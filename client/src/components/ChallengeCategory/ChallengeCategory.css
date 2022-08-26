@@ -1,12 +1,28 @@
 .ChallengeCategory-Container {
-    background-color: rgba(182, 182, 182, 0.8);
-    width: min(100% - 2rem, 600px);
+    width: min(100% - 2rem, 800px);
     margin-inline: auto;
+    padding-top: 3.2rem;
+}
+
+.ChallengeCategory-Header {
+    background-color: rgba(87, 85, 85, 0.8);
+}
+
+.ChallengeCategory-Body {
+    background-color: rgba(182, 182, 182, 0.8);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.Challenge-Container {
+    width: min(100% - 2rem, 600px);
 }
 
 .Challenge-Header {
     background-color: black;
     padding: 0.1px 0px 0px 0px;
+    width: 100%;
 }
 
 .Challenge-Text {

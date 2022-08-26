@@ -48,6 +48,9 @@ body {
   min-height: 100vh;
 }
 
+body > iframe {
+  pointer-events: none;
+}
 
 /* width */
 ::-webkit-scrollbar {
