@@ -4,14 +4,22 @@ import './ChallengeCategory.css';
 
 const ChallengeCategory = (props) => {
 
-    const objectives = {
-        objOne: {
+    const objectives = [
+        {
+            isPercent: false,
             task: "Treasure Chest Unlocked",
             progress: "0",
-            goal: "3",
+            goal: "50",
             completed: false,
-        }
-    }
+        },
+        {
+            isPercent: true,
+            task: "Plundered Umbral Energy",
+            progress: "0",
+            goal: "100%",
+            completed: false,
+        },
+    ]
 
     return (
         <section className='ChallengeCategory-Container'>
