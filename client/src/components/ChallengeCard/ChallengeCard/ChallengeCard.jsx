@@ -5,15 +5,19 @@ const ChallengeCard = (props) => {
 
     return (
         <section className='ChallengeCard-Container'>
+                    {/* NAME */}
                     <article className='ChallengeCard-Header'>
-                        <h3>Challenge Name</h3>
+                        <h3>{props.name}</h3>
                     </article>
                     <section className='ChallengeCard-Body'>
+                        {/* Description */}
                         <article>
-                            <p>Challenge description</p>
+                            <p>{props.desc}</p>
                         </article>
+                        {/* Objectives */}
                         <section>
-                            <article className='ChallengeCardObjective-Obj'>
+                            {/* ObjOne  */}
+                            <article className='ChallengeObjective-Obj'>
                                 <input
                                     id='challenge'
                                     type='checkbox'
@@ -38,8 +42,15 @@ const ChallengeCard = (props) => {
                         </section>
                         <section>
                             <h4>Rewards</h4>
-                            <p>Repute</p>
-                            <p>Challenger XP</p>
+                            { props.reward &&
+                                <p>{props.reward}</p>
+                            }
+                            { props.xp &&
+                                <p>{props.xp}</p>
+                            }
+                            { props.dust &&
+                                <p>{props.dust}</p>
+                            }
                         </section>
                     </section>
                 </section>
