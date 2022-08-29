@@ -17,4 +17,7 @@
 
 - Challenge Category Component
   - Create collapsible menu for each week
+
+- Challenge Card
+  - Add icons to the rewards
   

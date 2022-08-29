@@ -9,14 +9,14 @@ const ChallengeCategory = (props) => {
             isPercent: false,
             task: "Treasure Chest Unlocked",
             progress: "0",
-            goal: "50",
+            goal: 50,
             completed: false,
         },
         {
             isPercent: true,
             task: "Plundered Umbral Energy",
             progress: "0",
-            goal: "100%",
+            goal: 100,
             completed: false,
         },
     ]
