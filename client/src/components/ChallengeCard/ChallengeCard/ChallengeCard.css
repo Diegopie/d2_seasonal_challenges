@@ -1,0 +1,19 @@
+.ChallengeCard-Container {
+    width: min(100% - 2rem, 600px);
+}
+
+.ChallengeCard-Header {
+    background-color: black;
+    padding: 0.1px 0px 0px 0px;
+    width: 100%;
+}
+
+.ChallengeCard-Text {
+    padding-left: 10px;
+}
+
+.ChallengeCardObjective-Obj {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+}

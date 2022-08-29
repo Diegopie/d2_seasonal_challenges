@@ -14,23 +14,3 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
-
-.Challenge-Container {
-    width: min(100% - 2rem, 600px);
-}
-
-.Challenge-Header {
-    background-color: black;
-    padding: 0.1px 0px 0px 0px;
-    width: 100%;
-}
-
-.Challenge-Text {
-    padding-left: 10px;
-}
-
-.ChallengeObjective-Obj {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: auto;
-}
