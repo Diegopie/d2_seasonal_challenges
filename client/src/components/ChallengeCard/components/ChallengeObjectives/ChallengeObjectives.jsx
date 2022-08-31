@@ -1,68 +1,54 @@
 import React from 'react';
+import ObjectiveProgressHook from '../../ObjectiveProgressHook';
 
 const ChallengeObjectives = (props) => {
 
-    console.log(props.objectives);
+    const objectivesArray = props.objectives.map(obj => {
+        return obj.progress;
+    })
+
+    console.log(objectivesArray);
+
+    const [objectiveProgress, setObjectiveProgress] = ObjectiveProgressHook(objectivesArray);
+
+    console.log({objectiveProgress});
+
+    const handleSelect = (e) => {
+        console.log("Hit Handle Select");
+        console.dir(e.target.id);
+        
+    }
 
     return (
         <section>
-            {props.objectives.map((obj) => {
+            {props.objectives.map((obj, index) => {
                 return (
-                    <article className='ChallengeObjectives-Obj'>
+                    <article key={obj.task} className='ChallengeObjectives-Obj'>
                         <input
                             id='challenge'
                             type='checkbox'
                         />
                         <p> {obj.task} </p>
                         {/* Tally Objectives */}
-                        {!obj.isPercent &&
-                            <article className='ChallengeObjectives-Obj'>
-                                <select id='challenge progress' value=''>
-                                    <option disabled>Your Progress</option>
-                                    {[...Array((obj.goal+1))].map((num, i) => {
-                                        return (<option key={i} >{i}</option>)
-                                    })}
-                                </select>
+                        <article className='ChallengeObjectives-Obj'>
+                            <select id={index} value={objectiveProgress[index]} onChange={handleSelect}>
+                                <option key='default' disabled>Your Progress</option>
+                                {[...Array((obj.goal + 1))].map((num, i) => {
+                                    return (<option key={i} value={i} >{i}</option>)
+                                })}
+                            </select>
+                            {/* Tally Goal */}
+                            {!obj.isPercent &&
                                 <p>{obj.goal}</p>
-                            </article>
-                        }
-                        {/* Percentage Objectives */}
-                        {obj.isPercent &&
-                            <article className='ChallengeObjectives-Obj'>
-                                <select id='challenge progress' value=''>
-                                    <option disabled>Your Progress</option>
-                                    <option>0</option>
-                                    <option>1</option>
-                                </select>
-                                <p>3</p>
-                            </article>
-                        }
+                            }
+                            {obj.isPercent &&
+                                <p>{obj.goal}%</p>
+                            }
+                        </article>
                     </article>
                 )
 
             })}
-            <article className='ChallengeObjectives-Obj'>
-                <input
-                    id='challenge'
-                    type='checkbox'
-                />
-                <p> Treasure Chests unlocked</p>
-            </article>
-            <article className='ChallengeObjectives-Obj'>
-                <input
-                    id='challenge'
-                    type='checkbox'
-                />
-                <p>Plundered Umbral Energy</p>
-                <article className='ChallengeObjectives-Obj'>
-                    <select id='challenge progress' value=''>
-                        <option disabled>Your Progress</option>
-                        <option>0</option>
-                        <option>1</option>
-                    </select>
-                    <p>3</p>
-                </article>
-            </article>
         </section>
     );
 };

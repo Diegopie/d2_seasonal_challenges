@@ -1,14 +1,17 @@
 import React from 'react';
 import ChallengeCard from '../ChallengeCard/ChallengeCard/ChallengeCard';
+import ObjectiveProgressHook from '../ChallengeCard/ObjectiveProgressHook';
 import './ChallengeCategory.css';
 
 const ChallengeCategory = (props) => {
+
+    const [objectiveProgress, setObjectiveProgress] = ObjectiveProgressHook();
 
     const objectives = [
         {
             isPercent: false,
             task: "Treasure Chest Unlocked",
-            progress: "0",
+            progress: "19",
             goal: 50,
             completed: false,
         },
