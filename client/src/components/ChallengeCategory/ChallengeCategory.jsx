@@ -41,14 +41,6 @@ const ChallengeCategory = (props) => {
                         />
                     )
                 })}
-                <ChallengeCard
-                    name="Successful Expedition"
-                    desc="Obtain Plundered Umbral Energy from bonus chests in Expedition"
-                    objectives={objectives}
-                    reward="Repute"
-                    xp="Tier1"
-                    dust={null}
-                />
             </section>
         </section>
     );
