@@ -1,13 +1,14 @@
 import React from 'react';
-import TriumphTracker from '../features/TriumphTracker/template/TriumphTracker';
+import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 
 
 const Homepage = () => {
 
     return (
         <main className='App-backMaxHeight'>
-            {/* <Intro /> */}
-            <TriumphTracker />
+            <section className='App-backImg App-backImg-1-light'>\
+                <ChallengeCategory />
+            </section>
         </main>
     );
 };
