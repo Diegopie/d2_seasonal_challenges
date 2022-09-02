@@ -21,20 +21,34 @@ const ChallengeCategory = (props) => {
         },
     ]
 
+    console.log(props.challenges);
+
     return (
         <section className='ChallengeCategory-Container'>
             <article className='ChallengeCategory-Header'>
-                <h2>Week One</h2>
+                <h2>{props.name}</h2>
             </article>
             <section className='ChallengeCategory-Body'>
-               <ChallengeCard 
+                {props.challenges.map((challenge) => {
+                    return (
+                        <ChallengeCard
+                            name={challenge.name}
+                            desc={challenge.description}
+                            objectives={challenge.objectives}
+                            reward={challenge.reward}
+                            xp={challenge.xp}
+                            dust={challenge.dust}
+                        />
+                    )
+                })}
+                <ChallengeCard
                     name="Successful Expedition"
                     desc="Obtain Plundered Umbral Energy from bonus chests in Expedition"
                     objectives={objectives}
                     reward="Repute"
                     xp="Tier1"
                     dust={null}
-               />
+                />
             </section>
         </section>
     );
