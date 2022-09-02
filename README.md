@@ -22,6 +22,8 @@ App description
   - [Technology Overview](#technology-overview)
   - [Contact](#contact)
   - [License](#license)
+- [react-template](#react-template)
+- [d2_seasonal_challenges](#d2_seasonal_challenges)
 
 # Development
 
@@ -100,10 +102,20 @@ console.log("Hello Again")
 
 ## Future Development
 
-Describe goals for feature dev
+There were a few coding concepts I wanted to practice when creating this project so I laid out the development process base on what I wanted to learn/practice. The initial concept was working with and rendering a larger amount of data that can be updated by a user then managing all of that in local storage.
 
-- And list them here
-  - with specifics
+This are the concepts I would like to practice in the future and how they effect the app
+
+- PWA - Offline and Installable App
+  - PWAs just make me happy ☺️ and many console users like their Destiny companion apps on their phone. This will give a more native app feel for those users and something neat for PC users
+  - Offline support is mostly for me to learn service workers. Destiny is an online game so I don't see how many users will benefit from offline support but I can brag about it to my fiancee 🥰
+  
+- JWT Authentication and Server Database
+  - I have implemented many very basic user account and authentication but I would like to have something more polished and user friendly
+  - With user auth, I can connect to a database so users can track their progress anywhere!
+  
+- Destiny API Integration
+  - This would render most of the work done completely redundant but will be a huge quality of life improvement. I have many ideas for Destiny apps learning all the previous coding concepts are important for that. This will also be a good baby step for using the huge amount of data the Destiny API offers
 
 ## Resources
 
