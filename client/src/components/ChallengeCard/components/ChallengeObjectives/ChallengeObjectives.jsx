@@ -7,16 +7,22 @@ const ChallengeObjectives = (props) => {
         return obj.progress;
     })
 
-    console.log(objectivesArray);
+    // console.log(objectivesArray);
 
     const [objectiveProgress, setObjectiveProgress] = ObjectiveProgressHook(objectivesArray);
 
-    console.log({objectiveProgress});
+    console.log(objectiveProgress);
 
     const handleSelect = (e) => {
         console.log("Hit Handle Select");
-        console.dir(e.target.id);
-        
+        console.log(e.target.id);
+        const value = e.target.value
+        console.log(e.target.value);
+        console.log(objectiveProgress);
+        const newObjArray = objectiveProgress.splice(e.target.id, 1, value)
+        console.log(newObjArray);
+        // setObjectiveProgress([...newObjArray]);
+        console.log(objectiveProgress);
     }
 
     return (

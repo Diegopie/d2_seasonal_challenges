@@ -1,11 +1,8 @@
 import React from 'react';
 import ChallengeCard from '../ChallengeCard/ChallengeCard/ChallengeCard';
-import ObjectiveProgressHook from '../ChallengeCard/ObjectiveProgressHook';
 import './ChallengeCategory.css';
 
 const ChallengeCategory = (props) => {
-
-    const [objectiveProgress, setObjectiveProgress] = ObjectiveProgressHook();
 
     const objectives = [
         {
