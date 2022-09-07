@@ -7,7 +7,7 @@ const seasonalChallenges = [
                 {
                     name: 'Successful Expedition',
                     description: 'Obtain Plundered Umbral Energy from bonus chests in Expedition',
-                    category: 'Expedition',
+                    category: ['Expedition'],
                     completed: false,
                     objectives: [
                         {
@@ -32,7 +32,7 @@ const seasonalChallenges = [
                 {
                     name: 'Antiquarian I',
                     description: 'Return the first relic to the HELM. Defeat combatants on Europa. Defeating combatants with a Fusion Rifle will award bonus progress',
-                    category: 'Europa',
+                    category: ['Europa'],
                     completed: false,
                     objectives: [
                         {
@@ -57,7 +57,7 @@ const seasonalChallenges = [
                 {
                     name: 'Fire Discipline',
                     description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
-                    category: 'Ketchcrash',
+                    category: ['Ketchcrash'],
                     completed: false,
                     objectives: [
                         {
@@ -82,7 +82,7 @@ const seasonalChallenges = [
                 {
                     name: 'Shaper I',
                     description: 'Shape three unique Seasonal weapons',
-                    category: 'Gear',
+                    category: ['Gear'],
                     completed: false,
                     objectives: [
                         {
@@ -106,7 +106,7 @@ const seasonalChallenges = [
                 {
                     name: 'Antiquarian II',
                     description: 'Return the second relic to the H.E.L.M. Also, defeat Fallen. Defeating them with precision final blows will award bonus progress',
-                    category: 'Expedition',
+                    category: ['Expedition'],
                     completed: false,
                     objectives: [
                         {
@@ -131,7 +131,7 @@ const seasonalChallenges = [
                 {
                     name: 'Expert Expedition I',
                     description: 'Complete Expeditions and gather treasure in the treasure haul',
-                    category: 'Expedition',
+                    category: ['Expedition'],
                     completed: false,
                     objectives: [
                         {
@@ -156,7 +156,7 @@ const seasonalChallenges = [
                 {
                     name: "Seeker's Cache I",
                     description: 'Complete bounties from the Star Chart or on Nessus, Cosmodrome, or Europa. Also, decipher the Small Treasure Beacon, available from the Star Chart in the H.E.L.M.',
-                    category: 'Activities',
+                    category: ['Activities'],
                     completed: false,
                     objectives: [
                         {
