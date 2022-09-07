@@ -4,25 +4,6 @@ import './ChallengeCategory.css';
 
 const ChallengeCategory = (props) => {
 
-    const objectives = [
-        {
-            isPercent: false,
-            task: "Treasure Chest Unlocked",
-            progress: "19",
-            goal: 50,
-            completed: false,
-        },
-        {
-            isPercent: true,
-            task: "Plundered Umbral Energy",
-            progress: "0",
-            goal: 100,
-            completed: false,
-        },
-    ]
-
-    console.log(props.challenges);
-
     return (
         <section className='ChallengeCategory-Container'>
             <article className='ChallengeCategory-Header'>
@@ -32,6 +13,7 @@ const ChallengeCategory = (props) => {
                 {props.challenges.map((challenge) => {
                     return (
                         <ChallengeCard
+                            key={challenge.name}
                             name={challenge.name}
                             desc={challenge.description}
                             objectives={challenge.objectives}
