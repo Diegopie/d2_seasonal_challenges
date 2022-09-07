@@ -1,44 +1,10 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-
+import seasonalChallenges from '../data/seasonalChallenges';
 
 const Homepage = () => {
 
-    const seasonalChallenges = [
-            // Week One
-            
-                {
-                    name: 'Week One',
-                    challenges: [
-                        {
-                            name: 'Successful Expedition',
-                            description: 'Obtain Plunderd Umbral Energy from bonus chests in Expedition',
-                            category: 'Expedition',
-                            objectives: [
-                                {
-                                    isPercent: false,
-                                    task: "Treasure Chest Unlocked",
-                                    progress: 0,
-                                    goal: 50,
-                                    completed: false,
-                                },
-                                {
-                                    isPercent: true,
-                                    task: "Plundered Umbral Energy",
-                                    progress: 0,
-                                    goal: 3,
-                                    completed: false,
-                                },
-                            ],
-                            reward: 'Repute',
-                            xp: 'XP',
-                            dust: null
-                        }
-                    ]
-                },
-            
-            // Week Two
-    ]
+    
 
 
     return (

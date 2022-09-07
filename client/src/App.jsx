@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 // Import Pages
 import Homepage from './pages/Homepage';
+import Activities from './pages/Activities';
 import NotFoundPage from './pages/NotFoundPage';
 // Import Components
 
@@ -46,6 +47,7 @@ function App() {
             />
             <Switch>
                 <Route exact path='/' component={Homepage} />
+                <Route exact path='/activities' component={Activities} />
                 <Route component={NotFoundPage} />
             </Switch>
         </Router>
