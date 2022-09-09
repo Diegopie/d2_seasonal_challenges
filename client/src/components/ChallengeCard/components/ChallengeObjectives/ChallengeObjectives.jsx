@@ -1,6 +1,6 @@
 import React from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
-import ObjectivesSelect from '../ObjectiveOptions/ObjectiveOptions';
+import ObjectiveOptions from '../ObjectiveOptions/ObjectiveOptions';
 
 const ChallengeObjectives = (props) => {
 
@@ -20,7 +20,7 @@ const ChallengeObjectives = (props) => {
                         <p> {obj.task} </p>
                         {/* Tally Objectives */}
                         <article className='ChallengeObjectives-Obj'>
-                            <ObjectivesSelect 
+                            <ObjectiveOptions 
                                 task={obj.task}
                                 index={index}
                                 progress={obj.progress}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
 
-const ObjectivesSelect = (props) => {
+const ObjectiveOptions = (props) => {
 
     const [challengeState, ] = useChallengeContext()
 
@@ -23,21 +23,14 @@ const ObjectivesSelect = (props) => {
 
     
     const handleSelect = (e) => {
-        console.log('-----');
-        console.log("handleSelect e.target.val");
-        console.log(e.target.value);
+        // * Set New State to Update Page
         setObjProgress(e.target.value);
-        console.log("handleSelect objProgress");
-        console.log(objProgress);
+        // * Deconstruct data from selected challenge objective
         const {challenge, index} = e.target.dataset;
-        // successfully getting correct challenge from local storage
+        // * Get Local Storage Object
         const localChallenge = JSON.parse(localStorage.getItem(challenge));
-        console.log('old local');
-        console.log(localChallenge.objectives[index].progress);
-        // console.log(localChallenge.objectives[index].progress);
+        // * Mutate and save data
         localChallenge.objectives[index].progress = e.target.value
-        console.log('new local');
-        console.log(localChallenge.objectives[index].progress);
         localStorage.setItem(challenge, JSON.stringify(localChallenge));
     };
 
@@ -57,4 +50,4 @@ const ObjectivesSelect = (props) => {
     );
 };
 
-export default ObjectivesSelect;
+export default ObjectiveOptions;

@@ -1,1 +1,1 @@
-export { default } from './ObjectivesSelect';
+export { default } from './ObjectiveOptions';
