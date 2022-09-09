@@ -1,6 +1,6 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import seasonalChallenges from '../data/seasonalChallenges';
+import localSeasonalChallenges from '../data/parsedSeasonalChallenges';;
 
 const Activities = () => {
 
@@ -88,7 +88,7 @@ const Activities = () => {
     }
 
     const sortChallenges = () => {
-        seasonalChallenges.forEach((week => {
+        localSeasonalChallenges.forEach((week => {
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
                 challenge.category.forEach((activity => {

@@ -5,7 +5,7 @@ const ObjectiveOptions = (props) => {
 
     const [challengeState, ] = useChallengeContext()
 
-    const {name} = challengeState;
+    const { name}  = challengeState;
 
     const [objProgress, setObjProgress] = useState(() => {
         const getLocal = localStorage.getItem(name.replaceAll(' ', '-'));
@@ -16,7 +16,6 @@ const ObjectiveOptions = (props) => {
         }
         
         const progress = JSON.parse(getLocal).objectives[props.index].progress;
-        console.log(progress);
         return progress
     });
 
