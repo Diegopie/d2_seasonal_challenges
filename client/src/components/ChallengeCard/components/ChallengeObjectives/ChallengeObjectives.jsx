@@ -1,6 +1,6 @@
 import React from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
-import ObjectivesSelect from '../ObjectivesSelect/ObjectiveOptions';
+import ObjectivesSelect from '../ObjectiveOptions/ObjectiveOptions';
 
 const ChallengeObjectives = (props) => {
 

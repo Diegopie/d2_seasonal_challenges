@@ -29,7 +29,6 @@ const reducer = (state, action) => {
 }
 
 const ChallengeProvider = (props) => {
-    console.log(props);
     const [state, dispatch] = useReducer(reducer, challengeState);
 
     return (
