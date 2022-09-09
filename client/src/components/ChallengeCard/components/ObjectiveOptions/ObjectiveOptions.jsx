@@ -10,11 +10,14 @@ const ObjectivesSelect = (props) => {
     });
     
     const handleSelect = (e) => {
+        setObjProgress(e.target.value);
         const {challenge, index} = e.target.dataset;
         // successfully getting correct challenge from local storage
-        const test = JSON.parse(localStorage.getItem(challenge));
-        console.log(test.objectives[index]);
-        setObjProgress(e.target.value);
+        const localChallenge = JSON.parse(localStorage.getItem(challenge));
+        console.log(localChallenge.objectives[index].progress);
+        localChallenge.objectives[index].progress = objProgress
+        console.log(localChallenge.objectives[index].progress);
+        localStorage.setItem(challenge, JSON.stringify(localChallenge));
     };
 
     return (
