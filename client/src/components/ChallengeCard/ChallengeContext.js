@@ -18,6 +18,10 @@ const reducer = (state, action) => {
                 ...state,
                 name: action.payload.name,
                 description: action.payload.description,
+                objectives: action.payload.objectives,
+                reward: action.payload.reward,
+                xp: action.payload.xp,
+                dust: action.payload.dust,
             };
     
         default: return state;

@@ -6,7 +6,7 @@ import './ChallengeCard.css';
 
 const ChallengeCard = (props) => {
 
-    const [{name, description}, dispatch] = useChallengeContext();
+    const [{name, description, objectives, reward, xp, dust}, dispatch] = useChallengeContext();
 
     useEffect(() => {
         dispatch({type: 'setState', payload: props.data });
@@ -27,13 +27,13 @@ const ChallengeCard = (props) => {
                 </article>
                 {/* Objectives */}
                 <ChallengeObjectives 
-                    objectives={props.objectives}
+                    objectives={objectives}
                 />
                 {/* Rewards */}
                 <ChallengeReward 
-                    reward={props.reward}
-                    xp={props.xp}
-                    dust={props.dust}
+                    reward={reward}
+                    xp={xp}
+                    dust={dust}
                 />
             </section>
         </section>
