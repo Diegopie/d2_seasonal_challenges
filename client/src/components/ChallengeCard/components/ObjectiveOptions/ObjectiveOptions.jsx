@@ -3,24 +3,40 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectivesSelect = (props) => {
 
-    const [{name}, ] = useChallengeContext();
+    const [challengeState, ] = useChallengeContext()
+
+    const {name} = challengeState;
 
     const [objProgress, setObjProgress] = useState(() => {
-        return(props.progress);
+        const getLocal = localStorage.getItem(name.replaceAll(' ', '-'));
+        if (getLocal === null) {
+            // console.log(getLocal);
+            localStorage.setItem(name.replaceAll(' ', '-'), JSON.stringify(challengeState));
+            return 0;
+        }
+        
+        const progress = JSON.parse(getLocal).objectives[props.index].progress;
+        console.log(progress);
+        return progress
     });
+
+
     
     const handleSelect = (e) => {
+        console.log('-----');
         console.log("handleSelect e.target.val");
         console.log(e.target.value);
         setObjProgress(e.target.value);
+        console.log("handleSelect objProgress");
+        console.log(objProgress);
         const {challenge, index} = e.target.dataset;
         // successfully getting correct challenge from local storage
         const localChallenge = JSON.parse(localStorage.getItem(challenge));
-        console.log("handleSelect objProgress");
-        console.log(objProgress);
+        console.log('old local');
+        console.log(localChallenge.objectives[index].progress);
         // console.log(localChallenge.objectives[index].progress);
-        localChallenge.objectives[index].progress = objProgress
-        
+        localChallenge.objectives[index].progress = e.target.value
+        console.log('new local');
         console.log(localChallenge.objectives[index].progress);
         localStorage.setItem(challenge, JSON.stringify(localChallenge));
     };

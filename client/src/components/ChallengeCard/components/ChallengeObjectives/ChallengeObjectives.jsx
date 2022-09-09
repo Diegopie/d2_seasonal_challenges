@@ -4,25 +4,9 @@ import ObjectivesSelect from '../ObjectiveOptions/ObjectiveOptions';
 
 const ChallengeObjectives = (props) => {
 
-    const [challengeState, ] = useChallengeContext()
+    const [{objectives}, ] = useChallengeContext()
 
-    const {name, objectives} = challengeState;
 
-    console.log(challengeState);
-
-    // ** MOVING SETTING LOCAL HER BREAKS THE REST OF THE CONTEXT
-    const getLocal = (index) => {
-        const getLocal = localStorage.getItem(name.replaceAll(' ', '-'));
-        if (getLocal === null) {
-            // console.log(getLocal);
-            localStorage.setItem(name.replaceAll(' ', '-'), JSON.stringify(challengeState));
-            return 0;
-        }
-        
-        const progress = JSON.parse(getLocal).objectives[index].progress;
-        console.log(progress);
-        return progress
-    }
 
     return (
         <section>
@@ -39,7 +23,7 @@ const ChallengeObjectives = (props) => {
                             <ObjectivesSelect 
                                 task={obj.task}
                                 index={index}
-                                progress={getLocal(index)}
+                                progress={obj.progress}
                                 goal={obj.goal}
                             />
                             {/* Tally Goal */}
