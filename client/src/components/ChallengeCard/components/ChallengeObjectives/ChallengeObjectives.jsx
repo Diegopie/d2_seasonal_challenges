@@ -1,11 +1,16 @@
 import React from 'react';
-import ObjectivesSelect from '../ObjectivesSelect/ObjectiveOptions';
+import { useChallengeContext } from '../../ChallengeContext';
+import ObjectiveOptions from '../ObjectiveOptions/ObjectiveOptions';
 
 const ChallengeObjectives = (props) => {
 
+    const [{objectives}, ] = useChallengeContext()
+
+
+
     return (
         <section>
-            {props.objectives.map((obj, index) => {
+            {objectives.map((obj, index) => {
                 return (
                     <article key={obj.task} className='ChallengeObjectives-Obj'>
                         <input
@@ -15,7 +20,7 @@ const ChallengeObjectives = (props) => {
                         <p> {obj.task} </p>
                         {/* Tally Objectives */}
                         <article className='ChallengeObjectives-Obj'>
-                            <ObjectivesSelect 
+                            <ObjectiveOptions 
                                 task={obj.task}
                                 index={index}
                                 progress={obj.progress}
