@@ -1,11 +1,14 @@
 import React from 'react';
+import { useChallengeContext } from '../../ChallengeContext';
 import ObjectivesSelect from '../ObjectivesSelect/ObjectiveOptions';
 
 const ChallengeObjectives = (props) => {
 
+    const [{objectives}, ] = useChallengeContext()
+
     return (
         <section>
-            {props.objectives.map((obj, index) => {
+            {objectives.map((obj, index) => {
                 return (
                     <article key={obj.task} className='ChallengeObjectives-Obj'>
                         <input

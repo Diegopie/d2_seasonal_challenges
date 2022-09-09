@@ -19,12 +19,6 @@ const ChallengeCategory = (props) => {
                         >
                             <ChallengeCard
                                 key={challenge.name}
-                                name={challenge.name}
-                                desc={challenge.description}
-                                objectives={challenge.objectives}
-                                reward={challenge.reward}
-                                xp={challenge.xp}
-                                dust={challenge.dust}
                                 data={challenge}
                             />
                         </ChallengeProvider>
