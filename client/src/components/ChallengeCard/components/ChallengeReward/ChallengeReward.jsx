@@ -1,18 +1,21 @@
 import React from 'react';
+import { useChallengeContext } from '../../ChallengeContext';
 
 const ChallengeReward = (props) => {
+
+    const [{reward, xp, dust}, ] = useChallengeContext();
 
     return (
         <section>
             <h4>Rewards</h4>
-            {props.reward &&
-                <p>{props.reward}</p>
+            {reward &&
+                <p>{reward}</p>
             }
-            {props.xp &&
-                <p>{props.xp}</p>
+            {xp &&
+                <p>{xp}</p>
             }
-            {props.dust &&
-                <p>{props.dust}</p>
+            {dust &&
+                <p>{dust}</p>
             }
         </section>
     );
