@@ -12,7 +12,7 @@ const ChallengeCard = (props) => {
         dispatch({type: 'setState', payload: props.data });
     }, [dispatch, props])
 
-    console.log(name);
+    // console.log(name);
 
     return (
         <section className='ChallengeCard-Container'>

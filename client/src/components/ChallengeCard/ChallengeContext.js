@@ -14,7 +14,6 @@ const challengeState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'setState':
-            localStorage.setItem(action.payload.name.replaceAll(' ', '-'), JSON.stringify(action.payload))
             return {
                 ...state,
                 name: action.payload.name,
