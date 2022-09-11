@@ -33,7 +33,7 @@ const localSeasonalChallenges = seasonalChallenges.map((week) => {
     return week;
 });
 
-console.log('-- localSeasonalChallenges -- ');
-console.log(localSeasonalChallenges);
+// console.log('-- localSeasonalChallenges -- ');
+// console.log(localSeasonalChallenges);
 
 export default localSeasonalChallenges;

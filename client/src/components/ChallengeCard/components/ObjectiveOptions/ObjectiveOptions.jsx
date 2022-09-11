@@ -6,35 +6,44 @@ const ObjectiveOptions = (props) => {
     const [challengeState, ] = useChallengeContext()
 
     const { week, challengeIndex, name }  = challengeState;
+    console.log({week});
 
-    const [objProgress, setObjProgress] = useState(() => {
-        const getLocal = localStorage.getItem(name.replaceAll(' ', '-'));
-        if (getLocal === null) {
-            // console.log(getLocal);
-            localStorage.setItem(name.replaceAll(' ', '-'), JSON.stringify(challengeState));
-            return 0;
-        }
-        
-        const progress = JSON.parse(getLocal).objectives[props.objectiveIndex].progress;
-        return progress
-    });
+    const [objProgress, setObjProgress] = useState();
 
-    const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
+    // ** This will replace handleSelect,  currently logging required data to make sure everything passes through
+    // This came from parsedSeasonalChallenges and needs to be refactored to update local storage instead of reading
+    const getLocal = (e, week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
         // * Find Correct Week
-        const dashedWeek = week.replaceAll(' ', '-');
+        setObjProgress(e.target.value);
+        const dashedWeek = week;
         const getLocal = localStorage.getItem(dashedWeek);
         const parseLocal = JSON.parse(getLocal)
-        if (isChallengeComplete) {
-            //  ** Find Correct Challenge
-            return parseLocal[challengeIndex].completed
-        }
-        if (isObjectiveComplete) {
-            return parseLocal[challengeIndex].objectives[objectiveIndex].completed
-        }
-        return parseLocal[challengeIndex].objectives[objectiveIndex].progress
-    }
+        console.log({parseLocal});
+        const currentChallenge = parseLocal[challengeIndex];
+        console.log({currentChallenge});
+        const currentTask = currentChallenge.objectives[props.objectiveIndex];
+        console.log({currentTask});
+        console.log(currentTask.progress);
+     
+        // parseLocal.map()
+        // ** Toggle Challenge Completed
+        // if (isChallengeComplete) {
+        //     //  ** Find Correct Challenge
+        //     return parseLocal[challengeIndex].completed
+        // }
 
-    console.log(week, challengeIndex, null, props.objectiveIndex, false );
+        // ** Toggle Task Objective Completed
+        // if (isObjectiveComplete) {
+        //     return parseLocal[challengeIndex].objectives[objectiveIndex].completed
+        // }
+
+        //  ** Toggle Task Completed
+        // return parseLocal[challengeIndex].objectives[objectiveIndex].progress
+
+        // ** Update Task Value
+    }
+    
+    // console.log(week, challengeIndex, null, props.objectiveIndex, false );
     
     const handleSelect = (e) => {
         // * Set New State to Update Page
@@ -55,7 +64,7 @@ const ObjectiveOptions = (props) => {
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}
-            onChange={handleSelect}
+            onChange={e => getLocal(e, week, challengeIndex)}
         >
             <option key='default' disabled>Your Progress</option>
             {[...Array((props.goal + 1))].map((num, i) => {
