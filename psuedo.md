@@ -5,8 +5,8 @@
 ## MVP
 
 - ChallengeCard
-  - refactor components to use parsed data
-  - Create code and/or hook to update state and local storage
+  - Move getLocal from ObjectiveStorage into a hook
+  - Add ability to update task completed
   - Need to add logic to also update local if a new challenge is added to the week array
 
 ## Polish
