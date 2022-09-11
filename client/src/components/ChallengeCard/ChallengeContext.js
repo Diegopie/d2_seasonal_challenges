@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 const ChallengeContext = createContext({});
 
 const challengeState = {
+    week: '',
     name: '',
     description: '',
     objectives: [],
@@ -12,16 +13,20 @@ const challengeState = {
 }
 
 const reducer = (state, action) => {
+
+    
+
     switch (action.type) {
         case 'setState':
             return {
                 ...state,
-                name: action.payload.name,
-                description: action.payload.description,
-                objectives: action.payload.objectives,
-                reward: action.payload.reward,
-                xp: action.payload.xp,
-                dust: action.payload.dust,
+                week:action.payload.week,
+                name: action.payload.challenge.name,
+                description: action.payload.challenge.description,
+                objectives: action.payload.challenge.objectives,
+                reward: action.payload.challenge.reward,
+                xp: action.payload.challenge.xp,
+                dust: action.payload.challenge.dust,
             };
     
         default: return state;
@@ -32,9 +37,9 @@ const ChallengeProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, challengeState);
 
     useEffect(() => {
-        dispatch({type: 'setState', payload: props.data });
+        dispatch({type: 'setState', payload: {week:props.data.week, challenge: props.data.challenge} });
     }, [dispatch, props])
-    
+
     return (
         <ChallengeContext.Provider value={[state, dispatch]} {...props} />
     );

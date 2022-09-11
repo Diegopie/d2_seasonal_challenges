@@ -17,7 +17,7 @@ const ChallengeCategory = (props) => {
                         // Wrap the State Provider for Individual Challenges and Pass Challenge Data to Dispatch Initial State
                         <ChallengeProvider 
                             key={challenge.name}
-                            data={challenge}
+                            data={{week: props.name.replaceAll(' ', '-'), challenge}}
                         >
                             <ChallengeCard
                                 key={challenge.name}
