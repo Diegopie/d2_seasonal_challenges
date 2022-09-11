@@ -19,10 +19,10 @@ const reducer = (state, action) => {
 
     switch (action.type) {
         case 'setState':
-            const { week, challenge, challengeIndex } = action.payload
+            const { challenge, challengeIndex } = action.payload
             return {
                 ...state,
-                week: week,
+                week: challenge.belongsTo,
                 name: challenge.name,
                 challengeIndex: challengeIndex,
                 description: challenge.description,
@@ -38,11 +38,11 @@ const reducer = (state, action) => {
 
 const ChallengeProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, challengeState);
-    const { week, challenge, challengeIndex} = props.data;
+    const { challenge, challengeIndex} = props.data;
 
     useEffect(() => {
-        dispatch({type: 'setState', payload: {week:week, challenge: challenge, challengeIndex: challengeIndex} });
-    }, [dispatch, week, challenge, challengeIndex])
+        dispatch({type: 'setState', payload: { challenge: challenge, challengeIndex: challengeIndex} });
+    }, [dispatch, challenge, challengeIndex])
 
     return (
         <ChallengeContext.Provider value={[state, dispatch]} {...props} />

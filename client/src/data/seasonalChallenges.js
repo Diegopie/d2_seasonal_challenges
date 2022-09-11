@@ -1,60 +1,62 @@
 const seasonalChallenges = [
     // Week One
-    
-        {
-            name: 'Week One',
-            challenges: [
-                {
-                    name: 'Successful Expedition',
-                    description: 'Obtain Plundered Umbral Energy from bonus chests in Expedition',
-                    category: ['Expedition'],
-                    completed: false,
-                    objectives: [
-                        {
-                            isPercent: false,
-                            task: "Treasure Chest Unlocked",
-                            progress: 0,
-                            goal: 50,
-                            completed: false,
-                        },
-                        {
-                            isPercent: true,
-                            task: "Plundered Umbral Energy",
-                            progress: 0,
-                            goal: 3,
-                            completed: false,
-                        },
-                    ],
-                    reward: 'Repute',
-                    xp: 'XP',
-                    dust: null
-                },
-                
-                {
-                    name: 'Antiquarian I',
-                    description: 'Return the first relic to the HELM. Defeat combatants on Europa. Defeating combatants with a Fusion Rifle will award bonus progress',
-                    category: ['Europa'],
-                    completed: false,
-                    objectives: [
-                        {
-                            isPercent: false,
-                            task: "Relic Placed",
-                            progress: 0,
-                            goal: 1,
-                            completed: false,
-                        },
-                        {
-                            isPercent: false,
-                            task: "Combatants Defeated",
-                            progress: 0,
-                            goal: 200,
-                            completed: false,
-                        },
-                    ],
-                    reward: 'Repute',
-                    xp: 'XP',
-                    dust: null
-                },
+
+    {
+        name: 'Week One',
+        challenges: [
+            {
+                belongsTo: 'Week-One',
+                name: 'Successful Expedition',
+                description: 'Obtain Plundered Umbral Energy from bonus chests in Expedition',
+                category: ['Expedition'],
+                completed: false,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Treasure Chest Unlocked",
+                        progress: 0,
+                        goal: 50,
+                        completed: false,
+                    },
+                    {
+                        isPercent: true,
+                        task: "Plundered Umbral Energy",
+                        progress: 0,
+                        goal: 3,
+                        completed: false,
+                    },
+                ],
+                reward: 'Repute',
+                xp: 'XP',
+                dust: null
+            },
+
+            {
+                belongsTo: 'Week-One',
+                name: 'Antiquarian I',
+                description: 'Return the first relic to the HELM. Defeat combatants on Europa. Defeating combatants with a Fusion Rifle will award bonus progress',
+                category: ['Europa'],
+                completed: false,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Relic Placed",
+                        progress: 0,
+                        goal: 1,
+                        completed: false,
+                    },
+                    {
+                        isPercent: false,
+                        task: "Combatants Defeated",
+                        progress: 0,
+                        goal: 200,
+                        completed: false,
+                    },
+                ],
+                reward: 'Repute',
+                xp: 'XP',
+                dust: null
+            },
             //     {
             //         name: 'Fire Discipline',
             //         description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
@@ -98,7 +100,7 @@ const seasonalChallenges = [
             //         xp: 'XP',
             //         dust: null
             //     },
-            ]
+        ]
         // },
         // Week Two
         // {
@@ -198,7 +200,7 @@ const seasonalChallenges = [
         //             dust: null
         //         },
         //     ]
-        },
+    },
 ]
 
 export default seasonalChallenges;

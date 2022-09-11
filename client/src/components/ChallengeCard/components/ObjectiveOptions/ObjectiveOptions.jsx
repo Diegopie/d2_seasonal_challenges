@@ -13,10 +13,11 @@ const ObjectiveOptions = (props) => {
 
     // ** This will replace handleSelect,  currently logging required data to make sure everything passes through
     // This came from parsedSeasonalChallenges and needs to be refactored to update local storage instead of reading
-    const getLocal = (e, week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
+    const handleSelect = (e, week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
         // * Find Correct Week
         setObjProgress(e.target.value);
         const dashedWeek = week;
+        console.log(week);
         const getLocal = localStorage.getItem(dashedWeek);
         const parseLocal = JSON.parse(getLocal)
 
@@ -53,7 +54,7 @@ const ObjectiveOptions = (props) => {
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}
-            onChange={e => getLocal(e, week, challengeIndex)}
+            onChange={e => handleSelect(e, week, challengeIndex)}
         >
             <option key='default' disabled>Your Progress</option>
             {[...Array((props.goal + 1))].map((num, i) => {
