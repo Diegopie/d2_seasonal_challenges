@@ -3,12 +3,13 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
-    const [challengeState, ] = useChallengeContext()
+    const [challengeState,] = useChallengeContext()
 
-    const { week, challengeIndex, name }  = challengeState;
-    console.log({week});
+    const { week, challengeIndex, name } = challengeState;
 
-    const [objProgress, setObjProgress] = useState();
+    const [objProgress, setObjProgress] = useState(() => {
+        return props.progress
+    });
 
     // ** This will replace handleSelect,  currently logging required data to make sure everything passes through
     // This came from parsedSeasonalChallenges and needs to be refactored to update local storage instead of reading
@@ -18,14 +19,17 @@ const ObjectiveOptions = (props) => {
         const dashedWeek = week;
         const getLocal = localStorage.getItem(dashedWeek);
         const parseLocal = JSON.parse(getLocal)
-        console.log({parseLocal});
-        const currentChallenge = parseLocal[challengeIndex];
-        console.log({currentChallenge});
-        const currentTask = currentChallenge.objectives[props.objectiveIndex];
-        console.log({currentTask});
-        console.log(currentTask.progress);
-     
-        // parseLocal.map()
+
+        const newLocal = parseLocal.map((challenge) => {
+            const currentTask = challenge.objectives[props.objectiveIndex];
+            console.log({ currentTask });
+            console.log(currentTask.progress);
+            currentTask.progress = e.target.value;
+            return challenge
+        })
+
+        localStorage.setItem(week, JSON.stringify(newLocal));
+
         // ** Toggle Challenge Completed
         // if (isChallengeComplete) {
         //     //  ** Find Correct Challenge
@@ -42,24 +46,9 @@ const ObjectiveOptions = (props) => {
 
         // ** Update Task Value
     }
-    
-    // console.log(week, challengeIndex, null, props.objectiveIndex, false );
-    
-    const handleSelect = (e) => {
-        // * Set New State to Update Page
-        setObjProgress(e.target.value);
-        // * Deconstruct data from selected challenge objective
-        console.log(e.target.dataset);
-        const {challenge, objectiveIndex} = e.target.dataset;
-        // * Get Local Storage Object
-        const localChallenge = JSON.parse(localStorage.getItem(challenge));
-        // * Mutate and save data
-        localChallenge.objectives[objectiveIndex].progress = e.target.value
-        localStorage.setItem(challenge, JSON.stringify(localChallenge));
-    };
 
     return (
-        <select 
+        <select
             id={`${props.task.replaceAll(' ', '-')}`}
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
