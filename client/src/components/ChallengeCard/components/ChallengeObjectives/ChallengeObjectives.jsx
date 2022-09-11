@@ -23,11 +23,11 @@ const ChallengeObjectives = (props) => {
                             {/* Use Prop Data Rather Than Context to Easier Mange Individual Instances of ObjectiveOptions */}
                             <ObjectiveOptions 
                                 task={obj.task}
-                                index={index}
+                                objectiveIndex={index}
                                 progress={obj.progress}
                                 goal={obj.goal}
                             />
-                            {/* Tally Goal */}
+                            {/* Tally Goal - Render a Percentage if Goal is a Percentage*/}
                             {!obj.isPercent &&
                                 <p>{obj.goal}</p>
                             }
