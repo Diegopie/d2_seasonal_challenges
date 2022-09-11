@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
 const ChallengeContext = createContext({});
 
@@ -31,6 +31,10 @@ const reducer = (state, action) => {
 const ChallengeProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, challengeState);
 
+    useEffect(() => {
+        dispatch({type: 'setState', payload: props.data });
+    }, [dispatch, props])
+    
     return (
         <ChallengeContext.Provider value={[state, dispatch]} {...props} />
     );
