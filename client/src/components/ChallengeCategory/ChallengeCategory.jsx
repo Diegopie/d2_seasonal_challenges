@@ -11,15 +11,16 @@ const ChallengeCategory = (props) => {
                 <h2>{props.name}</h2>
             </article>
             <section className='ChallengeCategory-Body'>
+                {/* Map Through Prop Data for Every Challenge in that Week */}
                 {props.challenges.map((challenge) => {
                     return (
+                        // Wrap the State Provider for Individual Challenges and Pass Challenge Data to Dispatch Initial State
                         <ChallengeProvider 
                             key={challenge.name}
                             data={challenge}
                         >
                             <ChallengeCard
                                 key={challenge.name}
-                                data={challenge}
                             />
                         </ChallengeProvider>
                     )

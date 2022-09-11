@@ -5,7 +5,7 @@ const ObjectiveOptions = (props) => {
 
     const [challengeState, ] = useChallengeContext()
 
-    const { name}  = challengeState;
+    const { name }  = challengeState;
 
     const [objProgress, setObjProgress] = useState(() => {
         const getLocal = localStorage.getItem(name.replaceAll(' ', '-'));

@@ -8,9 +8,6 @@ const ChallengeCard = (props) => {
 
     const [{name, description}, ] = useChallengeContext();
 
-
-    console.log(name);
-
     return (
         <section className='ChallengeCard-Container'>
             {/* NAME */}

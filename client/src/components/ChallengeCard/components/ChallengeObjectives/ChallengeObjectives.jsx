@@ -20,6 +20,7 @@ const ChallengeObjectives = (props) => {
                         <p> {obj.task} </p>
                         {/* Tally Objectives */}
                         <article className='ChallengeObjectives-Obj'>
+                            {/* Use Prop Data Rather Than Context to Easier Mange Individual Instances of ObjectiveOptions */}
                             <ObjectiveOptions 
                                 task={obj.task}
                                 index={index}
