@@ -14,9 +14,6 @@ const challengeState = {
 }
 
 const reducer = (state, action) => {
-
-    
-
     switch (action.type) {
         case 'setState':
             const { challenge, challengeIndex } = action.payload
@@ -31,6 +28,12 @@ const reducer = (state, action) => {
                 xp: challenge.xp,
                 dust: challenge.dust,
             };
+        case 'setProgress':
+            const { newObjectiveProgress } = action.payload;
+            return {
+                ...state,
+                objectives: newObjectiveProgress
+            }
     
         default: return state;
     }

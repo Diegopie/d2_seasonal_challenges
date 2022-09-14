@@ -19,7 +19,7 @@ const seasonalChallenges = [
                         completed: false,
                     },
                     {
-                        isPercent: true,
+                        isPercent: false,
                         task: "Plundered Umbral Energy",
                         progress: 0,
                         goal: 3,

@@ -3,7 +3,7 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
-    const [challengeState,] = useChallengeContext()
+    const [challengeState, dispatch] = useChallengeContext()
 
     const { week, challengeIndex, name } = challengeState;
 
@@ -11,25 +11,27 @@ const ObjectiveOptions = (props) => {
         return props.progress
     });
 
-    // ** This will replace handleSelect,  currently logging required data to make sure everything passes through
-    // This came from parsedSeasonalChallenges and needs to be refactored to update local storage instead of reading
+    // This came from parsedSeasonalChallenges and needs to be refactored to removed not need arguments
     const handleSelect = (e, week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
-        // * Find Correct Week
-        setObjProgress(e.target.value);
-        const dashedWeek = week;
-        console.log(week);
-        const getLocal = localStorage.getItem(dashedWeek);
+        const userSelectedValue = e.target.value;
+        // * Set Component State to Update Page
+        setObjProgress(userSelectedValue);
+        // * Update Local Storage
+        const getLocal = localStorage.getItem(week);
         const parseLocal = JSON.parse(getLocal)
-
+        // ** Map Through Array and return the Objective that Needs to Be Changed
         const newLocal = parseLocal.map((challenge) => {
             const currentTask = challenge.objectives[props.objectiveIndex];
-            console.log({ currentTask });
-            console.log(currentTask.progress);
-            currentTask.progress = e.target.value;
+            currentTask.progress = userSelectedValue;
             return challenge
         })
-
+        // ** Store the New Array in Local Storage
         localStorage.setItem(week, JSON.stringify(newLocal));
+
+        // ** Dispatch Values to State for Data to Persist Between Pages
+        // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
+        const newObjectiveProgress = newLocal[challengeIndex].objectives;
+        dispatch({type:'setProgress', payload: { newObjectiveProgress }})
 
         // ** Toggle Challenge Completed
         // if (isChallengeComplete) {

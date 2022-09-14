@@ -6,8 +6,6 @@ const ChallengeObjectives = (props) => {
 
     const [{objectives}, ] = useChallengeContext()
 
-
-
     return (
         <section>
             {objectives.map((obj, index) => {
