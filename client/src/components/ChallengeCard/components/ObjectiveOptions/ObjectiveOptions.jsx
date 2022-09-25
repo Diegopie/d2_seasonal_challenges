@@ -12,7 +12,7 @@ const ObjectiveOptions = (props) => {
     });
 
     // This came from parsedSeasonalChallenges and needs to be refactored to removed not need arguments
-    const handleSelect = (e, week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
+    const handleSelect = (e, week, challengeIndex) => {
         const userSelectedValue = e.target.value;
         // * Set Component State to Update Page
         setObjProgress(userSelectedValue);
@@ -33,21 +33,6 @@ const ObjectiveOptions = (props) => {
         const newObjectiveProgress = newLocal[challengeIndex].objectives;
         dispatch({type:'setProgress', payload: { newObjectiveProgress }})
 
-        // ** Toggle Challenge Completed
-        // if (isChallengeComplete) {
-        //     //  ** Find Correct Challenge
-        //     return parseLocal[challengeIndex].completed
-        // }
-
-        // ** Toggle Task Objective Completed
-        // if (isObjectiveComplete) {
-        //     return parseLocal[challengeIndex].objectives[objectiveIndex].completed
-        // }
-
-        //  ** Toggle Task Completed
-        // return parseLocal[challengeIndex].objectives[objectiveIndex].progress
-
-        // ** Update Task Value
     }
 
     return (
