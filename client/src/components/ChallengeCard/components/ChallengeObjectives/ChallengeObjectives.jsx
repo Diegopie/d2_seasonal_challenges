@@ -1,19 +1,27 @@
 import React from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
 import ObjectiveOptions from '../ObjectiveOptions/ObjectiveOptions';
+import ObjectiveToggle from '../ObjectiveToggle/ObjectiveToggle';
 
 const ChallengeObjectives = (props) => {
 
-    const [{objectives}, ] = useChallengeContext()
+    const [{name, objectives}, ] = useChallengeContext();
+    
 
     return (
         <section>
             {objectives.map((obj, index) => {
+                const id = name.replaceAll(' ', '-') + '-' + obj.task.replaceAll(' ', '-');
                 return (
                     <article key={obj.task} className='ChallengeObjectives-Obj'>
-                        <input
-                            id='challenge'
+                        {/* <input
+                            id={id}
                             type='checkbox'
+                            onClick={e => handleClick(id, week, index)}
+                        /> */}
+                        <ObjectiveToggle
+                            id={id}
+                            index={index}
                         />
                         <p> {obj.task} </p>
                         {/* Tally Objectives */}

@@ -3,9 +3,7 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
-    const [challengeState, dispatch] = useChallengeContext()
-
-    const { week, challengeIndex, name } = challengeState;
+    const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
 
     const [objProgress, setObjProgress] = useState(() => {
         return props.progress
@@ -32,7 +30,6 @@ const ObjectiveOptions = (props) => {
         // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
         const newObjectiveProgress = newLocal[challengeIndex].objectives;
         dispatch({type:'setProgress', payload: { newObjectiveProgress }})
-
     }
 
     return (
