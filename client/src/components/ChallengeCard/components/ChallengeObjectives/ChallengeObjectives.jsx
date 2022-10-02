@@ -6,7 +6,6 @@ import ObjectiveToggle from '../ObjectiveToggle/ObjectiveToggle';
 const ChallengeObjectives = (props) => {
 
     const [{name, objectives}, ] = useChallengeContext();
-    
 
     return (
         <section>
@@ -21,7 +20,9 @@ const ChallengeObjectives = (props) => {
                         /> */}
                         <ObjectiveToggle
                             id={id}
-                            index={index}
+                            objectiveIndex={index}
+                            progress={obj.progress}
+                            completed={obj.completed}
                         />
                         <p> {obj.task} </p>
                         {/* Tally Objectives */}

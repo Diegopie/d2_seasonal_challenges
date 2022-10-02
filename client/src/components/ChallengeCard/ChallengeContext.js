@@ -28,23 +28,22 @@ const reducer = (state, action) => {
                 xp: challenge.xp,
                 dust: challenge.dust,
             };
-        case 'setProgress':
-            const { newObjectiveProgress } = action.payload;
+        case 'setNewObjective':
+            const { newObjective } = action.payload;
             return {
                 ...state,
-                objectives: newObjectiveProgress
+                objectives: newObjective
             }
-    
         default: return state;
     }
 }
 
 const ChallengeProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, challengeState);
-    const { challenge, challengeIndex} = props.data;
+    const { challenge, challengeIndex } = props.data;
 
     useEffect(() => {
-        dispatch({type: 'setState', payload: { challenge: challenge, challengeIndex: challengeIndex} });
+        dispatch({ type: 'setState', payload: { challenge: challenge, challengeIndex: challengeIndex } });
     }, [dispatch, challenge, challengeIndex])
 
     return (

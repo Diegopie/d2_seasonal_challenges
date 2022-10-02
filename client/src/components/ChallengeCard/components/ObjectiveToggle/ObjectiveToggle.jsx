@@ -1,27 +1,41 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveToggle = (props) => {
 
-    const [challengeState, dispatch] = useChallengeContext()
+    const [{ week, challengeIndex }, dispatch] = useChallengeContext();
 
-    const { week, challengeIndex, name } = challengeState;
 
-    const [objProgress, setObjProgress] = useState(() => {
-        return props.progress
-    });
+    const handleClick = (id, week, challengeIndex) => {
+        const currentObjective = document.getElementById(id);
 
-    // This came from parsedSeasonalChallenges and needs to be refactored to removed not need arguments
-    const handleClick = (id, week, index) => {
-       const objective = document.getElementById(id);
-       console.log(objective);
+        // * Update Local Storage
+        const getLocal = localStorage.getItem(week);
+        // ** Parse Local With Mutable Variable
+        const newLocal = JSON.parse(getLocal);
+        // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
+        const currentTask = newLocal[challengeIndex].objectives[props.objectiveIndex];
+        currentTask.completed = currentObjective.checked;
+        // ** Store the Mutated Array in Local Storage
+        localStorage.setItem(week, JSON.stringify(newLocal));
+
+        // ** Dispatch Values to State for Data to Persist Between Pages
+        // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
+        const newObjective = newLocal[challengeIndex].objectives;
+        dispatch({type:'setNewObjective', payload: { newObjective }});
     }
+
+    useEffect(() => {
+        if (props.completed) {
+            document.getElementById(props.id).checked = props.completed;
+        }
+    }, [props.completed, props.id])
 
     return (
         <input
             id={props.id}
             type='checkbox'
-            onClick={e => handleClick(props.id, week, props.index)}
+            onClick={e => handleClick(props.id, week, challengeIndex)}
         />
     );
 };

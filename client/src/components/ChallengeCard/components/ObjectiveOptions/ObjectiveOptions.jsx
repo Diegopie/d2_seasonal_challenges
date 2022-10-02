@@ -5,32 +5,37 @@ const ObjectiveOptions = (props) => {
 
     const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
 
+
+    // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
         return props.progress
     });
+
+// NEED TO REFACTOR SO IT DOES NOT UPDATE EVERY SINGLE INSTANCE OF A CURRENT INDEX
 
     // This came from parsedSeasonalChallenges and needs to be refactored to removed not need arguments
     const handleSelect = (e, week, challengeIndex) => {
         const userSelectedValue = e.target.value;
         // * Set Component State to Update Page
         setObjProgress(userSelectedValue);
-        // * Update Local Storage
+        // ** Parse Local With Mutable Variable
         const getLocal = localStorage.getItem(week);
-        const parseLocal = JSON.parse(getLocal)
-        // ** Map Through Array and return the Objective that Needs to Be Changed
-        const newLocal = parseLocal.map((challenge) => {
-            const currentTask = challenge.objectives[props.objectiveIndex];
-            currentTask.progress = userSelectedValue;
-            return challenge
-        })
-        // ** Store the New Array in Local Storage
+        const newLocal = JSON.parse(getLocal);
+        // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
+        const currentTask = newLocal[challengeIndex].objectives[props.objectiveIndex];
+        currentTask.progress = userSelectedValue;
+        // ** Store the Mutated Array in Local Storage
         localStorage.setItem(week, JSON.stringify(newLocal));
 
         // ** Dispatch Values to State for Data to Persist Between Pages
         // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
-        const newObjectiveProgress = newLocal[challengeIndex].objectives;
-        dispatch({type:'setProgress', payload: { newObjectiveProgress }})
+        const newObjective = newLocal[challengeIndex].objectives;
+        dispatch({type:'setNewObjective', payload: { newObjective }});
     }
+
+ 
+
+    // Can we use a useEffect to listen to completed value??
 
     return (
         <select
