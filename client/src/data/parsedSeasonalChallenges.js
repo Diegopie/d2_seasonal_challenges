@@ -21,6 +21,17 @@ const localSeasonalChallenges = seasonalChallenges.map((week) => {
     if (localStorage.getItem(weekName) === null) {
         localStorage.setItem(weekName, JSON.stringify(week.challenges));
     }
+    
+    const localData = JSON.parse(localStorage.getItem(weekName))
+    const serverData = week.challenges;
+    if (serverData.length > localData.length) {
+        console.log("hit");
+        for (let i = localData.length; i < serverData.length; i++) {
+            localData.push(serverData[i])
+        }
+        localStorage.setItem(weekName, JSON.stringify(localData))
+    }
+    
     week.challenges.map((challenge ,challengeIndex) => {
         challenge.objectives.map((objective, objectiveIndex) => {
             objective.completed = getLocal(weekName, challengeIndex, false, objectiveIndex, true)

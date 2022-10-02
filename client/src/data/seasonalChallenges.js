@@ -57,31 +57,31 @@ const seasonalChallenges = [
                 xp: 'XP',
                 dust: null
             },
-            //     {
-            //         name: 'Fire Discipline',
-            //         description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
-            //         category: ['Ketchcrash'],
-            //         completed: false,
-            //         objectives: [
-            //             {
-            //                 isPercent: false,
-            //                 task: "Ketchcrash activities completed",
-            //                 progress: 0,
-            //                 goal: 3,
-            //                 completed: false,
-            //             },
-            //             {
-            //                 isPercent: false,
-            //                 task: "Cannons activated",
-            //                 progress: 0,
-            //                 goal: 5,
-            //                 completed: false,
-            //             },
-            //         ],
-            //         reward: null,
-            //         xp: 'XP',
-            //         dust: null
-            //     },
+            // {
+            //     name: 'Fire Discipline',
+            //     description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
+            //     category: ['Ketchcrash'],
+            //     completed: false,
+            //     objectives: [
+            //         {
+            //             isPercent: false,
+            //             task: "Ketchcrash activities completed",
+            //             progress: 0,
+            //             goal: 3,
+            //             completed: false,
+            //         },
+            //         {
+            //             isPercent: false,
+            //             task: "Cannons activated",
+            //             progress: 0,
+            //             goal: 5,
+            //             completed: false,
+            //         },
+            //     ],
+            //     reward: null,
+            //     xp: 'XP',
+            //     dust: null
+            // },
             //     {
             //         name: 'Shaper I',
             //         description: 'Shape three unique Seasonal weapons',
