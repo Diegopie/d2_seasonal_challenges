@@ -7,6 +7,7 @@ const ChallengeReward = (props) => {
 
     return (
         <section>
+            {/* Check If Each Reward Type has a Truthy Value in this Challenge Instance and Render */}
             <h4>Rewards</h4>
             {reward &&
                 <p>{reward}</p>

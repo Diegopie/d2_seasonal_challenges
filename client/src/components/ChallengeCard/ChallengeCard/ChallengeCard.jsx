@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useChallengeContext } from '../ChallengeContext';
 import ChallengeObjectives from '../components/ChallengeObjectives/ChallengeObjectives';
 import ChallengeReward from '../components/ChallengeReward/ChallengeReward';
@@ -6,13 +6,7 @@ import './ChallengeCard.css';
 
 const ChallengeCard = (props) => {
 
-    const [{name, description}, dispatch] = useChallengeContext();
-
-    useEffect(() => {
-        dispatch({type: 'setState', payload: props.data });
-    }, [dispatch, props])
-
-    // console.log(name);
+    const [{name, description}, ] = useChallengeContext();
 
     return (
         <section className='ChallengeCard-Container'>

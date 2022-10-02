@@ -3,44 +3,47 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
-    const [challengeState, ] = useChallengeContext()
+    const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
 
-    const {name} = challengeState;
 
+    // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
-        const getLocal = localStorage.getItem(name.replaceAll(' ', '-'));
-        if (getLocal === null) {
-            // console.log(getLocal);
-            localStorage.setItem(name.replaceAll(' ', '-'), JSON.stringify(challengeState));
-            return 0;
-        }
-        
-        const progress = JSON.parse(getLocal).objectives[props.index].progress;
-        console.log(progress);
-        return progress
+        return props.progress
     });
 
+// NEED TO REFACTOR SO IT DOES NOT UPDATE EVERY SINGLE INSTANCE OF A CURRENT INDEX
 
-    
-    const handleSelect = (e) => {
-        // * Set New State to Update Page
-        setObjProgress(e.target.value);
-        // * Deconstruct data from selected challenge objective
-        const {challenge, index} = e.target.dataset;
-        // * Get Local Storage Object
-        const localChallenge = JSON.parse(localStorage.getItem(challenge));
-        // * Mutate and save data
-        localChallenge.objectives[index].progress = e.target.value
-        localStorage.setItem(challenge, JSON.stringify(localChallenge));
-    };
+    // This came from parsedSeasonalChallenges and needs to be refactored to removed not need arguments
+    const handleSelect = (e, week, challengeIndex) => {
+        const userSelectedValue = e.target.value;
+        // * Set Component State to Update Page
+        setObjProgress(userSelectedValue);
+        // ** Parse Local With Mutable Variable
+        const getLocal = localStorage.getItem(week);
+        const newLocal = JSON.parse(getLocal);
+        // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
+        const currentTask = newLocal[challengeIndex].objectives[props.objectiveIndex];
+        currentTask.progress = userSelectedValue;
+        // ** Store the Mutated Array in Local Storage
+        localStorage.setItem(week, JSON.stringify(newLocal));
+
+        // ** Dispatch Values to State for Data to Persist Between Pages
+        // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
+        const newObjective = newLocal[challengeIndex].objectives;
+        dispatch({type:'setNewObjective', payload: { newObjective }});
+    }
+
+ 
+
+    // Can we use a useEffect to listen to completed value??
 
     return (
-        <select 
+        <select
             id={`${props.task.replaceAll(' ', '-')}`}
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
-            data-index={props.index}
-            onChange={handleSelect}
+            data-objective-index={props.objectiveIndex}
+            onChange={e => handleSelect(e, week, challengeIndex)}
         >
             <option key='default' disabled>Your Progress</option>
             {[...Array((props.goal + 1))].map((num, i) => {
