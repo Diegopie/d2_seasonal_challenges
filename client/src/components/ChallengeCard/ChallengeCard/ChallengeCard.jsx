@@ -6,7 +6,20 @@ import './ChallengeCard.css';
 
 const ChallengeCard = (props) => {
 
-    const [{name, description}, ] = useChallengeContext();
+    const [{name, description, objectives}, ] = useChallengeContext();
+
+
+    // TODO: compare the total number of objectives to the total number of completed objectives by tallying a number
+    // console.log(objectives);
+    // const objectivesToComplete = objectives.length;
+    // let totalObjectivesCompleted = 0;
+    // for (let i = 0; i < objectivesToComplete; i++) {
+    //     if(objectives[i].completed) {
+    //         console.log("hit");
+    //         totalObjectivesCompleted++;
+    //     }        
+    // }
+    // console.log(totalObjectivesCompleted);
 
     return (
         <section className='ChallengeCard-Container'>
