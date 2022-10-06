@@ -6,9 +6,9 @@ const ObjectiveToggle = (props) => {
     const [{ week, challengeIndex }, dispatch] = useChallengeContext();
 
 
+    // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
     const handleClick = (id, week, challengeIndex) => {
         const currentObjective = document.getElementById(id);
-
         // * Update Local Storage
         const getLocal = localStorage.getItem(week);
         // ** Parse Local With Mutable Variable
@@ -18,9 +18,7 @@ const ObjectiveToggle = (props) => {
         currentTask.completed = currentObjective.checked;
         // ** Store the Mutated Array in Local Storage
         localStorage.setItem(week, JSON.stringify(newLocal));
-
         // ** Dispatch Values to State for Data to Persist Between Pages
-        // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
         const newObjective = newLocal[challengeIndex].objectives;
         dispatch({type:'setNewObjective', payload: { newObjective }});
     }

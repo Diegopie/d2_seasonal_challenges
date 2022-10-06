@@ -5,15 +5,14 @@ const ObjectiveOptions = (props) => {
 
     const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
 
+    console.log(props.completed);
+
 
     // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
         return props.progress
     });
 
-// NEED TO REFACTOR SO IT DOES NOT UPDATE EVERY SINGLE INSTANCE OF A CURRENT INDEX
-
-    // This came from parsedSeasonalChallenges and needs to be refactored to removed not need arguments
     const handleSelect = (e, week, challengeIndex) => {
         const userSelectedValue = e.target.value;
         // * Set Component State to Update Page
@@ -33,16 +32,13 @@ const ObjectiveOptions = (props) => {
         dispatch({type:'setNewObjective', payload: { newObjective }});
     }
 
- 
-
-    // Can we use a useEffect to listen to completed value??
-
     return (
         <select
             id={`${props.task.replaceAll(' ', '-')}`}
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}
+            disabled={props.completed}
             onChange={e => handleSelect(e, week, challengeIndex)}
         >
             <option key='default' disabled>Your Progress</option>
