@@ -33,6 +33,7 @@ const ChallengeObjectives = (props) => {
                                 objectiveIndex={index}
                                 progress={obj.progress}
                                 goal={obj.goal}
+                                completed={obj.completed}
                             />
                             {/* Tally Goal - Render a Percentage if Goal is a Percentage*/}
                             {!obj.isPercent &&
