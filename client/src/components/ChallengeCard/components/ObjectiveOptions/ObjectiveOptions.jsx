@@ -5,16 +5,13 @@ const ObjectiveOptions = (props) => {
 
     const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
 
-    console.log(props.completed);
-
-
     // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
         return props.progress
     });
 
     const handleSelect = (e, week, challengeIndex) => {
-        const userSelectedValue = e.target.value;
+        const userSelectedValue = Number(e.target.value);
         // * Set Component State to Update Page
         setObjProgress(userSelectedValue);
         // ** Parse Local With Mutable Variable
@@ -25,7 +22,10 @@ const ObjectiveOptions = (props) => {
         currentTask.progress = userSelectedValue;
         // ** Store the Mutated Array in Local Storage
         localStorage.setItem(week, JSON.stringify(newLocal));
-
+        if(userSelectedValue === props.goal) {
+            console.log("hit");
+            currentTask.completed = true;
+        }
         // ** Dispatch Values to State for Data to Persist Between Pages
         // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
         const newObjective = newLocal[challengeIndex].objectives;
