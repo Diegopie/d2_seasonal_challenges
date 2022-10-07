@@ -4,7 +4,7 @@ import ChallengeProvider from '../ChallengeCard/ChallengeContext';
 import './ChallengeCategory.css';
 
 const ChallengeCategory = (props) => {
-    console.log(props.challenges)
+    
     return (
         <section className='ChallengeCategory-Container'>
             <article className='ChallengeCategory-Header'>

@@ -11,7 +11,6 @@ const Homepage = () => {
         <main className='App-backMaxHeight'>
             <section className='App-backImg App-backImg-1-light'>
                 {seasonalChallenges.map((week) => {
-                    console.log(week.challenges);
                     return (
                         <ChallengeCategory
                             key={week.name}

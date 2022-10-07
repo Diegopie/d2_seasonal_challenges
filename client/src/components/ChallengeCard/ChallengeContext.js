@@ -7,6 +7,7 @@ const challengeState = {
     name: '',
     challengeIndex: '',
     description: '',
+    completed: false,
     objectives: [],
     reward: '',
     xp: '',
@@ -34,6 +35,12 @@ const reducer = (state, action) => {
                 ...state,
                 objectives: newObjective
             }
+            case 'setCompletedObjective':
+                const { completedObjective } = action.payload;
+                return {
+                    ...state,
+                    completed: completedObjective
+                }
         default: return state;
     }
 }
