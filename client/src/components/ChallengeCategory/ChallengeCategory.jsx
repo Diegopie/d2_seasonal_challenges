@@ -14,7 +14,7 @@ const ChallengeCategory = (props) => {
                 {/* Map Through Prop Data for Every Challenge in that Week */}
                 {/* NOTE: THIS DOES NOT WORK IN ACTIVITIES PAGE SINCE THEY WILL HAVE A DIFFERENT INDEX VALUE THAN ACTIVITIES (SYNCED WITH LOCAL STORAGE) */}
                 {/* I AM TRYING TO HARD CODE CHALLENGE INDEX IN DATA BUT IT IS CAUSING A CRASH AT THE MOMENT */}
-                {props.challenges.map((challenge, index) => {
+                {props.challenges.map((challenge) => {
                     return (
                         // Wrap the State Provider for Individual Challenges and Pass Challenge Data to Dispatch Initial State
                         <ChallengeProvider 

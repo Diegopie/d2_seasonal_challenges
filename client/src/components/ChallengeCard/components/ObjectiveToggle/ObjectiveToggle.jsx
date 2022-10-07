@@ -3,14 +3,13 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveToggle = (props) => {
 
-    const [{ name, week, challengeIndex }, dispatch] = useChallengeContext();
+    const [{ week, challengeIndex }, dispatch] = useChallengeContext();
 
-    console.log(challengeIndex);
+    
 
 
     // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
     const handleClick = (id, week, challengeIndex) => {
-        console.log(challengeIndex);
         const currentObjective = document.getElementById(id);
         // * Update Local Storage
         const getLocal = localStorage.getItem(week);

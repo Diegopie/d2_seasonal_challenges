@@ -16,12 +16,12 @@ const challengeState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'setState':
-            const { challenge, challengeIndex } = action.payload
+            const { challenge } = action.payload
             return {
                 ...state,
                 week: challenge.belongsTo,
                 name: challenge.name,
-                challengeIndex: challengeIndex,
+                challengeIndex: challenge.challengeIndex,
                 description: challenge.description,
                 objectives: challenge.objectives,
                 reward: challenge.reward,
