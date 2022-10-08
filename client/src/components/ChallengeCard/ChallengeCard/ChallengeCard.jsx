@@ -6,17 +6,11 @@ import './ChallengeCard.css';
 
 const ChallengeCard = (props) => {
 
-    const [{ name, description, objectives, completed }, dispatch] = useChallengeContext();
+    const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
-
-
-    // TODO: compare the total number of objectives to the total number of completed objectives by tallying a number
-
-
+    // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
     useEffect(() => {
-        // console.log({name});
-        // console.log(objectives);
-        // console.log({ completed });
+        // ** Store The Amount of Objectives to Complete; Have a Number that Can Increment If A Challenge Is COmplete; Loop Through the Length of the Objectives Array to Increment When Any Objective is Completed
         const objectivesToComplete = objectives.length;
         let totalObjectivesCompleted = 0;
         for (let i = 0; i < objectivesToComplete; i++) {
@@ -25,25 +19,29 @@ const ChallengeCard = (props) => {
                 totalObjectivesCompleted++;
             }
         }
-        // console.log("-- After ++ ");
-        // console.log({ name });
-        // console.log({ totalObjectivesCompleted });
-        // console.log({ objectivesToComplete });
-        // console.log(totalObjectivesCompleted === objectivesToComplete);
 
-        // TODO: add in the not zero condition fixed crashes - now we should probably check if completed it true at the very top so this code does not need to run and it just renders completed
-        // TODO: add local storage update
-        if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete!== 0) {
-            console.log("how here??");
-            // console.log("-- Complete Condition --");
-            // console.log({ name });
-            // console.log(objectives);
-            // console.log({ completed });
+        // ** If Our Incremented Value is Equal to the Total Number of Objectives, The Challenge Is Marked Complete In State and Local Storage; {NOTE: State is coming in as a 0 Value on initial mount. I do not know why but preventing these condition to run when objectives are loaded as 0 prevents crashes}
+        if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete !== 0) {
+            // * Update Local Storage and Parse Local With Mutable Variable
+            const getLocal = localStorage.getItem(week);
+            const newLocal = JSON.parse(getLocal);
+            // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
+            const currentTask = newLocal[challengeIndex]
+            currentTask.completed = true;
+            // ** Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
+            localStorage.setItem(week, JSON.stringify(newLocal));
             dispatch({ type: 'setCompletedObjective', payload: { completedObjective: true } });
-        } else {
+
+        // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
+        } else if ( totalObjectivesCompleted !== objectivesToComplete && objectivesToComplete !== 0) {
+            const getLocal = localStorage.getItem(week);
+            const newLocal = JSON.parse(getLocal);
+            const currentTask = newLocal[challengeIndex]
+            currentTask.completed = false;
+            localStorage.setItem(week, JSON.stringify(newLocal));
             dispatch({ type: 'setCompletedObjective', payload: { completedObjective: false } });
         }
-    }, [dispatch, objectives])
+    }, [completed, challengeIndex, dispatch, objectives, week])
 
     return (
         <section className='ChallengeCard-Container'>
