@@ -30,7 +30,10 @@ const ChallengeCard = (props) => {
         // console.log({ totalObjectivesCompleted });
         // console.log({ objectivesToComplete });
         // console.log(totalObjectivesCompleted === objectivesToComplete);
-        if (totalObjectivesCompleted === objectivesToComplete) {
+
+        // TODO: add in the not zero condition fixed crashes - now we should probably check if completed it true at the very top so this code does not need to run and it just renders completed
+        // TODO: add local storage update
+        if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete!== 0) {
             console.log("how here??");
             // console.log("-- Complete Condition --");
             // console.log({ name });
