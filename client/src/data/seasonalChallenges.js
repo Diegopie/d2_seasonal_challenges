@@ -59,49 +59,53 @@ const seasonalChallenges = [
                 xp: 'XP',
                 dust: null
             },
-            // {
-            //     name: 'Fire Discipline',
-            //     description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
-            //     category: ['Ketchcrash'],
-            //     completed: false,
-            //     objectives: [
-            //         {
-            //             isPercent: false,
-            //             task: "Ketchcrash activities completed",
-            //             progress: 0,
-            //             goal: 3,
-            //             completed: false,
-            //         },
-            //         {
-            //             isPercent: false,
-            //             task: "Cannons activated",
-            //             progress: 0,
-            //             goal: 5,
-            //             completed: false,
-            //         },
-            //     ],
-            //     reward: null,
-            //     xp: 'XP',
-            //     dust: null
-            // },
-            //     {
-            //         name: 'Shaper I',
-            //         description: 'Shape three unique Seasonal weapons',
-            //         category: ['Gear'],
-            //         completed: false,
-            //         objectives: [
-            //             {
-            //                 isPercent: false,
-            //                 task: "Weapons Shaped",
-            //                 progress: 0,
-            //                 goal: 3,
-            //                 completed: false,
-            //             }
-            //         ],
-            //         reward: null,
-            //         xp: 'XP',
-            //         dust: null
-            //     },
+            {
+                belongsTo: 'Week-One',
+                name: 'Fire Discipline',
+                description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
+                category: ['Ketchcrash'],
+                completed: false,
+                challengeIndex: 2,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Ketchcrash activities completed",
+                        progress: 0,
+                        goal: 3,
+                        completed: false,
+                    },
+                    {
+                        isPercent: false,
+                        task: "Cannons activated",
+                        progress: 0,
+                        goal: 5,
+                        completed: false,
+                    },
+                ],
+                reward: null,
+                xp: 'XP',
+                dust: null
+            },
+            {
+                belongsTo: 'Week-One',
+                name: 'Shaper I',
+                description: 'Shape three unique Seasonal weapons',
+                category: ['Gear'],
+                completed: false,
+                challengeIndex: 3,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Weapons Shaped",
+                        progress: 0,
+                        goal: 3,
+                        completed: false,
+                    }
+                ],
+                reward: null,
+                xp: 'XP',
+                dust: null
+            },
         ]
         // },
         // Week Two

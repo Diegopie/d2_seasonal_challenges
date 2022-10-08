@@ -5,7 +5,7 @@ const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isO
     const dashedWeek = week.replaceAll(' ', '-');
     const getLocal = localStorage.getItem(dashedWeek);
     const parseLocal = JSON.parse(getLocal);
-    
+
     if (isChallengeComplete) {
         //  ** Find Correct Challenge
         return parseLocal[challengeIndex].completed;
@@ -37,6 +37,7 @@ const localSeasonalChallenges = seasonalChallenges.map((week) => {
         localStorage.setItem(weekName, JSON.stringify(localData));
     }
     
+    // TODO: Create and Store the value for BelongsTo and challengeIndex Programmatically 
     // * For a Given Week, map() Through Each Challenge and Sync Data In Local Storage
     week.challenges.map((challenge ,challengeIndex) => {
         // ** For a Given Challenge, map() Through Each Objective and Sync Data in Local Storage
