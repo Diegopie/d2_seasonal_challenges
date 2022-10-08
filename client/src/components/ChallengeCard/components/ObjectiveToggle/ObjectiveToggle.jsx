@@ -5,6 +5,8 @@ const ObjectiveToggle = (props) => {
 
     const [{ week, challengeIndex }, dispatch] = useChallengeContext();
 
+    
+
 
     // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
     const handleClick = (id, week, challengeIndex) => {

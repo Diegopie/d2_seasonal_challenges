@@ -10,6 +10,7 @@ const seasonalChallenges = [
                 description: 'Obtain Plundered Umbral Energy from bonus chests in Expedition',
                 category: ['Expedition'],
                 completed: false,
+                challengeIndex: 0,
                 objectives: [
                     {
                         isPercent: false,
@@ -37,6 +38,7 @@ const seasonalChallenges = [
                 description: 'Return the first relic to the HELM. Defeat combatants on Europa. Defeating combatants with a Fusion Rifle will award bonus progress',
                 category: ['Europa'],
                 completed: false,
+                challengeIndex: 1,
                 objectives: [
                     {
                         isPercent: false,
