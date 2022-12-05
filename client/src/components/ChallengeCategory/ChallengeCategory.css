@@ -6,6 +6,12 @@
 
 .ChallengeCategory-Header {
     background-color: rgba(87, 85, 85, 0.8);
+    display: flex;
+}
+
+.ChallengeCategory-Title {
+    width: 75%;
+    text-align: center;
 }
 
 .ChallengeCategory-Body {

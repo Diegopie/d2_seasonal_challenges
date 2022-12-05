@@ -8,6 +8,17 @@ const ChallengeCard = (props) => {
 
     const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
+    useEffect(() => {
+        const challengesRemaining = document.getElementById(props.challengesRemainingID);
+        if(!completed) {
+            console.log(parseInt(challengesRemaining.innerText));
+            challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
+        }
+        if(completed) {
+            challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
+        }
+    }, [completed, props])
+
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
     useEffect(() => {
         // ** Store The Amount of Objectives to Complete; Have a Number that Can Increment If A Challenge Is COmplete; Loop Through the Length of the Objectives Array to Increment When Any Objective is Completed
@@ -30,7 +41,7 @@ const ChallengeCard = (props) => {
             currentTask.completed = true;
             // ** Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
             localStorage.setItem(week, JSON.stringify(newLocal));
-            dispatch({ type: 'setCompletedObjective', payload: { completedObjective: true } });
+            dispatch({ type: 'setCompletedChallenge', payload: { completedChallenge: true } });
 
         // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
         } else if ( totalObjectivesCompleted !== objectivesToComplete && objectivesToComplete !== 0) {
@@ -39,7 +50,7 @@ const ChallengeCard = (props) => {
             const currentTask = newLocal[challengeIndex]
             currentTask.completed = false;
             localStorage.setItem(week, JSON.stringify(newLocal));
-            dispatch({ type: 'setCompletedObjective', payload: { completedObjective: false } });
+            dispatch({ type: 'setCompletedChallenge', payload: { completedChallenge: false } });
         }
     }, [completed, challengeIndex, dispatch, objectives, week])
 
