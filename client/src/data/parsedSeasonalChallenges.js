@@ -1,9 +1,9 @@
 import seasonalChallenges from "./seasonalChallenges";
 
+// * Return Challenge Complete, Objective Complete, or Progress base off which Booleans are passed to the function
 const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
     // * Find Correct Week and Parse Data
-    const dashedWeek = week.replaceAll(' ', '-');
-    const getLocal = localStorage.getItem(dashedWeek);
+    const getLocal = localStorage.getItem(week);
     const parseLocal = JSON.parse(getLocal);
 
     if (isChallengeComplete) {
@@ -16,6 +16,7 @@ const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isO
     return parseLocal[challengeIndex].objectives[objectiveIndex].progress;
 }
 
+// 1) * Map Through Seasonal Challenge Data, Determine if it Needs To Be Newly Saved to Local Storage, if More Challenges Have Been Added, Sync any Values that May Exist In Local Storage, Programmatically Update Data Values, and Re-save to Local Storage
 const localSeasonalChallenges = seasonalChallenges.map((week) => {
     // * Set weekName to be JSON and LocalStorage Friendly
     const weekName = week.name.replaceAll(' ', '-');
@@ -36,10 +37,15 @@ const localSeasonalChallenges = seasonalChallenges.map((week) => {
         // *** Save Updated Data to Local Storage
         localStorage.setItem(weekName, JSON.stringify(localData));
     }
-    
-    // TODO: Create and Store the value for BelongsTo and challengeIndex Programmatically 
-    // * For a Given Week, map() Through Each Challenge and Sync Data In Local Storage
-    week.challenges.map((challenge ,challengeIndex) => {
+
+    // * For a Given Week, map() Through Each Challenge, Programmatically Create Data, and Sync Data In Local Storage
+    week.challenges.map((challenge, challengeIndex) => {
+        // *** Create belongsTo string
+        challenge.belongsTo = weekName;
+        // *** Create challengeIndex Number
+        challenge.challengeIndex = challengeIndex;
+        // *** Use getLocal to Sync Completed Data
+        challenge.completed = getLocal(weekName, challengeIndex, true);
         // ** For a Given Challenge, map() Through Each Objective and Sync Data in Local Storage
         challenge.objectives.map((objective, objectiveIndex) => {
             // *** Use getLocal to Sync Data
@@ -48,11 +54,11 @@ const localSeasonalChallenges = seasonalChallenges.map((week) => {
             // *** Return Updated Data
             return objective;
         })
-        // *** Use getLocal to Sync Data
-        challenge.completed = getLocal(weekName, challengeIndex, true);
         // *** Return Updated Data
         return challenge;
     })
+    // console.log({week});
+    localStorage.setItem(weekName, JSON.stringify(week.challenges));
     // *** Return Updated Data
     return week;
 });

@@ -5,12 +5,12 @@ const seasonalChallenges = [
         name: 'Week One',
         challenges: [
             {
-                belongsTo: 'Week-One',
+                belongsTo: String,
                 name: 'Successful Expedition',
                 description: 'Obtain Plundered Umbral Energy from bonus chests in Expedition',
                 category: ['Expedition'],
                 completed: false,
-                challengeIndex: 0,
+                challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
@@ -31,14 +31,13 @@ const seasonalChallenges = [
                 xp: 'XP',
                 dust: null
             },
-
             {
                 belongsTo: 'Week-One',
                 name: 'Antiquarian I',
                 description: 'Return the first relic to the HELM. Defeat combatants on Europa. Defeating combatants with a Fusion Rifle will award bonus progress',
                 category: ['Europa'],
                 completed: false,
-                challengeIndex: 1,
+                challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
@@ -65,7 +64,7 @@ const seasonalChallenges = [
                 description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
                 category: ['Ketchcrash'],
                 completed: false,
-                challengeIndex: 2,
+                challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
@@ -92,7 +91,7 @@ const seasonalChallenges = [
                 description: 'Shape three unique Seasonal weapons',
                 category: ['Gear'],
                 completed: false,
-                challengeIndex: 3,
+                challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
@@ -113,12 +112,12 @@ const seasonalChallenges = [
             name: 'Week Two',
             challenges: [
                 {
-                    belongsTo: 'Week-Two',
+                    belongsTo: String,
                     name: 'Antiquarian II',
                     description: 'Return the second relic to the H.E.L.M. Also, defeat Fallen. Defeating them with precision final blows will award bonus progress',
                     category: ['Expedition'],
                     completed: false,
-                    challengeIndex: 0,
+                    challengeIndex: Number,
                     objectives: [
                         {
                             isPercent: false,
@@ -140,12 +139,12 @@ const seasonalChallenges = [
                     dust: null
                 },
                 {
-                    belongsTo: 'Week-Two',
+                    belongsTo: String,
                     name: 'Expert Expedition I',
                     description: 'Complete Expeditions and gather treasure in the treasure haul',
                     category: ['Expedition'],
                     completed: false,
-                    challengeIndex: 1,
+                    challengeIndex: Number,
                     objectives: [
                         {
                             isPercent: false,
@@ -167,12 +166,12 @@ const seasonalChallenges = [
                     dust: null
                 },
                 {
-                    belongsTo: 'Week-Two',
+                    belongsTo: String,
                     name: "Seeker's Cache I",
                     description: 'Complete bounties from the Star Chart or on Nessus, Cosmodrome, or Europa. Also, decipher the Small Treasure Beacon, available from the Star Chart in the H.E.L.M.',
                     category: ['Activities'],
                     completed: false,
-                    challengeIndex: 2,
+                    challengeIndex: Number,
                     objectives: [
                         {
                             isPercent: false,
@@ -194,12 +193,12 @@ const seasonalChallenges = [
                     dust: null
                 },
                 {
-                    belongsTo: 'Week-Two',
+                    belongsTo: String,
                     name: 'Fusillade',
                     description: 'Defeat targets with Submachine Guns. Defeating combatants in Ketchcrash and defeating Guardians will award bonus progress',
                     category: ['Ketchcrash', 'Crucible'],
                     completed: false,
-                    challengeIndex: 3,
+                    challengeIndex: Number,
                     objectives: [
                         {
                             isPercent: false,
