@@ -20,12 +20,13 @@ const ObjectiveOptions = (props) => {
         // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
         const currentTask = newLocal[challengeIndex].objectives[props.objectiveIndex];
         currentTask.progress = userSelectedValue;
-        // ** Store the Mutated Array in Local Storage
-        localStorage.setItem(week, JSON.stringify(newLocal));
+        // ** If a User Selects the Final Options, Mark Objective as Complete
         if(userSelectedValue === props.goal) {
             console.log("hit");
             currentTask.completed = true;
         }
+        // ** Store the Mutated Array in Local Storage
+        localStorage.setItem(week, JSON.stringify(newLocal));
         // ** Dispatch Values to State for Data to Persist Between Pages
         // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
         const newObjective = newLocal[challengeIndex].objectives;
