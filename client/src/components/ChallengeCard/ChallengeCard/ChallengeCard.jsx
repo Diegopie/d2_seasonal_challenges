@@ -8,6 +8,17 @@ const ChallengeCard = (props) => {
 
     const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
+    useEffect(() => {
+        const challengesRemaining = document.getElementById(props.challengesRemainingID);
+        if(!completed) {
+            console.log(parseInt(challengesRemaining.innerText));
+            challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
+        }
+        if(completed) {
+            challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
+        }
+    }, [completed, props])
+
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
     useEffect(() => {
         // ** Store The Amount of Objectives to Complete; Have a Number that Can Increment If A Challenge Is COmplete; Loop Through the Length of the Objectives Array to Increment When Any Objective is Completed
