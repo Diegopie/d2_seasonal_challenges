@@ -35,11 +35,11 @@ const reducer = (state, action) => {
                 ...state,
                 objectives: newObjective
             }
-            case 'setCompletedObjective':
-                const { completedObjective } = action.payload;
+            case 'setCompletedChallenge':
+                const { completedChallenge } = action.payload;
                 return {
                     ...state,
-                    completed: completedObjective
+                    completed: completedChallenge
                 }
         default: return state;
     }
