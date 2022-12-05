@@ -15,6 +15,7 @@ const ChallengeCard = (props) => {
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
         }
         if(completed) {
+            if (parseInt(challengesRemaining.innerText) === 0 ) return;
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
         }
     }, [completed, props])
@@ -54,11 +55,19 @@ const ChallengeCard = (props) => {
         }
     }, [completed, challengeIndex, dispatch, objectives, week])
 
+    const isActivities = window.location.pathname.includes('/activities');
+    console.log(isActivities);
+
     return (
         <section className='ChallengeCard-Container'>
             {/* NAME */}
             <article className='ChallengeCard-Header'>
-                <h3>{name}</h3>
+                {isActivities && 
+                    <h3>{name + " - " + week.replaceAll('-', ' ')}</h3>                
+                }
+                {!isActivities && 
+                    <h3>{name}</h3>                
+                }
                 {completed === true &&
                     <p>Completed!</p>
                 }
