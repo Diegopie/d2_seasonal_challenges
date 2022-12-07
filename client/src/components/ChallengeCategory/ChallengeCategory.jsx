@@ -16,7 +16,7 @@ const ChallengeCategory = (props) => {
             const activityChallenges = document.getElementsByClassName(activityHeader);
             // Loop through each returned element, check if their data set is true, and remove from DOM
             for (let i = 0; i < activityChallenges.length; i++) {
-                console.log(i);
+                // console.log(i);
             }
         }
 
