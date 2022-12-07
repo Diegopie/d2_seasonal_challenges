@@ -7,10 +7,18 @@ const ChallengeCategory = (props) => {
 
     const challengesRemainingID = props.name + '-challengesRemaining';
     const activityHeader = props.name.replaceAll(' ', '-')
+    const togglerID = activityHeader + '-completeToggler'
 
     const handleToggle = (e) => {
-        const isChecked = document.querySelector('#complete-toggler').checked
+        const isChecked = document.getElementById(togglerID).checked
         // If isChecked is True, Hide Completed Challenges
+        if (isChecked) {
+            const activityChallenges = document.getElementsByClassName(activityHeader);
+            // Loop through each returned element, check if their data set is true, and remove from DOM
+            for (let i = 0; i < activityChallenges.length; i++) {
+                console.log(i);
+            }
+        }
 
     }
 
@@ -24,7 +32,7 @@ const ChallengeCategory = (props) => {
                         <p>Hide Completed: </p>
                         <label className="HideCompleted">
                             <input
-                                id='complete-toggler'
+                                id={togglerID}
                                 type='checkbox'
                                 onClick={handleToggle}
                             />
