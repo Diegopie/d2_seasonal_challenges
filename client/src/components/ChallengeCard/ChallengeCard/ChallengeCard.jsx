@@ -11,7 +11,6 @@ const ChallengeCard = (props) => {
     useEffect(() => {
         const challengesRemaining = document.getElementById(props.challengesRemainingID);
         if(!completed) {
-            console.log(parseInt(challengesRemaining.innerText));
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
         }
         if(completed) {
@@ -56,10 +55,9 @@ const ChallengeCard = (props) => {
     }, [completed, challengeIndex, dispatch, objectives, week])
 
     const isActivities = window.location.pathname.includes('/activities');
-    console.log(isActivities);
 
     return (
-        <section className='ChallengeCard-Container'>
+        <section className={'ChallengeCard-Container '+ props.activityHeader} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header'>
                 {isActivities && 
