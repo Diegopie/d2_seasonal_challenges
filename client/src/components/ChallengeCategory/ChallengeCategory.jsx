@@ -8,12 +8,11 @@ const ChallengeCategory = (props) => {
     const challengesRemainingID = props.name + '-challengesRemaining';
     const activityHeader = props.name.replaceAll(' ', '-')
     const togglerID = activityHeader + '-completeToggler'
+    const activityChallenges = document.getElementsByClassName(activityHeader);
 
     const handleToggle = (e) => {
-        const isChecked = document.getElementById(togglerID).checked
+        const isChecked = document.getElementById(togglerID).checked;
         // If isChecked is True, Hide Completed Challenges
-        const activityChallenges = document.getElementsByClassName(activityHeader);
-
         if (isChecked) {
             // Loop through each returned element, check if their data set is true, and remove from DOM
             for (let i = 0; i < activityChallenges.length; i++) {
@@ -31,7 +30,7 @@ const ChallengeCategory = (props) => {
                 activityChallenges[i].classList.remove('ChallengeCard-Hide');
             }
 
-    }
+    };
 
     return (
         <section className='ChallengeCategory-Container'>
@@ -63,6 +62,7 @@ const ChallengeCategory = (props) => {
                             <ChallengeCard
                                 key={challenge.name}
                                 challengesRemainingID={challengesRemainingID}
+                                togglerID={togglerID}
                                 activityHeader={activityHeader}
                             />
                         </ChallengeProvider>

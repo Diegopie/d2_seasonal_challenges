@@ -8,16 +8,24 @@ const ChallengeCard = (props) => {
 
     const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
+   
+
+    // * On Mount and State Change, Determine Which Challenges are Completed, Increment and Update DOM Value if/when value becomes not Completed, Decrement Value if/when it becomes completed
     useEffect(() => {
         const challengesRemaining = document.getElementById(props.challengesRemainingID);
         if(!completed) {
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
+    
         }
         if(completed) {
+            // ** Prevent DOM Value from becoming negative
             if (parseInt(challengesRemaining.innerText) === 0 ) return;
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
         }
-    }, [completed, props])
+
+        
+
+    }, [completed, props.challengesRemainingID]);
 
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
     useEffect(() => {
@@ -31,33 +39,43 @@ const ChallengeCard = (props) => {
             }
         }
 
-        // ** If Our Incremented Value is Equal to the Total Number of Objectives, The Challenge Is Marked Complete In State and Local Storage; {NOTE: State is coming in as a 0 Value on initial mount. I do not know why but preventing these condition to run when objectives are loaded as 0 prevents crashes}
-        if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete !== 0) {
+        const updateLocalAndState= (isComplete) => {
             // * Update Local Storage and Parse Local With Mutable Variable
             const getLocal = localStorage.getItem(week);
             const newLocal = JSON.parse(getLocal);
             // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
             const currentTask = newLocal[challengeIndex]
-            currentTask.completed = true;
+            currentTask.completed = isComplete;
             // ** Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
             localStorage.setItem(week, JSON.stringify(newLocal));
-            dispatch({ type: 'setCompletedChallenge', payload: { completedChallenge: true } });
-
+            dispatch({ type: 'setCompletedChallenge', payload: { completedChallenge: isComplete } });
+        };
+       
+        // ** If Our Incremented Value is Equal to the Total Number of Objectives, The Challenge Is Marked Complete In State and Local Storage; {NOTE: State is coming in as a 0 Value on initial mount. I do not know why but preventing these condition to run when objectives are loaded as 0 prevents crashes}
+        const isChecked = document.getElementById(props.togglerID).checked;
+        const currentContainer = document.getElementById(name.replaceAll(' ','-'));
+       
+        if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete !== 0) {
+            // *** Update Local Storage and State with True Values
+            updateLocalAndState(true);
+            if (isChecked) {
+                if (currentContainer === null) return; 
+                currentContainer.classList.add('ChallengeCard-Hide');
+            }
         // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
         } else if ( totalObjectivesCompleted !== objectivesToComplete && objectivesToComplete !== 0) {
-            const getLocal = localStorage.getItem(week);
-            const newLocal = JSON.parse(getLocal);
-            const currentTask = newLocal[challengeIndex]
-            currentTask.completed = false;
-            localStorage.setItem(week, JSON.stringify(newLocal));
-            dispatch({ type: 'setCompletedChallenge', payload: { completedChallenge: false } });
+            updateLocalAndState(false);
+            if (isChecked) {
+                if (currentContainer === null) return; 
+                currentContainer.classList.remove('ChallengeCard-Hide');
+            }
         }
-    }, [completed, challengeIndex, dispatch, objectives, week])
+    }, [completed, challengeIndex, dispatch, name, objectives, props.togglerID, week]);
 
     const isActivities = window.location.pathname.includes('/activities');
 
     return (
-        <section className={'ChallengeCard-Container '+ props.activityHeader} data-completed={completed}>
+        <section className={'ChallengeCard-Container '+ props.activityHeader} id={name.replaceAll(' ','-')} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header'>
                 {isActivities && 
