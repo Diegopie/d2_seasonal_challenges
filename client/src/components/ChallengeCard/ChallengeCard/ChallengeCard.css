@@ -17,3 +17,7 @@
     flex-wrap: nowrap;
     margin: auto;
 }
+
+.ChallengeCard-Hide {
+    display: none;
+}
