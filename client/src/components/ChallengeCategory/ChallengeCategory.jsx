@@ -16,9 +16,18 @@ const ChallengeCategory = (props) => {
             const activityChallenges = document.getElementsByClassName(activityHeader);
             // Loop through each returned element, check if their data set is true, and remove from DOM
             for (let i = 0; i < activityChallenges.length; i++) {
-                // console.log(i);
+                const isCompleted = activityChallenges[i].dataset.completed;
+                console.log(isCompleted);
+                if (isCompleted === 'true') {
+                    console.log("why");
+                    // Need to write the CSS class
+                    activityChallenges[i].classList.add(activityHeader);
+                } 
             }
         }
+         // ADD logic to remove the ChallengeCard-Hide when toggle is turned off
+        //  classList.contains()
+        // classList.remove
 
     }
 
