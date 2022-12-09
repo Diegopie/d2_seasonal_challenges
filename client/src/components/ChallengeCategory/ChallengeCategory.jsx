@@ -12,22 +12,24 @@ const ChallengeCategory = (props) => {
     const handleToggle = (e) => {
         const isChecked = document.getElementById(togglerID).checked
         // If isChecked is True, Hide Completed Challenges
+        const activityChallenges = document.getElementsByClassName(activityHeader);
+
         if (isChecked) {
-            const activityChallenges = document.getElementsByClassName(activityHeader);
             // Loop through each returned element, check if their data set is true, and remove from DOM
             for (let i = 0; i < activityChallenges.length; i++) {
                 const isCompleted = activityChallenges[i].dataset.completed;
-                console.log(isCompleted);
+                console.log(typeof(isCompleted));
                 if (isCompleted === 'true') {
-                    console.log("why");
                     // Need to write the CSS class
-                    activityChallenges[i].classList.add(activityHeader);
+                    activityChallenges[i].classList.add('ChallengeCard-Hide');
                 } 
             }
+            return;
         }
-         // ADD logic to remove the ChallengeCard-Hide when toggle is turned off
-        //  classList.contains()
-        // classList.remove
+            // Loop through each returned element, check if their data set is true, and remove from DOM
+            for (let i = 0; i < activityChallenges.length; i++) {
+                activityChallenges[i].classList.remove('ChallengeCard-Hide');
+            }
 
     }
 
