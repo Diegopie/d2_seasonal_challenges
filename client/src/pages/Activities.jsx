@@ -4,6 +4,7 @@ import localSeasonalChallenges from '../data/parsedSeasonalChallenges';;
 
 const Activities = () => {
 
+    // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
         // [0]
         {
@@ -52,6 +53,7 @@ const Activities = () => {
         },
     ];
 
+    // Manually Create Cases that Correspond with the Category's Index Value
     const handleChallenge = (category, challenge) => {
         // console.log({category, challenge});
         switch (category) {
@@ -87,6 +89,7 @@ const Activities = () => {
         }
     }
 
+    // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
     const sortChallenges = () => {
         localSeasonalChallenges.forEach((week => {
             week.challenges.forEach(challenge => {

@@ -196,7 +196,7 @@ const seasonalChallenges = [
                     belongsTo: String,
                     name: 'Fusillade',
                     description: 'Defeat targets with Submachine Guns. Defeating combatants in Ketchcrash and defeating Guardians will award bonus progress',
-                    category: ['Ketchcrash', 'Crucible'],
+                    category: ['Ketchcrash', 'Crucible', 'Loadout'],
                     completed: false,
                     challengeIndex: Number,
                     objectives: [
