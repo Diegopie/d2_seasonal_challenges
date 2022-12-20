@@ -1,10 +1,12 @@
-# Hot New App
+# Destiny 2 Seasonal Challenges
 
 <!-- ![App hero image](./client/public/assets/img/readme/app.png) -->
 
 ## Description
 
-App description
+If efficiency is how you play then you're at the right place! I often find myself spending more time preparing to play Destiny rather than playing it. There is so much to do and so little time 😞. I made this app to have a little Ghost companion do the thinking for me. Rather than filtering through each week to know how many challenges I have to suffer through Gambit with one can simply visit this site and simply see all Seasonal Challenges that are related to a given activity!
+
+So if you are preparing to do your Pinnacle Vanguard challenge you can visit the Activities page and see all the current Vanguard Seasonal Challenges. This App is [not yet](#future-development) connected to the Destiny API, so your challenge progress must be manually updated for now. This is more easy to do in the home page as it will directly match the order seen in the game
 
 <!-- [Live Link 😁](https://diegopie.herokuapp.com/) -->
 
@@ -15,15 +17,23 @@ App description
 
 ## Table of Contents
 
-- [Hot New App](#hot-new-app)
+- [Destiny 2 Seasonal Challenges](#destiny-2-seasonal-challenges)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
 - [Development](#development)
   - [Technology Overview](#technology-overview)
+  - [Dependencies/Packages](#dependenciespackages)
+    - [Dev Dependencies](#dev-dependencies)
+  - [Client](#client)
+    - [App Feature](#app-feature)
+    - [Another Feature](#another-feature)
+  - [Bugs](#bugs)
+  - [Future Development](#future-development)
+  - [Resources](#resources)
   - [Contact](#contact)
   - [License](#license)
 - [react-template](#react-template)
-- [d2_seasonal_challenges](#d2_seasonal_challenges)
+- [d2\_seasonal\_challenges](#d2_seasonal_challenges)
 
 # Development
 
@@ -36,10 +46,10 @@ App description
 &NewLine;
 &NewLine;
 
-<!-- ```sh
+```sh
 Frontend – React, CSS3,  
 Backend – Node, Express
-``` -->
+```
 
 &NewLine;
 &NewLine;
@@ -49,10 +59,10 @@ Backend – Node, Express
 &NewLine;
 &NewLine;
 
-<!-- | | | |
-| ------ | ------ | ------ |
-| [express](https://www.npmjs.com/package/express) | [mongoose](https://www.npmjs.com/package/mongoose) | [react-typed](https://www.npmjs.com/package/react-typed) |
-[react-router-dom](https://www.npmjs.com/package/react-router-dom) | -->
+| | |
+| ------ | ------ |
+| [express](https://www.npmjs.com/package/express) | [mongoose](https://www.npmjs.com/package/mongoose) |
+<!-- [react-router-dom](https://www.npmjs.com/package/react-router-dom) | -->
 
 &NewLine;
 &NewLine;
@@ -62,9 +72,9 @@ Backend – Node, Express
 &NewLine;
 &NewLine;
 
-<!-- | | | |
-| ------ | ------ | ------ |
-| [eslint](https://www.npmjs.com/package/eslint) | [nodemon](https://www.npmjs.com/package/nodemon) | -->
+| | |
+| ------ | ------ |
+| [eslint](https://www.npmjs.com/package/eslint) | [nodemon](https://www.npmjs.com/package/nodemon) |
 
 &NewLine;
 &NewLine;
@@ -73,7 +83,7 @@ Backend – Node, Express
 
 ## Client
 
-This app is rendered using React. My key goals for this portfolio was to only use vanilla CSS and to implement dark mode toggling.
+This app is rendered using React. My key goal was to manage all the data with useContext and sync the user's data will local storage. This is rather limiting for gamers that use multiple devices but was faster than sitting down and learning the Destiny 2 API. Though that integration will come in [future builds](#future-development)
 
 ### App Feature
 
