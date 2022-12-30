@@ -39,6 +39,7 @@ const ChallengeCard = (props) => {
             }
         }
 
+        // Handle Updating LocalStorage and State
         const updateLocalAndState= (isComplete) => {
             // * Update Local Storage and Parse Local With Mutable Variable
             const getLocal = localStorage.getItem(week);
@@ -58,12 +59,15 @@ const ChallengeCard = (props) => {
         if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete !== 0) {
             // *** Update Local Storage and State with True Values
             updateLocalAndState(true);
+            // *** Check if User Selected to Hide Completed Challenges. if True, hide from DOM
             if (isChecked) {
+                // {Note: I'm having an issue where the initial state for currentContainer data is null, as the app crashes here. Returning the function if null prevents crashes then assumes desired functionality}
                 if (currentContainer === null) return; 
                 currentContainer.classList.add('ChallengeCard-Hide');
             }
         // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
         } else if ( totalObjectivesCompleted !== objectivesToComplete && objectivesToComplete !== 0) {
+            // *** Update Local Storage and State with False Values
             updateLocalAndState(false);
             if (isChecked) {
                 if (currentContainer === null) return; 

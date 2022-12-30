@@ -1,6 +1,6 @@
 {
   "name": "d2-seasonal-challenges",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "Track and optimize your seasonal challenge progress!",
   "engines": {
     "node": "^16"
@@ -22,7 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "mongoose": "^6.5.1"
+    "mongoose": "^6.5.1",
+    "react-router-dom": "^6.6.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

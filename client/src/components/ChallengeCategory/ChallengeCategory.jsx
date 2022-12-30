@@ -10,6 +10,7 @@ const ChallengeCategory = (props) => {
     const togglerID = activityHeader + '-completeToggler'
     const activityChallenges = document.getElementsByClassName(activityHeader);
 
+    // Manage Hiding and Unhiding Completed Challenges (Also Handled in ChallengeCard)
     const handleToggle = (e) => {
         const isChecked = document.getElementById(togglerID).checked;
         // If isChecked is True, Hide Completed Challenges
@@ -17,19 +18,16 @@ const ChallengeCategory = (props) => {
             // Loop through each returned element, check if their data set is true, and remove from DOM
             for (let i = 0; i < activityChallenges.length; i++) {
                 const isCompleted = activityChallenges[i].dataset.completed;
-                console.log(typeof(isCompleted));
                 if (isCompleted === 'true') {
-                    // Need to write the CSS class
                     activityChallenges[i].classList.add('ChallengeCard-Hide');
-                } 
+                }
             }
             return;
         }
-            // Loop through each returned element, check if their data set is true, and remove from DOM
-            for (let i = 0; i < activityChallenges.length; i++) {
-                activityChallenges[i].classList.remove('ChallengeCard-Hide');
-            }
-
+        // IF isChecked is False, add all challenges back to DOM
+        for (let i = 0; i < activityChallenges.length; i++) {
+            activityChallenges[i].classList.remove('ChallengeCard-Hide');
+        }
     };
 
     return (
