@@ -20,28 +20,26 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 - [Destiny 2 Seasonal Challenges](#destiny-2-seasonal-challenges)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
-- [Development](#development)
-  - [Technology Overview](#technology-overview)
-  - [Dependencies/Packages](#dependenciespackages)
-    - [Dev Dependencies](#dev-dependencies)
-  - [Client](#client)
-    - [App Feature](#app-feature)
-    - [Another Feature](#another-feature)
-  - [Bugs](#bugs)
-  - [Future Development](#future-development)
-  - [Resources](#resources)
-  - [Contact](#contact)
-  - [License](#license)
-- [react-template](#react-template)
-- [d2\_seasonal\_challenges](#d2_seasonal_challenges)
+  - [Development](#development)
+    - [Technology Overview](#technology-overview)
+    - [Dependencies/Packages](#dependenciespackages)
+      - [Dev Dependencies](#dev-dependencies)
+    - [Client](#client)
+      - [Persisting User Data](#persisting-user-data)
+      - [Setting and Updating State](#setting-and-updating-state)
+    - [Bugs](#bugs)
+    - [Future Development](#future-development)
+    - [Resources](#resources)
+    - [Contact](#contact)
+    - [License](#license)
 
-# Development
+## Development
 
-- [Technology Overview](#Technology-Overview)
-- [Dependencies/Packages](#Dependencies/Packages)
-- [Client](#Client)
+- [Technology Overview](#technology-overview)
+- [Dependencies/Packages](#dependenciespackages)
+- [Client](#client)
 
-## Technology Overview
+### Technology Overview
 
 &NewLine;
 &NewLine;
@@ -54,7 +52,7 @@ Backend – Node, Express
 &NewLine;
 &NewLine;
 
-## Dependencies/Packages
+### Dependencies/Packages
 
 &NewLine;
 &NewLine;
@@ -67,7 +65,7 @@ Backend – Node, Express
 &NewLine;
 &NewLine;
 
-### Dev Dependencies
+#### Dev Dependencies
 
 &NewLine;
 &NewLine;
@@ -79,38 +77,111 @@ Backend – Node, Express
 &NewLine;
 &NewLine;
 
-> [Back To Development](#Development) || [Back To Table of Contents](#Table-of-Contents)
+> [Back To Development](#development) || [Back To Table of Contents](#table-of-contents)
 
-## Client
+### Client
 
 This app is rendered using React. My key goal was to manage all the data with useContext and sync the user's data will local storage. This is rather limiting for gamers that use multiple devices but was faster than sitting down and learning the Destiny 2 API. Though that integration will come in [future builds](#future-development)
 
-### App Feature
+#### Persisting User Data
 
-Describe key app features and how it works
+Because I did not want to work with the API just yet I had to figure out how to store data for a user. I've created very basic user accounts in the past but want to spend more time to figure out how to make it more secure, more user friendly, and creating account recovery. Moreover, connecting to the API would let users login though their Bungie Accounts anyway. So I moved forward with a simple local storage solution.
 
-``` js
-// use code snippets to display work
-console.log("Hello World")
-```
-
-> [Back To Client](#Client) || [Back To Development](#Development)
-
-### Another Feature
-
-Describe a second feature, if desired
+Every seasonal challenge in the game has to be manually entered into a JS file then parsed into localSeasonalChallenges. This accomplishes three things: save new challenges into the client's local storage, create key data points for the application to reference to be able to update/save progress in state and local storage, and sync data in local storage to render on screen.
 
 ``` js
-console.log("Hello Again")
+const localSeasonalChallenges = seasonalChallenges.map((week) => {
+    // * Set weekName to be JSON and LocalStorage Friendly
+    const weekName = week.name.replaceAll(' ', '-');
+    // * If a Given Week is Not In Local Storage, Save to LocalStorage
+    if (localStorage.getItem(weekName) === null) {
+        localStorage.setItem(weekName, JSON.stringify(week.challenges));
+    }
+    // * If a Challenges are Added to As Week, add Them To LocalStorage without Deleting User Data
+    const localData = JSON.parse(localStorage.getItem(weekName))
+    const serverData = week.challenges;
+    // ** Checks if Server has new data by comparing the it's length to LocalStorage
+    if (serverData.length > localData.length) {
+        // *** Start Loop with the length of LocalStorage, since we would already have those indexes saved with user data and we do not want to overwrite them with default values
+        //  // Loop through the length of the server data and push any new data at index [i]
+        for (let i = localData.length; i < serverData.length; i++) {
+            localData.push(serverData[i]);
+        }
+        // *** Save Updated Data to Local Storage
+        localStorage.setItem(weekName, JSON.stringify(localData));
+    }
+
+    // * For a Given Week, map() Through Each Challenge, Programmatically Create Data, and Sync Data In Local Storage
+    week.challenges.map((challenge, challengeIndex) => {
+        // *** Create belongsTo string
+        challenge.belongsTo = weekName;
+        // *** Create challengeIndex Number
+        challenge.challengeIndex = challengeIndex;
+        // *** Use getLocal to Sync Completed Data
+        challenge.completed = getLocal(weekName, challengeIndex, true);
+        // ** For a Given Challenge, map() Through Each Objective and Sync Data in Local Storage
+        challenge.objectives.map((objective, objectiveIndex) => {
+            // *** Use getLocal to Sync Data
+            objective.completed = getLocal(weekName, challengeIndex, false, objectiveIndex, true)
+            objective.progress = getLocal(weekName, challengeIndex, false, objectiveIndex, false)
+            // *** Return Updated Data
+            return objective;
+        })
+        // *** Return Updated Data
+        return challenge;
+    })
+    // console.log({week});
+    localStorage.setItem(weekName, JSON.stringify(week.challenges));
+    // *** Return Updated Data
+    return week;
+});
 ```
 
-> [Back To Client](#Client) || [Back To Development](#Development)
+> [Back To Client](#client) || [Back To Development](#development)
 
-## Bugs
+#### Setting and Updating State
 
-- Be honest, this app has something not working right 😬
+The client renders each week or category of challenge by mapping through the localSeasonalChallenges data. Because of this, we can initialize state context for every single challenge in our database programmatically.
 
-## Future Development
+``` js
+{
+    props.challenges.map((challenge) => {
+        return (
+            // Wrap the State Provider for Individual Challenges and Pass Challenge Data to Dispatch Initial State
+            <ChallengeProvider
+                key={challenge.name}
+                data={{ challenge }}
+            >
+                <ChallengeCard
+                    key={challenge.name}
+                    challengesRemainingID={challengesRemainingID}
+                    togglerID={togglerID}
+                    activityHeader={activityHeader}
+                />
+            </ChallengeProvider>
+        )
+    })
+}
+```
+
+Now we just have to update local storage when a user changes a value so that can be seen on reload and dispatch the change in state for the client to update the screen
+
+``` js
+// ** Store the Mutated Array in Local Storage
+localStorage.setItem(week, JSON.stringify(newLocal));
+// ** Dispatch Values to State for Data to Persist Between Pages
+const newObjective = newLocal[challengeIndex].objectives;
+dispatch({type:'setNewObjective', payload: { newObjective }});
+
+```
+
+> [Back To Client](#client) || [Back To Development](#development)
+
+### Bugs
+
+Two big things to figure out are that state is not persisting between pages and that challenges do not sync when they appear multiple times on the page
+
+### Future Development
 
 There were a few coding concepts I wanted to practice when creating this project so I laid out the development process base on what I wanted to learn/practice. The initial concept was working with and rendering a larger amount of data that can be updated by a user then managing all of that in local storage.
 
@@ -127,16 +198,14 @@ This are the concepts I would like to practice in the future and how they effect
 - Destiny API Integration
   - This would render most of the work done completely redundant but will be a huge quality of life improvement. I have many ideas for Destiny apps learning all the previous coding concepts are important for that. This will also be a good baby step for using the huge amount of data the Destiny API offers
 
-## Resources
+### Resources
 
 <!-- Adobe Icons: [freepik.com](https://www.freepik.com) -->
 
-## Contact
+### Contact
 
 If you have any feedback our questions, please reach me by [email](diegopie@outlook.com), [GitHub](https://github.com/Diegopie), or [LinkedIn](https://www.linkedin.com/in/diego-hernandez-7327381b2/)!
 
-## License
+### License
 
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed
-# react-template
-# d2_seasonal_challenges
