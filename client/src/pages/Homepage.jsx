@@ -1,6 +1,6 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import seasonalChallenges from '../data/seasonalChallenges';
+import localSeasonalChallenges from '../data/parsedSeasonalChallenges.js';
 
 const Homepage = () => {
 
@@ -10,7 +10,7 @@ const Homepage = () => {
     return (
         <main className='App-backMaxHeight'>
             <section className='App-backImg App-backImg-1-light'>
-                {seasonalChallenges.map((week) => {
+                {localSeasonalChallenges.map((week) => {
                     return (
                         <ChallengeCategory
                             key={week.name}
