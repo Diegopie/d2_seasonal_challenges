@@ -1,6 +1,8 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import localSeasonalChallenges from '../data/parsedSeasonalChallenges';;
+import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
+import Menu from '../layouts/Menu';
+
 
 const Activities = () => {
 
@@ -23,7 +25,7 @@ const Activities = () => {
         },
         // [3]
         {
-            name: 'PvP',
+        name: 'PvP',
             challenges: []
         },
         // [4]
@@ -105,6 +107,8 @@ const Activities = () => {
     sortChallenges();
 
     return (
+        <>
+        <Menu/>
         <main className='App-backMaxHeight'>
             <section className='App-backImg App-backImg-1-light'>
                 {activityChallenges.map((week) => {
@@ -120,6 +124,7 @@ const Activities = () => {
                 })}
             </section>
         </main>
+        </>
     );
 };
 

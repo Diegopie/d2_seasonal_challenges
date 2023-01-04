@@ -22,9 +22,6 @@ const ChallengeCard = (props) => {
             if (parseInt(challengesRemaining.innerText) === 0) return;
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
         }
-
-
-
     }, [completed, props.challengesRemainingID]);
 
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
@@ -63,10 +60,10 @@ const ChallengeCard = (props) => {
             // {Note: I'm having an issue where the initial state for currentContainer data is null, as the app crashes here. Returning the function if null prevents crashes then assumes desired functionality}
             if (currentContainer === null) return;
             if (isChecked) return;
-            setTimeout(() => {
-                currentContainer.classList.add('ChallengeCard-Hide');
-              }, "2000")
-            
+            // setTimeout(() => {
+            currentContainer.classList.add('ChallengeCard-Hide');
+            //   }, "2000")
+
 
             // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
         } else if (totalObjectivesCompleted !== objectivesToComplete && objectivesToComplete !== 0) {
