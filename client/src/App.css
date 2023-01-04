@@ -35,8 +35,8 @@ body {
   z-index: 2;
 }
 
-.App-backImg-1-light {
-  background-image: url("./assets/production/background-img/backImg-1-light.jpg");
+.backgroundImg {
+  background-image: url("./assets/production/background-img/background-season19.jpg");
   min-height: 100vh;
 }
   .App-backImg-1_1-light {

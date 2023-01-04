@@ -110,7 +110,7 @@ const Activities = () => {
         <>
         <Menu/>
         <main className='App-backMaxHeight'>
-            <section className='App-backImg App-backImg-1-light'>
+            <section className='App-backImg backgroundImg'>
                 {activityChallenges.map((week) => {
                     if (week.challenges.length > 0)
                         return (

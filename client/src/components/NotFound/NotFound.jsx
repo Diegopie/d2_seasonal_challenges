@@ -6,7 +6,7 @@ import './NotFound.css';
 const NotFound = (props) => {
 
     // Set Classes Based On darkMode Value
-    const [backImg, ] = DarkContentHook('App-backImg-1-dark', 'App-backImg-1-light');
+    const [backImg, ] = DarkContentHook('backgroundImg', 'App-backImg-1-light');
 
     return (
         <section className={`App-backImg ${backImg}`}>
