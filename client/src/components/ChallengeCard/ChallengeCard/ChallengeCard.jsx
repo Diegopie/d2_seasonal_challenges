@@ -22,9 +22,6 @@ const ChallengeCard = (props) => {
             if (parseInt(challengesRemaining.innerText) === 0) return;
             challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
         }
-
-
-
     }, [completed, props.challengesRemainingID]);
 
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete

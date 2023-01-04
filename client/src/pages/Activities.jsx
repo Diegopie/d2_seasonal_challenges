@@ -1,7 +1,8 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import localSeasonalChallenges from '../data/parsedSeasonalChallenges';import Menu from '../layouts/Menu';
-;
+import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
+import Menu from '../layouts/Menu';
+
 
 const Activities = () => {
 
@@ -24,7 +25,7 @@ const Activities = () => {
         },
         // [3]
         {
-            name: 'PvP',
+        name: 'PvP',
             challenges: []
         },
         // [4]
