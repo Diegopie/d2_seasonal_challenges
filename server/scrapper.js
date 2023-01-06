@@ -45,12 +45,12 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
 
     const parsedData =
     {
-        belongsTo: String,
+        belongsTo: '',
         name: name,
         description: description,
         category: [],
         completed: false,
-        challengeIndex: Number,
+        challengeIndex: '',
         objectives: parsedObjectives,
         reward: reward,
         xp: xp,
@@ -60,6 +60,3 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
 }
 
 console.log(parsedChallenges);
-
-
-

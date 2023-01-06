@@ -10,12 +10,12 @@ const Activities = () => {
     const activityChallenges = [
         // [0]
         {
-            name: 'Expedition',
+            name: 'More Than A Weapon',
             challenges: []
         },
         // [1]
         {
-            name: 'Ketchcrash',
+            name: 'Heist Battlegrounds',
             challenges: []
         },
         // [2]
@@ -25,7 +25,7 @@ const Activities = () => {
         },
         // [3]
         {
-        name: 'PvP',
+            name: 'PvP',
             challenges: []
         },
         // [4]
@@ -50,6 +50,16 @@ const Activities = () => {
         },
         // [8]
         {
+            name: 'Destination - Moon',
+            challenges: []
+        },
+        // [9]
+        {
+            name: 'Destination - Cosmodrome',
+            challenges: []
+        },
+        // [10]
+        {
             name: 'Destination - Europa',
             challenges: []
         },
@@ -59,10 +69,10 @@ const Activities = () => {
     const handleChallenge = (category, challenge) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Expedition':
+            case 'More Than A Weapon':
                 activityChallenges[0].challenges.push(challenge)
                 break;
-            case 'Ketchcrash':
+            case 'Heist Battlegrounds':
                 activityChallenges[1].challenges.push(challenge)
                 break;
             case 'Gambit':
@@ -83,8 +93,14 @@ const Activities = () => {
             case 'Gear':
                 activityChallenges[7].challenges.push(challenge)
                 break;
+            case 'Moon':
+                activityChallenges[8].challenges.push(challenge)
+                break;
+            case 'Cosmodrome':
+                activityChallenges[9].challenges.push(challenge)
+                break;
             case 'Europa':
-                activityChallenges[7].challenges.push(challenge)
+                activityChallenges[10].challenges.push(challenge)
                 break;
             default:
                 break;
@@ -108,22 +124,22 @@ const Activities = () => {
 
     return (
         <>
-        <Menu/>
-        <main className='App-backMaxHeight'>
-            <section className='App-backImg App-backImg-1-light'>
-                {activityChallenges.map((week) => {
-                    if (week.challenges.length > 0)
-                        return (
-                            <ChallengeCategory
-                                key={week.name}
-                                name={week.name}
-                                challenges={week.challenges}
-                            />
-                        )
-                    return [];
-                })}
-            </section>
-        </main>
+            <Menu />
+            <main className='App-backMaxHeight'>
+                <section className='App-backImg backgroundImg-02'>
+                    {activityChallenges.map((week) => {
+                        if (week.challenges.length > 0)
+                            return (
+                                <ChallengeCategory
+                                    key={week.name}
+                                    name={week.name}
+                                    challenges={week.challenges}
+                                />
+                            )
+                        return [];
+                    })}
+                </section>
+            </main>
         </>
     );
 };

@@ -1,218 +1,1076 @@
 const seasonalChallenges = [
     // Week One
-
     {
         name: 'Week One',
         challenges: [
+            // 01
             {
-                belongsTo: String,
-                name: 'Successful Expedition',
-                description: 'Obtain Plundered Umbral Energy from bonus chests in Expedition',
-                category: ['Expedition'],
+                belongsTo: Number,
+                name: "More Than a Weapon I",
+                description: "Complete Week 1 of More Than a Weapon.",
+                category: ['More Than A Weapon'],
                 completed: false,
                 challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
-                        task: "Treasure Chest Unlocked",
-                        progress: 0,
-                        goal: 50,
-                        completed: false,
-                    },
-                    {
-                        isPercent: false,
-                        task: "Plundered Umbral Energy",
-                        progress: 0,
-                        goal: 3,
-                        completed: false,
-                    },
-                ],
-                reward: 'Repute',
-                xp: 'XP',
-                dust: null
-            },
-            {
-                belongsTo: 'Week-One',
-                name: 'Antiquarian I',
-                description: 'Return the first relic to the HELM. Defeat combatants on Europa. Defeating combatants with a Fusion Rifle will award bonus progress',
-                category: ['Europa'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: false,
-                        task: "Relic Placed",
+                        task: "More than a Weapon: Week 1 completed",
                         progress: 0,
                         goal: 1,
-                        completed: false,
-                    },
-                    {
-                        isPercent: false,
-                        task: "Combatants Defeated",
-                        progress: 0,
-                        goal: 200,
-                        completed: false,
-                    },
+                        completed: false
+                    }
                 ],
-                reward: 'Repute',
-                xp: 'XP',
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
                 dust: null
             },
+            // 02
             {
-                belongsTo: 'Week-One',
-                name: 'Fire Discipline',
-                description: 'Complete Ketchcrash activities and activate cannons aboard the deck of your Ketch',
-                category: ['Ketchcrash'],
+                belongsTo: Number,
+                name: "Heist Battlegrounds I",
+                description: "In the Heist Battlegrounds playlist or Legend Heist Battlegrounds, open Seraph Chests and defeat powerful Hive combatants.",
+                category: ['Heist Battlegrounds'],
                 completed: false,
                 challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
-                        task: "Ketchcrash activities completed",
+                        task: "Seraph Chests",
                         progress: 0,
-                        goal: 3,
-                        completed: false,
+                        goal: 5,
+                        completed: false
                     },
                     {
                         isPercent: false,
-                        task: "Cannons activated",
+                        task: "Powerful Hive defeated",
                         progress: 0,
-                        goal: 5,
-                        completed: false,
-                    },
+                        goal: 50,
+                        completed: false
+                    }
                 ],
-                reward: null,
-                xp: 'XP',
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
                 dust: null
             },
+            // 03
             {
-                belongsTo: 'Week-One',
-                name: 'Shaper I',
-                description: 'Shape three unique Seasonal weapons',
+                belongsTo: Number,
+                name: "Frozen Lightning",
+                description: "Defeat combatants with Stasis or Arc damage in Heist Battlegrounds.",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Stasis or Arc final blows",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 04
+            {
+                belongsTo: Number,
+                name: "Precision Loadout",
+                description: "Defeat targets with Bows or Linear Fusion Rifles. Bonus progress for defeating Guardians. Defeat combatants in Heist Battlegrounds with precision final blows.",
+                category: ['Loadout', 'PvP', 'Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Bow or Linear Fusion Rifle final blows",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Precision Final Blows in Heist Battlegrounds",
+                        progress: 0,
+                        goal: 50,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 05
+            {
+                belongsTo: Number,
+                name: "Moon Activities",
+                description: "On the Moon, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
+                category: ['Moon'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Progress",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 06
+            {
+                belongsTo: Number,
+                name: "Taking All Challenges",
+                description: "Complete weekly playlist challenges.",
+                category: ['Vanguard', 'PvP', 'Gambit'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Challenges",
+                        progress: 0,
+                        goal: 3,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 07
+            {
+                belongsTo: Number,
+                name: "Long-Range Calibration",
+                description: "Calibrate long-range weapons — Pulse Rifles, Bows, Trace Rifles — on the Moon. Bonus progress in Lost Sectors.",
+                category: ['Moon'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Calibration",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 08
+            {
+                belongsTo: Number,
+                name: "Dredgin' Up Victory",
+                description: "Complete Gambit matches. Earn bonus progress for wins.",
+                category: ['Gambit'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Progress",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 09
+            {
+                belongsTo: Number,
+                name: "Spark Defender",
+                description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
+                category: ['PvP'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Points",
+                        progress: 0,
+                        goal: 50,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 10
+            {
+                belongsTo: Number,
+                name: "Hive Slayer",
+                description: "Defeat Hive combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
+                category: ['Vanguard'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Hive",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            }
+        ]
+    },
+    // Week Two
+    {
+        // 01
+        name: 'Week Two',
+        challenges: [
+            {
+                belongsTo: String,
+                name: "More Than a Weapon II",
+                description: "Complete Week 2 of More Than a Weapon.",
+                category: ['More Than A Weapon'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "More Than a Weapon: Week 2 completed",
+                        progress: 0,
+                        goal: 1,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP",
+                dust: null
+            },
+            // 02
+            {
+                belongsTo: String,
+                name: "Heist Battlegrounds II",
+                description: "In the Heist Battlegrounds playlist, complete heists and defeat Deathtongue Choristers.",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Heist Battlegrounds",
+                        progress: 0,
+                        goal: 10,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Deathtongue Choristers",
+                        progress: 0,
+                        goal: 5,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 03
+            {
+                belongsTo: String,
+                name: "Fire in the Void",
+                description: "Defeat combatants with Void or Solar damage in Heist Battlegrounds.",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Void or Solar final blows",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 4
+            {
+                belongsTo: String,
+                name: "Umbral Focusing I",
+                description: "Focus a Season of the Seraph engram at the Exo Frame in the HELM",
                 category: ['Gear'],
                 completed: false,
                 challengeIndex: Number,
                 objectives: [
                     {
                         isPercent: false,
-                        task: "Weapons Shaped",
+                        task: "Engrams focused",
                         progress: 0,
-                        goal: 3,
-                        completed: false,
+                        goal: 1,
+                        completed: false
                     }
                 ],
                 reward: null,
-                xp: 'XP',
+                xp: "Challenger XP",
                 dust: null
             },
+            // 05
+            {
+                belongsTo: String,
+                name: "Cosmodrome Activities",
+                description: "In the Cosmodrome, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
+                category: ['Cosmodrome'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Progress",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 05
+            {
+                belongsTo: String,
+                name: "Lost in the Legend",
+                description: "Complete a Lost Sector on Legend or higher.",
+                category: ['Activities'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Lost Sectors",
+                        progress: 0,
+                        goal: 1,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 06
+            {
+                belongsTo: String,
+                name: "Mid-Range Calibration",
+                description: "Calibrate mid-range weapons—Hand Cannons, Glaives, Auto Rifles, Fusion Rifles, Machine Guns—in the Cosmodrome. Bonus progress for rapidly defeating combatants.",
+                category: ['Cosmodrome'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Calibration",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 07
+            {
+                belongsTo: String,
+                name: "Bank, Kill, Repeat",
+                description: "Earn points by banking Motes, defeating Blockers, and defeating Guardians in Gambit.",
+                category: ['Gambit'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Points",
+                        progress: 0,
+                        goal: 250,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 08
+            {
+                belongsTo: String,
+                name: "Freezing Void",
+                description: "Defeat Guardians. Bonus progress is granted for opponents defeated with Void or Stasis effects.",
+                category: ['PvP'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Guardians",
+                        progress: 0,
+                        goal: 80,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 09
+            {
+                belongsTo: String,
+                name: "The Fallen Fall",
+                description: "Defeat Fallen combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
+                category: ['Vanguard'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Fallen",
+                        progress: 0,
+                        goal: 200,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
         ]
-        },
-        // Week Two
-        {
-            name: 'Week Two',
-            challenges: [
+    },
+    // Week Three
+    {
+        name: 'Week Three',
+        challenges: [
+            // 01 
+            {
+                belongsTo: Number,
+                name: "More Than a Weapon III",
+                description: "Complete Week 3 of More Than and defeat Hive and Fallen combatants anywhere in the system",
+                category: ['More Than A Weapon'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "More than a Weapon: Week 3 completed",
+                        progress: 0,
+                        goal: 1,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Combatants",
+                        progress: 0,
+                        goal: 250,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 02
+            {
+                belongsTo: String,
+                name: "Seraph's Shield I",
+                description: "Complete the Exotic mission 'Operation: Seraph's Shield' to earn the Revision Zero Exotic Pulse Rifle. Defeat combatants anywhere in the system with Pulse Rifles",
+                category: ['Activities', 'Loadout'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Operation: Seraph's Shield complete",
+                        progress: 0,
+                        goal: 1,
+                        completed: false
+                    },
+                    {
+                        isPercent: true,
+                        task: "Combatants",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 03
+            {
+                belongsTo: String,
+                name: "In the Cold Light of the Sun",
+                description: "Defeat combatants with Solar or Stasis damage in Heist Battlegrounds",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Solar or Stasis final blows",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 04
+            {
+                belongsTo: String,
+                name: "Rapid Loadout",
+                description: "Defeat targets with Pulse Rifles or Trace Rifles. Bonus progress for defeating Guardians.Rapidly defeat combatants in Heist Battlegrounds",
+                category: ['Heist Battlegrounds', 'PvP', 'Loadout'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Pulse Rifle or Trace Rifle final blows",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Rapidly defeated",
+                        progress: 0,
+                        goal: 10,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 05
+            {
+                belongsTo: String,
+                name: "Europa Activities",
+                description: "On Europa, earn progress by completing bounties, patrols, public events, and Lost Sectors",
+                category: ['Europa'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: true,
+                        task: "Progress",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 06
+            {
+                belongsTo: String,
+                name: "Power Broker",
+                description: "Reach Power Level 1580 by earning powerful rewards and Prime Engrams.",
+                category: [],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Power Level",
+                        progress: 0,
+                        goal: 1580,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 07
+            {
+                belongsTo: String,
+                name: "Close-Range Calibration",
+                description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords—on Europa. Bonus progress for rapidly defeating combatants.",
+                category: ['Loadout'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Calibration",
+                        progress: 0,
+                        goal: 200,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 08
+            {
+                belongsTo: String,
+                name: "Primeval Entourage",
+                description: "Defeat Taken in Gambit. Earn bonus progress for defeating tougher combatants.",
+                category: ['Gambit'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Taken",
+                        progress: 0,
+                        goal: 100,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 09
+            {
+                belongsTo: String,
+                name: "Scorched Earth",
+                description: "Defeat Guardians in Team Scorched. Charged detonations in midair or on surfaces earn bonus progress.",
+                category: ['PvP'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Guardians",
+                        progress: 0,
+                        goal: 40,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+            // 10
+            {
+                belongsTo: String,
+                name: "Ultimate Champion",
+                description: "Defeat Champions in any Nightfall strike on Hero difficulty or higher. Earn bonus progress at higher difficulty tiers.",
+                category: ['Vanguard'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Champions",
+                        progress: 0,
+                        goal: 60,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: "Bright Dust"
+            },
+        ]
+    },
+    // Week Four
+    {
+        name: 'Week Four',
+        challenges: [
+            // 01 
+            {
+                belongsTo: Number,
+                name: "More Than a Weapon IV",
+                description: "Complete Week 4 of More Than a Weapon. Defeat Hive and Scorn anywhere in the system",
+                category: ['More Than A Weapon'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "More than a Weapon: Week 4 completed",
+                        progress: 0,
+                        goal: 1,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Combatants",
+                        progress: 0,
+                        goal: 250,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 02
+            {
+                belongsTo: String,
+                name: "Heist Battlegrounds III",
+                description: "In the Heist Battlegrounds playlist, complete heists and breach submind vaults without alerting Wrathborn reinforcements.",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Heist Battlegrounds",
+                        progress: 0,
+                        goal: 20,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Vaults breached",
+                        progress: 0,
+                        goal: 3,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 03
+            {
+                belongsTo: String,
+                name: "Entropic Shock",
+                description: "Defeat combatants with Arc of Void damage in Heist Battlegrounds.",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                  {
+                    isPercent: true,
+                    task: "Arc of Void final blows",
+                    progress: 0,
+                    goal: 100,
+                    completed: false
+                  }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+              },
+            // 04
+            {
+              belongsTo: String,
+              name: "Seasonal Shaping I",
+              description: "Unlock the Pattern for any Seasonal or IKELOS v1.0.3 weapon.",
+              category: ['Gear'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
                 {
-                    belongsTo: String,
-                    name: 'Antiquarian II',
-                    description: 'Return the second relic to the H.E.L.M. Also, defeat Fallen. Defeating them with precision final blows will award bonus progress',
-                    category: ['Expedition'],
-                    completed: false,
-                    challengeIndex: Number,
-                    objectives: [
-                        {
-                            isPercent: false,
-                            task: "Relic Placed",
-                            progress: 0,
-                            goal: 2,
-                            completed: false,
-                        },
-                        {
-                            isPercent: false,
-                            task: "Fallen Killed",
-                            progress: 0,
-                            goal: 250,
-                            completed: false,
-                        },
-                    ],
-                    reward: 'Repute',
-                    xp: 'XP',
-                    dust: null
+                  isPercent: false,
+                  task: "Pattern unlocked",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: null
+            },
+            // 05
+            {
+              belongsTo: String,
+              name: "Mod Collector",
+              description: "Unlock artifact mods.",
+              category: ['Gear'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Mods unlocked",
+                  progress: 0,
+                  goal: 12,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP++",
+              dust: "Bright Dust"
+            },
+            // 06
+            {
+              belongsTo: String,
+              name: "Precision Calibration",
+              description: "Calibrate marksman weapons—Scout Rifles, Sniper Rifles, and Linear Fusion Rifles—by landing precision final blows. Bonus progress against Guardians.",
+              category: ['Loadout', 'PvP'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Calibration",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
+            },
+            // 07
+            {
+              belongsTo: String,
+              name: "High-Value Hunter",
+              description: "Defeat powerful combatants in Gambit. Earn bonus progress for defeating high-value targets.",
+              category: ['Gambit'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Combatants",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP++",
+              dust: "Bright Dust"
+            },
+            // 08
+            {
+              belongsTo: String,
+              name: "Momentum Crash",
+              description: "Defeat Guardians in Momentum Control. Earn bonus progress with Zone Advantage.",
+              category: ['PvP'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Guardians",
+                  progress: 0,
+                  goal: 50,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
+            },
+            // 09
+            {
+              belongsTo: String,
+              name: "Darkest Nightfall",
+              description: "Complete any Nightfall strike on Hero difficulty or higher.",
+              category: ['Vanguard'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Nightfall",
+                  progress: 0,
+                  goal: 3,
+                  completed: false
+                }
+              ],
+              reward: 'Nightfall Weapon',
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
+            },
+          ]
+    },
+    // Week Five
+    {
+        name: 'Week Five',
+        challenges: [
+            // 01 
+            {
+                belongsTo: Number,
+                name: "More Than a Weapon V",
+                description: "Complete Week 5 of More Than a Weapon. Defeat Hive and Taken anywhere in the system",
+                category: ['More Than A Weapon'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "More than a Weapon: Week 5 completed",
+                        progress: 0,
+                        goal: 1,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Combatants",
+                        progress: 0,
+                        goal: 250,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 02
+            {
+                belongsTo: String,
+                name: "Heist Battlegrounds IV",
+                description: "In the Heist Battlegrounds playlist, complete heists and defeat Champions.",
+                category: ['Heist Battlegrounds'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Heist Battlegrounds",
+                        progress: 0,
+                        goal: 25,
+                        completed: false
+                    },
+                    {
+                        isPercent: false,
+                        task: "Champions",
+                        progress: 0,
+                        goal: 5,
+                        completed: false
+                    }
+                ],
+                reward: "Exo Frame Module",
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 03
+            {
+              belongsTo: String,
+              name: "Quick Heists",
+              description: "Complete a Heist Battleground in under 12 minutes.",
+              category: ['Heist Battlegrounds'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Incomplete",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: null
+            },
+             // 04
+             {
+                belongsTo: String,
+                name: "Umbral Focusing II",
+                description: "Focus a Season of the Seraph engram at the Exo Frame in the HELM",
+                category: ['Gear'],
+                completed: false,
+                challengeIndex: Number,
+                objectives: [
+                    {
+                        isPercent: false,
+                        task: "Engrams focused",
+                        progress: 0,
+                        goal: 5,
+                        completed: false
+                    }
+                ],
+                reward: null,
+                xp: "Challenger XP+",
+                dust: null
+            },
+            // 05
+            {
+              belongsTo: String,
+              name: "Timeless Iteration",
+              description: "Acquire Veles-X.",
+              category: ['Gear'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Acquired",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP++",
+              dust: "Bright Dust"
+            },
+            // 06
+            {
+              belongsTo: String,
+              name: "Iron Sharpens Iron",
+              description: "Complete Iron Banner matches. Earn bonus progress for wins.",
+              category: ['PvP'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Progress",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP++",
+              dust: "Bright Dust"
+            },
+            // 07
+            {
+              belongsTo: String,
+              name: "Fell and Fallen",
+              description: "Defeat Fallen and Hive bosses in strikes or Vanguard playlists.",
+              category: ['Vanguard'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Hive boss defeated",
+                  progress: 0,
+                  goal: 5,
+                  completed: false
                 },
                 {
-                    belongsTo: String,
-                    name: 'Expert Expedition I',
-                    description: 'Complete Expeditions and gather treasure in the treasure haul',
-                    category: ['Expedition'],
-                    completed: false,
-                    challengeIndex: Number,
-                    objectives: [
-                        {
-                            isPercent: false,
-                            task: "Expeditions Completed",
-                            progress: 0,
-                            goal: 3,
-                            completed: false,
-                        },
-                        {
-                            isPercent: false,
-                            task: "Treasure Gathered",
-                            progress: 0,
-                            goal: 25,
-                            completed: false,
-                        },
-                    ],
-                    reward: 'Repute',
-                    xp: 'XP',
-                    dust: null
-                },
-                {
-                    belongsTo: String,
-                    name: "Seeker's Cache I",
-                    description: 'Complete bounties from the Star Chart or on Nessus, Cosmodrome, or Europa. Also, decipher the Small Treasure Beacon, available from the Star Chart in the H.E.L.M.',
-                    category: ['Activities'],
-                    completed: false,
-                    challengeIndex: Number,
-                    objectives: [
-                        {
-                            isPercent: false,
-                            task: 'Bounties',
-                            progress: 0,
-                            goal: 15,
-                            completed: false,
-                        },
-                        {
-                            isPercent: false,
-                            task: 'Small Treasure Beacon',
-                            progress: 0,
-                            goal: 1,
-                            completed: false,
-                        },
-                    ],
-                    reward: null,
-                    xp: 'XP',
-                    dust: null
-                },
-                {
-                    belongsTo: String,
-                    name: 'Fusillade',
-                    description: 'Defeat targets with Submachine Guns. Defeating combatants in Ketchcrash and defeating Guardians will award bonus progress',
-                    category: ['Ketchcrash', 'Crucible', 'Loadout'],
-                    completed: false,
-                    challengeIndex: Number,
-                    objectives: [
-                        {
-                            isPercent: false,
-                            task: "Submachine Gun kills",
-                            progress: 0,
-                            goal: 200,
-                            completed: false,
-                        }
-                    ],
-                    reward: null,
-                    xp: 'XP',
-                    dust: null
-                },
-            ]
+                  isPercent: false,
+                  task: "Fallen boss defeated",
+                  progress: 0,
+                  goal: 5,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP++",
+              dust: "Bright Dust"
+            },
+          ]
     },
 ]
 

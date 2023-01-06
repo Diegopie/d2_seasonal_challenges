@@ -12,7 +12,7 @@ const Homepage = () => {
         <>
             <Menu />
             <main className='App-backMaxHeight'>
-                <section className='App-backImg App-backImg-1-light'>
+                <section className='App-backImg backgroundImg'>
                     {localSeasonalChallenges.map((week) => {
                         return (
                             <ChallengeCategory

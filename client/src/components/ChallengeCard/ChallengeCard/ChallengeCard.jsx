@@ -51,7 +51,7 @@ const ChallengeCard = (props) => {
 
         // ** If Our Incremented Value is Equal to the Total Number of Objectives, The Challenge Is Marked Complete In State and Local Storage; {NOTE: State is coming in as a 0 Value on initial mount. I do not know why but preventing these condition to run when objectives are loaded as 0 prevents crashes}
         const isChecked = document.getElementById(props.togglerID).checked;
-        const currentContainer = document.getElementById(name.replaceAll(' ', '-'));
+        const currentContainer = document.getElementsByClassName(name.replaceAll(' ', '-'));
 
         if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete !== 0) {
             // *** Update Local Storage and State with True Values
@@ -61,7 +61,10 @@ const ChallengeCard = (props) => {
             if (currentContainer === null) return;
             if (isChecked) return;
             // setTimeout(() => {
-            currentContainer.classList.add('ChallengeCard-Hide');
+            for (let i = 0; i < currentContainer.length; i++) {
+                currentContainer[i].classList.add('ChallengeCard-Hide');
+                
+            }
             //   }, "2000")
 
 
@@ -70,15 +73,18 @@ const ChallengeCard = (props) => {
             // *** Update Local Storage and State with False Values
             updateLocalAndState(false);
             if (currentContainer === null) return;
-            currentContainer.classList.remove('ChallengeCard-Hide');
-
+            for (let i = 0; i < currentContainer.length; i++) {
+                currentContainer[i].classList.remove('ChallengeCard-Hide');
+                
+            }
         }
+
     }, [completed, challengeIndex, dispatch, name, objectives, props.togglerID, week]);
 
     const isActivities = window.location.pathname.includes('/activities');
 
     return (
-        <section className={'ChallengeCard-Container ' + props.activityHeader} id={name.replaceAll(' ', '-')} data-completed={completed}>
+        <section className={'ChallengeCard-Container ' + props.activityHeader + ' ' + name.replaceAll(' ', '-')} id={name.replaceAll(' ', '-')} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header'>
                 {isActivities &&
