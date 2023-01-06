@@ -126,7 +126,7 @@ const Activities = () => {
         <>
             <Menu />
             <main className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg'>
+                <section className='App-backImg backgroundImg-02'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (
