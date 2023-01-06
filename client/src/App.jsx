@@ -5,6 +5,9 @@ import { ToastContainer, Zoom } from 'react-toastify';
 // Import Pages
 import Homepage from './pages/Homepage';
 import Activities from './pages/Activities';
+import XP from './pages/XP';
+import SeasonalReward from './pages/SeasonalReward';
+import TimeSensitive from './pages/TimeSensitive';
 import NotFoundPage from './pages/NotFoundPage';
 // Import Components
 
@@ -48,6 +51,9 @@ function App() {
             <Switch>
                 <Route exact path='/' component={Homepage} />
                 <Route exact path='/activities' component={Activities} />
+                <Route exact path='/xp' component={XP} />
+                <Route exact path='/seasonal-reward' component={SeasonalReward} />
+                <Route exact path='/time-sensitive' component={TimeSensitive} />
                 <Route component={NotFoundPage} />
             </Switch>
         </Router>

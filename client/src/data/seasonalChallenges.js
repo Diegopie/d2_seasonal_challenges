@@ -190,7 +190,7 @@ const seasonalChallenges = [
                 belongsTo: Number,
                 name: "Spark Defender",
                 description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
-                category: ['PvP'],
+                category: ['PvP', 'Time'],
                 completed: false,
                 challengeIndex: Number,
                 objectives: [
@@ -650,7 +650,7 @@ const seasonalChallenges = [
                 belongsTo: String,
                 name: "Scorched Earth",
                 description: "Defeat Guardians in Team Scorched. Charged detonations in midair or on surfaces earn bonus progress.",
-                category: ['PvP'],
+                category: ['PvP', 'Time'],
                 completed: false,
                 challengeIndex: Number,
                 objectives: [
@@ -859,7 +859,7 @@ const seasonalChallenges = [
               belongsTo: String,
               name: "Momentum Crash",
               description: "Defeat Guardians in Momentum Control. Earn bonus progress with Zone Advantage.",
-              category: ['PvP'],
+              category: ['PvP', 'Time'],
               completed: false,
               challengeIndex: Number,
               objectives: [
@@ -1026,7 +1026,7 @@ const seasonalChallenges = [
               belongsTo: String,
               name: "Iron Sharpens Iron",
               description: "Complete Iron Banner matches. Earn bonus progress for wins.",
-              category: ['PvP'],
+              category: ['PvP', 'Time'],
               completed: false,
               challengeIndex: Number,
               objectives: [
