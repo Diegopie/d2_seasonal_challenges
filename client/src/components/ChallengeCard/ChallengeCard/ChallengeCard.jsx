@@ -65,7 +65,6 @@ const ChallengeCard = (props) => {
                 currentContainer[i].classList.add('ChallengeCard-Hide');
                 
             }
-            
             //   }, "2000")
 
 
