@@ -44,6 +44,22 @@ body {
   background-image: url("./assets/production/background-img/background-season19-02.jpg");
   min-height: 100vh;
 }
+
+.backgroundImg-03 {
+  background-image: url("./assets/production/background-img/background-season19-03.webp");
+  min-height: 100vh;
+}
+
+.backgroundImg-04 {
+  background-image: url("./assets/production/background-img/background-season19-04.jpg");
+  min-height: 100vh;
+}
+
+.backgroundImg-05 {
+  background-image: url("./assets/production/background-img/background-season19-05.jpg");
+  min-height: 100vh;
+}
+
   .App-backImg-1_1-light {
     background-image: url("./assets/production/background-img/backImg-1-light.jpg");
     min-height: 100vh;

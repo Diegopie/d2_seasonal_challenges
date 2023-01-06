@@ -16,6 +16,9 @@ const Menu = (props) => {
               <Nav className="me-auto">
                 <Nav.Link href='/'>Weekly</Nav.Link>
                 <Nav.Link href='/activities'>Activities</Nav.Link>
+                <Nav.Link href='/xp'>XP</Nav.Link>
+                <Nav.Link href='/seasonal-reward'>Exo Frame Modules</Nav.Link>
+                <Nav.Link href='/time-sensitive'>Time Sensitive</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
