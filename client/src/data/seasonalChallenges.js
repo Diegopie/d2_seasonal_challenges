@@ -1076,7 +1076,7 @@ const seasonalChallenges = [
     {
         name: 'Week Six',
         challenges: [
-            //
+            // 01
             {
               belongsTo: String,
               name: "More Than a Weapon VI",
@@ -1104,7 +1104,7 @@ const seasonalChallenges = [
               xp: "Challenger XP++",
               dust: null
             },
-            //
+            // 02
             {
               belongsTo: String,
               name: "Heist Battlegrounds V",
@@ -1132,7 +1132,7 @@ const seasonalChallenges = [
               xp: "Challenger XP++",
               dust: null
             },
-            //
+            // 03
             {
               belongsTo: String,
               name: "Seraph's Secrets",
@@ -1153,7 +1153,7 @@ const seasonalChallenges = [
               xp: "Challenger XP+",
               dust: null
             },
-            //
+            // 04
             {
               belongsTo: String,
               name: "CQC Loadout",
@@ -1181,7 +1181,7 @@ const seasonalChallenges = [
               xp: "Challenger XP+",
               dust: null
             },
-            //
+            // 05
             {
               belongsTo: String,
               name: "Apex Armorer",
@@ -1202,7 +1202,7 @@ const seasonalChallenges = [
               xp: "Challenger XP+",
               dust: "Bright Dust"
             },
-            //
+            // 06
             {
               belongsTo: String,
               name: "Absolutely Stunning",
@@ -1223,7 +1223,7 @@ const seasonalChallenges = [
               xp: "Challenger XP+++",
               dust: "Bright Dust"
             },
-            //
+            // 07
             {
               belongsTo: String,
               name: "Crucible Ornament",
