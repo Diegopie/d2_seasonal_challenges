@@ -1,5 +1,5 @@
 .ChallengeCategory-Container {
-    width: min(100% - 2rem, 1200px);
+    width: min(100% - 2rem, 1000px);
     margin-inline: auto;
     padding-top: 3.2rem;
 }

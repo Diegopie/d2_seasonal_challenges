@@ -86,7 +86,7 @@ const ChallengeCard = (props) => {
     return (
         <section className={'ChallengeCard-Container ' + props.activityHeader + ' ' + name.replaceAll(' ', '-')} id={name.replaceAll(' ', '-')} data-completed={completed}>
             {/* NAME */}
-            <article className='ChallengeCard-Header'>
+            <article className='ChallengeCard-Header App-FlexCenter'>
                 {isActivities &&
                     <h3>{name + " - " + week.replaceAll('-', ' ')}</h3>
                 }

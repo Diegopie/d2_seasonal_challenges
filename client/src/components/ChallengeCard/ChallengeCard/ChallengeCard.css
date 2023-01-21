@@ -1,11 +1,17 @@
 .ChallengeCard-Container {
-    width: min(100% - 2rem, 600px);
+    width: min(100% - 2rem, 500px);
 }
+
 
 .ChallengeCard-Header {
     background-color: black;
     padding: 0.1px 0px 0px 0px;
     width: 100%;
+}
+
+.ChallengeCard-Body {
+    width: min(100% - 3rem, 500px);
+    margin: auto;
 }
 
 .ChallengeCard-Text {
@@ -20,4 +26,13 @@
 
 .ChallengeCard-Hide {
     display: none !important;
+}
+
+@media (max-width: 1000px) {
+  .ChallengeCard-Container {
+    width: min(100%, 1000px);
+}
+.ChallengeCard-Body {
+    width: min(100% - 3rem, 1000px);
+}
 }
