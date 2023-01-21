@@ -1,5 +1,5 @@
 .ChallengeCategory-Container {
-    width: min(100% - 2rem, 800px);
+    width: min(100% - 2rem, 1200px);
     margin-inline: auto;
     padding-top: 3.2rem;
 }
@@ -12,18 +12,17 @@
 .ChallengeCategory-Title {
     width: 75%;
     text-align: center;
+    flex-flow: column;
 }
 
 .ChallengeCategory-Body {
     background-color: rgba(182, 182, 182, 0.8);
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
-.HideCompleted-Body {
-    display: flex;
-}
+/* Togglers */
 
 .HideCompleted {
     position: relative;

@@ -19,5 +19,5 @@
 }
 
 .ChallengeCard-Hide {
-    display: none;
+    display: none !important;
 }
