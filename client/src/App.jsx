@@ -18,16 +18,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import ScrollHook from './hooks/ScrollHook';
 
+// What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
+
 function App() {
 
-    const [{ darkMode, hidesLoader }, dispatch] = useGlobalContext();
+    const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
 
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            dispatch({ type: 'setDarkMode', payload: e.matches });
+            dispatchGlobal({ type: 'setDarkMode', payload: e.matches });
         })
     }
-
 
     // Remove Loading and Change Body Background Color On Dark Mode Change
     useEffect(() => {
