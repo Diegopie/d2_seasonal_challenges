@@ -608,7 +608,7 @@ const seasonalChallenges = [
                 belongsTo: String,
                 name: "Close-Range Calibration",
                 description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords—on Europa. Bonus progress for rapidly defeating combatants.",
-                category: ['Loadout'],
+                category: ['Europa'],
                 completed: false,
                 challengeIndex: Number,
                 objectives: [

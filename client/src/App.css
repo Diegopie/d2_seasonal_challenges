@@ -27,6 +27,11 @@ body {
   height: 100vh;
 }
 
+.App-FlexCenter {
+  display: flex;
+  justify-content: center;
+}
+
 .App-zIndex-1 {
   z-index: 1;
 }
