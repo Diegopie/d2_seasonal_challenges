@@ -22,11 +22,11 @@ import ScrollHook from './hooks/ScrollHook';
 
 function App() {
 
-    const [{ darkMode, hidesLoader }, dispatch] = useGlobalContext();
+    const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
 
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            dispatch({ type: 'setDarkMode', payload: e.matches });
+            dispatchGlobal({ type: 'setDarkMode', payload: e.matches });
         })
     }
 

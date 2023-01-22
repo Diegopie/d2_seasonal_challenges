@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
+import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
 
 export const GlobalContext = createContext();
 
@@ -25,6 +26,7 @@ const defaultState = {
     hidesLoader: () => document.querySelector('.load-icon').classList.add('hide-icon'),
     showLoader: () => document.querySelector('.load-icon').classList.remove('hide-icon'),
     darkMode: determineDarkMode(),
+    parsedData: localSeasonalChallenges,
 };
 
 const reducer = (state, action) => {
@@ -34,15 +36,21 @@ const reducer = (state, action) => {
                 ...state,
                 darkMode: action.payload
             };
+        case 'updateParsedData':
+            console.log('updated ParsedData');
+            return {
+                ...state,
+                parsedData: localSeasonalChallenges
+            };
         default: return state;
     }
 };
 
 const GlobalProvider = (props) => {
-    const [state, dispatch] = useReducer(reducer, defaultState);
+    const [state, dispatchGlobal] = useReducer(reducer, defaultState);
 
     return (
-        <GlobalContext.Provider value={[state, dispatch]} {...props} />
+        <GlobalContext.Provider value={[state, dispatchGlobal]} {...props} />
     );
 
 };

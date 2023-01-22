@@ -1,5 +1,6 @@
-import React from 'react';
+import { useEffect } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
+import { useGlobalContext } from '../context/GlobalContext';
 import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
 import Menu from '../layouts/Menu';
 
@@ -104,9 +105,12 @@ const Activities = () => {
     };
 
     // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
+    const [{parsedData}, ] = useGlobalContext();
+    console.log(parsedData);
+
     const sortChallenges = () => {
         // * Loop through each week
-        localSeasonalChallenges.forEach((week => {
+        parsedData.forEach((week => {
             // * Loop through each challenge in a week
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
@@ -119,7 +123,16 @@ const Activities = () => {
         }))
     }
 
-    sortChallenges();
+    
+       
+        sortChallenges()
+    
+useEffect(() => {
+    // I want the sorter to run in useEffect to update on every run but it wont do it
+console.log('why no?');
+console.log(parsedData);
+}, [parsedData])
+    
 
     
     // console.log(findActivityIndex('Europa'));

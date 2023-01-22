@@ -81,7 +81,7 @@ const ChallengeCard = (props) => {
 
     }, [completed, challengeIndex, dispatch, name, objectives, props.togglerID, week]);
 
-    const isActivities = window.location.pathname.includes('/activities');
+    const isActivities = window.location.pathname.includes('/');
 
     return (
         <section className={'ChallengeCard-Container ' + props.activityHeader + ' ' + name.replaceAll(' ', '-')} id={name.replaceAll(' ', '-')} data-completed={completed}>

@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useGlobalContext } from '../../../../context/GlobalContext';
 import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
     const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
+
+    const [{}, dispatchGlobal] = useGlobalContext()
 
     // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
@@ -31,6 +34,7 @@ const ObjectiveOptions = (props) => {
         // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
         const newObjective = newLocal[challengeIndex].objectives;
         dispatch({type:'setNewObjective', payload: { newObjective }});
+        dispatchGlobal({type:'updateParsedData'})
     }
 
     return (
