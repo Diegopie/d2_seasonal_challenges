@@ -8,57 +8,43 @@ const Activities = () => {
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
-        // [0]
-        {
-            name: 'More Than A Weapon',
-            challenges: []
-        },
-        // [1]
-        {
-            name: 'Heist Battlegrounds',
-            challenges: []
-        },
-        // [2]
-        {
-            name: 'Gambit',
-            challenges: []
-        },
-        // [3]
-        {
-            name: 'PvP',
-            challenges: []
-        },
-        // [4]
-        {
-            name: 'Vanguard',
-            challenges: []
-        },
-        // [5]
-        {
-            name: 'Activities',
-            challenges: []
-        },
-        // [6]
         {
             name: 'Loadout',
             challenges: []
         },
-        // [7]
+        {
+            name: 'Heist Battlegrounds',
+            challenges: []
+        },
+        {
+            name: 'Gambit',
+            challenges: []
+        },
+        {
+            name: 'PvP',
+            challenges: []
+        },
+        {
+            name: 'Vanguard',
+            challenges: []
+        },
+        {
+            name: 'Activities',
+            challenges: []
+        },
+        
         {
             name: 'Gear',
             challenges: []
         },
-        // [8]
         {
             name: 'Destination - Moon',
             challenges: []
         },
-        // [9]
         {
             name: 'Destination - Cosmodrome',
             challenges: []
         },
-        // [10]
         {
             name: 'Destination - Europa',
             challenges: []
@@ -66,61 +52,77 @@ const Activities = () => {
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value
-    const handleChallenge = (category, challenge) => {
+    const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'More Than A Weapon':
-                activityChallenges[0].challenges.push(challenge)
-                break;
             case 'Heist Battlegrounds':
-                activityChallenges[1].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gambit':
-                activityChallenges[2].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'PvP':
-                activityChallenges[3].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Vanguard':
-                activityChallenges[4].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Activities':
-                activityChallenges[5].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Loadout':
-                activityChallenges[6].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gear':
-                activityChallenges[7].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Moon':
-                activityChallenges[8].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Cosmodrome':
-                activityChallenges[9].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Europa':
-                activityChallenges[10].challenges.push(challenge)
+                activityChallenges[index].challenges.push(challenge)
                 break;
             default:
                 break;
         }
     }
 
+    const findActivityIndex = (arg) => {
+        let activityIndex;
+
+        activityChallenges.forEach((category, index) => {
+            // console.log(category.name);
+            if (category.name.includes(arg)) {
+                // console.log(index);
+                activityIndex = index;
+            }
+        })
+        return activityIndex;
+    };
+
     // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
     const sortChallenges = () => {
+        // * Loop through each week
         localSeasonalChallenges.forEach((week => {
+            // * Loop through each challenge in a week
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
+                // * Loop through each activity in the category array for a given challenge
                 challenge.category.forEach((activity => {
                     // console.log(activity);
-                    handleChallenge(activity, challenge)
+                    handleChallenge(activity, challenge, findActivityIndex(activity))
                 }))
             })
         }))
     }
 
     sortChallenges();
+
+    
+    // console.log(findActivityIndex('Europa'));
 
     return (
         <>

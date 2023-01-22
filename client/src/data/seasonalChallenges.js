@@ -1081,7 +1081,7 @@ const seasonalChallenges = [
               belongsTo: String,
               name: "More Than a Weapon VI",
               description: "Complete Week 6 of More Than a Weapon. Defeat powerful Hive and Fallen combatants anywhere in the system. Bonus progress for defeating them in Heist Battlegrounds and the Exotic mission Operation: Seraph's Shield.",
-              category: ["More Than a Weapon", "Heist Battlegrounds", "Operation: Seraph's Shield"],
+              category: ["More Than A Weapon", "Heist Battlegrounds", "Operation: Seraph's Shield"],
               completed: false,
               challengeIndex: Number,
               objectives: [
@@ -1255,7 +1255,7 @@ const seasonalChallenges = [
               belongsTo: String,
               name: "More Than a Weapon VII",
               description: "Complete Week 7 of More Than a Weapon. Defeat Hive and Fallen bosses anywhere in the system. Bonus progress for defeating them in Heist Battlegrounds and the Exotic mission Operation: Seraph's Shield.",
-              category: ["More Than a Weapon", "Heist Battlegrounds", "Operation: Seraph's Shield"],
+              category: ["More Than A Weapon", "Heist Battlegrounds", "Operation: Seraph's Shield"],
               completed: false,
               challengeIndex: Number,
               objectives: [
