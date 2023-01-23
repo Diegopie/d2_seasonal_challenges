@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
+
+import newSeasonalChallenges from '../data/newSeasonalChallenges';
 import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
 import Menu from '../layouts/Menu';
 
 
 const Activities = () => {
+
+    console.log(newSeasonalChallenges);
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
