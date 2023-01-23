@@ -1,5 +1,4 @@
-import seasonalChallenges from "./seasonalChallenges";
-import newSeasonalChallenges from "./newSeasonalChallenges";
+import seasonalChallenges from "./seasonalChallenges/index";
 
 // * Return Challenge Complete, Objective Complete, or Progress base off which Booleans are passed to the function
 const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
@@ -18,7 +17,7 @@ const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isO
 }
 
 // 1) * Map Through Seasonal Challenge Data, Determine if it Needs To Be Newly Saved to Local Storage, if More Challenges Have Been Added, Sync any Values that May Exist In Local Storage, Programmatically Update Data Values, and Re-save to Local Storage
-const localSeasonalChallenges = newSeasonalChallenges.map((week) => {
+const localSeasonalChallenges = seasonalChallenges.map((week) => {
     // * Set weekName to be JSON and LocalStorage Friendly
     const weekName = week.name.replaceAll(' ', '-');
     // * If a Given Week is Not In Local Storage, Save to LocalStorage

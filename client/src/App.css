@@ -1,6 +1,6 @@
 body {
   background-color: #A09EF0;
-  color: white;
+  color: white !important;
 }
 
   .darkMode {

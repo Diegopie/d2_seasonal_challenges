@@ -37,7 +37,7 @@ const reducer = (state, action) => {
                 darkMode: action.payload
             };
         case 'updateParsedData':
-            console.log('updated ParsedData');
+            // console.log('updated ParsedData');
             return {
                 ...state,
                 parsedData: localSeasonalChallenges
