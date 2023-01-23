@@ -107,6 +107,7 @@ const Activities = () => {
 
     // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
     const [{parsedData}, ] = useGlobalContext();
+    console.log(parsedData[0].challenges[3].objectives);
 
     const sortChallenges = () => {
         // * Loop through each week
