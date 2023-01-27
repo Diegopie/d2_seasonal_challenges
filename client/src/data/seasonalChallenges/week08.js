@@ -1,4 +1,6 @@
-const weeek08 = [
+const week08 = {
+  name: "Week Eight",
+  challenges: [
     // 01
     {
       belongsTo: String,
@@ -132,3 +134,6 @@ const weeek08 = [
       dust: "Bright Dust"
     }
   ]
+};
+
+export default week08;
