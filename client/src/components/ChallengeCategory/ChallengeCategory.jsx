@@ -1,5 +1,5 @@
 import React from 'react';
-import ChallengeCard from '../ChallengeCard/ChallengeCard/ChallengeCard';
+import ChallengeCard from '../ChallengeCard';
 import ChallengeProvider from '../ChallengeCard/ChallengeContext';
 import './ChallengeCategory.css';
 
@@ -14,8 +14,6 @@ const ChallengeCategory = (props) => {
 
     const handleToggleActivities = () => {
         const isChecked = document.getElementById(togglerActivitiesID).checked;
-        console.log(isChecked);
-        console.log(document.getElementById(ChallengeCategoryContainerID));
         const selectedSection = document.getElementById(ChallengeCategoryContainerID);
         // If isChecked is True, Hide All Challenges
         if (isChecked) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
-import Menu from '../layouts/Menu';
+import { useGlobalContext } from '../context/GlobalContext';
 
 
 const TimeSensitive = () => {
@@ -28,8 +27,10 @@ const TimeSensitive = () => {
     }
 
     // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
+    const [{parsedData}, ] = useGlobalContext();
+
     const sortChallenges = () => {
-        localSeasonalChallenges.forEach((week => {
+        parsedData.forEach((week => {
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
                 challenge.category.forEach((activity => {
@@ -44,7 +45,6 @@ const TimeSensitive = () => {
 
     return (
         <>
-            <Menu />
             <main className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-04'>
                     {activityChallenges.map((week) => {

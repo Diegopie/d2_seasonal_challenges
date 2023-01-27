@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
-import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
-import Menu from '../layouts/Menu';
+
 
 
 const Activities = () => {
+
+   
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
@@ -106,7 +107,7 @@ const Activities = () => {
 
     // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
     const [{parsedData}, ] = useGlobalContext();
-    console.log(parsedData);
+    console.log(parsedData[0].challenges[3].objectives);
 
     const sortChallenges = () => {
         // * Loop through each week
@@ -127,11 +128,11 @@ const Activities = () => {
        
         sortChallenges()
     
-useEffect(() => {
-    // I want the sorter to run in useEffect to update on every run but it wont do it
-console.log('why no?');
-console.log(parsedData);
-}, [parsedData])
+// useEffect(() => {
+//     // I want the sorter to run in useEffect to update on every run but it wont do it
+// console.log('why no?');
+// console.log(parsedData);
+// }, [parsedData])
     
 
     
@@ -139,7 +140,6 @@ console.log(parsedData);
 
     return (
         <>
-            <Menu />
             <main className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-02'>
                     {activityChallenges.map((week) => {
