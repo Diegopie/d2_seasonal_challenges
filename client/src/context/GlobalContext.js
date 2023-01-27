@@ -26,7 +26,7 @@ const defaultState = {
     hidesLoader: () => document.querySelector('.load-icon').classList.add('hide-icon'),
     showLoader: () => document.querySelector('.load-icon').classList.remove('hide-icon'),
     darkMode: determineDarkMode(),
-    parsedData: localSeasonalChallenges,
+    parsedData: localSeasonalChallenges(),
 };
 
 const reducer = (state, action) => {
@@ -38,9 +38,10 @@ const reducer = (state, action) => {
             };
         case 'updateParsedData':
             console.log('updated ParsedData');
+            console.log(localSeasonalChallenges());
             return {
                 ...state,
-                parsedData: localSeasonalChallenges
+                parsedData: localSeasonalChallenges()
             };
         default: return state;
     }

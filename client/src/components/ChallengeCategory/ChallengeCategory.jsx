@@ -1,5 +1,5 @@
 import React from 'react';
-import ChallengeCard from '../ChallengeCard/ChallengeCard/ChallengeCard';
+import ChallengeCard from '../ChallengeCard';
 import ChallengeProvider from '../ChallengeCard/ChallengeContext';
 import './ChallengeCategory.css';
 

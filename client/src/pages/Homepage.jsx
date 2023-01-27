@@ -1,19 +1,17 @@
 import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import localSeasonalChallenges from '../data/parsedSeasonalChallenges.js';
-import Menu from '../layouts/Menu';
+import { useGlobalContext } from '../context/GlobalContext';
 
 const Homepage = () => {
 
 
-
+    const [{parsedData}, ] = useGlobalContext();
 
     return (
         <>
-            <Menu />
             <main className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg'>
-                    {localSeasonalChallenges.map((week) => {
+                    {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
                                 key={week.name}
