@@ -6,6 +6,8 @@ import week05 from "./week05";
 import week06 from "./week06";
 import week07 from "./week07";
 import week08 from "./week08";
+import week09 from "./week09";
+import week10 from "./week10";
 
 let seasonalChallenges = [];
 
@@ -17,7 +19,9 @@ seasonalChallenges.push(
     week05,
     week06,
     week07,
-    week08
+    week08,
+    week09,
+    week10
 );
 
 export default seasonalChallenges;

@@ -22,8 +22,8 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
         const objective = {
             isPercent: false,
             task: $(allObjectives[i]).children('strong').text().trim(),
-            progress: $(allObjectives[i]).children('div').children('span').text().trim(),
-            goal: 0,
+            progress: 0,
+            goal: $(allObjectives[i]).children('div').children('span').text().trim(),
             completed: false,
         }
         parsedObjectives.push(objective);
