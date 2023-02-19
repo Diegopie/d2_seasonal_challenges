@@ -1,6 +1,7 @@
 const week09 = {
   name: "Week Nine",
   challenges: [
+    // 01
     {
       belongsTo: String,
       name: "Legend Heist Battlegrounds II",
@@ -35,6 +36,7 @@ const week09 = {
       xp: "Challenger XP++",
       dust: null
     },
+    // 02
     {
       belongsTo: String,
       name: "Heavy Loadout",
@@ -62,6 +64,7 @@ const week09 = {
       xp: "Challenger XP+",
       dust: null
     },
+    // 03
     {
       belongsTo: String,
       name: "Pinnacle",
@@ -82,6 +85,7 @@ const week09 = {
       xp: "Challenger XP+++",
       dust: "Bright Dust"
     },
+    // 04
     {
       belongsTo: String,
       name: "Armory-Wide Calibration",
@@ -116,6 +120,7 @@ const week09 = {
       xp: "Challenger XP+++",
       dust: "Bright Dust"
     },
+    // 05
     {
       belongsTo: String,
       name: "Icy Singularity",
@@ -136,6 +141,7 @@ const week09 = {
       xp: "Challenger XP++",
       dust: "Bright Dust"
     },
+    // 06
     {
       belongsTo: String,
       name: "Cosmic Chill",
