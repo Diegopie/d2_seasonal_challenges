@@ -40,28 +40,28 @@ body {
   z-index: 2;
 }
 
-.backgroundImg {
-  background-image: url("./assets/production/background-img/background-season19.jpg");
+.backgroundImg-Home {
+  background-image: url("./assets/production/background-img/background-season20_Home.jpg");
   min-height: 100vh;
 }
 
-.backgroundImg-02 {
-  background-image: url("./assets/production/background-img/background-season19-02.jpg");
+.backgroundImg-Activities {
+  background-image: url("./assets/production/background-img/background-season20_Activities.jpg");
   min-height: 100vh;
 }
 
-.backgroundImg-03 {
-  background-image: url("./assets/production/background-img/background-season19-03.webp");
+.backgroundImg-XP {
+  background-image: url("./assets/production/background-img/background-season20_XP.jpg");
   min-height: 100vh;
 }
 
-.backgroundImg-04 {
-  background-image: url("./assets/production/background-img/background-season19-04.jpg");
+.backgroundImg-SeasonalReward {
+  background-image: url("./assets/production/background-img/background-season20_SeasonalReward.jpg");
   min-height: 100vh;
 }
 
-.backgroundImg-05 {
-  background-image: url("./assets/production/background-img/background-season19-05.jpg");
+.backgroundImg-Time {
+  background-image: url("./assets/production/background-img/background-season20_Time.jpeg");
   min-height: 100vh;
 }
 

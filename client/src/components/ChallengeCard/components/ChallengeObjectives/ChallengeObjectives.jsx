@@ -12,7 +12,7 @@ const ChallengeObjectives = (props) => {
             {objectives.map((obj, index) => {
                 const id = name.replaceAll(' ', '-') + '-' + obj.task.replaceAll(' ', '-');
                 return (
-                    <article key={obj.task} className='ChallengeObjectives-Obj'>
+                    <article key={obj.task} className='ChallengeObjectives-Body'>
                         {/* <input
                             id={id}
                             type='checkbox'
@@ -24,9 +24,9 @@ const ChallengeObjectives = (props) => {
                             progress={obj.progress}
                             completed={obj.completed}
                         />
-                        <p> {obj.task} </p>
+                        <p className='ChallengeObjectives-Task'> {obj.task} </p>
                         {/* Tally Objectives */}
-                        <article className='ChallengeObjectives-Obj'>
+                        <article className='ChallengeObjectives-OptionsContainer'>
                             {/* Use Prop Data Rather Than Context to Easier Mange Individual Instances of ObjectiveOptions */}
                             <ObjectiveOptions 
                                 task={obj.task}
@@ -37,10 +37,10 @@ const ChallengeObjectives = (props) => {
                             />
                             {/* Tally Goal - Render a Percentage if Goal is a Percentage*/}
                             {!obj.isPercent &&
-                                <p>{obj.goal}</p>
+                                <p className='ChallengeObjectivePercentage'>{obj.goal}</p>
                             }
                             {obj.isPercent &&
-                                <p>{obj.goal}%</p>
+                                <p className='ChallengeObjectivePercentage'>{obj.goal}%</p>
                             }
                         </article>
                     </article>

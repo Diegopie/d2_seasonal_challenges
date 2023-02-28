@@ -35,6 +35,7 @@ const ObjectiveToggle = (props) => {
         <input
             id={props.id}
             type='checkbox'
+            className='ObjectiveToggle'
             onClick={e => handleClick(props.id, week, challengeIndex)}
         />
     );

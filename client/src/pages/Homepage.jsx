@@ -10,7 +10,7 @@ const Homepage = () => {
     return (
         <>
             <main className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg'>
+                <section className='App-backImg backgroundImg-Home'>
                     {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
