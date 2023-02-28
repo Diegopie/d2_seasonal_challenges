@@ -4,7 +4,7 @@
 
 
 .ChallengeCard-Header {
-    background-color: black;
+    /* background-color: #aec9f5; */
     padding: 0.1px 0px 0px 0px;
     width: 100%;
 }
@@ -18,10 +18,37 @@
     padding-left: 10px;
 }
 
-.ChallengeObjectives-Obj {
+.ObjectiveToggle {
+    margin-right: 0.8rem;
+    width: 1.4rem;
+    position: relative;
+    bottom: 0.3rem;
+}
+
+.ChallengeObjectives-Task {
+    width: 65%;
+}
+
+.ChallengeObjectives-Body {
+    margin-left: 4%;
     display: flex;
     flex-wrap: nowrap;
-    margin: auto;
+    text-align: center;
+    /* margin: auto; */
+}
+
+.ChallengeObjectives-OptionsContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.ObjectiveOptions {
+    max-width: 4.5rem;
+}
+
+.ChallengeObjectivePercentage {
+    min-width: 40%;
 }
 
 .ChallengeCard-Hide {
@@ -29,10 +56,24 @@
 }
 
 @media (max-width: 1000px) {
-  .ChallengeCard-Container {
+    .ChallengeCard-Container {
     width: min(100%, 1000px);
-}
-.ChallengeCard-Body {
+    }
+
+    .ChallengeCard-Body {
     width: min(100% - 3rem, 1000px);
+    }
 }
+
+@media (max-width: 600px) {
+    .ChallengeObjectives-Task {
+    width: 55%;
+    }
+}
+
+@media (max-width: 380px) {
+    .ObjectiveOptions {
+        max-width: 3.2rem;
+    }
+
 }

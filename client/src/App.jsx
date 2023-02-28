@@ -29,6 +29,11 @@ function App() {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             dispatchGlobal({ type: 'setDarkMode', payload: e.matches });
         })
+        // Check for seasonal progress wipe
+        if (localStorage.getItem('StartSeason20') === null) {
+            localStorage.clear();
+            localStorage.setItem('StartSeason20', true);
+        }
     }
 
     // Remove Loading and Change Body Background Color On Dark Mode Change

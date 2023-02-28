@@ -9,7 +9,7 @@ const SeasonalReward = () => {
     const activityChallenges = [
         // [0]
         {
-            name: 'Exo Frame Modules',
+            name: 'War Table Upgrade',
             challenges: []
         },
     ];
@@ -18,7 +18,7 @@ const SeasonalReward = () => {
     const handleChallenge = (category, challenge) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Exo Frame Module':
+            case 'War Table Upgrade':
                 activityChallenges[0].challenges.push(challenge)
                 break;
             default:
@@ -46,7 +46,7 @@ const SeasonalReward = () => {
     return (
         <>
             <main className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-05'>
+                <section className='App-backImg backgroundImg-SeasonalReward'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

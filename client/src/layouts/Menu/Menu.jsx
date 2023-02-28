@@ -8,7 +8,7 @@ import './Menu.css';
 const Menu = (props) => {
 
     return (
-        <Navbar bg="dark" variant='dark' expand="lg">
+        <Navbar className='Menu-Container' bg="dark" variant='dark' expand="lg">
           <Container>
             <Navbar.Brand href="/">D2 Seasonal Challenges</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -17,7 +17,7 @@ const Menu = (props) => {
                 <Nav.Link href='/'>Weekly</Nav.Link>
                 <Nav.Link href='/activities'>Activities</Nav.Link>
                 <Nav.Link href='/xp'>XP</Nav.Link>
-                <Nav.Link href='/seasonal-reward'>Exo Frame Modules</Nav.Link>
+                <Nav.Link href='/seasonal-reward'>War Table Upgrade</Nav.Link>
                 <Nav.Link href='/time-sensitive'>Time Sensitive</Nav.Link>
               </Nav>
             </Navbar.Collapse>

@@ -46,7 +46,7 @@ const TimeSensitive = () => {
     return (
         <>
             <main className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-04'>
+                <section className='App-backImg backgroundImg-Time'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

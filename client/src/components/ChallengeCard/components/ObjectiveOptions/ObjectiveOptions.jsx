@@ -40,6 +40,7 @@ const ObjectiveOptions = (props) => {
     return (
         <select
             id={`${props.task.replaceAll(' ', '-')}`}
+            className='ObjectiveOptions'
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}

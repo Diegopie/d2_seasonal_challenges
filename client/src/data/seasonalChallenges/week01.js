@@ -3,229 +3,222 @@ const week01 = {
         challenges: [
             // 01
             {
-                belongsTo: Number,
-                name: "More Than a Weapon I",
-                description: "Complete Week 1 of More Than a Weapon.",
-                category: ['More Than A Weapon'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: false,
-                        task: "More than a Weapon: Week 1 completed",
-                        progress: 0,
-                        goal: 1,
-                        completed: false
-                    }
-                ],
-                reward: "Exo Frame Module",
-                xp: "Challenger XP+",
-                dust: null
+              belongsTo: String,
+              name: "Righteous Defiance",
+              description: "Complete Defiant Battleground: EDZ.",
+              category: ['Defiant Battleground'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                }
+              ],
+              reward: 'War Table Upgrade',
+              xp: "Challenger XP",
+              dust: null
             },
             // 02
             {
-                belongsTo: Number,
-                name: "Heist Battlegrounds I",
-                description: "In the Heist Battlegrounds playlist or Legend Heist Battlegrounds, open Seraph Chests and defeat powerful Hive combatants.",
-                category: ['Heist Battlegrounds'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: false,
-                        task: "Seraph Chests",
-                        progress: 0,
-                        goal: 5,
-                        completed: false
-                    },
-                    {
-                        isPercent: false,
-                        task: "Powerful Hive defeated",
-                        progress: 0,
-                        goal: 50,
-                        completed: false
-                    }
-                ],
-                reward: "Exo Frame Module",
-                xp: "Challenger XP+",
-                dust: null
+              belongsTo: String,
+              name: "Awaken, Queensguard",
+              description: "Complete Week 1 of the We Stand Unbroken quest",
+              category: [],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                }
+              ],
+              reward: 'War Table Upgrade',
+              xp: "Challenger XP+",
+              dust: null
             },
             // 03
             {
-                belongsTo: Number,
-                name: "Frozen Lightning",
-                description: "Defeat combatants with Stasis or Arc damage in Heist Battlegrounds.",
-                category: ['Heist Battlegrounds'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: true,
-                        task: "Stasis or Arc final blows",
-                        progress: 0,
-                        goal: 100,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: null
+              belongsTo: String,
+              name: "Legion's Bounty",
+              description: "Spend a Defiant Key to earn bonus rewards at the end of a Defiant Battlegrounds playlist activity. Defiant Keys can be earned by completing Lightfall campaign missions, Terminal Overload in Neomuna, raids, Vanguard Ops playlist activities, Gambit..",
+              category: ['Defiant Battlegrounds'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Defiant Key",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                },
+                {
+                  isPercent: false,
+                  task: "Bonus rewards received",
+                  progress: 0,
+                  goal: 1,
+                  completed: false
+                }
+              ],
+              reward: 'War Table Upgrade',
+              xp: "Challenger XP",
+              dust: null
             },
             // 04
             {
-                belongsTo: Number,
-                name: "Precision Loadout",
-                description: "Defeat targets with Bows or Linear Fusion Rifles. Bonus progress for defeating Guardians. Defeat combatants in Heist Battlegrounds with precision final blows.",
-                category: ['Loadout', 'PvP', 'Heist Battlegrounds'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: true,
-                        task: "Bow or Linear Fusion Rifle final blows",
-                        progress: 0,
-                        goal: 100,
-                        completed: false
-                    },
-                    {
-                        isPercent: false,
-                        task: "Precision Final Blows in Heist Battlegrounds",
-                        progress: 0,
-                        goal: 50,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: null
+              belongsTo: String,
+              name: "Silver Lining",
+              description: "Reach Rank 12 with Nimbus in Neomuna.",
+              category: ['Neomuna'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Neomuna Rank",
+                  progress: 0,
+                  goal: 12,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP++",
+              dust: null
             },
             // 05
             {
-                belongsTo: Number,
-                name: "Moon Activities",
-                description: "On the Moon, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
-                category: ['Moon'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: true,
-                        task: "Progress",
-                        progress: 0,
-                        goal: 100,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: "Bright Dust"
+              belongsTo: String,
+              name: "Keycard-Operated",
+              description: "Use keys to unlock Terminal Overload Key Chests in Neomuna. After completing the quest Stargazer, Terminal Overload Keys can be earned in Neomuna by completing public events, looting chests, and completing patrols",
+              category: ['Neomuna'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Chests",
+                  progress: 0,
+                  goal: 2,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: null
             },
             // 06
             {
-                belongsTo: Number,
-                name: "Taking All Challenges",
-                description: "Complete weekly playlist challenges.",
-                category: ['Vanguard', 'PvP', 'Gambit'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: false,
-                        task: "Challenges",
-                        progress: 0,
-                        goal: 3,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: "Bright Dust"
+              belongsTo: String,
+              name: "Neptune Activities",
+              description: "In Neomuna, complete bounties, patrols, public events, and Lost Sectors.",
+              category: ['Neomuna'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Progress",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
             },
             // 07
             {
-                belongsTo: Number,
-                name: "Long-Range Calibration",
-                description: "Calibrate long-range weapons — Pulse Rifles, Bows, Trace Rifles — on the Moon. Bonus progress in Lost Sectors.",
-                category: ['Moon'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: true,
-                        task: "Calibration",
-                        progress: 0,
-                        goal: 100,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: "Bright Dust"
+              belongsTo: String,
+              name: "Taking All Challenges",
+              description: "Complete weekly playlist challenges.",
+              category: [],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: false,
+                  task: "Challenges",
+                  progress: 0,
+                  goal: 3,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
             },
             // 08
             {
-                belongsTo: Number,
-                name: "Dredgin' Up Victory",
-                description: "Complete Gambit matches. Earn bonus progress for wins.",
-                category: ['Gambit'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: true,
-                        task: "Progress",
-                        progress: 0,
-                        goal: 100,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: "Bright Dust"
+              belongsTo: String,
+              name: "Spark Defender",
+              description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
+              category: ['PvP'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Points",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
             },
             // 09
             {
-                belongsTo: Number,
-                name: "Spark Defender",
-                description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
-                category: ['PvP', 'Time'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: false,
-                        task: "Points",
-                        progress: 0,
-                        goal: 50,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: "Bright Dust"
+              belongsTo: String,
+              name: "Anti-Cabal Sweep",
+              description: "Defeat Cabal combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
+              category: ['Vanguard'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Cabal",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
             },
             // 10
             {
-                belongsTo: Number,
-                name: "Hive Slayer",
-                description: "Defeat Hive combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
-                category: ['Vanguard'],
-                completed: false,
-                challengeIndex: Number,
-                objectives: [
-                    {
-                        isPercent: true,
-                        task: "Hive",
-                        progress: 0,
-                        goal: 100,
-                        completed: false
-                    }
-                ],
-                reward: null,
-                xp: "Challenger XP+",
-                dust: "Bright Dust"
+              belongsTo: String,
+              name: "Deadly Horizons",
+              description: "Calibrate long-range weapons -- Pulse Rifles, Bows, and Trace Rifles -- in Neomuna. Bonus progress awarded in Lost Sectors.",
+              category: ['Neomuna'],
+              completed: false,
+              challengeIndex: Number,
+              objectives: [
+                {
+                  isPercent: true,
+                  task: "Calibration",
+                  progress: 0,
+                  goal: 100,
+                  completed: false
+                }
+              ],
+              reward: null,
+              xp: "Challenger XP+",
+              dust: "Bright Dust"
             }
-        ]
+          ]
     };
 
 export default week01;

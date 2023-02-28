@@ -2,10 +2,11 @@
     width: min(100% - 2rem, 1000px);
     margin-inline: auto;
     padding-top: 3.2rem;
+    text-shadow: 0.5px 0.5px #000000;
 }
 
 .ChallengeCategory-Header {
-    background-color: rgba(87, 85, 85, 0.8);
+    background-color: rgba(174, 201, 245, 0.5);
     display: flex;
 }
 
@@ -16,7 +17,7 @@
 }
 
 .ChallengeCategory-Body {
-    background-color: rgba(182, 182, 182, 0.8);
+    background-color: rgba(174, 201, 245, 0.4);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
