@@ -6,7 +6,7 @@ const ObjectiveOptions = (props) => {
 
     const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
 
-    const [{}, dispatchGlobal] = useGlobalContext()
+    const [, dispatchGlobal] = useGlobalContext()
 
     // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {

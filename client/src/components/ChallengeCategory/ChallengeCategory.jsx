@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ChallengeCard from '../ChallengeCard';
 import ChallengeProvider from '../ChallengeCard/ChallengeContext';
 import './ChallengeCategory.css';
@@ -49,6 +49,14 @@ const ChallengeCategory = (props) => {
             }
         }
     };
+
+    useEffect(()=> {;
+        if(window.location.pathname === '/') {
+            console.log(document.getElementById(togglerID).checked)
+            document.getElementById(togglerID).checked = true;
+
+        }
+    },[togglerID])
 
     return (
         <section className='ChallengeCategory-Container'>
