@@ -1,5 +1,11 @@
 import seasonalChallenges from "./seasonalChallenges/index";
 
+// Check for seasonal progress wipe at the start of the season
+if (localStorage.getItem('StartSeason20') === null) {
+    localStorage.clear();
+    localStorage.setItem('StartSeason20', true);
+}
+
 // * Return Challenge Complete, Objective Complete, or Progress base off which Booleans are passed to the function
 const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isObjectiveComplete) => {
     // * Find Correct Week and Parse Data
