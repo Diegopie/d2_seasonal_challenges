@@ -8,7 +8,7 @@ import './Menu.css';
 const Menu = (props) => {
 
     return (
-        <Navbar bg="dark" variant='dark' expand="lg">
+        <Navbar className='Menu-Container' bg="dark" variant='dark' expand="lg">
           <Container>
             <Navbar.Brand href="/">D2 Seasonal Challenges</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
