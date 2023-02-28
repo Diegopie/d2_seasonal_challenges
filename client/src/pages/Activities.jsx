@@ -15,7 +15,7 @@ const Activities = () => {
             challenges: []
         },
         {
-            name: 'Heist Battlegrounds',
+            name: 'Defiant Battleground',
             challenges: []
         },
         {
@@ -40,7 +40,7 @@ const Activities = () => {
             challenges: []
         },
         {
-            name: 'Destination - Moon',
+            name: 'Destination - Neomuna',
             challenges: []
         },
         {
@@ -57,7 +57,7 @@ const Activities = () => {
     const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Heist Battlegrounds':
+            case 'Defiant Battleground':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gambit':
@@ -78,7 +78,7 @@ const Activities = () => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Moon':
+            case 'Neomuna':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Cosmodrome':
@@ -107,7 +107,7 @@ const Activities = () => {
 
     // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
     const [{parsedData}, ] = useGlobalContext();
-    console.log(parsedData[0].challenges[3].objectives);
+    // console.log(parsedData[0].challenges[3].objectives);
 
     const sortChallenges = () => {
         // * Loop through each week
