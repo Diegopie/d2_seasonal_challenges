@@ -48,7 +48,7 @@ const week01 = {
               belongsTo: String,
               name: "Legion's Bounty",
               description: "Spend a Defiant Key to earn bonus rewards at the end of a Defiant Battlegrounds playlist activity. Defiant Keys can be earned by completing Lightfall campaign missions, Terminal Overload in Neomuna, raids, Vanguard Ops playlist activities, Gambit..",
-              category: ['Defiant Battlegrounds'],
+              category: ['Defiant Battleground'],
               completed: false,
               challengeIndex: Number,
               objectives: [
