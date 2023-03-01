@@ -19,6 +19,12 @@
     }
   ],
   "start_url": ".",
+  "shortcuts": [
+    {"name": "Activities", "url": "/activities" },
+    {"name": "XP", "url": "/xp" },
+    {"name": "War Table", "url": "/seasonal-reward" },
+    {"name": "Time Sensitive", "url": "/time-sensitive" }
+  ],
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
