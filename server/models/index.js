@@ -1,4 +1,4 @@
 module.exports = {
-    ModelOne: require('./ModelOne'),
-    ModelTwo: require('./ModelTwo')
+    BasicUser: require('./BasicUser'),
+    // ModelTwo: require('./ModelTwo')
 };
