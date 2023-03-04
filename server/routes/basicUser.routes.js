@@ -3,14 +3,16 @@ const basicUserRouter = require('express').Router();
 const { BasicUser } = require('../models');
 
 // * Print Errors and Create Response Object 
-// arg 1 & 2 can be null if no error
-// arg 3 is true if error occurs
-const handleError = (message, route, err, msgError) => {
+// arg 1 is the data to send to the client; arg 2 is the rought the route the req is made
+// arg 3 is the err from the promise or null of not applicalple
+// arg 4 is true if the request is successfull
+const handleResponse = (message, route, err, success) => {
     if (route && err) console.log({ route }, err);
     return {
         message: {
+            success: success,
             msgBody: message,
-            msgError: msgError
+            msgError: err
         }
     };
 };
@@ -30,130 +32,74 @@ basicUserRouter.post('/new', async ({ body }, res) => {
         return true;
     }).catch(err => {
         res.status(500).json(
-            handleError('Error Checking For Duplicate Username', '/api/basic-user/new', err, true)
+            handleResponse('Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
         );
     })
 
     // // ** No Match Will Still Return an Empty Array
     if (checkDupe) {
         res.status(500).json(
-            handleError('Username already in use', '/api/basic-user/new', err, true)
+            handleResponse('Username already in use', '/api/basic-user/new', null, false)
         );
         return;
     }
 
-    // why
-    // * Create New Guest
+    // * Create New User
     const newUser = new BasicUser({ username, seasonalChallenges });
     newUser.save(err => {
         if (err) {
             res.status(500).json(
-                handleError('Error saving new user to the database', '/api/basic-user/new', err, true)
+                handleResponse('Error saving new user to the database', '/api/basic-user/new', err, false)
             );
             return;
         }
 
         res.status(201).json(
-            handleError('Successfully saved new user!', '/api/basic-user/new', null, false)
+            handleResponse('Successfully saved new user!', '/api/basic-user/new', null, true)
         );
     })
 });
 
-// * Server User and All Guest info on Login and Page Load
-basicUserRouter.post('/login', ({ body }, res) => {
-    const { accessCode } = body;
+// * Serve challenge data on login/load
+basicUserRouter.post('/data', ({ body }, res) => {
+    const { username } = body;
 
     try {
         BasicUser.findOne(
-            { accessKey: accessCode }
-        ).then( async data => {
+            { username: username }
+        ).then( data => {
             
             if (!data) {
-                res.status(500).json({
-                    success: false,
-                    message: "Error Finding Guest",
-                });
+                res.status(500).json(
+                    handleResponse('Error quering db for user', '/api/basic-user/data', null, false)
+                );
                 return;
             }
     
-            // ** Get All Guests
-            const allHumans = await Guest.find({});
-    
-            const allHumansFiltered = [];
-    
-            allHumans.forEach(doc => {
-                if (doc.public) {
-                    allHumansFiltered.push(doc);
-                }
-            });
-            
-    
-            res.status(200).json({
-                success: true,
-                message: {
-                    human: data,
-                    allHuman: allHumans,
-                    allHumansFiltered: allHumansFiltered,
-                }
-            });
+            // Send data to client    
+            res.status(200).json(
+                handleResponse(data, '/api/basic-user/data', null, true)
+            );
         })
     } catch (err) {
         console.log(err);
     }
 });
 
-
+// Update Server with New User Data
 basicUserRouter.post('/update', async ({ body }, res) => {
-    const { finder, name, accessKey, rsvp, public, role, icons } = body;
+    const { username, seasonalChallenges } = body;
 
-    // * Check for Dup Access Keys if Access Key Was Changed
-    if (finder !== accessKey) {
-        const checkDupe = await BasicUser.findOne(
-            { accessKey: accessKey }
-        ).then(data => {
-            // console.log('Hit Check Dupe');
-            // No Dupe
-            if (!data) {
-                return false;
-            }
-            // Dupe
-            return true;
-        }).catch(err => {
-            console.log(err);
-        })
-        //  // ** Fail if Dupe Exists
-        if (checkDupe) {
-            res.status(500).json({
-                success: false,
-                message: "Access Key Already in Use",
-            });
-            return;
-        }
-    }
-
-    const filter = { accessKey: finder }
-    const update = {
-        name: name,
-        accessKey: accessKey,
-        rsvp: rsvp,
-        public: public,
-        role: role,
-        icons: icons
-    }
-
-    Guest.findOneAndUpdate(filter, update, { new: true })
+    BasicUser.findOneAndUpdate({username: username}, {seasonalChallenges: seasonalChallenges}, { new: true })
         .then(data => {
-            res.status(201).json({
-                success: true,
-                message: "Info Updated!"
-            });
+            res.status(201).json(
+                handleResponse("Saved data to db!", '/api/basic-user/update', null, true)
+            );
         })
         .catch(err => {
-            res.status(500).json({
-                success: false,
-                message: "Error Updating Info",
-                error: err,
-            });
+            res.status(500).json(
+                handleResponse("Error updating db!", '/api/basic-user/update', err, false)
+            );
         })
 });
 
