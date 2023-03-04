@@ -32,6 +32,10 @@ body {
   justify-content: center;
 }
 
+.App-TextCenter {
+  text-align: center;
+}
+
 .App-zIndex-1 {
   z-index: 1;
 }
@@ -44,6 +48,36 @@ body {
   background-image: url("./assets/production/background-img/home.jfif");
   min-height: 100vh;
 }
+
+.Home-Container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+}
+
+.Home-text {
+  text-align: center;
+  padding: 8% 15% 7%;
+  text-shadow: 0.5px 0.8px #000000;
+}
+
+.Home-button {
+  margin-top: 6%!important;
+  background-color: #7ebcec;
+  border: solid;
+  color: white;
+  border-radius: 8%;
+  padding: 0.4rem 0.9rem;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+}
+  .Home-button:hover {
+      border-color: #A09EF0;
+      color: #A09EF0;
+      text-decoration: none;
+  }
 
 .backgroundImg-Weekly {
   background-image: url("./assets/production/background-img/background-season20_Home.jpg");
