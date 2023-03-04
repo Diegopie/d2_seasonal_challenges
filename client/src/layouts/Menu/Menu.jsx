@@ -14,11 +14,12 @@ const Menu = (props) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href='/'>Weekly</Nav.Link>
+                <Nav.Link href='/weekly'>Weekly</Nav.Link>
                 <Nav.Link href='/activities'>Activities</Nav.Link>
                 <Nav.Link href='/xp'>XP</Nav.Link>
                 <Nav.Link href='/seasonal-reward'>War Table Upgrade</Nav.Link>
                 <Nav.Link href='/time-sensitive'>Time Sensitive</Nav.Link>
+                <Nav.Link >Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

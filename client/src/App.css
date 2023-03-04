@@ -41,6 +41,11 @@ body {
 }
 
 .backgroundImg-Home {
+  background-image: url("./assets/production/background-img/home.jfif");
+  min-height: 100vh;
+}
+
+.backgroundImg-Weekly {
   background-image: url("./assets/production/background-img/background-season20_Home.jpg");
   min-height: 100vh;
 }

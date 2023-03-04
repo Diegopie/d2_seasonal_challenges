@@ -2,7 +2,7 @@ import React from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
 
-const Homepage = () => {
+const Weekly = () => {
 
 
     const [{parsedData}, ] = useGlobalContext();
@@ -10,7 +10,7 @@ const Homepage = () => {
     return (
         <>
             <main className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-Home'>
+                <section className='App-backImg backgroundImg-Weekly'>
                     {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
@@ -26,4 +26,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default Weekly;
