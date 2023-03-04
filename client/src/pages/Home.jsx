@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { postNewUser } from '../api/server-data';
 
 const Home = () => {
 
@@ -9,7 +10,10 @@ const Home = () => {
         console.log(username);
         if (username === '') {
             toast.error('Username cannot be empty')
+            return;
         }
+
+        // postNewUser(username)
     }
 
     useEffect(() => {
