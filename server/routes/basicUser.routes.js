@@ -11,8 +11,8 @@ const handleResponse = (message, route, err, success) => {
     return {
         message: {
             success: success,
-            msgBody: message,
-            msgError: err
+            message: message,
+            error: err
         }
     };
 };

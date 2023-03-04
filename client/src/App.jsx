@@ -18,12 +18,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import ScrollHook from './hooks/ScrollHook';
 import Menu from './layouts/Menu';
+import postNewUser from './api/server-data';
 
 // What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
 
 function App() {
 
     const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
+
+    postNewUser('Client', ['array'])
+    .then(data => {
+        console.log(data);
+    })
 
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
