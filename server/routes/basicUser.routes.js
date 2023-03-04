@@ -42,7 +42,7 @@ basicUserRouter.post('/new', async ({ body }, res) => {
         return;
     }
 
-
+    // why
     // * Create New Guest
     const newUser = new BasicUser({ username, seasonalChallenges });
     newUser.save(err => {
