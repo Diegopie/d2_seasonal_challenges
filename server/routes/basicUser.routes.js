@@ -93,7 +93,7 @@ basicUserRouter.post('/update', async ({ body }, res) => {
     BasicUser.findOneAndUpdate({username: username}, {seasonalChallenges: seasonalChallenges}, { new: true })
         .then(data => {
             res.status(201).json(
-                handleResponse("Saved data to db!", '/api/basic-user/update', null, true)
+                handleResponse({note: "Saved data to db!", message: data}, '/api/basic-user/update', null, true)
             );
         })
         .catch(err => {

@@ -52,7 +52,7 @@ const ChallengeCategory = (props) => {
 
     useEffect(()=> {;
         if(window.location.pathname === '/') {
-            console.log(document.getElementById(togglerID).checked)
+            // console.log(document.getElementById(togglerID).checked)
             document.getElementById(togglerID).checked = true;
 
         }
