@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
+import parserServerData from '../api/parseServerData';
 import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
 
 export const GlobalContext = createContext();
@@ -20,6 +21,8 @@ const determineDarkMode = () => {
         return localDarkMode;
     }
 }
+
+parserServerData()
 
 const defaultState = {
     // Functions

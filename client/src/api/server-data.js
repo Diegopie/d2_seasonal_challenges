@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 
-const postNewUser = async (username, target, seasonalChallenges) => {
+const postNewUser = async (username, seasonalChallenges) => {
+    console.log(seasonalChallenges);
     try {
         // * Request new user
         const newUserResponse = await fetch('/api/basic-user/new', {
@@ -9,29 +10,28 @@ const postNewUser = async (username, target, seasonalChallenges) => {
             },
             body: JSON.stringify({
                 username: username,
-                target: seasonalChallenges
+                seasonalChallenges20: seasonalChallenges
             }),
             method: 'POST'
         });
         // * Verify Data
-        const data = await newUserResponse.json();
-        // console.log(data);
+        const { message } = await newUserResponse.json();
 
-        if (!data.success) {
+        if (!message.success) {
             // console.log("Could not create user!");
-            toast.error(`Could not create your account 😲, ${data.message.message}. Refresh and try again`)
+            toast.error(`Could not create your account 😲, ${message.note}. Refresh and try again`)
             return false;
         }
-        toast.success(`Hi ${data.message.username}`)
-        return data.message;
+        toast.success(`Hi ${message.data.username}`)
+        localStorage.setItem('username', message.data.username);
+        return true;
         
     } catch (err) {
         console.log(err);
     }
 } 
 
-const getServerData = async (username, seasonalChallenges) => {
-    console.log(username);
+const getServerData = async (username, ) => {
     try {
         // * Request user Data
         const getServerDataResponse = await fetch('/api/basic-user/data', {
@@ -40,14 +40,11 @@ const getServerData = async (username, seasonalChallenges) => {
             },
             body: JSON.stringify({
                 username: username,
-                target: seasonalChallenges
             }),
             method: 'POST'
         });
         // * Verify Data
         const {message} = await getServerDataResponse.json();
-        console.log(message);
-        console.log(message.success);
 
         if (!message.success) {
             toast.error(`Could not get your data 😲, ${message.message}. Refresh and try again`)

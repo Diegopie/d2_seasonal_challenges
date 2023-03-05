@@ -6,12 +6,13 @@ const { BasicUser } = require('../models');
 // arg 1 is the data to send to the client; arg 2 is the rought the route the req is made
 // arg 3 is the err from the promise or null of not applicalple
 // arg 4 is true if the request is successfull
-const handleResponse = (message, route, err, success) => {
+const handleResponse = (data, note, route, err, success) => {
     if (route && err) console.log({ route }, err);
     return {
         message: {
             success: success,
-            message: message,
+            note: note,
+            data: data,
             error: err
         }
     };
@@ -20,7 +21,7 @@ const handleResponse = (message, route, err, success) => {
 // * Create User
 
 basicUserRouter.post('/new', async ({ body }, res) => {
-    const { username, seasonalChallenges } = body;
+    const { username, seasonalChallenges20 } = body;
 
     // * Check for Dup Access Keys
     const checkDupe = await BasicUser.findOne(
@@ -32,30 +33,30 @@ basicUserRouter.post('/new', async ({ body }, res) => {
         return true;
     }).catch(err => {
         res.status(500).json(
-            handleResponse('Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
+            handleResponse(null, 'Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
         );
     })
 
     // // ** No Match Will Still Return an Empty Array
     if (checkDupe) {
         res.status(500).json(
-            handleResponse('Username already in use', '/api/basic-user/new', null, false)
+            handleResponse(null, 'Username already in use', '/api/basic-user/new', null, false)
         );
         return;
     }
 
     // * Create New User
-    const newUser = new BasicUser({ username, seasonalChallenges });
+    const newUser = new BasicUser({ username, seasonalChallenges20 });
     newUser.save(err => {
         if (err) {
             res.status(500).json(
-                handleResponse('Error saving new user to the database', '/api/basic-user/new', err, false)
+                handleResponse(null, 'Error saving new user to the database', '/api/basic-user/new', err, false)
             );
             return;
         }
 
         res.status(201).json(
-            handleResponse('Successfully saved new user!', '/api/basic-user/new', null, true)
+            handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/new', null, true)
         );
     })
 });
@@ -71,14 +72,14 @@ basicUserRouter.post('/data', ({ body }, res) => {
             
             if (!data) {
                 res.status(500).json(
-                    handleResponse('Error quering db for user', '/api/basic-user/data', null, false)
+                    handleResponse(null, 'Error quering db for user', '/api/basic-user/data', null, false)
                 );
                 return;
             }
     
             // Send data to client    
             res.status(200).json(
-                handleResponse(data, '/api/basic-user/data', null, true)
+                handleResponse(data, 'Reqests successfull','/api/basic-user/data', null, true)
             );
         })
     } catch (err) {

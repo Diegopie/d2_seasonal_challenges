@@ -51,7 +51,7 @@ const ChallengeCategory = (props) => {
     };
 
     useEffect(()=> {;
-        if(window.location.pathname === '/') {
+        if(window.location.pathname === '/weekly') {
             // console.log(document.getElementById(togglerID).checked)
             document.getElementById(togglerID).checked = true;
 

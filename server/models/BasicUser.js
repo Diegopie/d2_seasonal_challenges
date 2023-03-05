@@ -5,7 +5,7 @@ const BasicUserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    seasonalChallenges: {
+    seasonalChallenges20: {
         type: Array,
         required: true,
     },
