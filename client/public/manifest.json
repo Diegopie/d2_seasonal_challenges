@@ -20,10 +20,10 @@
   ],
   "start_url": ".",
   "shortcuts": [
-    {"name": "Activities", "url": "/activities" },
-    {"name": "XP", "url": "/xp" },
-    {"name": "War Table", "url": "/seasonal-reward" },
-    {"name": "Time Sensitive", "url": "/time-sensitive" }
+    { "name": "Activities", "url": "/activities", "icon": [{ "src:": "../src/assets/production/shortcut-icon.png"}] },
+    { "name": "XP", "url": "/xp", "icon": [{ "src:": "../src/assets/production/shortcut-icon.png"}] },
+    { "name": "War Table", "url": "/seasonal-reward", "icon": [{ "src:": "../src/assets/production/shortcut-icon.png"}] },
+    { "name": "Time Sensitive", "url": "/time-sensitive", "icon": [{ "src:": "../src/assets/production/shortcut-icon.png"}] }
   ],
   "display": "standalone",
   "theme_color": "#000000",

@@ -160,7 +160,7 @@ const week01 = {
               belongsTo: String,
               name: "Spark Defender",
               description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
-              category: ['PvP'],
+              category: ['PvP', 'Time'],
               completed: false,
               challengeIndex: Number,
               objectives: [
