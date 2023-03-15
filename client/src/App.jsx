@@ -24,7 +24,7 @@ import { parserServerData } from './api/parseServerData';
 // What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
 
 function App() {
-    parserServerData();
+    // parserServerData();
 
     const [{ darkMode, hidesLoader, parsedData }, dispatchGlobal] = useGlobalContext();
 
@@ -47,9 +47,9 @@ function App() {
         }
         document.body.classList.remove('darkMode');
         // Get Server Data
-        parserServerData().then(
-            dispatchGlobal({ type: 'setParsedData' })
-        )
+        // parserServerData().then(
+        //     dispatchGlobal({ type: 'setParsedData' })
+        // )
     }, [darkMode, hidesLoader, parserServerData])
 
 
@@ -64,7 +64,7 @@ function App() {
             <Menu />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
-                <Route exact path='weekly' element={<Weekly props={'but sex'}/>} />
+                <Route exact path='weekly' element={<Weekly props={parsedData}/>} />
                 <Route exact path='activities' element={<Activities />} />
                 <Route exact path='/xp' element={XP} />
                 <Route exact path='/seasonal-reward' element={SeasonalReward} />

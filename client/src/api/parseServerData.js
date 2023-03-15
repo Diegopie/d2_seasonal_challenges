@@ -23,7 +23,7 @@ const parserServerData = async () => {
         if (window.location.pathname !== '/') {
             window.location.replace('/');
         }
-        return;
+        return false;
 
     }
     if (username === null) {
@@ -41,7 +41,7 @@ const parserServerData = async () => {
         localStorage.setItem(`Week-${weeks[i]}`, JSON.stringify(serverData[i]));
     }
 
-    return;
+    return serverData;
 
     
 

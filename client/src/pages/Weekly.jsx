@@ -1,21 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { parserServerData } from '../api/parseServerData';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
 
 const Weekly = (props) => {
 
 
-    // const [{parsedData}, ] = useGlobalContext();
+    const [{parsedData}, ] = useGlobalContext();
 
-    console.log(props);
+    console.log(parsedData.then(data => console.log(data)));
 
-    
+    useEffect(() => {
+        
+    })
 
     return (
         <>
             <main className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-Weekly'>
-                    {/* {props.parsedData.map((week) => {
+                    {/* {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
                                 key={week.name}

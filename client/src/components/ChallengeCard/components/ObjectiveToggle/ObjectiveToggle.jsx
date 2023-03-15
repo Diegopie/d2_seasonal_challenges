@@ -17,8 +17,10 @@ const ObjectiveToggle = (props) => {
         const newLocal = JSON.parse(getLocal);
         // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
         const currentTask = newLocal[challengeIndex].objectives[props.objectiveIndex];
+        console.log(currentTask);
         currentTask.completed = currentObjective.checked;
         // ** Store the Mutated Array in Local Storage
+        console.log(newLocal);
         localStorage.setItem(week, JSON.stringify(newLocal));
         // ** Dispatch Values to State for Data to Persist Between Pages
         const newObjective = newLocal[challengeIndex].objectives;
