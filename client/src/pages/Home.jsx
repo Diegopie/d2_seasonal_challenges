@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { allLocalData } from '../api/parseServerData';
 import { postNewUser } from '../api/server-data';
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
             toast.error('Username cannot be empty')
             return;
         }
-        postNewUser(username, JSON.parse(localStorage.getItem('fullLocalArray')));
+        postNewUser(username, allLocalData());
     }
 
     useEffect(() => {

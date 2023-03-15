@@ -1,3 +1,4 @@
+import { parserServerData } from "../api/parseServerData";
 import seasonalChallenges from "./seasonalChallenges/index";
 
 // Check for seasonal progress wipe at the start of the season
@@ -14,16 +15,26 @@ const getLocal = (week, challengeIndex, isChallengeComplete, objectiveIndex, isO
 
     if (isChallengeComplete) {
         //  ** Find Correct Challenge
+        if (parseLocal[challengeIndex].completed === undefined) {
+            console.log(parseLocal[challengeIndex])
+        }
         return parseLocal[challengeIndex].completed;
     }
     if (isObjectiveComplete) {
+        if (parseLocal[challengeIndex].objectives[objectiveIndex] === undefined) {
+            console.log(getLocal)
+        }
         return parseLocal[challengeIndex].objectives[objectiveIndex].completed;
     }
     return parseLocal[challengeIndex].objectives[objectiveIndex].progress;
 }
 
+
+
 // 1) * Map Through Seasonal Challenge Data, Determine if it Needs To Be Newly Saved to Local Storage, if More Challenges Have Been Added, Sync any Values that May Exist In Local Storage, Programmatically Update Data Values, and Re-save to Local Storage
 const localSeasonalChallenges = () => {
+
+    // await parserServerData();
 
     return seasonalChallenges.map((week) => {
         // * Set weekName to be JSON and LocalStorage Friendly
@@ -75,4 +86,4 @@ const localSeasonalChallenges = () => {
 // console.log('-- localSeasonalChallenges -- ');
 // console.log(localSeasonalChallenges);
 
-export default localSeasonalChallenges;
+export {localSeasonalChallenges};

@@ -11,7 +11,8 @@ const allLocalData = () => {
         if (data === null) break;
         fullLocalArray.push(data);
     }
-    console.log(fullLocalArray);
+    console.log({fullLocalArray});
+    localStorage.setItem('fullLocalArray', JSON.stringify(fullLocalArray));
     return fullLocalArray;
 }
 
@@ -19,7 +20,6 @@ const parserServerData = async () => {
     const username = localStorage.getItem('username');
     if(localStorage.getItem('initServerData') === null) {
         localStorage.setItem('initServerData', false);
-        localStorage.setItem('fullLocalArray', JSON.stringify(allLocalData()))
         if (window.location.pathname !== '/') {
             window.location.replace('/');
         }
@@ -47,4 +47,4 @@ const parserServerData = async () => {
 
 }
 
-export default parserServerData;
+export {allLocalData, parserServerData };

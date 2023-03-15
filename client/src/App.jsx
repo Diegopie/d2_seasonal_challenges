@@ -1,6 +1,6 @@
 // Import Dependencies
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Router, Route, Routes, Switch } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 // Import Pages
 import Home from './pages/Home';
@@ -13,18 +13,22 @@ import NotFoundPage from './pages/NotFoundPage';
 // Import Components
 
 // Import Utils/Data
-import ScrollHook from './hooks/ScrollHook';
+// import ScrollHook from './hooks/ScrollHook';
 import { useGlobalContext } from './context/GlobalContext';
 // CSS
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Menu from './layouts/Menu';
+import { parserServerData } from './api/parseServerData';
 
 // What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
 
 function App() {
+    parserServerData();
 
-    const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
+    const [{ darkMode, hidesLoader, parsedData }, dispatchGlobal] = useGlobalContext();
+
+
 
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -33,35 +37,41 @@ function App() {
     }
 
     // Remove Loading and Change Body Background Color On Dark Mode Change
-    useEffect(() => {
+    useEffect( () => {
+        // * Hide Laoding Screen
         hidesLoader();
+        // * Set Dark Mode
         if (darkMode) {
             document.body.classList.add('darkMode');
             return
         }
         document.body.classList.remove('darkMode');
-    }, [darkMode, hidesLoader,])
+        // Get Server Data
+        parserServerData().then(
+            dispatchGlobal({ type: 'setParsedData' })
+        )
+    }, [darkMode, hidesLoader, parserServerData])
 
 
     return (
-        <Router>
-            <ScrollHook />
+        <BrowserRouter>
+            {/* <ScrollHook /> */}
             <ToastContainer
                 position="top-right"
                 transition={Zoom}
                 autoClose={4000}
             />
             <Menu />
-            <Switch>
-                <Route exact path='/' component={Home}></Route>
-                <Route exact path='/weekly' component={Weekly} />
-                <Route exact path='/activities' component={Activities} />
-                <Route exact path='/xp' component={XP} />
-                <Route exact path='/seasonal-reward' component={SeasonalReward} />
-                <Route exact path='/time-sensitive' component={TimeSensitive} />
-                <Route component={NotFoundPage} />
-            </Switch>
-        </Router>
+            <Routes>
+                <Route exact path='/' element={<Home />}></Route>
+                <Route exact path='weekly' element={<Weekly props={'but sex'}/>} />
+                <Route exact path='activities' element={<Activities />} />
+                <Route exact path='/xp' element={XP} />
+                <Route exact path='/seasonal-reward' element={SeasonalReward} />
+                <Route exact path='/time-sensitive' element={TimeSensitive} />
+                <Route element={NotFoundPage} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
