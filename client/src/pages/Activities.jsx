@@ -48,7 +48,7 @@ const Activities = () => {
             challenges: []
         },
         {
-            name: 'Destination - Europa',
+            name: 'Destination - EDZ',
             challenges: []
         },
     ];
@@ -84,7 +84,7 @@ const Activities = () => {
             case 'Cosmodrome':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Europa':
+            case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             default:
