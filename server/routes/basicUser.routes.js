@@ -22,47 +22,45 @@ const handleResponse = (data, note, route, err, success) => {
 // * Create User
 
 basicUserRouter.post('/newUpdated', async ({ body }, res) => {
-    // const { username, seasonalChallenges20 } = body;
+    const { username } = body;
 
     // * Check for Dup Access Keys
     console.log(seedSeasonalChallenges20);
-    console.log(seedSeasonalChallenges20[0].challenges);
-    console.log(seedSeasonalChallenges20[1].challenges);
-    // const checkDupe = await BasicUser.findOne(
-    //     { username: username }
-    // ).then(data => {
-    //     if (!data) {
-    //         return false;
-    //     }
-    //     return true;
-    // }).catch(err => {
-    //     res.status(500).json(
-    //         handleResponse(null, 'Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
-    //     );
-    // })
+    const checkDupe = await BasicUser.findOne(
+        { username: username }
+    ).then(data => {
+        if (!data) {
+            return false;
+        }
+        return true;
+    }).catch(err => {
+        res.status(500).json(
+            handleResponse(null, 'Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
+        );
+    })
 
-    // // // ** No Match Will Still Return an Empty Array
-    // if (checkDupe) {
-    //     res.status(500).json(
-    //         handleResponse(null, 'Username already in use', '/api/basic-user/new', null, false)
-    //     );
-    //     return;
-    // }
+    // // ** No Match Will Still Return an Empty Array
+    if (checkDupe) {
+        res.status(500).json(
+            handleResponse(null, 'Username already in use', '/api/basic-user/new', null, false)
+        );
+        return;
+    }
 
-    // // * Create New User
-    // const newUser = new BasicUser({ username, seasonalChallenges20 });
-    // newUser.save(err => {
-    //     if (err) {
-    //         res.status(500).json(
-    //             handleResponse(null, 'Error saving new user to the database', '/api/basic-user/new', err, false)
-    //         );
-    //         return;
-    //     }
+    // * Create New User
+    const newUser = new BasicUser({ username, seasonalChallenges20: seedSeasonalChallenges20 });
+    newUser.save(err => {
+        if (err) {
+            res.status(500).json(
+                handleResponse(null, 'Error saving new user to the database', '/api/basic-user/new', err, false)
+            );
+            return;
+        }
 
-    //     res.status(201).json(
-    //         handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/new', null, true)
-    //     );
-    // })
+        res.status(201).json(
+            handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/new', null, true)
+        );
+    })
 });
 
 basicUserRouter.post('/new', async ({ body }, res) => {

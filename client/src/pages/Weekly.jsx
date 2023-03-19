@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { parserServerData } from '../api/parseServerData';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
 
 const Weekly = (props) => {
 
+    console.log(props);
 
     const [{parsedData}, ] = useGlobalContext();
 
-    console.log(parsedData.then(data => console.log(data)));
+    const [season20Data, setSeason20Data] = useState([]);
 
     useEffect(() => {
-        
+        parsedData.then(data => {
+            setSeason20Data(data);
+        })
     })
 
     return (
         <>
             <main className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-Weekly'>
-                    {/* {parsedData.map((week) => {
+                    {season20Data.map((week) => {
                         return (
                             <ChallengeCategory
                                 key={week.name}
@@ -26,7 +28,7 @@ const Weekly = (props) => {
                                 challenges={week.challenges}
                             />
                         )
-                    })} */}
+                    })}
                 </section>
             </main>
         </>

@@ -1,6 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import { parserServerData } from '../api/parseServerData';
-import {localSeasonalChallenges} from '../data/parsedSeasonalChallenges';
+import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
 
 export const GlobalContext = createContext();
 
