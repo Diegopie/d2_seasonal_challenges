@@ -38,7 +38,7 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
     for (let i = 0; i < allRewards.length; i++) {
         // console.log($(allRewards[i]).find('strong').text().trim());
         const thisReward = $(allRewards[i]).find('strong').text().trim();
-        if (thisReward === 'Exo Frame Module') reward = thisReward;
+        if (thisReward === 'War Table Upgrade') reward = thisReward;
         if (thisReward.includes('Challenger')) xp = thisReward;
         if (thisReward === 'Bright Dust') dust = thisReward;
     }
