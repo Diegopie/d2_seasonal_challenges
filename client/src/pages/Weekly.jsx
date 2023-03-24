@@ -4,14 +4,14 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const Weekly = (props) => {
 
-    console.log(props);
+    console.log(props.pageData);
 
     const [{parsedData}, ] = useGlobalContext();
 
     const [season20Data, setSeason20Data] = useState([]);
 
     useEffect(() => {
-        parsedData.then(data => {
+        props.pageData.then(data => {
             setSeason20Data(data);
         })
     })

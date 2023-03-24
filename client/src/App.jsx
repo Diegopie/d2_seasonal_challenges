@@ -1,6 +1,6 @@
 // Import Dependencies
 import React, { useEffect } from 'react';
-import { BrowserRouter, Router, Route, Routes, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 // Import Pages
 import Home from './pages/Home';
@@ -11,16 +11,14 @@ import SeasonalReward from './pages/SeasonalReward';
 import TimeSensitive from './pages/TimeSensitive';
 import NotFoundPage from './pages/NotFoundPage';
 // Import Components
-
+import Menu from './layouts/Menu';
 // Import Utils/Data
+import usePageData from './data/pageDataHook/usePageData';
 // import ScrollHook from './hooks/ScrollHook';
 import { useGlobalContext } from './context/GlobalContext';
 // CSS
-import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import Menu from './layouts/Menu';
-import localSeasonalChallenges from './data/parsedSeasonalChallenges';
-import getPageData from './data/pageData';
+import 'react-toastify/dist/ReactToastify.css';
 
 // What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
 
@@ -60,8 +58,8 @@ function App() {
             <Menu />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
-                <Route exact path='weekly' element={<Weekly props={getPageData('weekly')}/>} />
-                <Route exact path='activities' element={<Activities />} />
+                <Route exact path='weekly' element={<Weekly pageData={usePageData('weekly')}/>} />
+                <Route exact path='activities' element={<Activities pageData={usePageData('activities')}/>} />
                 <Route exact path='/xp' element={XP} />
                 <Route exact path='/seasonal-reward' element={SeasonalReward} />
                 <Route exact path='/time-sensitive' element={TimeSensitive} />

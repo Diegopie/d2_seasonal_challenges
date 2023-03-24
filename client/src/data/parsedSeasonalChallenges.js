@@ -12,8 +12,8 @@ const localSeasonalChallenges = () => {
 
     return getServerData('ass')
     .then(data => {
-        console.log(data);
-        console.log(parseData(data.data.seasonalChallenges20));
+        // console.log(data);
+        // console.log(parseData(data.data.seasonalChallenges20));
         return parseData(data.data.seasonalChallenges20)
     })
 }
