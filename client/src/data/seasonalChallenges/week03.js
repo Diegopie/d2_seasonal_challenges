@@ -17,7 +17,7 @@ const week03 =  {
               completed: false
             }
           ],
-          reward: null,
+          reward: 'War Table Upgrade',
           xp: "Challenger XP+",
           dust: null
         },
@@ -25,7 +25,7 @@ const week03 =  {
           belongsTo: String,
           name: "Bane of the Shadow Legion",
           description: "Use abilities to defeat combatants in the Defiant Battlegrounds playlist. Defeating combatants with the Strand subclass will grant bonus progress.",
-          category: ['Defiant Battlegrounds'],
+          category: ['Defiant Battleground'],
           completed: false,
           challengeIndex: Number,
           objectives: [
@@ -37,7 +37,7 @@ const week03 =  {
               completed: false
             }
           ],
-          reward: null,
+          reward: 'War Table Upgrade',
           xp: "Challenger XP",
           dust: null
         },
@@ -45,7 +45,7 @@ const week03 =  {
           belongsTo: String,
           name: "Defiantly Defeated",
           description: "Defeat combatants with Season of Defiance weapons. These are Perpetualis, Prodigal Return, Regnant, Caretaker, Raconteur, and Royal Executioner. Bonus progress awarded for combatant defeated in Seasonal activities",
-          category: ['Loadout', 'Defiant Battlegrounds'],
+          category: ['Loadout', 'Defiant Battleground'],
           completed: false,
           challengeIndex: Number,
           objectives: [
