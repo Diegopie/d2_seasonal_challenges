@@ -19,19 +19,25 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
     const parsedObjectives = [];
     for (let i = 0; i < allObjectives.length; i++) {
 
-        let goal = $(allObjectives[i]).children('div').children('span').text().trim();
+        // ** Determine Value of an Objective's Goal
+        const goal = () => {
+            // Path to goal on DOM
+            const target = $(allObjectives[i]).children('div').children('span').text().trim();
 
-        if (goal !== 'Incomplete'){
-            goal = parseInt($(allObjectives[i]).children('div').children('span').text().match(/\/(.*)/)[1]);
+            if (target === 'Incomplete') {
+                return 1;
+            }
+
+            return parseInt($(allObjectives[i]).children('div').children('span').text().match(/\/(.*)/)[1]);
         }
 
-        console.log(goal);
-        
+        // console.log(goal());
+
         const objective = {
             isPercent: false,
             task: $(allObjectives[i]).children('strong').text().trim(),
             progress: 0,
-            goal: goal,
+            goal: goal(),
             completed: false,
         }
         parsedObjectives.push(objective);
