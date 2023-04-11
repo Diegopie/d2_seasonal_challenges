@@ -18,7 +18,7 @@ const week02 =  {
               completed: false
             }
           ],
-          reward: null,
+          reward: 'War Table Upgrade',
           xp: "Challenger XP+",
           dust: null
         },
@@ -39,7 +39,7 @@ const week02 =  {
               completed: false
             }
           ],
-          reward: null,
+          reward: 'War Table Upgrade',
           xp: "Challenger XP",
           dust: null
         },
