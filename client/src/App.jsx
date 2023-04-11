@@ -1,6 +1,6 @@
 // Import Dependencies
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 // Import Pages
 import Homepage from './pages/Homepage';
