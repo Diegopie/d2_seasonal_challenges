@@ -14,11 +14,15 @@ const usePageData = (page) => {
 const parser  = (page, data) => {
     switch (page) {
         case 'weekly':
-            console.log('hit weekly');
+            // console.log('hit weekly');
             console.log(data);
             return data;
         case 'activities':
-            console.log('hit activities');
+            // console.log('hit activities');
+            console.log(data);
+            return sortActivityChallenges(data)
+        case 'xp':
+            // console.log('hit xp');
             console.log(data);
             return sortActivityChallenges(data)
             

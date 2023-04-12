@@ -60,9 +60,9 @@ function App() {
                 <Route exact path='/' element={<Home />}></Route>
                 <Route exact path='weekly' element={<Weekly pageData={usePageData('weekly')}/>} />
                 <Route exact path='activities' element={<Activities pageData={usePageData('activities')}/>} />
-                <Route exact path='/xp' element={XP} />
-                <Route exact path='/seasonal-reward' element={SeasonalReward} />
-                <Route exact path='/time-sensitive' element={TimeSensitive} />
+                <Route exact path='/xp' element={<XP pageData={usePageData('xp')}/>} />
+                <Route exact path='/seasonal-reward' element={<SeasonalReward pageData={usePageData('seasonUpgrade')}/>} />
+                <Route exact path='/time-sensitive' element={<TimeSensitive pageData={usePageData('timeSensitive')}/>} />
                 <Route element={NotFoundPage} />
             </Routes>
         </BrowserRouter>

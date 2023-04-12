@@ -25,7 +25,7 @@ const XP = () => {
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value
-    const handleChallenge = (category, challenge) => {
+    const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
             case 'Challenger XP':
