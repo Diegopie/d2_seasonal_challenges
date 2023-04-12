@@ -54,7 +54,7 @@ function App() {
             <Routes>
                 <Route exact path='/' element={<Homepage/>} />
                 <Route exact path='/activities' element={<Activities/>} />
-                <Route exact path='/xp' element={XP} />
+                <Route exact path='/xp' element={<XP/>} />
                 <Route exact path='/seasonal-reward' element={<SeasonalReward/>} />
                 <Route exact path='/time-sensitive' element={<TimeSensitive/>} />
                 <Route element={<NotFoundPage/>} />
