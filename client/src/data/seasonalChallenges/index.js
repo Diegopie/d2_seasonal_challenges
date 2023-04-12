@@ -4,7 +4,7 @@ import week03 from "./week03";
 import week04 from "./week04";
 import week05 from "./week05";
 import week06 from "./week06";
-// import week07 from "./week07";
+import week07 from "./week07";
 // import week08 from "./week08";
 // import week09 from "./week09";
 // import week10 from "./week10";
@@ -18,7 +18,7 @@ seasonalChallenges.push(
     week04,
     week05,
     week06,
-    // week07,
+    week07,
     // week08,
     // week09,
     // week10
