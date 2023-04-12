@@ -132,17 +132,19 @@ basicUserRouter.post('/data', ({ body }, res) => {
 
 // Update Server with New User Data
 basicUserRouter.post('/update', async ({ body }, res) => {
+    console.log('----req-----');
+    console.log(body.seasonalChallenges[0].challenges[0]);
     const { username, seasonalChallenges } = body;
-
-    BasicUser.findOneAndUpdate({username: username}, {seasonalChallenges: seasonalChallenges}, { new: true })
+    console.log(username);
+    BasicUser.findOneAndUpdate({username: username}, {seasonalChallenges20: seasonalChallenges}, { returnNewDocument: true })
         .then(data => {
             res.status(201).json(
-                handleResponse({note: "Saved data to db!", message: data}, '/api/basic-user/update', null, true)
+                handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)
             );
         })
         .catch(err => {
             res.status(500).json(
-                handleResponse("Error updating db!", '/api/basic-user/update', err, false)
+                handleResponse(null, "Error updating db!", '/api/basic-user/update', err, false)
             );
         })
 });

@@ -1,16 +1,15 @@
 import { toast } from "react-toastify";
+import { allLocalData } from "./parseServerData";
 
-const postNewUser = async (username, seasonalChallenges) => {
-    console.log(seasonalChallenges);
+const postNewUser = async (username) => {
     try {
         // * Request new user
-        const newUserResponse = await fetch('/api/basic-user/new', {
+        const newUserResponse = await fetch('/api/basic-user/newUpdated', {
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 username: username,
-                seasonalChallenges20: seasonalChallenges
             }),
             method: 'POST'
         });
@@ -23,6 +22,7 @@ const postNewUser = async (username, seasonalChallenges) => {
             return false;
         }
         toast.success(`Hi ${message.data.username}`)
+        console.log(message);
         localStorage.setItem('username', message.data.username);
         return true;
         
@@ -57,7 +57,8 @@ const getServerData = async (username, ) => {
     }
 }
 
-const updateServerData = async (username, seasonalChallenges) => {
+const updateServerData = async () => {
+    const username = localStorage.getItem('username')
     try {
         // * Update Data
         const updateDataResponse = await fetch('/api/basic-user/update', {
@@ -66,20 +67,19 @@ const updateServerData = async (username, seasonalChallenges) => {
             },
             body: JSON.stringify({
                 username: username,
-                target: seasonalChallenges
+                seasonalChallenges: allLocalData()
             }),
             method: 'POST'
         });
         // * Verify Data
         const { message } = await updateDataResponse.json();
-        // console.log(data);
+        // console.log(message);
 
         if (!message.success) {
             console.log("Could not update data!");
             return false;
         }
         
-        return message.message;
         
     } catch (err) {
         console.log(err);

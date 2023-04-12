@@ -13,7 +13,6 @@ import NotFoundPage from './pages/NotFoundPage';
 // Import Components
 import Menu from './layouts/Menu';
 // Import Utils/Data
-import usePageData from './data/pageDataHook/usePageData';
 // import ScrollHook from './hooks/ScrollHook';
 import { useGlobalContext } from './context/GlobalContext';
 // CSS
@@ -24,9 +23,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-    const [{ darkMode, hidesLoader, parsedData }, dispatchGlobal] = useGlobalContext();
+    const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
 
-
+    
 
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -35,7 +34,7 @@ function App() {
     }
 
     // Remove Loading and Change Body Background Color On Dark Mode Change
-    useEffect( () => {
+    useEffect(() => {
         // * Hide Laoding Screen
         hidesLoader();
         // * Set Dark Mode
@@ -44,6 +43,7 @@ function App() {
             return
         }
         document.body.classList.remove('darkMode');
+        // * Page Data
     }, [darkMode, hidesLoader])
 
 
@@ -58,12 +58,12 @@ function App() {
             <Menu />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
-                <Route exact path='weekly' element={<Weekly pageData={usePageData('weekly')}/>} />
-                <Route exact path='activities' element={<Activities pageData={usePageData('activities')}/>} />
-                <Route exact path='/xp' element={<XP pageData={usePageData('xp')}/>} />
-                <Route exact path='/seasonal-reward' element={<SeasonalReward pageData={usePageData('seasonUpgrade')}/>} />
-                <Route exact path='/time-sensitive' element={<TimeSensitive pageData={usePageData('timeSensitive')}/>} />
-                <Route element={NotFoundPage} />
+                <Route exact path='weekly' element={<Weekly />} />
+                <Route exact path='activities' element={<Activities />} />
+                <Route exact path='/xp' element={<XP />} />
+                <Route exact path='/seasonal-reward' element={<SeasonalReward />} />
+                <Route exact path='/time-sensitive' element={<TimeSensitive />} />
+                <Route element={<NotFoundPage />} />
             </Routes>
         </BrowserRouter>
     );

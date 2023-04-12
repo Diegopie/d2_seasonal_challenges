@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
 
-const Weekly = (props) => {
-
-    console.log(props.pageData);
-
-    const [{parsedData}, ] = useGlobalContext();
+const Weekly = () => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    useEffect(() => {
-        props.pageData.then(data => {
-            setSeason20Data(data);
-        })
-    })
+    const [{ parsedData },] = useGlobalContext();
+    // const [ count, setCount ] = useState(0)
 
+    parsedData
+        .then(data => {
+            setSeason20Data(data)
+        })
     return (
         <>
             <main className='App-backMaxHeight'>

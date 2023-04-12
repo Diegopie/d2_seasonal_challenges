@@ -13,7 +13,7 @@ const Home = () => {
             toast.error('Username cannot be empty')
             return;
         }
-        postNewUser(username, allLocalData());
+        postNewUser(username);
     }
 
     useEffect(() => {

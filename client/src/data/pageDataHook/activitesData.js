@@ -1,3 +1,5 @@
+// deprciated! for some reason, data would loop 4 times and duplicate challenges. The same code exists in the Activities page, but calling the data from app and passing down as a prop creates 4 duplicate challengs
+
 // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
 const activityChallenges = [
     {
@@ -99,10 +101,12 @@ const findActivityIndex = (arg) => {
 
 const sortActivityChallenges = (data) => {
     // * Loop through each week
-    console.log({activitiesData: data});
+    // console.log({activitiesData: data});
     data.forEach((week => {
+        console.log(week);
         // * Loop through each challenge in a week
         week.challenges.forEach(challenge => {
+            // console.log(challenge);
             // console.log(challenge.category);
             // * Loop through each activity in the category array for a given challenge
             challenge.category.forEach((activity => {
@@ -110,7 +114,9 @@ const sortActivityChallenges = (data) => {
                 handleChallenge(activity, challenge, findActivityIndex(activity))
             }))
         })
-    }))
+    }));
+    console.log({activitiesDataChallenges: activityChallenges});
+    
     return activityChallenges
 }
 

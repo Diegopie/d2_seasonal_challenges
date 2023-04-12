@@ -3,17 +3,23 @@ import { getServerData } from "./server-data";
 const weeks = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
 
 const allLocalData = () => {
+
+    function Week (name, data) {
+        this.name = name;
+        this.challenges = data
+    }
     
-    let fullLocalArray = [];
+   const allData = []
 
     for (let i = 0; i < weeks.length; i++) {
-        const data = JSON.parse(localStorage.getItem(`Week-${weeks[i]}`));
+        const week = `Week-${weeks[i]}`;
+        const data = JSON.parse(localStorage.getItem(week));
+        // console.log(data);
         if (data === null) break;
-        fullLocalArray.push(data);
+
+        allData.push(new Week(week.replace('-', ' '), data))
     }
-    console.log({fullLocalArray});
-    localStorage.setItem('fullLocalArray', JSON.stringify(fullLocalArray));
-    return fullLocalArray;
+    return allData;
 }
 
 const parserServerData = async () => {
@@ -38,7 +44,7 @@ const parserServerData = async () => {
     })
 
     for (let i = 0; i < serverData.length; i++) {
-        localStorage.setItem(`Week-${weeks[i]}`, JSON.stringify(serverData[i]));
+        // localStorage.setItem(`Week-${weeks[i]}`, JSON.stringify(serverData[i]));
     }
 
     return serverData;
