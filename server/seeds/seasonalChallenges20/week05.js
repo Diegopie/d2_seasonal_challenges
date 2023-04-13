@@ -1,175 +1,196 @@
-const week05 = {
-    name: 'Week Five',
-    challenges: [
-        // 01 
-        {
-            belongsTo: Number,
-            name: "More Than a Weapon V",
-            description: "Complete Week 5 of More Than a Weapon. Defeat Hive and Taken anywhere in the system",
-            category: ['More Than A Weapon'],
-            completed: false,
-            challengeIndex: Number,
-            objectives: [
-                {
-                    isPercent: false,
-                    task: "More than a Weapon: Week 5 completed",
-                    progress: 0,
-                    goal: 1,
-                    completed: false
-                },
-                {
-                    isPercent: false,
-                    task: "Combatants",
-                    progress: 0,
-                    goal: 250,
-                    completed: false
-                }
-            ],
-            reward: "Exo Frame Module",
-            xp: "Challenger XP+",
-            dust: null
-        },
-        // 02
-        {
-            belongsTo: String,
-            name: "Heist Battlegrounds IV",
-            description: "In the Heist Battlegrounds playlist, complete heists and defeat Champions.",
-            category: ['Heist Battlegrounds'],
-            completed: false,
-            challengeIndex: Number,
-            objectives: [
-                {
-                    isPercent: false,
-                    task: "Heist Battlegrounds",
-                    progress: 0,
-                    goal: 25,
-                    completed: false
-                },
-                {
-                    isPercent: false,
-                    task: "Champions",
-                    progress: 0,
-                    goal: 5,
-                    completed: false
-                }
-            ],
-            reward: "Exo Frame Module",
-            xp: "Challenger XP+",
-            dust: null
-        },
-        // 03
-        {
-          belongsTo: String,
-          name: "Quick Heists",
-          description: "Complete a Heist Battleground in under 12 minutes.",
-          category: ['Heist Battlegrounds'],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Incomplete",
-              progress: 0,
-              goal: 1,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP+",
-          dust: null
-        },
-         // 04
-         {
-            belongsTo: String,
-            name: "Umbral Focusing II",
-            description: "Focus a Season of the Seraph engram at the Exo Frame in the HELM",
-            category: ['Gear'],
-            completed: false,
-            challengeIndex: Number,
-            objectives: [
-                {
-                    isPercent: false,
-                    task: "Engrams focused",
-                    progress: 0,
-                    goal: 5,
-                    completed: false
-                }
-            ],
-            reward: null,
-            xp: "Challenger XP+",
-            dust: null
-        },
-        // 05
-        {
-          belongsTo: String,
-          name: "Timeless Iteration",
-          description: "Acquire Veles-X.",
-          category: ['Gear'],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Acquired",
-              progress: 0,
-              goal: 1,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP++",
-          dust: "Bright Dust"
-        },
-        // 06
-        {
-          belongsTo: String,
-          name: "Iron Sharpens Iron",
-          description: "Complete Iron Banner matches. Earn bonus progress for wins.",
-          category: ['PvP', 'Time'],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: true,
-              task: "Progress",
-              progress: 0,
-              goal: 100,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP++",
-          dust: "Bright Dust"
-        },
-        // 07
-        {
-          belongsTo: String,
-          name: "Fell and Fallen",
-          description: "Defeat Fallen and Hive bosses in strikes or Vanguard playlists.",
-          category: ['Vanguard'],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Hive boss defeated",
-              progress: 0,
-              goal: 5,
-              completed: false
-            },
-            {
-              isPercent: false,
-              task: "Fallen boss defeated",
-              progress: 0,
-              goal: 5,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP++",
-          dust: "Bright Dust"
-        },
-      ]
-};
+const challenges = [
+  {
+    belongsTo: String,
+    name: "Still Standing",
+    description: "Complete Week 5 of the We Stand Unbroken quest",
+    category: [],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "",
+        progress: 0,
+        goal: 0,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Legendary Liberator",
+    description: "Complete a Defiant Battleground on Legend difficulty.",
+    category: ['Defiant Battleground'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "",
+        progress: 0,
+        goal: 0,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Favored Warrior",
+    description: "Earn Favors of Justice, Grace, and Zeal during Season of Defiance activities. Bonus progress awarded for Favors earned during activities on Legend difficulty",
+    category: ['Defiant Battleground'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Favor of Justice",
+        progress: 0,
+        goal: 100,
+        completed: false
+      },
+      {
+        isPercent: true,
+        task: "Favor of Grace",
+        progress: 0,
+        goal: 100,
+        completed: false
+      },
+      {
+        isPercent: true,
+        task: "Favor of Zeal",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Friendly Neighborhood Guardian",
+    description: "Complete a weekly mission from Lightfall on Hero difficulty or higher.",
+    category: ['Activities'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Unraveling the Sun",
+    description: "Defeat Guardians in Crucible. Bonus progress is granted for opponents defeated with Strand, Solar, and Void ability final blows.",
+    category: ['PvP'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Guardians",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: String,
+    name: "Dredgin' Up Victory",
+    description: "Complete Gambit matches. Earn bonus progress for wins.",
+    category: ['Gambit'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Progress",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: String,
+    name: "Adversaries of Humanity",
+    description: "Defeat Taken and Vex bosses in Vanguard playlists or strikes.",
+    category: ['Vanguard'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Taken bosses",
+        progress: 0,
+        goal: 5,
+        completed: false
+      },
+      {
+        isPercent: false,
+        task: "Vex bosses",
+        progress: 0,
+        goal: 5,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: String,
+    name: "Righteous Blade",
+    description: "Acquire Ecliptic Distaff.",
+    category: ['Gear'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Glaive",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  }
+];
 
-export default week05;
+const weekName = 'Week Five'
+
+const week05 = {
+        name: weekName,
+        challenges: challenges.map((challenge, challengeIndex) => {
+          challenge.belongsTo = weekName.replaceAll(' ', '-');
+          challenge.challengeIndex = challengeIndex;
+          return challenge;
+        })
+    };
+
+module.exports = week05;

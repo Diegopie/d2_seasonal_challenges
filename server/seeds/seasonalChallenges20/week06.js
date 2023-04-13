@@ -1,175 +1,135 @@
-const week06 =  {
-    name: 'Week Six',
-    challenges: [
-        // 01
-        {
-          belongsTo: String,
-          name: "More Than a Weapon VI",
-          description: "Complete Week 6 of More Than a Weapon. Defeat powerful Hive and Fallen combatants anywhere in the system. Bonus progress for defeating them in Heist Battlegrounds and the Exotic mission Operation: Seraph's Shield.",
-          category: ["More Than A Weapon", "Heist Battlegrounds", "Operation: Seraph's Shield"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "More Than a Weapon: Week 6 completed",
-              progress: 0,
-              goal: 1,
-              completed: false
-            },
-            {
-              isPercent: true,
-              task: "Challenging combatants",
-              progress: 0,
-              goal: 100,
-              completed: false
-            }
-          ],
-          reward: "Exo Frame Module",
-          xp: "Challenger XP++",
-          dust: null
-        },
-        // 02
-        {
-          belongsTo: String,
-          name: "Heist Battlegrounds V",
-          description: "In the Heist Battlegrounds playlist or Legend Heist Battlegrounds, open Seraph Chests and defeat Deathtongue Choristers before they can channel Xivu Arath's battlesong.",
-          category: ["Heist Battlegrounds"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Seraph Chests",
-              progress: 0,
-              goal: 30,
-              completed: false
-            },
-            {
-              isPercent: false,
-              task: "Deathtongue Choristers",
-              progress: 0,
-              goal: 5,
-              completed: false
-            }
-          ],
-          reward: "Exo Frame Module",
-          xp: "Challenger XP++",
-          dust: null
-        },
-        // 03
-        {
-          belongsTo: String,
-          name: "Seraph's Secrets",
-          description: "Open hidden chests in the Exotic mission Operation: Seraph's Shield.",
-          category: ["Operation: Seraph's Shield"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Hidden chests",
-              progress: 0,
-              goal: 2,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP+",
-          dust: null
-        },
-        // 04
-        {
-          belongsTo: String,
-          name: "CQC Loadout",
-          description: "Defeat targets with Glaives. Bonus progress for defeating Guardians. Defeat combatants in Heist Battlegrounds with melee final blows",
-          category: ["Loadout", "Crucible", "Heist Battlegrounds"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: true,
-              task: "Glaive final blows",
-              progress: 0,
-              goal: 100,
-              completed: false
-            },
-            {
-              isPercent: false,
-              task: "Melee Final Blows",
-              progress: 0,
-              goal: 50,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP+",
-          dust: null
-        },
-        // 05
-        {
-          belongsTo: String,
-          name: "Apex Armorer",
-          description: "Masterwork a piece of armor.",
-          category: ["Gear"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Armor upgraded",
-              progress: 0,
-              goal: 1,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP+",
-          dust: "Bright Dust"
-        },
-        // 06
-        {
-          belongsTo: String,
-          name: "Absolutely Stunning",
-          description: "Stun Champions.",
-          category: ["Activities"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Champions",
-              progress: 0,
-              goal: 50,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP+++",
-          dust: "Bright Dust"
-        },
-        // 07
-        {
-          belongsTo: String,
-          name: "Crucible Ornament",
-          description: "Acquire the Crucible ornament for Veles-X.",
-          category: ["Crucible"],
-          completed: false,
-          challengeIndex: Number,
-          objectives: [
-            {
-              isPercent: false,
-              task: "Weapon Ornament",
-              progress: 0,
-              goal: 1,
-              completed: false
-            }
-          ],
-          reward: null,
-          xp: "Challenger XP+++",
-          dust: "Bright Dust"
-        }
-      ]
-};
+const challenges = [
+  {
+    belongsTo: String,
+    name: "Forceful Liberator",
+    description: "Defeat combatants in the Defiant Battlegrounds playlist using Power weapons. Earn bonus progress if they also deal Solar damage.",
+    category: ['Defiant Battleground'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Power weapon",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Relentless Liberator",
+    description: "Gain bonus rewards using a Defiant Key at the end of Defiant Battlegrounds playlist activities on both Normal and Legend difficulties.Defiant Keys can be earned by completing Lightfall campaign missions, Terminal Overload in Neomuna, raids, Vanguard strikes...",
+    category: ['Defiant Battleground'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Bonus rewards received",
+        progress: 0,
+        goal: 3,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Vexing Liberator",
+    description: "Defeat Vex with Seasonal weapons. These are Perpetualis, Prodigal Return, Regnant, Caretaker, Raconteur, and Royal Executioner.Bonus progress awarded for Vex defeated in Seasonal activities",
+    category: ['Loadout'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Defiant Crucible Ornament",
+    description: "Acquire the Crucible ornament for Ecliptic Distaff.",
+    category: ['PvP'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Weapon Ornament",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: String,
+    name: "Elegant Weaponry",
+    description: "Defeat combatants in Vanguard playlists or strikes while using a Sword, Bow, or Glaive.",
+    category: ['Vanguard'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Progress",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: String,
+    name: "Absolutely Stunning",
+    description: "Stun Champions.",
+    category: [],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Champions",
+        progress: 0,
+        goal: 50,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+++",
+    dust: "Bright Dust"
+  }
+];
 
-export default week06;
+const weekName = 'Week Six'
+
+const week06 = {
+        name: weekName,
+        challenges: challenges.map((challenge, challengeIndex) => {
+          challenge.belongsTo = weekName.replaceAll(' ', '-');
+          challenge.challengeIndex = challengeIndex;
+          return challenge;
+        })
+    };
+
+module.exports = week06;

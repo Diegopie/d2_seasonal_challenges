@@ -24,25 +24,26 @@ const handleResponse = (data, note, route, err, success) => {
 basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     const { username } = body;
 
-    // * Check for Dup Access Keys
-    console.log(seedSeasonalChallenges20);
-    const checkDupe = await BasicUser.findOne(
+    // * Check Excisting USer
+    // console.log('---server data--');
+    // console.log(seedSeasonalChallenges20);
+    const checkExisting = await BasicUser.findOne(
         { username: username }
     ).then(data => {
         if (!data) {
             return false;
         }
-        return true;
+        return data;
     }).catch(err => {
         res.status(500).json(
-            handleResponse(null, 'Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
+            handleResponse(null, 'Error Checking For Duplicate Username', '/api/basic-user/newUpdated', err, false)
         );
     })
 
-    // // ** No Match Will Still Return an Empty Array
-    if (checkDupe) {
-        res.status(500).json(
-            handleResponse(null, 'Username already in use', '/api/basic-user/new', null, false)
+    // // ** If User is Found, check for new server data and send res to client
+    if (checkExisting) {
+        res.status(201).json(
+            handleResponse(checkExisting, 'Found user!', '/api/basic-user/newUpdated', null, true)
         );
         return;
     }
@@ -52,54 +53,13 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     newUser.save(err => {
         if (err) {
             res.status(500).json(
-                handleResponse(null, 'Error saving new user to the database', '/api/basic-user/new', err, false)
+                handleResponse(null, 'Error saving new user to the database', '/api/basic-user/newUpdated', err, false)
             );
             return;
         }
 
         res.status(201).json(
-            handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/new', null, true)
-        );
-    })
-});
-
-basicUserRouter.post('/new', async ({ body }, res) => {
-    const { username, seasonalChallenges20 } = body;
-
-    // * Check for Dup Access Keys
-    const checkDupe = await BasicUser.findOne(
-        { username: username }
-    ).then(data => {
-        if (!data) {
-            return false;
-        }
-        return true;
-    }).catch(err => {
-        res.status(500).json(
-            handleResponse(null, 'Error Checking For Duplicate Username', '/api/basic-user/new', err, false)
-        );
-    })
-
-    // // ** No Match Will Still Return an Empty Array
-    if (checkDupe) {
-        res.status(500).json(
-            handleResponse(null, 'Username already in use', '/api/basic-user/new', null, false)
-        );
-        return;
-    }
-
-    // * Create New User
-    const newUser = new BasicUser({ username, seasonalChallenges20 });
-    newUser.save(err => {
-        if (err) {
-            res.status(500).json(
-                handleResponse(null, 'Error saving new user to the database', '/api/basic-user/new', err, false)
-            );
-            return;
-        }
-
-        res.status(201).json(
-            handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/new', null, true)
+            handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/newUpdated', null, true)
         );
     })
 });
@@ -111,18 +71,43 @@ basicUserRouter.post('/data', ({ body }, res) => {
     try {
         BasicUser.findOne(
             { username: username }
-        ).then( data => {
-            
+        ).then(data => {
+
             if (!data) {
                 res.status(500).json(
                     handleResponse(null, 'Error quering db for user', '/api/basic-user/data', null, false)
                 );
                 return;
             }
-    
+            const currentData = data.seasonalChallenges20;
+            const serverData = seedSeasonalChallenges20;
+            // console.log('---userdata---');
+            // console.log(currentData);
+            // *** If user's data is shorter than server, user is missing new data. Begin a loop with user's current data (length) than push new data to user array
+            if (currentData.length < serverData.length) {
+                for (let i = currentData.length; i < serverData.length; i++) {
+                    currentData.push(serverData[i]);
+                }
+                // console.log('---after update ---');
+                // console.log(currentData);
+                
+                // *** Legacy - current code sends to client, client saves to local, client sends all local data to /api/basic-user/update
+                // BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges20: seasonalChallenges }, { returnNewDocument: true })
+                //     .then(data => {
+                //         res.status(201).json(
+                //             handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)
+                //         );
+                //     })
+                //     .catch(err => {
+                //         res.status(500).json(
+                //             handleResponse(null, "Error updating db!", '/api/basic-user/update', err, false)
+                //         );
+                //     })
+            }
+
             // Send data to client    
             res.status(200).json(
-                handleResponse(data, 'Reqests successfull','/api/basic-user/data', null, true)
+                handleResponse(data, 'Reqests successfull', '/api/basic-user/data', null, true)
             );
         })
     } catch (err) {
@@ -132,11 +117,11 @@ basicUserRouter.post('/data', ({ body }, res) => {
 
 // Update Server with New User Data
 basicUserRouter.post('/update', async ({ body }, res) => {
-    console.log('----req-----');
-    console.log(body.seasonalChallenges[0].challenges[0]);
+    // console.log('----req-----');
+    // console.log(body.seasonalChallenges[0].challenges[0]);
     const { username, seasonalChallenges } = body;
-    console.log(username);
-    BasicUser.findOneAndUpdate({username: username}, {seasonalChallenges20: seasonalChallenges}, { returnNewDocument: true })
+    // console.log(username);
+    BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges20: seasonalChallenges }, { returnNewDocument: true })
         .then(data => {
             res.status(201).json(
                 handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)

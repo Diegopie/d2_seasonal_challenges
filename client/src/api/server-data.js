@@ -21,9 +21,10 @@ const postNewUser = async (username) => {
             toast.error(`Could not create your account 😲, ${message.note}. Refresh and try again`)
             return false;
         }
-        toast.success(`Hi ${message.data.username}`)
+        // toast.success(`Hi ${message.data.username}`)
         console.log(message);
         localStorage.setItem('username', message.data.username);
+        document.location.href = '/weekly';
         return true;
         
     } catch (err) {

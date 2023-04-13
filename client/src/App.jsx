@@ -23,6 +23,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
+    // * User
+    const username = localStorage.getItem('username');
+    const redirected = localStorage.getItem('unauth');
+    if (username === null && !redirected) {
+        localStorage.setItem('unauth', true)
+        console.log('hit');
+        document.location.href = '/';
+    }
+
     const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
 
     
@@ -43,7 +52,6 @@ function App() {
             return
         }
         document.body.classList.remove('darkMode');
-        // * Page Data
     }, [darkMode, hidesLoader])
 
 
