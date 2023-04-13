@@ -1,72 +1,15 @@
 const challenges = [
-  // 01
   {
     belongsTo: String,
-    name: "More Than a Weapon VII",
-    description: "Complete Week 7 of More Than a Weapon. Defeat Hive and Fallen bosses anywhere in the system. Bonus progress for defeating them in Heist Battlegrounds and the Exotic mission Operation: Seraph's Shield.",
-    category: ["More Than A Weapon", "Heist Battlegrounds", "Operation: Seraph's Shield"],
+    name: "Eternal Queensguard",
+    description: "Complete a flawless run in any Defiant Battlegrounds playlist location.",
+    category: ['Defiant Battleground'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: false,
-        task: "More Than a Weapon: Week 7 completed",
-        progress: 0,
-        goal: 1,
-        completed: false
-      },
-      {
-        isPercent: false,
-        task: "Bosses",
-        progress: 0,
-        goal: 5,
-        completed: false
-      }
-    ],
-    reward: "Exo Frame Module",
-    xp: "Challenger XP++",
-    dust: null
-  },
-  // 02
-  {
-    belongsTo: String,
-    name: "Heist Battlegrounds VI",
-    description: "In the Heist Battlegrounds playlist, complete heists and defeat combatants with Season of the Seraph or IKELOS weapons.",
-    category: ["Heist Battlegrounds"],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Heist Battlegrounds",
-        progress: 0,
-        goal: 35,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Combatants",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: "Exo Frame Module",
-    xp: "Challenger XP++",
-    dust: null
-  },
-  // 03
-  {
-    belongsTo: String,
-    name: "Legendary Heists",
-    description: "Complete a Heist Battleground on Legend difficulty.",
-    category: ["Heist Battlegrounds"],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Completed",
+        task: "",
         progress: 0,
         goal: 1,
         completed: false
@@ -76,20 +19,19 @@ const challenges = [
     xp: "Challenger XP+",
     dust: null
   },
-  // 04
   {
     belongsTo: String,
-    name: "Seasonal Shaping II",
-    description: "Earn levels with Shaped Seasonal or IKELOS v1.0.3 weapons.",
-    category: ["Loadout"],
+    name: "Defiant Focus",
+    description: "Decode or focus Defiant Engrams at the War Table during Season of Defiance.",
+    category: ['Gear'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: false,
-        task: "Weapon levels",
+        task: "Defiant Engram",
         progress: 0,
-        goal: 10,
+        goal: 20,
         completed: false
       }
     ],
@@ -97,47 +39,31 @@ const challenges = [
     xp: "Challenger XP+",
     dust: null
   },
-  // 05
   {
     belongsTo: String,
-    name: "Down to Size",
-    description: "Defeat targets with Trace Rifles, Glaives, and Linear Fusion Rifles in Gambit. Bonus progress for defeating invading Guardians.",
-    category: ["Gambit"],
+    name: "Favored Liberator",
+    description: "Generate Favors in Seasonal activities. All members of your current fireteam contribute to overall progress",
+    category: ['Defiant Battleground'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
-        isPercent: true,
-        task: "Trace Rifle",
+        isPercent: false,
+        task: "Favors generated",
         progress: 0,
-        goal: 100,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Glaive",
-        progress: 0,
-        goal: 100,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Linear Fusion Rifle",
-        progress: 0,
-        goal: 100,
+        goal: 60,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
-    dust: "Bright Dust"
+    xp: "Challenger XP+",
+    dust: null
   },
-  // 06
   {
     belongsTo: String,
     name: "Fleeting Glory",
     description: "Complete Crucible matches in the Competitive playlist. Earn bonus progress for wins.",
-    category: ["PvP"],
+    category: ['PvP'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -153,12 +79,31 @@ const challenges = [
     xp: "Challenger XP+++",
     dust: "Bright Dust"
   },
-  // 07
+  {
+    belongsTo: String,
+    name: "High-Value Hunter",
+    description: "Defeat powerful combatants in Gambit. Earn bonus progress for defeating high-value targets.",
+    category: ['Gambit'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Combatants",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
   {
     belongsTo: String,
     name: "Grandmaster",
     description: "Complete any Nightfall strike on Grandmaster.",
-    category: ["Vanguard"],
+    category: ['Vanguard'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -174,17 +119,17 @@ const challenges = [
     xp: "Challenger XP+++",
     dust: "Bright Dust"
   }
-];
+]
 
 const weekName = 'Week Seven'
 
 const week07 = {
-        name: weekName,
-        challenges: challenges.map((challenge, challengeIndex) => {
-          challenge.belongsTo = weekName.replaceAll(' ', '-');
-          challenge.challengeIndex = challengeIndex;
-          return challenge;
-        })
-    };
+  name: weekName,
+  challenges: challenges.map((challenge, challengeIndex) => {
+    challenge.belongsTo = weekName.replaceAll(' ', '-');
+    challenge.challengeIndex = challengeIndex;
+    return challenge;
+  })
+};
 
 module.exports = week07;
