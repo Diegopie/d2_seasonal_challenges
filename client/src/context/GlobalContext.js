@@ -21,6 +21,8 @@ const determineDarkMode = () => {
     }
 }
 
+// parserServerData().then(data => console.log(data))
+
 const defaultState = {
     // Functions
     hidesLoader: () => document.querySelector('.load-icon').classList.add('hide-icon'),
@@ -31,6 +33,11 @@ const defaultState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case 'setParsedData':
+            return {
+                ...state,
+                parsedData: localSeasonalChallenges()
+            }
         case 'setDarkMode':
             return {
                 ...state,

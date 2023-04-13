@@ -3,6 +3,7 @@ import { useChallengeContext } from './ChallengeContext';
 import ChallengeObjectives from './components/ChallengeObjectives';
 import ChallengeReward from './components/ChallengeReward';
 import './ChallengeCard.css';
+import { updateServerData } from '../../api/server-data';
 
 const ChallengeCard = (props) => {
 
@@ -47,6 +48,7 @@ const ChallengeCard = (props) => {
             // ** Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
             localStorage.setItem(week, JSON.stringify(newLocal));
             dispatch({ type: 'setCompletedChallenge', payload: { completedChallenge: isComplete } });
+            
         };
 
         // ** If Our Incremented Value is Equal to the Total Number of Objectives, The Challenge Is Marked Complete In State and Local Storage; {NOTE: State is coming in as a 0 Value on initial mount. I do not know why but preventing these condition to run when objectives are loaded as 0 prevents crashes}
@@ -56,6 +58,7 @@ const ChallengeCard = (props) => {
         if (totalObjectivesCompleted === objectivesToComplete && objectivesToComplete !== 0) {
             // *** Update Local Storage and State with True Values
             updateLocalAndState(true);
+            updateServerData();
             // *** Check if User Selected to Hide Completed Challenges. if True, hide from DOM
             // {Note: I'm having an issue where the initial state for currentContainer data is null, as the app crashes here. Returning the function if null prevents crashes then assumes desired functionality}
             if (currentContainer === null) return;

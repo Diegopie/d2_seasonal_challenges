@@ -1,6 +1,6 @@
 {
   "name": "d2-seasonal-challenges",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "Track and optimize your seasonal challenge progress!",
   "engines": {
     "node": "^16"

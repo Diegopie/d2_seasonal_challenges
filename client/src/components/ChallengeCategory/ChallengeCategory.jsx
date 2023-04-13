@@ -4,7 +4,6 @@ import ChallengeProvider from '../ChallengeCard/ChallengeContext';
 import './ChallengeCategory.css';
 
 const ChallengeCategory = (props) => {
-
     const challengesRemainingID = props.name + '-challengesRemaining';
     const activityHeader = props.name.replaceAll(' ', '-');
     
@@ -51,8 +50,8 @@ const ChallengeCategory = (props) => {
     };
 
     useEffect(()=> {;
-        if(window.location.pathname === '/') {
-            console.log(document.getElementById(togglerID).checked)
+        if(window.location.pathname === '/weekly') {
+            // console.log(document.getElementById(togglerID).checked)
             document.getElementById(togglerID).checked = true;
 
         }
@@ -100,6 +99,7 @@ const ChallengeCategory = (props) => {
                         >
                             <ChallengeCard
                                 key={challenge.name}
+                                // key={uuidv4()}
                                 challengesRemainingID={challengesRemainingID}
                                 togglerID={togglerID}
                                 activityHeader={activityHeader}
