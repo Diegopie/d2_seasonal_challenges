@@ -15,6 +15,10 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 &NewLine;
 &NewLine;
 
+## Updates
+
+Big news! The mid season update is introducting a very basic user system. This lets you sync your data between devices! It is very basic with now passwords, but gets us running 👌
+
 ## Table of Contents
 
 - [Destiny 2 Seasonal Challenges](#destiny-2-seasonal-challenges)
@@ -46,7 +50,7 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 
 ```sh
 Frontend – React, CSS3,  
-Backend – Node, Express
+Backend – Node, Express, MongoDB
 ```
 
 &NewLine;
@@ -58,7 +62,7 @@ Backend – Node, Express
 &NewLine;
 
 | | |
-| ------ | ------ |
+| ------ | ------ | 
 | [express](https://www.npmjs.com/package/express) | [mongoose](https://www.npmjs.com/package/mongoose) |
 <!-- [react-router-dom](https://www.npmjs.com/package/react-router-dom) | -->
 
@@ -187,13 +191,16 @@ There were a few coding concepts I wanted to practice when creating this project
 
 This are the concepts I would like to practice in the future and how they effect the app
 
-- PWA - Offline and Installable App
-  - PWAs just make me happy ☺️ and many console users like their Destiny companion apps on their phone. This will give a more native app feel for those users and something neat for PC users
-  - Offline support is mostly for me to learn service workers. Destiny is an online game so I don't see how many users will benefit from offline support but I can brag about it to my fiancee 🥰
+- PWA - Offline
+  - Offline support is mostly for me to learn service workers. Destiny is an online game so I don't see how many users will benefit from offline support but I can brag about it to my wife 🥰
+
+- Seasonal Triumphs
+  - Many Destiny players get their Seasonal Challenges knocked out in the week. A bigger pie to eat are 
+  Seasonal Triumphs. Tackling these effeciently are a next big step to help more players! 
   
 - JWT Authentication and Server Database
   - I have implemented many very basic user account and authentication but I would like to have something more polished and user friendly
-  - With user auth, I can connect to a database so users can track their progress anywhere!
+  - With user auth, I can connect to a database so users can track their progress anywhere! A very basic version is running now
   
 - Destiny API Integration
   - This would render most of the work done completely redundant but will be a huge quality of life improvement. I have many ideas for Destiny apps learning all the previous coding concepts are important for that. This will also be a good baby step for using the huge amount of data the Destiny API offers

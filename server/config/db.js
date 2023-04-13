@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 async function db() {
     try {
         mongoose.set("strictQuery", false);
-        mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/d2-challenges', {
+        mongoose.connect(process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/d2-challenges', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         })

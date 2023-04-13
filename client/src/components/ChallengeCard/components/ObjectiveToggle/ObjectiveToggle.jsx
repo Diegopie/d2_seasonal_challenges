@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { updateServerData } from '../../../../api/server-data';
 import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveToggle = (props) => {
@@ -20,9 +21,11 @@ const ObjectiveToggle = (props) => {
         currentTask.completed = currentObjective.checked;
         // ** Store the Mutated Array in Local Storage
         localStorage.setItem(week, JSON.stringify(newLocal));
+        console.log({newLocal});
         // ** Dispatch Values to State for Data to Persist Between Pages
         const newObjective = newLocal[challengeIndex].objectives;
         dispatch({type:'setNewObjective', payload: { newObjective }});
+        updateServerData();
     }
 
     useEffect(() => {
