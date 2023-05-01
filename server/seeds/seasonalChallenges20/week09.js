@@ -1,168 +1,183 @@
-const week09 = {
-  name: "Week Nine",
-  challenges: [
-    // 01
-    {
-      belongsTo: String,
-      name: "Legend Heist Battlegrounds II",
-      description: "Complete each Heist Battleground on Legend difficulty.",
-      category: ['Heist Battleground'],
-      completed: false,
-      challengeIndex: Number,
-      objectives: [
-        {
-          isPercent: false,
-          task: "Legend Heist Battleground: Europa",
-          progress: 0,
-          goal: 1,
-          completed: false
-        },
-        {
-          isPercent: false,
-          task: "Legend Heist Battleground: Moon",
-          progress: 0,
-          goal: 1,
-          completed: false
-        },
-        {
-          isPercent: false,
-          task: "Legend Heist Battleground: Mars",
-          progress: 0,
-          goal: 1,
-          completed: false
-        }
-      ],
-      reward: null,
-      xp: "Challenger XP++",
-      dust: null
-    },
-    // 02
-    {
-      belongsTo: String,
-      name: "Heavy Loadout",
-      description: "Defeat targets with Machine Guns. Bonus progress for defeating Guardians. Defeat powerful combatants in Heist Battlegrounds",
-      category: ['Heist Battleground', 'PvP'],
-      completed: false,
-      challengeIndex: Number,
-      objectives: [
-        {
-          isPercent: true,
-          task: "Machine Gun final blows",
-          progress: 0,
-          goal: 100,
-          completed: false
-        },
-        {
-          isPercent: true,
-          task: "Challenging combatants",
-          progress: 0,
-          goal: 100,
-          completed: false
-        }
-      ],
-      reward: null,
-      xp: "Challenger XP+",
-      dust: null
-    },
-    // 03
-    {
-      belongsTo: String,
-      name: "Pinnacle",
-      description: "Reach Power Level 1590 by earning pinnacle rewards.",
-      category: ['Gear'],
-      completed: false,
-      challengeIndex: Number,
-      objectives: [
-        {
-          isPercent: false,
-          task: "Power Level",
-          progress: 0,
-          goal: 1590,
-          completed: false
-        }
-      ],
-      reward: null,
-      xp: "Challenger XP+++",
-      dust: "Bright Dust"
-    },
-    // 04
-    {
-      belongsTo: String,
-      name: "Armory-Wide Calibration",
-      description: "Calibrate Kinetic, Energy, and Power weapons. Bonus progress against Champions.",
-      category: ['Loadout'],
-      completed: false,
-      challengeIndex: Number,
-      objectives: [
-        {
-          isPercent: true,
-          task: "Kinetic weapon",
-          progress: 0,
-          goal: 100,
-          completed: false
-        },
-        {
-          isPercent: true,
-          task: "Energy weapon",
-          progress: 0,
-          goal: 100,
-          completed: false
-        },
-        {
-          isPercent: true,
-          task: "Power weapon",
-          progress: 0,
-          goal: 100,
-          completed: false
-        }
-      ],
-      reward: null,
-      xp: "Challenger XP+++",
-      dust: "Bright Dust"
-    },
-    // 05
-    {
-      belongsTo: String,
-      name: "Icy Singularity",
-      description: "Defeat targets with Void or Stasis effects. Bonus progress for defeating invading Guardians.",
-      category: ['Loadout', 'Gambit'],
-      completed: false,
-      challengeIndex: Number,
-      objectives: [
-        {
-          isPercent: true,
-          task: "Progress",
-          progress: 0,
-          goal: 100,
-          completed: false
-        }
-      ],
-      reward: null,
-      xp: "Challenger XP++",
-      dust: "Bright Dust"
-    },
-    // 06
-    {
-      belongsTo: String,
-      name: "Cosmic Chill",
-      description: "Defeat combatants with Void or Stasis effects in Vanguard playlists.",
-      category: ['Vanguard'],
-      completed: false,
-      challengeIndex: Number,
-      objectives: [
-        {
-          isPercent: true,
-          task: "Progress",
-          progress: 0,
-          goal: 100,
-          completed: false
-        }
-      ],
-      reward: null,
-      xp: "Challenger XP++",
-      dust: "Bright Dust"
-    }
-  ]
+const challenges = [
+  {
+    "belongsTo": String,
+    "name": "Legendary Defiance",
+    "description": "Complete Defiant Battlegrounds on Legend difficulty.",
+    "category": ['Defiant Battleground'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": false,
+        "task": "Progress",
+        "progress": 0,
+        "goal": 2,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP++",
+    "dust": null
+  },
+  {
+    "belongsTo": String,
+    "name": "Favored Warrior",
+    "description": "Earn Favors of Justice, Grace, and Zeal during Season of Defiance activities. Bonus progress awarded for Favors earned during activities on Legend difficulty.",
+    "category": ['Defiant Battleground'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": false,
+        "task": "Favor of Justice",
+        "progress": 0,
+        "goal": 20,
+        "completed": false
+      },
+      {
+        "isPercent": false,
+        "task": "Favor of Grace",
+        "progress": 0,
+        "goal": 20,
+        "completed": false
+      },
+      {
+        "isPercent": false,
+        "task": "Favor of Zeal",
+        "progress": 0,
+        "goal": 20,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP+",
+    "dust": null
+  },
+  {
+    "belongsTo": String,
+    "name": "Defiant Specialist",
+    "description": "Defeat combatants with precision final blows in Seasonal activities. Bonus progress awarded for using Season of Defiance weapons. These are Perpetualis, Prodigal Return, Regnant, Caretaker, Raconteur, and Royal Executioner.",
+    "category": ['Defiant Battleground'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": false,
+        "task": "Precision",
+        "progress": 0,
+        "goal": 100,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP+",
+    "dust": null
+  },
+  {
+    "belongsTo": String,
+    "name": "Pinnacle",
+    "description": "Reach Power Level 1810 by earning pinnacle rewards.",
+    "category": ['Gear'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": false,
+        "task": "Power Level",
+        "progress": 0,
+        "goal": 1,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP+++",
+    "dust": "Bright Dust"
+  },
+  {
+    "belongsTo": String,
+    "name": "Warp and Weft",
+    "description": "In Gambit, defeat targets with a Strand, Solar, or Void subclass equipped. Bonus progress is awarded for ability final blows and defeating Guardians.",
+    "category": ['Gambit'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": true,
+        "task": "Progress",
+        "progress": 0,
+        "goal": 100,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP++",
+    "dust": "Bright Dust"
+  },
+  {
+    "belongsTo": String,
+    "name": "Weaving Sunlight",
+    "description": "Defeat combatants in Vanguard playlists with a Strand, Solar, or Void subclass equipped. Bonus progress awarded for ability final blows.",
+    "category": ['Vanguard'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": true,
+        "task": "Progress",
+        "progress": 0,
+        "goal": 100,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP++",
+    "dust": "Bright Dust"
+  },
+  {
+    "belongsTo": String,
+    "name": "Armory-Wide Calibration",
+    "description": "Calibrate Kinetic, Energy, and Power weapons. Bonus progress against Champions.",
+    "category": ['Loadout'],
+    "completed": false,
+    "challengeIndex": Number,
+    "objectives": [
+      {
+        "isPercent": true,
+        "task": "Kinetic weapon",
+        "progress": 0,
+        "goal": 100,
+        "completed": false
+      },
+      {
+        "isPercent": true,
+        "task": "Energy weapon",
+        "progress": 0,
+        "goal": 100,
+        "completed": false
+      },
+      {
+        "isPercent": true,
+        "task": "Power weapon",
+        "progress": 0,
+        "goal": 100,
+        "completed": false
+      }
+    ],
+    "reward": null,
+    "xp": "Challenger XP+++",
+    "dust": "Bright Dust"
+  }
+];
+
+const weekName = 'Week Eight'
+
+const week08 = {
+  name: weekName,
+  challenges: challenges.map((challenge, challengeIndex) => {
+    challenge.belongsTo = weekName.replaceAll(' ', '-');
+    challenge.challengeIndex = challengeIndex;
+    return challenge;
+  })
 };
 
-export default week09;
+module.exports = week08;

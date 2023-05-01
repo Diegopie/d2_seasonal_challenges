@@ -5,8 +5,8 @@ const week04 = require( "./week04");
 const week05 = require( "./week05");
 const week06 = require( "./week06");
 const week07 = require( "./week07");
-// const week08 = require( "./week08");
-// const week09 = require( "./week09");
+const week08 = require( "./week08");
+const week09 = require( "./week09");
 // const week10 = require( "./week10");
 
 let seedSeasonalChallenges20 = [];
@@ -19,8 +19,8 @@ seedSeasonalChallenges20.push(
     week05,
     week06,
     week07,
-    // week08,
-    // week09,
+    week08,
+    week09,
     // week10
 );
 
