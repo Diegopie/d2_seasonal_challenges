@@ -12,6 +12,7 @@ import TimeSensitive from './pages/TimeSensitive';
 import NotFoundPage from './pages/NotFoundPage';
 // Import Components
 import Menu from './layouts/Menu';
+import FootNav from './layouts/FootNav';
 // Import Utils/Data
 // import ScrollHook from './hooks/ScrollHook';
 import { useGlobalContext } from './context/GlobalContext';
@@ -25,16 +26,12 @@ function App() {
 
     // * User
     const username = localStorage.getItem('username');
-    const redirected = localStorage.getItem('unauth');
-    if (username === null && !redirected) {
-        localStorage.setItem('unauth', true)
-        console.log('hit');
+    const path = window.location.pathname
+    if (username === null && path !== '/') {
         document.location.href = '/';
     }
 
     const [{ darkMode, hidesLoader }, dispatchGlobal] = useGlobalContext();
-
-    
 
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -64,6 +61,7 @@ function App() {
                 autoClose={4000}
             />
             <Menu />
+            <FootNav />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
                 <Route exact path='weekly' element={<Weekly />} />

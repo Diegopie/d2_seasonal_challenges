@@ -44,6 +44,24 @@ body {
   z-index: 2;
 }
 
+.App-PushBottomUp {
+  padding-bottom: 5rem;
+}
+
+.App-Button {
+  padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+  border-style: none;
+  border-radius: 3px;
+  /* border-color: white; */
+  background-color: rgba(129, 181, 181, 0.8);
+  color:white;
+}
+
+.App-Button:hover {
+  background-color: rgba(129, 181, 181, 1);
+  height: 2rem;
+}
+
 .backgroundImg-Home {
   background-image: url("./assets/production/background-img/home.jfif");
   min-height: 100vh;

@@ -24,6 +24,7 @@ const postNewUser = async (username) => {
         // toast.success(`Hi ${message.data.username}`)
         console.log(message);
         localStorage.setItem('username', message.data.username);
+        localStorage.setItem('unauth', false)
         document.location.href = '/weekly';
         return true;
         
@@ -46,6 +47,8 @@ const getServerData = async (username, ) => {
         });
         // * Verify Data
         const {message} = await getServerDataResponse.json();
+
+        // console.log(message);
 
         if (!message.success) {
             toast.error(`Could not get your data 😲, ${message.message}. Refresh and try again`)

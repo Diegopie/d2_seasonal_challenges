@@ -76,9 +76,9 @@
         }
 
         input:checked + .HideCompleted-slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
+        -webkit-transform: translateX(85%);
+        -ms-transform: translateX(85%);
+        transform: translateX(85%);
         background-color: red;
         background-image: url('../../assets/production/sunIcon.svg');
         }
@@ -89,3 +89,11 @@
     .HideCompleted-slider.HideCompleted-round:before {
         border-radius: 50%;
     }
+
+    @media only screen and (max-width: 560px) {
+        input:checked + .HideCompleted-slider:before {
+            -webkit-transform: translateX(60%);
+            -ms-transform: translateX(60%);
+            transform: translateX(60%);
+            }
+      }

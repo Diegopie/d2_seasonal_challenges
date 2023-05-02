@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { postNewUser } from '../api/server-data';
 
 const Home = () => {
+
+    const auth = localStorage.getItem('username');
+    if (auth) {
+        document.location.href = '/weekly';
+    } 
 
     const [username, setUsername] = useState('');
 
