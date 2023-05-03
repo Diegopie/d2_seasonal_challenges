@@ -4,8 +4,7 @@ import DropUpMenu from './components/DropUpMenu';
 const FootNav = (props) => {
 
   const handleClick = (menu) => {
-    const target = document.getElementById(menu)
-    console.log(target.dataset.show);
+    const target = document.getElementById(menu);
 
     if (target.dataset.show === 'false') {
       target.classList.add('FootNav-DropUp-ShowContainer');
@@ -21,11 +20,14 @@ const FootNav = (props) => {
       <article className='FootNav-Container'>
 
         <nav className='FootNav-Body'>
-          <button className='FootNav-NavItem App-Button' onClick={() => { handleClick('dropUp') }}>Categories</button>
-          <button className='App-Button'>Page</button>
-          <button className='App-Button'>Tracked</button>
+          <button className='App-Button FootNav-Button' onClick={() => { handleClick('dropUp') }}>Categories</button>
+          <button className='App-Button FootNav-Button'><a href='#main'>Top</a></button>
+          {/* <button className='App-Button FootNav-Button'>Tracked</button> */}
         </nav>
-        <DropUpMenu />
+        <DropUpMenu 
+          handleClick={handleClick}
+          menu='dropUp'
+        />
       </article>
     </section>
   );

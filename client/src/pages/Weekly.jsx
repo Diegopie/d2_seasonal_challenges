@@ -18,7 +18,7 @@ const Weekly = () => {
 
     return (
         <>
-            <main className='App-backMaxHeight'>
+            <main id='main' className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-Weekly App-PushBottomUp' >
                     {season20Data.map((week) => {
                         return (

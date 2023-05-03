@@ -134,7 +134,7 @@ const Activities = (props) => {
 
     return (
         <>
-            <main className='App-backMaxHeight'>
+            <main id='main' className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-Activities'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)

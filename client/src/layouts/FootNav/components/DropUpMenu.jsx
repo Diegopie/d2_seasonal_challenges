@@ -5,7 +5,7 @@ const DropUpMenu = (props) => {
     const [{activityIdsNav}, ] = useGlobalContext();
 
     return (
-        <section className='FootNav-DropUp-Container' id='dropUp' data-show='false'>
+        <section className='FootNav-DropUp-Container FootNav-DropUp-ShowContaine' id='dropUp' data-show='false'>
 
             <article className='FootNav-DropUp-Body'>
                 {
@@ -13,7 +13,8 @@ const DropUpMenu = (props) => {
                         return (
                             <a 
                                 key={id}
-                                href={`#${id}`} 
+                                href={`#${id}`}
+                                onClick={() => props.handleClick(props.menu)}
                                 className='App-Button FootNav-DropUp-Button'>{id.replaceAll('-', ' ')}</a>
                         )
                     })
