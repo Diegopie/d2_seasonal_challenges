@@ -1,20 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
-
 
 
 const Activities = (props) => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    const [{ parsedData },] = useGlobalContext();
-    // const [ count, setCount ] = useState(0)
-
-    parsedData
-        .then(data => {
-            setSeason20Data(data)
-        })
+    const [{ parsedData }, ] = useGlobalContext();
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
@@ -130,11 +123,14 @@ const Activities = (props) => {
         }))
     }
 
+    useEffect(() => {
+        parsedData
+            .then(data => {
+                setSeason20Data(data)
+            });
+    }, [parsedData])
 
-
-    sortChallenges()
-
-
+    sortChallenges();
 
     return (
         <>
@@ -153,6 +149,7 @@ const Activities = (props) => {
                     })}
                 </section>
             </main>
+            {/* <FootNav /> */}
         </>
     );
 };

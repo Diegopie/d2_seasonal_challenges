@@ -61,7 +61,6 @@ function App() {
                 autoClose={4000}
             />
             <Menu />
-            <FootNav />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
                 <Route exact path='weekly' element={<Weekly />} />
@@ -71,6 +70,7 @@ function App() {
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
                 <Route element={<NotFoundPage />} />
             </Routes>
+            <FootNav />
         </BrowserRouter>
     );
 }

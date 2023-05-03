@@ -3,11 +3,11 @@ import { getServerData } from "../api/server-data";
 const localSeasonalChallenges = () => {
     const username = localStorage.getItem('username');
     if (username === null) return;
-    console.log(username);
+    // console.log(username);
 
     return getServerData(username)
         .then(data => {
-            console.log(data);
+            // console.log(data);
             const serverData = data.data.seasonalChallenges20
             serverData.map((week) => {
                 // * Set weekName to be JSON and LocalStorage Friendly

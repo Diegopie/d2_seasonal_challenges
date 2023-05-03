@@ -169,9 +169,9 @@ const challenges = [
   }
 ];
 
-const weekName = 'Week Eight'
+const weekName = 'Week Nine'
 
-const week08 = {
+const week09 = {
   name: weekName,
   challenges: challenges.map((challenge, challengeIndex) => {
     challenge.belongsTo = weekName.replaceAll(' ', '-');
@@ -180,4 +180,4 @@ const week08 = {
   })
 };
 
-module.exports = week08;
+module.exports = week09;

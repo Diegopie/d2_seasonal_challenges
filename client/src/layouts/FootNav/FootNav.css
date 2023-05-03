@@ -10,11 +10,10 @@
 .FootNav-Container {
     margin: auto;
     width: 84vw;
-    /* max-width: 480px; */
 }
 
 .FootNav-Body {
-    background-color: rgba(174, 201, 245, 0.9);
+    background-color: rgba(174, 201, 245, 1);
     color: black;
     border-radius: 100px;
     display: flex;
@@ -24,16 +23,43 @@
     height: 3.2rem;
 }
 
-.FootNav-NavItem {
-
+.FootNav-DropUp-Container {
+    z-index: -1;
+    border-radius: 10px;
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: rgba(174, 201, 245, 0.9);
+    bottom: 25rem;
+    height: 24rem;    
 }
+
+.FootNav-DropUp-Container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+.FootNav-DropUp-Body {
+    display: flex;
+    flex-flow: column;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.FootNav-DropUp-Button {
+    margin-top: 0.8rem !important;
+    background-color:rgb(116, 163, 239) !important;
+    text-decoration: none;
+    text-align: center;
+}
+    .FootNav-DropUp-Button:hover {
+        color: rgb(232, 214, 94) !important
+    }
+
 
 @media only screen and (min-width: 700px) {
     .FootNav-Container {
         max-width: 480px;
         
-    }
-    .FootNav-Body {
-        max-width: 70%;
     }
   }
