@@ -5,7 +5,7 @@ const DropUpMenu = (props) => {
     const [{activityIdsNav}, ] = useGlobalContext();
 
     return (
-        <section className='FootNav-DropUp-Container'>
+        <section className='FootNav-DropUp-Container' id='dropUp' data-show='false'>
 
             <article className='FootNav-DropUp-Body'>
                 {

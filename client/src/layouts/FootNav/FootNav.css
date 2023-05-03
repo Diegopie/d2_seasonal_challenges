@@ -31,7 +31,13 @@
     width: 100%;
     background-color: rgba(174, 201, 245, 0.9);
     bottom: 25rem;
-    height: 24rem;    
+    height: 0;    
+    transform-origin: bottom 100%;
+    transition: height 1s;
+}
+
+.FootNav-DropUp-ShowContainer {
+    height: 24rem;
 }
 
 .FootNav-DropUp-Container::-webkit-scrollbar-track {
