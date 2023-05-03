@@ -70,7 +70,7 @@ function App() {
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
                 <Route element={<NotFoundPage />} />
             </Routes>
-            {/* <FootNav /> */}
+            <FootNav />
         </BrowserRouter>
     );
 }
