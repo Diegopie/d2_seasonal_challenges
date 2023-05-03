@@ -1,4 +1,5 @@
 import './FootNav.css';
+import Coffee from './components/Coffee';
 import DropUpMenu from './components/DropUpMenu';
 
 const FootNav = (props) => {
