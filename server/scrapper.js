@@ -1,19 +1,25 @@
 const seasonalChallenges = $('.record-container')[0].children;
-// console.log(seasonalChallenges.length);
-// console.log(typeof (seasonalChallenges));
 
 let parsedChallenges = [];
 
 for (let i = 0; i < seasonalChallenges.length; i++) {
-    // console.log($(seasonalChallenges[i]).children('h3').text());
 
+    const decode = (text) => {
+        const el = document.createElement("div");
+        el.innerHTML = text;
+        text = el.innerText;
+        return text;
+    }
+
+    // I believes this was to manage 'Redacted' challenges that were not yet in the API
     if ($(seasonalChallenges[i]).children('h3').text() === '') {
         // console.log('hit');
         continue;
     }
 
     const name = $(seasonalChallenges[i]).children('h3').text().trim();
-    const description = $(seasonalChallenges[i]).children('.record-description').text().trim();;
+    console.dir($(seasonalChallenges[i]).children('.record-description'));
+    const description = decode($(seasonalChallenges[i]).children('.record-description').text().trim());
 
     const allObjectives = $(seasonalChallenges[i]).children('.objective-progress-container').children();
     const parsedObjectives = [];
@@ -23,11 +29,11 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
         const goal = () => {
             // Path to goal on DOM
             const target = $(allObjectives[i]).children('div').children('span').text().trim();
-
+            // * Return 1 if Goal is 'Incomplete', meaning there is only one task to achieve
             if (target === 'Incomplete') {
                 return 1;
             }
-
+            // Regex Remove any character before a '/' and the '/' itself, return something like 50 instead of 0/50
             return parseInt($(allObjectives[i]).children('div').children('span').text().match(/\/(.*)/)[1]);
         }
 
