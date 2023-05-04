@@ -4,6 +4,10 @@ import DropUpMenu from './components/DropUpMenu';
 
 const FootNav = (props) => {
 
+  if (window.location.pathname === '/') {
+    return null;
+  }
+
   const handleClick = (menu) => {
     const target = document.getElementById(menu);
 
@@ -22,7 +26,7 @@ const FootNav = (props) => {
 
         <nav className='FootNav-Body'>
           <button className='App-Button FootNav-Button' onClick={() => { handleClick('dropUp') }}>Categories</button>
-          <button className='App-Button FootNav-Button'><a href='#main'>Top</a></button>
+          <button className='App-Button FootNav-Button'><a href='#NavBar'>Top</a></button>
           {/* <button className='App-Button FootNav-Button'>Tracked</button> */}
         </nav>
         <DropUpMenu 

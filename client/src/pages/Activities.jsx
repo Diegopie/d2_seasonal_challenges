@@ -52,6 +52,10 @@ const Activities = (props) => {
             name: 'Destination - EDZ',
             challenges: []
         },
+        {
+            name: 'Destination - Europa',
+            challenges: []
+        },
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value

@@ -4,13 +4,6 @@ let parsedChallenges = [];
 
 for (let i = 0; i < seasonalChallenges.length; i++) {
 
-    const decode = (text) => {
-        const el = document.createElement("div");
-        el.innerHTML = text;
-        text = el.innerText;
-        return text;
-    }
-
     // I believes this was to manage 'Redacted' challenges that were not yet in the API
     if ($(seasonalChallenges[i]).children('h3').text() === '') {
         // console.log('hit');
@@ -19,7 +12,9 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
 
     const name = $(seasonalChallenges[i]).children('h3').text().trim();
     console.dir($(seasonalChallenges[i]).children('.record-description'));
-    const description = decode($(seasonalChallenges[i]).children('.record-description').text().trim());
+    const descriptionTarget = $(seasonalChallenges[i]).children('.record-description');
+    console.dir(descriptionTarget);
+    const description = descriptionTarget[0].innerText
 
     const allObjectives = $(seasonalChallenges[i]).children('.objective-progress-container').children();
     const parsedObjectives = [];

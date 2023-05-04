@@ -8,6 +8,8 @@
 .ChallengeCategory-Header {
     background-color: rgba(174, 201, 245, 0.5);
     display: flex;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .ChallengeCategory-Title {
@@ -21,6 +23,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 /* Togglers */
