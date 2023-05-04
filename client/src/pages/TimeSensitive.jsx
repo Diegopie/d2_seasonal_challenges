@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
 
@@ -7,13 +7,15 @@ const TimeSensitive = () => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    const [{ parsedData },] = useGlobalContext();
+    const [{ parsedData }, ] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
 
-    parsedData
-        .then(data => {
-            setSeason20Data(data)
-        })
+    useEffect(() => {
+        parsedData
+            .then(data => {
+                setSeason20Data(data);
+            })
+    }, [parsedData])
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
@@ -54,7 +56,7 @@ const TimeSensitive = () => {
 
     return (
         <>
-            <main className='App-backMaxHeight'>
+            <main id='main' className='App-backMaxHeight'>
                 <section className='App-backImg backgroundImg-Time'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)

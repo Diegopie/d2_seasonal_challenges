@@ -39,6 +39,7 @@ const parserServerData = async () => {
     // let serverData = [];
     const serverData = await getServerData(localStorage.getItem('username'))
     .then(({data}) => {
+
         console.log(data);
         return data.seasonalChallenges20
     })
@@ -48,8 +49,6 @@ const parserServerData = async () => {
     }
 
     return serverData;
-
-    
 
 }
 
