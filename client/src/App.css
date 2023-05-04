@@ -7,6 +7,14 @@ body {
     background-color: #2A2C2E;
   }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+  a:hover {
+    color:inherit
+  }
+
 .App-scrollLock {
   overflow: hidden;
 }
@@ -44,40 +52,24 @@ body {
   z-index: 2;
 }
 
+.App-PushBottomUp {
+  padding-bottom: 5rem;
+}
+
+.App-Button {
+  padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+  border-style: none;
+  border-radius: 3px;
+}
+
+.App-Button:hover {
+  height: 2rem;
+}
+
 .backgroundImg-Home {
   background-image: url("./assets/production/background-img/home.jfif");
   min-height: 100vh;
 }
-
-.Home-Container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  text-align: center;
-}
-
-.Home-text {
-  text-align: center;
-  padding: 8% 15% 7%;
-  text-shadow: 0.5px 0.8px #000000;
-}
-
-.Home-button {
-  margin-top: 6%!important;
-  background-color: #7ebcec;
-  border: solid;
-  color: white;
-  border-radius: 8%;
-  padding: 0.4rem 0.9rem;
-  text-align: center;
-  display: inline-block;
-  margin: 4px 2px;
-}
-  .Home-button:hover {
-      border-color: #A09EF0;
-      color: #A09EF0;
-      text-decoration: none;
-  }
 
 .backgroundImg-Weekly {
   background-image: url("./assets/production/background-img/background-season20_Home.jpg");
@@ -125,7 +117,6 @@ body > iframe {
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  
 }
 
 /* Handle */

@@ -29,6 +29,7 @@ const defaultState = {
     showLoader: () => document.querySelector('.load-icon').classList.remove('hide-icon'),
     darkMode: determineDarkMode(),
     parsedData: localSeasonalChallenges(),
+    activityIdsNav: [],
 };
 
 const reducer = (state, action) => {
@@ -44,11 +45,14 @@ const reducer = (state, action) => {
                 darkMode: action.payload
             };
         case 'updateParsedData':
-            console.log('updated ParsedData');
-            console.log(localSeasonalChallenges());
             return {
                 ...state,
                 parsedData: localSeasonalChallenges()
+            };
+        case 'updateActivityIdsNav':
+            return {
+                ...state,
+                activityIdsNav: action.payload
             };
         default: return state;
     }

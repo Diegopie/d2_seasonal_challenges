@@ -7,6 +7,10 @@ import './Menu.css';
 
 const Menu = (props) => {
 
+  if (window.location.pathname === '/') {
+    return null;
+  }
+
   const handleLogoff = () => {
     console.log('logoff');
     localStorage.clear();
@@ -17,7 +21,7 @@ const Menu = (props) => {
   const logoutString = `Logout - ${localStorage.getItem('username')}`
 
     return (
-        <Navbar className='Menu-Container' bg="dark" variant='dark' expand="lg">
+        <Navbar id='NavBar' className='Menu-Container' bg="dark" variant='dark' expand="lg">
           <Container>
             <Navbar.Brand href="/weekly">D2 Seasonal Challenges</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

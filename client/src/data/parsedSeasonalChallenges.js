@@ -3,6 +3,7 @@ import { getServerData } from "../api/server-data";
 const localSeasonalChallenges = () => {
     const username = localStorage.getItem('username');
     if (username === null) return;
+    // console.log(username);
 
     return getServerData(username)
         .then(data => {
