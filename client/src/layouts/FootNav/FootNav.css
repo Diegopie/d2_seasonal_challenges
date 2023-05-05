@@ -79,6 +79,21 @@
     color: rgb(232, 214, 94) !important
 }
 
+.FootNav-Info-ShowContainer {
+    height: 34rem;
+    /* transition: height 6s; */
+    transform: translateY(-30%);
+    transition: transform 0.7s;
+}
+
+.FootNav-Info-Body {
+    display: flex;
+    flex-flow: column;
+    width: 65%;
+    margin: auto;
+    margin-top: 1.8rem;
+}
+
 
 @media only screen and (min-width: 700px) {
     .FootNav-Container {
