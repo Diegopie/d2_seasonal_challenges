@@ -14,7 +14,6 @@ const DropUpMenu = (props) => {
                             <a 
                                 key={id}
                                 href={`#${id}`}
-                                onClick={() => props.handleClick(props.menu)}
                                 className='App-Button FootNav-DropUp-Button'>{id.replaceAll('-', ' ')}</a>
                         )
                     })
