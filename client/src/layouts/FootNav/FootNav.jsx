@@ -25,8 +25,8 @@ const FootNav = (props) => {
       const id = thisMenu.id;
       let menuState = thisMenu.dataset.show;
       if (menuState === 'true') {
+        // If the menu that was clicked is already open, change isSameMenu so we can end the function before the menu opens again
         if (id === menu) {
-          console.log(id, menu);
           isSameMenu = true;
         }
         thisMenu.dataset.show = 'false';
@@ -42,10 +42,6 @@ const FootNav = (props) => {
       target.classList.add(className);
       target.dataset.show = 'true'
     }
-    // } else {
-    //   target.classList.remove(className);
-    //   target.dataset.show = 'false';
-    // }
   }
 
   return (
@@ -60,7 +56,7 @@ const FootNav = (props) => {
         </nav>
         <DropUpMenu
           handleClick={handleClick}
-          menu='dropUp'
+          menu='DropUp'
         />
         <Info
           showInfo={showInfo}
