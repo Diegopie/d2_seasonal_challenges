@@ -94,6 +94,22 @@
     margin-top: 1.8rem;
 }
 
+.ContactCards-container {
+    border-radius: 20%;
+    background-color: #F09C47;
+    padding: 1em;
+    margin: 0.8rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    /* margin-right: 4vw; */
+}
+
+.ContactCards-img {
+    height: 0.5rem;
+    padding: 0.3rem;
+    filter: invert(1);
+}
+
 
 @media only screen and (min-width: 700px) {
     .FootNav-Container {
