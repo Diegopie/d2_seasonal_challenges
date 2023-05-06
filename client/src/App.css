@@ -8,15 +8,15 @@ body {
   }
 
 a {
-  /* text-decoration: none; */
+  text-decoration: none;
   color: inherit;
 }
   a:hover {
     color:inherit
   }
 
-App-Link {
- /* text-decoration: underline; */
+.App-Link {
+ text-decoration: underline !important;
 }
 
 .App-scrollLock {
