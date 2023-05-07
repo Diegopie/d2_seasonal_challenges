@@ -34,6 +34,8 @@
         background-color: rgba(129, 181, 181, 1);
     }
 
+/* DropUp Nav Menu */
+
 .FootNav-DropUp-Container {
     z-index: -1;
     border-radius: 10px;
@@ -77,6 +79,45 @@
 
 .FootNav-DropUp-Button:hover {
     color: rgb(232, 214, 94) !important
+}
+
+/* Info Menu */
+
+.FootNav-Info-ShowContainer {
+    height: 34rem;
+    /* transition: height 6s; */
+    transform: translateY(-30%);
+    transition: transform 0.7s;
+}
+
+.FootNav-Info-Body {
+    display: flex;
+    flex-flow: column;
+    width: 65%;
+    margin: auto;
+    margin-top: 1.8rem;
+}
+
+.FootNav-Info-SupportImg {
+    width: 60%;
+    border-radius: 20px;
+}
+
+/* Contact Cards */
+
+.FootNav-ContactCards-container {
+    border-radius: 20%;
+    background-color: rgb(116, 163, 239);
+    /* padding: 1em; */
+    margin: 0.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    /* margin-right: 4vw; */
+}
+
+.FootNav-ContactCards-img {
+    height: 100%;
+    padding: 0.3rem;
 }
 
 

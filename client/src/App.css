@@ -15,6 +15,10 @@ a {
     color:inherit
   }
 
+.App-Link {
+ text-decoration: underline !important;
+}
+
 .App-scrollLock {
   overflow: hidden;
 }
