@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { postNewUser } from '../api/server-data';
 import './Page.css'
 import { toast } from 'react-toastify';
