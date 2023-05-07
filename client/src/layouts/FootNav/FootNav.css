@@ -94,20 +94,24 @@
     margin-top: 1.8rem;
 }
 
+.FootNav-Info-SupportImg {
+    width: 60%;
+    border-radius: 20px;
+}
+
 .ContactCards-container {
     border-radius: 20%;
-    background-color: #F09C47;
-    padding: 1em;
+    background-color: rgb(116, 163, 239);
+    /* padding: 1em; */
     margin: 0.8rem;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
     /* margin-right: 4vw; */
 }
 
 .ContactCards-img {
-    height: 0.5rem;
+    height: 100%;
     padding: 0.3rem;
-    filter: invert(1);
 }
 
 

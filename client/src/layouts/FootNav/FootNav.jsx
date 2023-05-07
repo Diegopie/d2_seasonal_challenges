@@ -31,6 +31,8 @@ const FootNav = (props) => {
         }
         thisMenu.dataset.show = 'false';
         thisMenu.classList.remove(`FootNav-${id}-ShowContainer`);
+        // disable scrolling 
+        document.body.classList.remove('App-scrollLock');
       }
     }
 
@@ -41,6 +43,7 @@ const FootNav = (props) => {
     if (target.dataset.show === 'false') {
       target.classList.add(className);
       target.dataset.show = 'true'
+      document.body.classList.add('App-scrollLock');
     }
   }
 
