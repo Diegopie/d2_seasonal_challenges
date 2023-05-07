@@ -34,6 +34,8 @@
         background-color: rgba(129, 181, 181, 1);
     }
 
+/* DropUp Nav Menu */
+
 .FootNav-DropUp-Container {
     z-index: -1;
     border-radius: 10px;
@@ -79,6 +81,8 @@
     color: rgb(232, 214, 94) !important
 }
 
+/* Info Menu */
+
 .FootNav-Info-ShowContainer {
     height: 34rem;
     /* transition: height 6s; */
@@ -99,7 +103,9 @@
     border-radius: 20px;
 }
 
-.ContactCards-container {
+/* Contact Cards */
+
+.FootNav-ContactCards-container {
     border-radius: 20%;
     background-color: rgb(116, 163, 239);
     /* padding: 1em; */
@@ -109,7 +115,7 @@
     /* margin-right: 4vw; */
 }
 
-.ContactCards-img {
+.FootNav-ContactCards-img {
     height: 100%;
     padding: 0.3rem;
 }

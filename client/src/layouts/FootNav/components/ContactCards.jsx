@@ -2,14 +2,14 @@ const ContactCards = (props) => {
 
     
     return (
-        <article className='ContactCards-container'>
+        <article className='FootNav-ContactCards-container'>
             <a 
                 href={props.link}
                 target='_blank'
                 rel="noreferrer"
                 title={props.title}
             >
-                <img className='ContactCards-img'
+                <img className='FootNav-ContactCards-img'
                     src={props.img}
                     alt={props.altText}
                 />
