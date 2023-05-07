@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import { useGlobalContext } from '../context/GlobalContext';
 
 
-const TimeSensitive = () => {
+const Dust = () => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
@@ -21,16 +21,16 @@ const TimeSensitive = () => {
     const activityChallenges = [
         // [0]
         {
-            name: 'Time Sensitive Challenges',
+            name: 'Bright Dust',
             challenges: []
         }
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value
-    const handleChallenge = (category, challenge) => {
+    const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Time':
+            case 'Bright Dust':
                 activityChallenges[0].challenges.push(challenge)
                 break;
             default:
@@ -38,16 +38,15 @@ const TimeSensitive = () => {
         }
     }
 
-    // Loop Through Every Challenge in the DataBase. Add the Challenge Data To Every Category it Belongs to
 
     const sortChallenges = () => {
         season20Data.forEach((week => {
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
-                challenge.category.forEach((activity => {
+                
                     // console.log(activity);
-                    handleChallenge(activity, challenge)
-                }))
+                    handleChallenge(challenge.dust, challenge)
+                
             })
         }))
     }
@@ -57,7 +56,7 @@ const TimeSensitive = () => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-Time App-PushBottomUp'>
+                <section className='App-backImg backgroundImg-XP App-PushBottomUp'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (
@@ -75,4 +74,4 @@ const TimeSensitive = () => {
     );
 };
 
-export default TimeSensitive;
+export default Dust;

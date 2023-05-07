@@ -55,7 +55,7 @@ const SeasonalReward = () => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-SeasonalReward'>
+                <section className='App-backImg backgroundImg-SeasonalReward App-PushBottomUp'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

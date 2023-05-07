@@ -57,10 +57,10 @@ const ChallengeCategory = (props) => {
             // console.log(document.getElementById(togglerID).checked)
             document.getElementById(togglerID).checked = true;
         }
-        const activitesContainer = document.getElementsByClassName('ChallengeCategory-Container');
+        const activitiesContainer = document.getElementsByClassName('ChallengeCategory-Container');
         let navIDs = [];
-        for (let i = 0; i < activitesContainer.length; i++) {
-            navIDs.push(activitesContainer[i].getAttribute('id'));
+        for (let i = 0; i < activitiesContainer.length; i++) {
+            navIDs.push(activitiesContainer[i].getAttribute('id'));
         }
         dispatchGlobal({type:'updateActivityIdsNav', payload: navIDs})
     }, [togglerID, dispatchGlobal])
