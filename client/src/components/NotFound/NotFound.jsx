@@ -1,17 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import DarkContentHook from '../../hooks/DarkContentHook';
 import './NotFound.css';
 
 const NotFound = (props) => {
 
-    // Set Classes Based On darkMode Value
-    const [backImg, ] = DarkContentHook('backgroundImg', 'App-backImg-1-light');
 
     return (
-        <section className={`App-backImg ${backImg}`}>
-            <article className='Intro-container'>
-                <article className='Intro'>
+        <section className={`App-backImg backgroundImg-Weekly`}>
+            <article className='App-FlexCenter'>
+                <article className=''>
                     <h1 className='App-dropShadow'>
                         Page Not Found 🤯
                     </h1>
@@ -21,8 +17,8 @@ const NotFound = (props) => {
                         alt='me xD'
                     /> */}
                     <section className='MyProjects-all'>
-                        <Link to='/'>
-                            <button className='MyProjects-button'>Return Home</button>
+                        <Link to='/weekly'>
+                            <button className='App-Button'>Return Home</button>
                         </Link>
                     </section>
                 </article>

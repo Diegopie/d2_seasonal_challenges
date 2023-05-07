@@ -68,7 +68,7 @@ function App() {
                 <Route exact path='/xp' element={<XP />} />
                 <Route exact path='/seasonal-reward' element={<SeasonalReward />} />
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
-                <Route element={<NotFoundPage />} />
+                <Route path='*' element={<NotFoundPage />} />
             </Routes>
             <FootNav />
         </BrowserRouter>
