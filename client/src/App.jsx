@@ -19,6 +19,7 @@ import { useGlobalContext } from './context/GlobalContext';
 // CSS
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
+import Dust from './pages/Dust';
 
 // What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
 
@@ -66,6 +67,7 @@ function App() {
                 <Route exact path='weekly' element={<Weekly />} />
                 <Route exact path='activities' element={<Activities />} />
                 <Route exact path='/xp' element={<XP />} />
+                <Route exact path='/dust' element={<Dust />} />
                 <Route exact path='/seasonal-reward' element={<SeasonalReward />} />
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
                 <Route path='*' element={<NotFoundPage />} />

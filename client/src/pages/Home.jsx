@@ -28,7 +28,7 @@ const Home = () => {
                     <h1 className='Home-text Home-Title'>Destiny 2 Seasonal Challenges</h1>
                     <article className='Home-text'>
                         <p>
-                            If efficiency is how you play Destiny then you are in the right place! I often find myself spending more time preparing to play Destiny than playing it. There is so much to do and so little time 😞. This app is a Ghost companion to do the thinking for you! Rather than filtering through each page of Seasonal Challenges and Triumphs to know the tourmenting objectives to complete in Gambit this season, this app will simply organize all related Challenges and Triumphs for an activity into one place!
+                            If efficiency is how you play Destiny then you are in the right place! I often find myself spending more time preparing to play Destiny than playing it. There is so much to do and so little time 😞. This app is a Ghost companion to do the thinking for you! Rather than filtering through each page of Seasonal Challenges and Triumphs to know the tormenting objectives to complete in Gambit this season, this app will simply organize all related Challenges and Triumphs for an activity into one place!
                         </p>
                         <p>
                             Enter a Username to get Started. If you have an account, enter your username to Login!

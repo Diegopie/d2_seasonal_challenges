@@ -72,7 +72,7 @@ const XP = () => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-XP'>
+                <section className='App-backImg backgroundImg-XP App-PushBottomUp'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (
