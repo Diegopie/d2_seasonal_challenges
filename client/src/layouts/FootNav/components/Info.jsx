@@ -14,7 +14,7 @@ const Info = (props) => {
             </article>
             <article id='feedback' className='FootNav-Info-Body'>
                 <h2>Feedback</h2>
-                <p>Tell me what you think! But be nicer than we generally are to Bungie devs 😅</p>
+                <p>Tell me what you think! What works, what doesn't, what should be added, what should be changed? But be nicer than we generally are to Bungie devs 😅</p>
                 <article className="App-FlexCenter">
                     <ContactCards
                         link='mailto:diegopie@outlook.com?subject=Feedback For Destiny 2 Seasonal Challenges&body=Hey Diego, I have some feedback for your website!'
@@ -36,7 +36,7 @@ const Info = (props) => {
             <article className='FootNav-Info-Body'>
                 <h2>Support</h2>
                 <p>Boy does this stuff take a long time to make, I can get raid exotics faster than it takes to add features 😅</p>
-                <p>If this app has added value and you feel like showing your support, check out my Buy Me a Coffe page or vist our <a className='App-Link' href='' target='_blank'>eCommerce store</a>! We have a plenty of options to refill your gamer juice so you can stay in the grind 💪</p>
+                <p>If this app has added value and you feel like showing your support, check out my Buy Me a Coffee page or visit our <a className='App-Link' href='https://www.amway.com/myshop/ParkerandDiego?utm_source=copy&utm_medium=sharebar&utm_campaign=us_en_8235356_94412679&utm_content=myshop' target='_blank'>eCommerce store</a>! We have a plenty of options to refill your gamer juice so you can stay in the grind 💪</p>
                 <div className='App-FlexCenter'>
                     <a className='App-TextCenter' href='https://www.buymeacoffee.com/diegopie' rel='noreferrer' target='_blank'><img
                         className='FootNav-Info-SupportImg'
@@ -54,7 +54,7 @@ const Info = (props) => {
                 <p>But feel free to send me <a className="App-Link" href="#feedback">Feedback</a> on what you would like to see first!</p>
                 <article>
                     <h3 className="App-TextCenter mt-3 h4">Hire Me?</h3>
-                    <p>Have you been unjustly been ignore for not having a web presence? Does the Man have your brand overlooked? Do your employes keep slacking and evening stealing?! If you need someone to <em>actually</em> serve your coding needs, <a href="https://www.youtube.com/watch?v=hZ5djcbM2fU" rel="noreferrer" target="_blank">Better Call Sau-</a></p>
+                    <p>Have you been unjustly ignored for not having a web presence? Does the Man have your brand overlooked? Do your employes keep slacking and evening stealing?! If you need someone to <em>actually</em> serve your coding needs, <a href="https://www.youtube.com/watch?v=hZ5djcbM2fU" rel="noreferrer" target="_blank">Better Call Sau-</a></p>
                     <p className='small'>No but really, give me a job plz thanks</p>
                     <article className="App-FlexCenter">
                         <ContactCards
