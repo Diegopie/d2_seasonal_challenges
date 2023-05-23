@@ -1,31 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import GlobalProvider from './context/GlobalContext';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const loadTest = false;
+const container = document.getElementById('app');
+const root = createRoot(container);
 
 if (loadTest) {
   setTimeout(() => {
-    ReactDOM.render(
+    root.render(
       <React.StrictMode>
         <GlobalProvider>
           <App />
         </GlobalProvider>
-      </React.StrictMode>,
-      document.getElementById('root')
+      </React.StrictMode>
     );
   }, 1600)
 } else {
-  ReactDOM.render(
+  root.render(
     <React.StrictMode>
       <GlobalProvider>
         <App />
       </GlobalProvider>
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
   );
 }
 
