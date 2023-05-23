@@ -25,6 +25,14 @@ import Dust from './pages/Dust';
 
 function App() {
 
+    if(localStorage.getItem('init21') !== 'true') {
+        console.log('hit');
+        localStorage.clear();
+        localStorage.setItem('init21', 'true');
+        console.log(localStorage.getItem('init21'));
+        document.location.href = '/';
+    }
+
     // * User
     const username = localStorage.getItem('username');
     const path = window.location.pathname

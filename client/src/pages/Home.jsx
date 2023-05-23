@@ -32,7 +32,7 @@ const Home = () => {
                         </p>
 
                     </article>
-                    <iframe className='iFrame' src="https://www.youtube.com/embed/V9efg5dKPOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className='iFrame' src="https://www.youtube.com/embed/V9efg5dKPOY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </section>
                 <form className='Home-Container mt-4'>
                     <p className='Form-text'>

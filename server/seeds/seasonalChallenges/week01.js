@@ -1,30 +1,8 @@
 const challenges = [
-  // 01
   {
     belongsTo: String,
-    name: "Righteous Defiance",
-    description: "Complete Defiant Battleground: EDZ.",
-    category: ['Defiant Battleground'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "",
-        progress: 0,
-        goal: 1,
-        completed: false
-      }
-    ],
-    reward: 'War Table Upgrade',
-    xp: "Challenger XP",
-    dust: null
-  },
-  // 02
-  {
-    belongsTo: String,
-    name: "Awaken, Queensguard",
-    description: "Complete Week 1 of the We Stand Unbroken quest",
+    name: "Into the Depths I",
+    description: "Complete the Week 1 Into the Depths mission",
     category: [],
     completed: false,
     challengeIndex: Number,
@@ -37,71 +15,75 @@ const challenges = [
         completed: false
       }
     ],
-    reward: 'War Table Upgrade',
+    reward: null,
     xp: "Challenger XP+",
     dust: null
   },
-  // 03
   {
     belongsTo: String,
-    name: "Legion's Bounty",
-    description: "Spend a Defiant Key to earn bonus rewards at the end of a Defiant Battlegrounds playlist activity. Defiant Keys can be earned by completing Lightfall campaign missions, Terminal Overload in Neomuna, raids, Vanguard Ops playlist activities, Gambit..",
-    category: ['Defiant Battleground'],
+    name: "Front Line Salvager I",
+    description: "Complete Salvage or Deep Dive activities while using an Arc or Strand subclass. Additionally, defeat Fallen anywhere in the system.",
+    category: ['Deep Dive', 'Salvage'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: false,
-        task: "Defiant Key",
+        task: "Seasonal activities",
         progress: 0,
-        goal: 1,
+        goal: 3,
         completed: false
       },
       {
-        isPercent: false,
-        task: "Bonus rewards received",
+        isPercent: true,
+        task: "Fallen",
         progress: 0,
-        goal: 1,
-        completed: false
-      }
-    ],
-    reward: 'War Table Upgrade',
-    xp: "Challenger XP",
-    dust: null
-  },
-  // 04
-  {
-    belongsTo: String,
-    name: "Silver Lining",
-    description: "Reach Rank 12 with Nimbus in Neomuna.",
-    category: ['Neomuna'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Neomuna Rank",
-        progress: 0,
-        goal: 12,
+        goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP+",
     dust: null
   },
-  // 05
   {
     belongsTo: String,
-    name: "Keycard-Operated",
-    description: "Use keys to unlock Terminal Overload Key Chests in Neomuna. After completing the quest Stargazer, Terminal Overload Keys can be earned in Neomuna by completing public events, looting chests, and completing patrols",
-    category: ['Neomuna'],
+    name: "Successful Salvager",
+    description: "Successfully complete jobs in Salvage activities.",
+    category: ['Salvage'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: false,
-        task: "Chests",
+        task: "Jobs",
+        progress: 0,
+        goal: 5,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "The One That Didn't Get Away",
+    description: "Catch fish at any Fish Pond. Additionally, complete public events on any destination.",
+    category: ['Activities'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Fish",
+        progress: 0,
+        goal: 50,
+        completed: false
+      },
+      {
+        isPercent: false,
+        task: "Public events",
         progress: 0,
         goal: 2,
         completed: false
@@ -111,12 +93,11 @@ const challenges = [
     xp: "Challenger XP+",
     dust: null
   },
-  // 06
   {
     belongsTo: String,
-    name: "Neptune Activities",
-    description: "In Neomuna, complete bounties, patrols, public events, and Lost Sectors.",
-    category: ['Neomuna'],
+    name: "EDZ Activities",
+    description: "In the EDZ, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
+    category: ['EDZ'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -132,12 +113,11 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 07
   {
     belongsTo: String,
     name: "Taking All Challenges",
     description: "Complete weekly playlist challenges.",
-    category: [],
+    category: ['Activites'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -153,18 +133,37 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 08
   {
     belongsTo: String,
     name: "Spark Defender",
     description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
-    category: ['PvP'],
+    category: ['PvP', 'Time'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Points",
+        progress: 0,
+        goal: 50,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: String,
+    name: "Standard Issue",
+    description: "Defeat targets in Gambit with Primary ammo. Bonus progress is granted for using Auto Rifles, Hand Cannons, and Scout Rifles. Bonus progress also is granted for defeating Guardians.",
+    category: ['Gambit'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: true,
-        task: "Points",
+        task: "Progress",
         progress: 0,
         goal: 100,
         completed: false
@@ -174,18 +173,17 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 09
   {
     belongsTo: String,
-    name: "Anti-Cabal Sweep",
-    description: "Defeat Cabal combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
+    name: "The Fallen Fall",
+    description: "Defeat Fallen combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
     category: ['Vanguard'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: true,
-        task: "Cabal",
+        task: "Fallen",
         progress: 0,
         goal: 100,
         completed: false
@@ -195,12 +193,11 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 10
   {
     belongsTo: String,
-    name: "Deadly Horizons",
-    description: "Calibrate long-range weapons -- Pulse Rifles, Bows, and Trace Rifles -- in Neomuna. Bonus progress awarded in Lost Sectors.",
-    category: ['Neomuna'],
+    name: "Calibrate Close Range",
+    description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords. Bonus progress for defeating Guardians.",
+    category: ['Loadout', 'PvP', 'Gambit'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -216,7 +213,7 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   }
-];
+]
 
 const weekName = 'Week One'
 

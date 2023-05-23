@@ -1,5 +1,5 @@
 const basicUserRouter = require('express').Router();
-const seedSeasonalChallenges20 = require('../seeds/seasonalChallenges20')
+const seedSeasonalChallenges21 = require('../seeds/seasonalChallenges')
 
 const { BasicUser } = require('../models');
 
@@ -26,7 +26,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
 
     // * Check Excisting USer
     // console.log('---server data--');
-    // console.log(seedSeasonalChallenges20);
+    // console.log(seedSeasonalChallenges21);
     const checkExisting = await BasicUser.findOne(
         { username: username }
     ).then(data => {
@@ -49,7 +49,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     }
 
     // * Create New User
-    const newUser = new BasicUser({ username, seasonalChallenges20: seedSeasonalChallenges20 });
+    const newUser = new BasicUser({ username, seasonalChallenges21: seedSeasonalChallenges21 });
     newUser.save(err => {
         if (err) {
             res.status(500).json(
@@ -79,8 +79,8 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 );
                 return;
             }
-            const currentData = data.seasonalChallenges20;
-            const serverData = seedSeasonalChallenges20;
+            const currentData = data.seasonalChallenges21;
+            const serverData = seedSeasonalChallenges21;
             // console.log('---userdata---');
             // console.log(currentData);
             // *** If user's data is shorter than server, user is missing new data. Begin a loop with user's current data (length) than push new data to user array
@@ -92,7 +92,7 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 // console.log(currentData);
                 
                 // *** Legacy - current code sends to client, client saves to local, client sends all local data to /api/basic-user/update
-                // BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges20: seasonalChallenges }, { returnNewDocument: true })
+                // BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges21: seasonalChallenges }, { returnNewDocument: true })
                 //     .then(data => {
                 //         res.status(201).json(
                 //             handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)
@@ -121,7 +121,7 @@ basicUserRouter.post('/update', async ({ body }, res) => {
     // console.log(body.seasonalChallenges[0].challenges[0]);
     const { username, seasonalChallenges } = body;
     // console.log(username);
-    BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges20: seasonalChallenges }, { returnNewDocument: true })
+    BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges21: seasonalChallenges }, { returnNewDocument: true })
         .then(data => {
             res.status(201).json(
                 handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)
