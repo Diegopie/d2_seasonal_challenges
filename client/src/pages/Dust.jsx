@@ -56,7 +56,7 @@ const Dust = () => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-XP App-PushBottomUp'>
+                <section className='App-backImg backgroundImg-Dust App-PushBottomUp'>
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

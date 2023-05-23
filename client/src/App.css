@@ -76,36 +76,32 @@ a {
 }
 
 .backgroundImg-Weekly {
-  background-image: url("./assets/production/background-img/background-season20_Home.jpg");
+  background-image: url("./assets/production/background-img/background_Home.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-Activities {
-  background-image: url("./assets/production/background-img/background-season20_Activities.jpg");
+  background-image: url("./assets/production/background-img/background_Activities.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-XP {
-  background-image: url("./assets/production/background-img/background-season20_XP.jpg");
+  background-image: url("./assets/production/background-img/background_XP.jpg");
+  min-height: 100vh;
+}
+
+.backgroundImg-Dust {
+  background-image: url("./assets/production/background-img/background_Dust.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-SeasonalReward {
-  background-image: url("./assets/production/background-img/background-season20_SeasonalReward.jpg");
+  background-image: url("./assets/production/background-img/background_SeasonalReward.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-Time {
-  background-image: url("./assets/production/background-img/background-season20_Time.jpeg");
-  min-height: 100vh;
-}
-
-  .App-backImg-1_1-light {
-    background-image: url("./assets/production/background-img/backImg-1-light.jpg");
-    min-height: 100vh;
-  }
-.App-backImg-1-dark {
-  background-image: url("./assets/production/background-img/backImg-1-dark.jpg");
+  background-image: url("./assets/production/background-img/background_Time.jpeg");
   min-height: 100vh;
 }
 
