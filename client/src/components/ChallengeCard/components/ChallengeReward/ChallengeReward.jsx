@@ -18,19 +18,31 @@ const ChallengeReward = (props) => {
             <h4>Rewards</h4>
             {reward &&
                 <div className='ChallengeReward-Body'>
-                    <img className='ChallengeReward-Img' src={`/assets/img/icons/${reward === 'War Table Upgrade' ? 'war-table.png' : 'weapon.jpg'}`}/>
+                    <img
+                        className='ChallengeReward-Img'
+                        alt={`${reward} Icon`}
+                        src={`/assets/img/icons/${reward === 'War Table Upgrade' ? 'war-table.png' : 'weapon.jpg'}`}
+                    />
                     <p>{reward}</p>
                 </div>
             }
             {xp &&
                 <div className='ChallengeReward-Body'>
-                    <img className='ChallengeReward-Img' src={getXpImg(xp)} />
+                    <img
+                        className='ChallengeReward-Img'
+                        alt={`${xp} Icon`}
+                        src={getXpImg(xp)}
+                    />
                     <p>{xp}</p>
                 </div>
             }
             {dust &&
                 <div className='ChallengeReward-Body'>
-                    <img className='ChallengeReward-Img' src='/assets/img/icons/bright-dust.png' />
+                    <img
+                        alt={`${dust} Icon`}
+                        className='ChallengeReward-Img'
+                        src='/assets/img/icons/bright-dust.png'
+                    />
                     <p>{dust}</p>
                 </div>
             }

@@ -6,12 +6,8 @@ const ObjectiveToggle = (props) => {
 
     const [{ completed, week, challengeIndex }, dispatch] = useChallengeContext();
 
-    
-
-
     // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
     const handleClick = (e, id, week, challengeIndex) => {
-        console.log(e.target.checked);
         const currentObjective = e.target;
         // * Update Local Storage
         const getLocal = localStorage.getItem(week);
