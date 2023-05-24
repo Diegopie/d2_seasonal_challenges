@@ -18,7 +18,7 @@ const ChallengeReward = (props) => {
             <h4>Rewards</h4>
             {reward &&
                 <div className='ChallengeReward-Body'>
-                    <img className='ChallengeReward-Img' src='/assets/img/icons/bright-dust.png' />
+                    <img className='ChallengeReward-Img' src={`/assets/img/icons/${reward === 'War Table Upgrade' ? 'war-table.png' : 'weapon.jpg'}`}/>
                     <p>{reward}</p>
                 </div>
             }
