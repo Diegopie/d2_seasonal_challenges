@@ -1,12 +1,12 @@
 .ChallengeCard-Container {
-    width: min(100% - 2rem, 500px);
+    width: min(100% - 2rem, 496px);
     margin-bottom: 0.6rem;
 }
 
 
 .ChallengeCard-Header {
-    /* background-color: #aec9f5; */
-    padding: 0.1px 0px 0px 0px;
+    text-align: center;
+    padding: 1rem 1.4rem 0rem 1.4rem;
     width: 100%;
 }
 
@@ -26,7 +26,7 @@
 .ChallengeCard-Completed {
         border-style: solid;
         border-color: #0cc0d9;
-        color: #0cc0d9;
+        color: #0cc0d9 !important;
 }
 
 .ObjectiveToggle {
@@ -42,20 +42,22 @@
 
 .ChallengeObjectives-Body {
     margin-left: 4%;
+    margin-bottom: 0.3rem;
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
-    /* margin: auto; */
 }
 
 .ChallengeObjectives-OptionsContainer {
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
+    align-items: baseline;
 }
 
 .ObjectiveOptions {
     max-width: 4.5rem;
+    height: 80%;
 }
 
 .ChallengeObjectivePercentage {

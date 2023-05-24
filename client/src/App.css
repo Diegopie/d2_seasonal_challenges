@@ -15,6 +15,13 @@ a {
     color:inherit
   }
 
+select {
+  background-color: rgba(127, 183, 216, 0.6);
+  color: #f1f1f1;
+  text-align: center;
+  border-radius: 8px;
+}
+
 .App-Link {
  text-decoration: underline !important;
 }
@@ -35,6 +42,10 @@ a {
   filter: drop-shadow(3px 4px 2px #474747);
 }
 
+.App-DropShadow-2 {
+  filter: drop-shadow(1px 1px 0.5px #696969);
+}
+
 .App-backMaxHeight {
   height: 100vh;
 }
@@ -42,6 +53,7 @@ a {
 .App-FlexCenter {
   display: flex;
   justify-content: center;
+  align-items: baseline;
 }
 
 .App-TextCenter {

@@ -93,7 +93,7 @@ const ChallengeCard = (props) => {
     const isActivities = window.location.pathname.includes('/');
 
     return (
-        <section className={'ChallengeCard-Container ' + props.activityHeader + ' ' + name.replaceAll(' ', '-')} id={name.replaceAll(' ', '-')} data-completed={completed}>
+        <section className={`ChallengeCard-Container ${props.activityHeader} ${name.replaceAll(' ', '-')} App-DropShadow-2`} id={name.replaceAll(' ', '-')} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header App-FlexCenter'>
                 {isActivities &&
