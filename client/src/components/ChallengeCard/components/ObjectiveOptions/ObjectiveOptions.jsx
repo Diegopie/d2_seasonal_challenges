@@ -11,6 +11,8 @@ const ObjectiveOptions = (props) => {
         return props.progress
     });
 
+    const selectId = props.task.replaceAll(' ', '-');
+
     const handleSelect = (e, week, challengeIndex) => {
         const userSelectedValue = Number(e.target.value);
         // * Set Component State to Update Page
@@ -33,12 +35,18 @@ const ObjectiveOptions = (props) => {
         const newObjective = newLocal[challengeIndex].objectives;
         dispatch({type:'setNewObjective', payload: { newObjective }});
         updateServerData();
+
+        // {patch} update dom to sync any duplicate Challenges
+        const targets = document.getElementsByClassName(selectId);
+            for (let i = 0; i < targets.length; i++) {
+                targets[i].value = userSelectedValue;
+            }
     }
 
     return (
         <select
-            id={`${props.task.replaceAll(' ', '-')}`}
-            className={`ObjectiveOptions ${completed ? 'ChallengeCard-Completed' : ''}`}
+            id={selectId}
+            className={`ObjectiveOptions ${selectId} ${completed ? 'ChallengeCard-Completed' : ''}`}
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}

@@ -10,8 +10,9 @@ const ObjectiveToggle = (props) => {
 
 
     // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
-    const handleClick = (id, week, challengeIndex) => {
-        const currentObjective = document.getElementById(id);
+    const handleClick = (e, id, week, challengeIndex) => {
+        console.log(e.target.checked);
+        const currentObjective = e.target;
         // * Update Local Storage
         const getLocal = localStorage.getItem(week);
         // ** Parse Local With Mutable Variable
@@ -26,6 +27,12 @@ const ObjectiveToggle = (props) => {
         const newObjective = newLocal[challengeIndex].objectives;
         dispatch({type:'setNewObjective', payload: { newObjective }});
         updateServerData();
+
+        // { bandaid } update DOM accoss all duplicates
+        const targets = document.getElementsByClassName(props.id);
+            for (let i = 0; i < targets.length; i++) {
+                targets[i].checked = e.target.checked;
+            }
     }
 
     useEffect(() => {
@@ -43,7 +50,7 @@ const ObjectiveToggle = (props) => {
             id={props.id}
             type='checkbox'
             className={`ObjectiveToggle ${props.id}`}
-            onClick={e => handleClick(props.id, week, challengeIndex)}
+            onClick={e => handleClick(e, props.id, week, challengeIndex)}
         />
     );
 };
