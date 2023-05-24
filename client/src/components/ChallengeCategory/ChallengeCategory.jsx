@@ -20,8 +20,8 @@ const ChallengeCategory = (props) => {
             selectedSection.classList.add('ChallengeCard-Hide');
             return;
         }
-        selectedSection.classList.remove('ChallengeCard-Hide');
         // If isChecked is False, Add All Challenges back to DOM
+        selectedSection.classList.remove('ChallengeCard-Hide');
     };
 
     // Manage Hiding and Unhiding Completed Challenges (Also Handled in ChallengeCard)
@@ -31,17 +31,19 @@ const ChallengeCategory = (props) => {
     const handleToggleChallenges = (e) => {
         const isChecked = document.getElementById(togglerID).checked;
         // If isChecked is True, Hide Completed Challenges
+        console.log(isChecked);
         if (isChecked) {
-            // Loop through each returned element, check if their data set is true, and remove from DOM
+            // Loop through each returned element, check if their data set is true, and add to DOM
             for (let i = 0; i < activityChallenges.length; i++) {
                 const isCompleted = activityChallenges[i].dataset.completed;
                 if (isCompleted === 'true') {
                     activityChallenges[i].classList.remove('ChallengeCard-Hide');
+                    activityChallenges[i].classList.add('ChallengeCard-Completed');
                 }
             }
             return;
         }
-        // IF isChecked is False, add all challenges back to DOM
+        // IF isChecked is False, remove all challenges from DOM
         for (let i = 0; i < activityChallenges.length; i++) {
             const isCompleted = activityChallenges[i].dataset.completed;
             if (isCompleted === 'true') {

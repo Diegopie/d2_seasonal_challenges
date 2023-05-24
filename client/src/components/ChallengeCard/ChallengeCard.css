@@ -1,5 +1,6 @@
 .ChallengeCard-Container {
     width: min(100% - 2rem, 500px);
+    margin-bottom: 0.6rem;
 }
 
 
@@ -16,6 +17,16 @@
 
 .ChallengeCard-Text {
     padding-left: 10px;
+}
+
+.ChallengeCard-Hide {
+    display: none !important;
+}
+
+.ChallengeCard-Completed {
+        border-style: solid;
+        border-color: #0cc0d9;
+        color: #0cc0d9;
 }
 
 .ObjectiveToggle {
@@ -49,10 +60,6 @@
 
 .ChallengeObjectivePercentage {
     min-width: 40%;
-}
-
-.ChallengeCard-Hide {
-    display: none !important;
 }
 
 @media (max-width: 1000px) {

@@ -63,13 +63,18 @@ const ChallengeCard = (props) => {
             // *** Check if User Selected to Hide Completed Challenges. if True, hide from DOM
             // {Note: I'm having an issue where the initial state for currentContainer data is null, as the app crashes here. Returning the function if null prevents crashes then assumes desired functionality}
             if (currentContainer === null) return;
+            console.log(currentContainer);
+
+            // Loop to Add 
+            for (let i = 0; i < currentContainer.length; i++) {
+                currentContainer[i].classList.add('ChallengeCard-Completed'); 
+            }
+            
             if (isChecked) return;
             // setTimeout(() => {
             for (let i = 0; i < currentContainer.length; i++) {
-                currentContainer[i].classList.add('ChallengeCard-Hide');
-                
+                currentContainer[i].classList.add('ChallengeCard-Hide'); 
             }
-            //   }, "2000")
 
 
             // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
@@ -78,7 +83,7 @@ const ChallengeCard = (props) => {
             updateLocalAndState(false);
             if (currentContainer === null) return;
             for (let i = 0; i < currentContainer.length; i++) {
-                currentContainer[i].classList.remove('ChallengeCard-Hide');
+                currentContainer[i].classList.remove('ChallengeCard-Hide', 'ChallengeCard-Completed');
                 
             }
         }
@@ -96,9 +101,6 @@ const ChallengeCard = (props) => {
                 }
                 {!isActivities &&
                     <h3>{name}</h3>
-                }
-                {completed === true &&
-                    <p>Completed!</p>
                 }
             </article>
             <section className='ChallengeCard-Body'>
