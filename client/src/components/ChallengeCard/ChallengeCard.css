@@ -64,6 +64,14 @@
     min-width: 40%;
 }
 
+.ChallengeReward-Body {
+    display: flex;
+}
+.ChallengeReward-Img {
+    height: 1.8rem;
+    margin-right: 0.3rem;
+}
+
 @media (max-width: 1000px) {
     .ChallengeCard-Container {
     width: min(100%, 1000px);

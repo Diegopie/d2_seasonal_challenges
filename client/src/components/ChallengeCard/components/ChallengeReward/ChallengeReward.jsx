@@ -3,20 +3,36 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ChallengeReward = (props) => {
 
-    const [{reward, xp, dust}, ] = useChallengeContext();
+    const [{ reward, xp, dust },] = useChallengeContext();
+
+    const getXpImg = (xpTier) => {
+        // {note: I don't see different Icons in light gg and they're not in game. Not sure if Bungie actually has different icons, so maybe I'll make them?}
+        if (xpTier === 'Challenger XP') return '/assets/img/icons/xp-t1.png'
+        if (xpTier === 'Challenger XP+') return '/assets/img/icons/xp-t1.png'
+        if (xpTier === 'Challenger XP++') return '/assets/img/icons/xp-t1.png'
+    }
 
     return (
         <section>
             {/* Check If Each Reward Type has a Truthy Value in this Challenge Instance and Render */}
             <h4>Rewards</h4>
             {reward &&
-                <p>{reward}</p>
+                <div className='ChallengeReward-Body'>
+                    <img className='ChallengeReward-Img' src='/assets/img/icons/bright-dust.png' />
+                    <p>{reward}</p>
+                </div>
             }
             {xp &&
-                <p>{xp}</p>
+                <div className='ChallengeReward-Body'>
+                    <img className='ChallengeReward-Img' src={getXpImg(xp)} />
+                    <p>{xp}</p>
+                </div>
             }
             {dust &&
-                <p>{dust}</p>
+                <div className='ChallengeReward-Body'>
+                    <img className='ChallengeReward-Img' src='/assets/img/icons/bright-dust.png' />
+                    <p>{dust}</p>
+                </div>
             }
         </section>
     );
