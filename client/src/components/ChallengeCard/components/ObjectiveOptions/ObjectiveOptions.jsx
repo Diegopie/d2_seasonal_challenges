@@ -4,7 +4,7 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
-    const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
+    const [{ completed, week, challengeIndex, name }, dispatch] = useChallengeContext()
 
     // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
@@ -23,7 +23,7 @@ const ObjectiveOptions = (props) => {
         currentTask.progress = userSelectedValue;
         // ** If a User Selects the Final Options, Mark Objective as Complete
         if(userSelectedValue === props.goal) {
-            console.log("hit");
+            // console.log("hit");
             currentTask.completed = true;
         }
         // ** Store the Mutated Array in Local Storage
@@ -38,7 +38,7 @@ const ObjectiveOptions = (props) => {
     return (
         <select
             id={`${props.task.replaceAll(' ', '-')}`}
-            className='ObjectiveOptions'
+            className={`ObjectiveOptions ${completed ? 'ChallengeCard-Completed' : ''}`}
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}

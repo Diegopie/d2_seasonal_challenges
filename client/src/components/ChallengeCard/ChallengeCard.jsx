@@ -63,7 +63,6 @@ const ChallengeCard = (props) => {
             // *** Check if User Selected to Hide Completed Challenges. if True, hide from DOM
             // {Note: I'm having an issue where the initial state for currentContainer data is null, as the app crashes here. Returning the function if null prevents crashes then assumes desired functionality}
             if (currentContainer === null) return;
-            console.log(currentContainer);
 
             // Loop to Add 
             for (let i = 0; i < currentContainer.length; i++) {

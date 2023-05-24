@@ -4,7 +4,7 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveToggle = (props) => {
 
-    const [{ week, challengeIndex }, dispatch] = useChallengeContext();
+    const [{ completed, week, challengeIndex }, dispatch] = useChallengeContext();
 
     
 
@@ -29,16 +29,20 @@ const ObjectiveToggle = (props) => {
     }
 
     useEffect(() => {
-        if (props.completed) {
-            document.getElementById(props.id).checked = props.completed;
+        // Toggle All Checkboxes to true if challenge is complete; Use className as some challenges are duplicated on DOM
+        if (completed) {
+            const targets = document.getElementsByClassName(props.id);
+            for (let i = 0; i < targets.length; i++) {
+                targets[i].checked = completed;
+            }
         }
-    }, [props.completed, props.id])
+    }, [completed, props.id])
 
     return (
         <input
             id={props.id}
             type='checkbox'
-            className='ObjectiveToggle'
+            className={`ObjectiveToggle ${props.id}`}
             onClick={e => handleClick(props.id, week, challengeIndex)}
         />
     );

@@ -3,27 +3,34 @@ body {
   color: white !important;
 }
 
-  .darkMode {
-    background-color: #2A2C2E;
-  }
+.darkMode {
+  background-color: #2A2C2E;
+}
 
 a {
   text-decoration: none;
   color: inherit;
 }
-  a:hover {
-    color:inherit
-  }
+
+a:hover {
+  color: inherit
+}
 
 select {
-  background-color: rgba(127, 183, 216, 0.6);
+  background-color: rgba(160, 211, 241, 0.6);
   color: #f1f1f1;
   text-align: center;
   border-radius: 8px;
+  filter: drop-shadow(1px 1px 0.5px #696969);
+}
+
+select option {
+  background: rgba(99, 130, 148, 0.6);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
 .App-Link {
- text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
 .App-scrollLock {
@@ -117,7 +124,7 @@ select {
   min-height: 100vh;
 }
 
-body > iframe {
+body>iframe {
   pointer-events: none;
 }
 

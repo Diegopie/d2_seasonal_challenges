@@ -26,7 +26,7 @@
 .ChallengeCard-Completed {
         border-style: solid;
         border-color: #0cc0d9;
-        color: #0cc0d9 !important;
+        color: #0cc0d9;
 }
 
 .ObjectiveToggle {
