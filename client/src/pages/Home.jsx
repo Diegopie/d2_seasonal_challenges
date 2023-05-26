@@ -40,7 +40,7 @@ const Home = () => {
                     </p>
                     <input
                         type={'text'}
-                        name='username'
+                        name='d2Challenges-username'
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                     ></input>

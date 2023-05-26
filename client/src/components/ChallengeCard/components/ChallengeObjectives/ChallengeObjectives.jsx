@@ -18,14 +18,6 @@ const ChallengeObjectives = (props) => {
                             type='checkbox'
                             onClick={e => handleClick(id, week, index)}
                         /> */}
-                        <ObjectiveToggle
-                            id={id}
-                            objectiveIndex={index}
-                            progress={obj.progress}
-                            completed={obj.completed}
-                        />
-                        <p className='ChallengeObjectives-Task'> {obj.task} </p>
-                        {/* Tally Objectives */}
                         <article className='ChallengeObjectives-OptionsContainer'>
                             {/* Use Prop Data Rather Than Context to Easier Mange Individual Instances of ObjectiveOptions */}
                             <ObjectiveOptions 
@@ -43,6 +35,15 @@ const ChallengeObjectives = (props) => {
                                 <p className='ChallengeObjectivePercentage'>{obj.goal}%</p>
                             }
                         </article>
+                        
+                        <p className='ChallengeObjectives-Task'> {obj.task} </p>
+                        {/* Tally Objectives */}
+                        <ObjectiveToggle
+                            id={id}
+                            objectiveIndex={index}
+                            progress={obj.progress}
+                            completed={obj.completed}
+                        />
                     </article>
                 )
 

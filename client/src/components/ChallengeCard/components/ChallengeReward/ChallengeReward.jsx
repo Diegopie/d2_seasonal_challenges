@@ -3,8 +3,15 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ChallengeReward = (props) => {
 
-    const [{ reward, xp, dust },] = useChallengeContext();
+    const [{ reward, xp, dust, week },] = useChallengeContext();
 
+    // console.log(week);
+
+    const getRewardImg = (reward) => {
+        if (week.includes('Deep')) return `/assets/img/icons/deep-rewards/${reward.replaceAll(' ', '-')}.png`
+        if (reward === 'War Table Upgrade') return '/assets/img/icons/war-table.png';
+        if (reward.includes('Weapon')) return '/assets/img/icons/weapon.jpg';
+    }
     const getXpImg = (xpTier) => {
         // {note: I don't see different Icons in light gg and they're not in game. Not sure if Bungie actually has different icons, so maybe I'll make them?}
         if (xpTier === 'Challenger XP') return '/assets/img/icons/xp-t1.png'
@@ -21,7 +28,7 @@ const ChallengeReward = (props) => {
                     <img
                         className='ChallengeReward-Img'
                         alt={`${reward} Icon`}
-                        src={`/assets/img/icons/${reward === 'War Table Upgrade' ? 'war-table.png' : 'weapon.jpg'}`}
+                        src={getRewardImg(reward)}
                     />
                     <p>{reward}</p>
                 </div>
