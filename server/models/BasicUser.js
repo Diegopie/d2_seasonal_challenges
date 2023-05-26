@@ -5,6 +5,10 @@ const BasicUserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    patchNumber: {
+        type: Number,
+        required: true,
+    },
     seasonalChallenges20: {
         type: Array,
         required: true,
