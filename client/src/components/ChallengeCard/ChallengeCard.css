@@ -1,6 +1,7 @@
 .ChallengeCard-Container {
     width: min(100% - 2rem, 496px);
     margin-bottom: 0.6rem;
+    transition: 1s;
 }
 
 
@@ -13,6 +14,7 @@
 .ChallengeCard-Body {
     width: min(100% - 3rem, 500px);
     margin: auto;
+    transition: 1s;
 }
 
 .ChallengeCard-Text {
@@ -24,20 +26,19 @@
 }
 
 .ChallengeCard-Completed {
-        border-style: solid;
-        border-color: #0cc0d9;
-        color: #0cc0d9;
+    border-style: solid;
+    border-color: #0cc0d9;
+    color: #0cc0d9;
 }
 
 .ObjectiveToggle {
-    margin-right: 0.8rem;
     width: 1.4rem;
     position: relative;
     bottom: 0.3rem;
 }
 
 .ChallengeObjectives-Task {
-    width: 65%;
+    width: 90%;
 }
 
 .ChallengeObjectives-Body {
@@ -58,6 +59,7 @@
 .ObjectiveOptions {
     max-width: 4.5rem;
     height: 80%;
+    transition: 1s;
 }
 
 .ChallengeObjectivePercentage {
@@ -67,6 +69,7 @@
 .ChallengeReward-Body {
     display: flex;
 }
+
 .ChallengeReward-Img {
     height: 1.8rem;
     margin-right: 0.3rem;
@@ -74,23 +77,20 @@
 
 @media (max-width: 1000px) {
     .ChallengeCard-Container {
-    width: min(100%, 1000px);
+        width: min(100%, 1000px);
+        transition: 1s;
     }
 
     .ChallengeCard-Body {
-    width: min(100% - 3rem, 1000px);
-    }
-}
-
-@media (max-width: 600px) {
-    .ChallengeObjectives-Task {
-    width: 55%;
+        width: min(100% - 3rem, 1000px);
+        transition: 1s;
     }
 }
 
 @media (max-width: 380px) {
     .ObjectiveOptions {
         max-width: 3.2rem;
+        transition: 1s;
     }
 
 }
