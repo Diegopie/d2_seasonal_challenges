@@ -1,5 +1,6 @@
 const basicUserRouter = require('express').Router();
-const seedSeasonalChallenges20 = require('../seeds/seasonalChallenges20')
+const seedSeasonalChallenges21 = require('../seeds/seasonalChallenges')
+const { patchNumber, patchedSeasonalChallenges } = require('../seeds/patch')
 
 const { BasicUser } = require('../models');
 
@@ -26,7 +27,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
 
     // * Check Excisting USer
     // console.log('---server data--');
-    // console.log(seedSeasonalChallenges20);
+    // console.log(seedSeasonalChallenges21);
     const checkExisting = await BasicUser.findOne(
         { username: username }
     ).then(data => {
@@ -49,7 +50,11 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     }
 
     // * Create New User
-    const newUser = new BasicUser({ username, seasonalChallenges20: seedSeasonalChallenges20 });
+    const newUser = new BasicUser({
+        username,
+        patchNumber,
+        seasonalChallenges21: seedSeasonalChallenges21
+    });
     newUser.save(err => {
         if (err) {
             res.status(500).json(
@@ -79,31 +84,57 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 );
                 return;
             }
-            const currentData = data.seasonalChallenges20;
-            const serverData = seedSeasonalChallenges20;
-            // console.log('---userdata---');
-            // console.log(currentData);
+            let currentData = data.seasonalChallenges21;
+            const serverData = seedSeasonalChallenges21;
             // *** If user's data is shorter than server, user is missing new data. Begin a loop with user's current data (length) than push new data to user array
             if (currentData.length < serverData.length) {
                 for (let i = currentData.length; i < serverData.length; i++) {
                     currentData.push(serverData[i]);
                 }
-                // console.log('---after update ---');
-                // console.log(currentData);
-                
-                // *** Legacy - current code sends to client, client saves to local, client sends all local data to /api/basic-user/update
-                // BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges20: seasonalChallenges }, { returnNewDocument: true })
-                //     .then(data => {
-                //         res.status(201).json(
-                //             handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)
-                //         );
-                //     })
-                //     .catch(err => {
-                //         res.status(500).json(
-                //             handleResponse(null, "Error updating db!", '/api/basic-user/update', err, false)
-                //         );
-                //     })
             }
+            console.log("---- NEW RUN ----");
+            // ** Check For Patch
+            console.log(data.patchNumber);
+            console.log(patchNumber);
+
+            // ** If User Has Never Received a Patch, Add It To Their Schema
+            if (data.patchNumber === undefined) {
+                console.log('hit undefined');
+                BasicUser.schema.add({
+                    patchNumber: {
+                        type: Number,
+                        default: patchNumber
+                    },
+                    
+                },{ returnNewDocument: true });
+            }
+
+            // ** If New Patch Is Available, Patch User's Data
+            if (data.patchNumber !== patchNumber) {
+                console.log("hit no match");
+
+                currentData = patchedSeasonalChallenges(data.seasonalChallenges21)
+                data.seasonalChallenges21 = currentData;
+
+                BasicUser.findOneAndUpdate(
+                    { username: username },
+                    {
+                        $set: {
+                            seasonalChallenges21: data.seasonalChallenges21,
+                            patchNumber: patchNumber
+                        }
+                    },
+                    {
+                        returnNewDocument: true,
+                        multi: true
+                    }
+                ).catch(err => {
+                    res.status(500).json(
+                        handleResponse(null, "Error updating patch!", '/api/basic-user/data', err, false)
+                    )
+                });
+            }
+
 
             // Send data to client    
             res.status(200).json(
@@ -121,7 +152,11 @@ basicUserRouter.post('/update', async ({ body }, res) => {
     // console.log(body.seasonalChallenges[0].challenges[0]);
     const { username, seasonalChallenges } = body;
     // console.log(username);
-    BasicUser.findOneAndUpdate({ username: username }, { seasonalChallenges20: seasonalChallenges }, { returnNewDocument: true })
+    BasicUser.findOneAndUpdate(
+        { username: username },
+        { seasonalChallenges21: seasonalChallenges },
+        { returnNewDocument: true }
+    )
         .then(data => {
             res.status(201).json(
                 handleResponse(data, "Saved data to db!", '/api/basic-user/update', null, true)

@@ -8,7 +8,7 @@ const localSeasonalChallenges = () => {
     return getServerData(username)
         .then(data => {
             // console.log(data);
-            const serverData = data.data.seasonalChallenges20
+            const serverData = data.data.seasonalChallenges21
             serverData.map((week) => {
                 // * Set weekName to be JSON and LocalStorage Friendly
                 const weekName = week.name.replaceAll(' ', '-');

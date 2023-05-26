@@ -1,6 +1,6 @@
 import { getServerData } from "./server-data";
 
-const weeks = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+const weeks = ['Season-of-the-Deep-Upgrades', 'Week-One', 'Week-Two', 'Week-Three', 'Week-Four', 'Week-Five', 'Week-Six', 'Week-Seven', 'Week-Eight', 'Week-Nine', 'Week-Ten'];
 
 const allLocalData = () => {
 
@@ -12,7 +12,7 @@ const allLocalData = () => {
    const allData = []
 
     for (let i = 0; i < weeks.length; i++) {
-        const week = `Week-${weeks[i]}`;
+        const week = weeks[i];
         const data = JSON.parse(localStorage.getItem(week));
         // console.log(data);
         if (data === null) break;

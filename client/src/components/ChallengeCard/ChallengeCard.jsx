@@ -9,8 +9,6 @@ const ChallengeCard = (props) => {
 
     const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
-
-
     // *** { THIS IS BEING DOUBLED FOR SOME REASON }
     // * On Mount and State Change, Determine Which Challenges are Completed, Increment and Update DOM Value if/when value becomes not Completed, Decrement Value if/when it becomes completed
     // useEffect(() => {
@@ -63,13 +61,17 @@ const ChallengeCard = (props) => {
             // *** Check if User Selected to Hide Completed Challenges. if True, hide from DOM
             // {Note: I'm having an issue where the initial state for currentContainer data is null, as the app crashes here. Returning the function if null prevents crashes then assumes desired functionality}
             if (currentContainer === null) return;
+
+            // Loop to Add 
+            for (let i = 0; i < currentContainer.length; i++) {
+                currentContainer[i].classList.add('ChallengeCard-Completed'); 
+            }
+            
             if (isChecked) return;
             // setTimeout(() => {
             for (let i = 0; i < currentContainer.length; i++) {
-                currentContainer[i].classList.add('ChallengeCard-Hide');
-                
+                currentContainer[i].classList.add('ChallengeCard-Hide'); 
             }
-            //   }, "2000")
 
 
             // ** If Objectives are Not All Done, or Have Been Unmarked as Complete, Store the Mutated Array in Local Storage and Dispatch Values to State for Data to Persist Between Pages
@@ -78,27 +80,24 @@ const ChallengeCard = (props) => {
             updateLocalAndState(false);
             if (currentContainer === null) return;
             for (let i = 0; i < currentContainer.length; i++) {
-                currentContainer[i].classList.remove('ChallengeCard-Hide');
+                currentContainer[i].classList.remove('ChallengeCard-Hide', 'ChallengeCard-Completed');
                 
             }
         }
 
     }, [completed, challengeIndex, dispatch, name, objectives, props.togglerID, week]);
 
-    const isActivities = window.location.pathname.includes('/');
+    const isWeekly = window.location.pathname.includes('/weekly');
 
     return (
-        <section className={'ChallengeCard-Container ' + props.activityHeader + ' ' + name.replaceAll(' ', '-')} id={name.replaceAll(' ', '-')} data-completed={completed}>
+        <section className={`ChallengeCard-Container ${props.activityHeader} ${name.replaceAll(' ', '-')} App-DropShadow-2`} id={name.replaceAll(' ', '-')} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header App-FlexCenter'>
-                {isActivities &&
+                {!isWeekly &&
                     <h3>{name + " - " + week.replaceAll('-', ' ')}</h3>
                 }
-                {!isActivities &&
+                {isWeekly &&
                     <h3>{name}</h3>
-                }
-                {completed === true &&
-                    <p>Completed!</p>
                 }
             </article>
             <section className='ChallengeCard-Body'>

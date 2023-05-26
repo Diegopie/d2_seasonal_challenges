@@ -22,7 +22,7 @@ const postNewUser = async (username) => {
             return false;
         }
         // toast.success(`Hi ${message.data.username}`)
-        console.log(message);
+        // console.log(message);
         localStorage.setItem('username', message.data.username);
         localStorage.setItem('unauth', false)
         document.location.href = '/weekly';

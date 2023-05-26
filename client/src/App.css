@@ -3,20 +3,34 @@ body {
   color: white !important;
 }
 
-  .darkMode {
-    background-color: #2A2C2E;
-  }
+.darkMode {
+  background-color: #2A2C2E;
+}
 
 a {
   text-decoration: none;
   color: inherit;
 }
-  a:hover {
-    color:inherit
-  }
+
+a:hover {
+  color: inherit
+}
+
+select {
+  background-color: rgba(160, 211, 241, 0.6);
+  color: #f1f1f1;
+  text-align: center;
+  border-radius: 8px;
+  filter: drop-shadow(1px 1px 0.5px #696969);
+}
+
+select option {
+  background: rgba(99, 130, 148, 0.6);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
 
 .App-Link {
- text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
 .App-scrollLock {
@@ -35,6 +49,10 @@ a {
   filter: drop-shadow(3px 4px 2px #474747);
 }
 
+.App-DropShadow-2 {
+  filter: drop-shadow(1px 1px 0.5px #696969);
+}
+
 .App-backMaxHeight {
   height: 100vh;
 }
@@ -42,6 +60,7 @@ a {
 .App-FlexCenter {
   display: flex;
   justify-content: center;
+  align-items: baseline;
 }
 
 .App-TextCenter {
@@ -76,40 +95,36 @@ a {
 }
 
 .backgroundImg-Weekly {
-  background-image: url("./assets/production/background-img/background-season20_Home.jpg");
+  background-image: url("./assets/production/background-img/background_Home.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-Activities {
-  background-image: url("./assets/production/background-img/background-season20_Activities.jpg");
+  background-image: url("./assets/production/background-img/background_Activities.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-XP {
-  background-image: url("./assets/production/background-img/background-season20_XP.jpg");
+  background-image: url("./assets/production/background-img/background_XP.jpg");
+  min-height: 100vh;
+}
+
+.backgroundImg-Dust {
+  background-image: url("./assets/production/background-img/background_Dust.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-SeasonalReward {
-  background-image: url("./assets/production/background-img/background-season20_SeasonalReward.jpg");
+  background-image: url("./assets/production/background-img/background_SeasonalReward.jpg");
   min-height: 100vh;
 }
 
 .backgroundImg-Time {
-  background-image: url("./assets/production/background-img/background-season20_Time.jpeg");
+  background-image: url("./assets/production/background-img/background_Time.jpeg");
   min-height: 100vh;
 }
 
-  .App-backImg-1_1-light {
-    background-image: url("./assets/production/background-img/backImg-1-light.jpg");
-    min-height: 100vh;
-  }
-.App-backImg-1-dark {
-  background-image: url("./assets/production/background-img/backImg-1-dark.jpg");
-  min-height: 100vh;
-}
-
-body > iframe {
+body>iframe {
   pointer-events: none;
 }
 

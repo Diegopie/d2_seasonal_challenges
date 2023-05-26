@@ -16,7 +16,11 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Defiant Battleground',
+            name: 'Deep Dive',
+            challenges: []
+        },
+        {
+            name: 'Salvage',
             challenges: []
         },
         {
@@ -41,28 +45,31 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Destination - Neomuna',
-            challenges: []
-        },
-        {
-            name: 'Destination - Cosmodrome',
-            challenges: []
-        },
-        {
             name: 'Destination - EDZ',
             challenges: []
         },
-        {
-            name: 'Destination - Europa',
-            challenges: []
-        },
+        // {
+        //     name: 'Destination - Neomuna',
+        //     challenges: []
+        // },
+        // {
+        //     name: 'Destination - Cosmodrome',
+        //     challenges: []
+        // },
+        // {
+        //     name: 'Destination - Europa',
+        //     challenges: []
+        // },
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value
     const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Defiant Battleground':
+            case 'Deep Dive':
+                activityChallenges[index].challenges.push(challenge)
+                break;
+            case 'Salvage':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gambit':
@@ -83,12 +90,12 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Neomuna':
-                activityChallenges[index].challenges.push(challenge)
-                break;
-            case 'Cosmodrome':
-                activityChallenges[index].challenges.push(challenge)
-                break;
+            // case 'Neomuna':
+            //     activityChallenges[index].challenges.push(challenge)
+            //     break;
+            // case 'Cosmodrome':
+            //     activityChallenges[index].challenges.push(challenge)
+            //     break;
             case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;

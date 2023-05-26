@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Weekly from './pages/Weekly';
 import Activities from './pages/Activities';
 import XP from './pages/XP';
+import Dust from './pages/Dust';
 import SeasonalReward from './pages/SeasonalReward';
 import TimeSensitive from './pages/TimeSensitive';
 import NotFoundPage from './pages/NotFoundPage';
@@ -19,11 +20,18 @@ import { useGlobalContext } from './context/GlobalContext';
 // CSS
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import Dust from './pages/Dust';
 
 // What if App pulled in seasonal data and proped it to pages as a function, so we may run this function to updated parsed data and sync mulitple copies of a challenge in a page
 
 function App() {
+
+    if(localStorage.getItem('init21') !== 'true') {
+        console.log('hit');
+        localStorage.clear();
+        localStorage.setItem('init21', 'true');
+        console.log(localStorage.getItem('init21'));
+        document.location.href = '/';
+    }
 
     // * User
     const username = localStorage.getItem('username');

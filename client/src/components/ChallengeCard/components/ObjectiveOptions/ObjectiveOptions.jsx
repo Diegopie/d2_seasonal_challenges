@@ -4,12 +4,14 @@ import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveOptions = (props) => {
 
-    const [{ week, challengeIndex, name }, dispatch] = useChallengeContext()
+    const [{ completed, week, challengeIndex, name }, dispatch] = useChallengeContext()
 
     // CAN WE GET THIS FROM CHALLENGE STATE INSTEAD OF PROPS
     const [objProgress, setObjProgress] = useState(() => {
         return props.progress
     });
+
+    const selectId = props.task.replaceAll(' ', '-');
 
     const handleSelect = (e, week, challengeIndex) => {
         const userSelectedValue = Number(e.target.value);
@@ -23,7 +25,7 @@ const ObjectiveOptions = (props) => {
         currentTask.progress = userSelectedValue;
         // ** If a User Selects the Final Options, Mark Objective as Complete
         if(userSelectedValue === props.goal) {
-            console.log("hit");
+            // console.log("hit");
             currentTask.completed = true;
         }
         // ** Store the Mutated Array in Local Storage
@@ -33,12 +35,18 @@ const ObjectiveOptions = (props) => {
         const newObjective = newLocal[challengeIndex].objectives;
         dispatch({type:'setNewObjective', payload: { newObjective }});
         updateServerData();
+
+        // {patch} update dom to sync any duplicate Challenges
+        const targets = document.getElementsByClassName(selectId);
+            for (let i = 0; i < targets.length; i++) {
+                targets[i].value = userSelectedValue;
+            }
     }
 
     return (
         <select
-            id={`${props.task.replaceAll(' ', '-')}`}
-            className='ObjectiveOptions'
+            id={selectId}
+            className={`ObjectiveOptions ${selectId} ${completed ? 'ChallengeCard-Completed' : ''}`}
             value={objProgress}
             data-challenge={name.replaceAll(' ', '-')}
             data-objective-index={props.objectiveIndex}
