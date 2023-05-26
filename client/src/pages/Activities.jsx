@@ -90,12 +90,12 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Neomuna':
-                activityChallenges[index].challenges.push(challenge)
-                break;
-            case 'Cosmodrome':
-                activityChallenges[index].challenges.push(challenge)
-                break;
+            // case 'Neomuna':
+            //     activityChallenges[index].challenges.push(challenge)
+            //     break;
+            // case 'Cosmodrome':
+            //     activityChallenges[index].challenges.push(challenge)
+            //     break;
             case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;

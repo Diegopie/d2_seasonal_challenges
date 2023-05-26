@@ -9,8 +9,6 @@ const ChallengeCard = (props) => {
 
     const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
-
-
     // *** { THIS IS BEING DOUBLED FOR SOME REASON }
     // * On Mount and State Change, Determine Which Challenges are Completed, Increment and Update DOM Value if/when value becomes not Completed, Decrement Value if/when it becomes completed
     // useEffect(() => {
@@ -89,16 +87,16 @@ const ChallengeCard = (props) => {
 
     }, [completed, challengeIndex, dispatch, name, objectives, props.togglerID, week]);
 
-    const isActivities = window.location.pathname.includes('/');
+    const isWeekly = window.location.pathname.includes('/weekly');
 
     return (
         <section className={`ChallengeCard-Container ${props.activityHeader} ${name.replaceAll(' ', '-')} App-DropShadow-2`} id={name.replaceAll(' ', '-')} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header App-FlexCenter'>
-                {isActivities &&
+                {!isWeekly &&
                     <h3>{name + " - " + week.replaceAll('-', ' ')}</h3>
                 }
-                {!isActivities &&
+                {isWeekly &&
                     <h3>{name}</h3>
                 }
             </article>
