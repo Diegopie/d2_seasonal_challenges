@@ -13,7 +13,6 @@ const Weekly = () => {
         parsedData
             .then(data => {
                 setSeason20Data(data);
-                console.log(data);
             })
     }, [parsedData])
 

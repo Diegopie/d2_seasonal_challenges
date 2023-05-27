@@ -92,30 +92,15 @@ basicUserRouter.post('/data', ({ body }, res) => {
                     currentData.push(serverData[i]);
                 }
             }
-            console.log("---- NEW RUN ----");
-            // ** Check For Patch
-            console.log(data.patchNumber);
-            console.log(patchNumber);
-
-            // ** If User Has Never Received a Patch, Add It To Their Schema
-            if (data.patchNumber === undefined) {
-                console.log('hit undefined');
-                BasicUser.schema.add({
-                    patchNumber: {
-                        type: Number,
-                        default: patchNumber
-                    },
-                    
-                },{ returnNewDocument: true });
-            }
-
+            
+            // * Check For Patch
             // ** If New Patch Is Available, Patch User's Data
             if (data.patchNumber !== patchNumber) {
                 console.log("hit no match");
-
+                
                 currentData = patchedSeasonalChallenges(data.seasonalChallenges21)
                 data.seasonalChallenges21 = currentData;
-
+                
                 BasicUser.findOneAndUpdate(
                     { username: username },
                     {
@@ -134,7 +119,6 @@ basicUserRouter.post('/data', ({ body }, res) => {
                     )
                 });
             }
-
 
             // Send data to client    
             res.status(200).json(
