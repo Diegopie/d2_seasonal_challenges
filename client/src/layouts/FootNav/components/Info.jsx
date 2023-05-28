@@ -18,17 +18,17 @@ const Info = (props) => {
                 <article className="App-FlexCenter">
                     <ContactCards
                         link='mailto:diegopie@outlook.com?subject=Feedback For Destiny 2 Seasonal Challenges&body=Hey Diego, I have some feedback for your website!'
-                        img='/assets/img/icons/iconmonstr-paper-plane-5.svg'
+                        img='/assets/img/icons/footer-info/iconmonstr-paper-plane-5.svg'
                         title='Email Me!'
                     />
                     <ContactCards
                         link='https://www.instagram.com/diegopie/'
-                        img='/assets/img/icons/Instagram_Glyph_Gradient_RGB.svg'
-                        title='Twit Me!'
+                        img='/assets/img/icons/footer-info/Instagram_Glyph_Gradient_RGB.svg'
+                        title='IntantGram Me!'
                     />
                     <ContactCards
                         link='https://twitter.com/Diegopie'
-                        img='/assets/img/icons/twit.svg'
+                        img='/assets/img/icons/footer-info/twit.svg'
                         title='Twit Me!'
                     />
                 </article>
@@ -38,9 +38,17 @@ const Info = (props) => {
                 <p>Boy does this stuff take a long time to make, I can get raid exotics faster than it takes to add features 😅</p>
                 <p>If this app has added value and you feel like showing your support, check out my Buy Me a Coffee page or visit our <a className='App-Link' href='https://www.amway.com/myshop/ParkerandDiego?utm_source=copy&utm_medium=sharebar&utm_campaign=us_en_8235356_94412679&utm_content=myshop' target='_blank' rel='noreferrer'>eCommerce store</a>! We have a plenty of options to refill your gamer juice so you can stay in the grind 💪</p>
                 <div className='App-FlexCenter'>
+                    <a className='App-TextCenter' href='https://www.amway.com/en_US/myshop/ParkerandDiego' rel='noreferrer' target='_blank'><img
+                        className='FootNav-Info-SupportImgPies'
+                        src='/assets/img/icons/footer-info/the-pies.png'
+                        alt='The Pies Logo'
+                    ></img>
+                    </a>
+                </div>
+                <div className='App-FlexCenter'>
                     <a className='App-TextCenter' href='https://www.buymeacoffee.com/diegopie' rel='noreferrer' target='_blank'><img
                         className='FootNav-Info-SupportImg'
-                        src='/assets/img/icons/bmc-full-logo.png'
+                        src='/assets/img/icons/footer-info/bmc-full-logo.png'
                         alt='Buy Me a Coffee Logo'
                     ></img>
                     </a>
@@ -59,22 +67,22 @@ const Info = (props) => {
                     <article className="App-FlexCenter">
                         <ContactCards
                             link='https://diegopie.herokuapp.com/'
-                            img='/assets/img/icons/site.svg'
+                            img='/assets/img/icons/footer-info/site.svg'
                             title='Check Out My Portfolio!'
                         />
                         <ContactCards
                             link='https://github.com/Diegopie'
-                            img='/assets/img/icons/github.svg'
+                            img='/assets/img/icons/footer-info/github.svg'
                             title='Find Me on GitHub!'
                         />
                         <ContactCards
                             link='https://www.linkedin.com/in/diego-hernandez-7327381b2'
-                            img='/assets/img/icons/iconmonstr-linkedin-3.svg'
+                            img='/assets/img/icons/footer-info/iconmonstr-linkedin-3.svg'
                             title='Find Me on LinkedIn!'
                         />
                         <ContactCards
                             link='/assets/HernandezD_Resume.pdf'
-                            img='/assets/img/icons/iconmonstr-cv-3.svg'
+                            img='/assets/img/icons/footer-info/iconmonstr-cv-3.svg'
                             title='Download My Resume!'
                         />
                     </article>

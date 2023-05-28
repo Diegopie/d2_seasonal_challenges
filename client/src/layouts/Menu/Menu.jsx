@@ -23,7 +23,7 @@ const Menu = (props) => {
     return (
         <Navbar id='NavBar' className='Menu-Container' bg="dark" variant='dark' expand="lg">
           <Container>
-            <Navbar.Brand href="/weekly">D2 Seasonal Challenges</Navbar.Brand>
+            <Navbar.Brand href="/weekly"><img src='/icons/favicon.png' className='Menu-Icon' alt='traveler icon'></img>D2 Seasonal Challenges</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
