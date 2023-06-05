@@ -4,11 +4,11 @@
 
 ## Description
 
-If efficiency is how you play then you're at the right place! I often find myself spending more time preparing to play Destiny rather than playing it. There is so much to do and so little time 😞. I made this app to have a little Ghost companion do the thinking for me. Rather than filtering through each week to know how many challenges I have to suffer through Gambit with one can simply visit this site and simply see all Seasonal Challenges that are related to a given activity!
+If efficiency is how you play then you're at the right place! I often find myself spending more time preparing to play Destiny rather than playing it. There is so much to do and so little time 😞. I made this app to have a little Ghost companion do the thinking for me. Rather than filtering through each week to know how many challenges I have to suffer in Gambit with, one can simply visit this site and see all Seasonal Challenges that are related to a given activity!
 
 So if you are preparing to do your Pinnacle Vanguard challenge you can visit the Activities page and see all the current Vanguard Seasonal Challenges. This App is [not yet](#future-development) connected to the Destiny API, so your challenge progress must be manually updated for now. This is more easy to do in the home page as it will directly match the order seen in the game
 
-<!-- [Live Link 😁](https://diegopie.herokuapp.com/) -->
+[Live Link 😁](https://d2-seasonal-challenges.herokuapp.com/)
 
 <!-- [Adobe XD Wireframe and Prototype](https://xd.adobe.com/view/7f0c8103-9ba6-49dd-8bca-2eaeeb93bbf6-2a5f/) -->
 
@@ -17,12 +17,17 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 
 ## Updates
 
-Big news! The mid season update is introducting a very basic user system. This lets you sync your data between devices! It is very basic with now passwords, but gets us running 👌
+05/23/23
+Season 21 update! New Bungie art has been added to each page. Many UI updates have been made, most notably having icons for the Rewards of a Challenge. The site has been updated to manage the new Seasonal Upgrades so you can continue to be efficient with these challenges
+
+04/18/23
+Big news! The mid season update is introducing a very basic user system. This lets you sync your data between devices! It is very basic with now passwords, but gets us running 👌
 
 ## Table of Contents
 
 - [Destiny 2 Seasonal Challenges](#destiny-2-seasonal-challenges)
   - [Description](#description)
+  - [Updates](#updates)
   - [Table of Contents](#table-of-contents)
   - [Development](#development)
     - [Technology Overview](#technology-overview)
@@ -35,6 +40,7 @@ Big news! The mid season update is introducting a very basic user system. This l
     - [Future Development](#future-development)
     - [Resources](#resources)
     - [Contact](#contact)
+    - [Support](#support)
     - [License](#license)
 
 ## Development
@@ -49,7 +55,7 @@ Big news! The mid season update is introducting a very basic user system. This l
 &NewLine;
 
 ```sh
-Frontend – React, CSS3,  
+Frontend – React, CSS3, Bootstrap Navbar 
 Backend – Node, Express, MongoDB
 ```
 
@@ -61,10 +67,9 @@ Backend – Node, Express, MongoDB
 &NewLine;
 &NewLine;
 
-| | |
-| ------ | ------ | 
-| [express](https://www.npmjs.com/package/express) | [mongoose](https://www.npmjs.com/package/mongoose) |
-<!-- [react-router-dom](https://www.npmjs.com/package/react-router-dom) | -->
+| | | |
+| ------ | ------ | ------ |
+| [express](https://www.npmjs.com/package/express) | [mongoose](https://www.npmjs.com/package/mongoose) | [react-router-dom](https://www.npmjs.com/package/react-router-dom) |
 
 &NewLine;
 &NewLine;
@@ -85,13 +90,16 @@ Backend – Node, Express, MongoDB
 
 ### Client
 
-This app is rendered using React. My key goal was to manage all the data with useContext and sync the user's data will local storage. This is rather limiting for gamers that use multiple devices but was faster than sitting down and learning the Destiny 2 API. Though that integration will come in [future builds](#future-development)
+This app is rendered using React. My key goal was to whip this up as fast as possible so I can get back to playing the game. This was not a great idea! 😅. The idea was to slap something together, learn the Destiny API, then make this thing polished and synced with game data.
+
+But it is very hard to get free time and I wanted to share this with my friends. Much of the app is still rooted in the original local storage solution for storing user data and I still plan to figure out the API in a [future build](#future-development).
+
+&NewLine;
+&NewLine;
 
 #### Persisting User Data
 
-Because I did not want to work with the API just yet I had to figure out how to store data for a user. I've created very basic user accounts in the past but want to spend more time to figure out how to make it more secure, more user friendly, and creating account recovery. Moreover, connecting to the API would let users login though their Bungie Accounts anyway. So I moved forward with a simple local storage solution.
-
-Every seasonal challenge in the game has to be manually entered into a JS file then parsed into localSeasonalChallenges. This accomplishes three things: save new challenges into the client's local storage, create key data points for the application to reference to be able to update/save progress in state and local storage, and sync data in local storage to render on screen.
+I very lazily wanted to avoid learning the Destiny API that would allow me to get user data directly from Bungie and not have to worry about this at all, buut I was lazy. This is the original local storage solution that I am actually quite proud of. Programmatically looping through all data and newly added data as the season progressed.
 
 ``` js
 const localSeasonalChallenges = seasonalChallenges.map((week) => {
@@ -145,7 +153,7 @@ const localSeasonalChallenges = seasonalChallenges.map((week) => {
 
 #### Setting and Updating State
 
-The client renders each week or category of challenge by mapping through the localSeasonalChallenges data. Because of this, we can initialize state context for every single challenge in our database programmatically.
+The client renders each week or category of challenge by mapping through the server data. Because of this, we can initialize state context for every single challenge in our database programmatically.
 
 ``` js
 {
@@ -168,7 +176,7 @@ The client renders each week or category of challenge by mapping through the loc
 }
 ```
 
-Now we just have to update local storage when a user changes a value so that can be seen on reload and dispatch the change in state for the client to update the screen
+When a user updates a value on a challenge, it still uses the original local storage solution to save the data, then the local storage data is used to save to the data base. The server data is just a mirror of the local storage data. Not very elegant or efficient, but it works well enough before implementing the Destiny API
 
 ``` js
 // ** Store the Mutated Array in Local Storage
@@ -176,6 +184,7 @@ localStorage.setItem(week, JSON.stringify(newLocal));
 // ** Dispatch Values to State for Data to Persist Between Pages
 const newObjective = newLocal[challengeIndex].objectives;
 dispatch({type:'setNewObjective', payload: { newObjective }});
+updateServerData();
 
 ```
 
@@ -183,20 +192,24 @@ dispatch({type:'setNewObjective', payload: { newObjective }});
 
 ### Bugs
 
-Two big things to figure out are that state is not persisting between pages and that challenges do not sync when they appear multiple times on the page
+Two big things to figure out are that state is not persisting between pages and that challenges do not sync when they appear multiple times on the page.
+
+State is initiated for every single item that is mapped in the JSX. This means if one challenge is included in multiple categories than it will be given multiple state initiations so they will not sync.
+I've updated the code so that when a user updates a value it checks for any duplications through the DOM, then updates all the duplicates on the DOM. 
+This is not elegant buuut it works well enough since getting the Destiny API working will solve all this.
 
 ### Future Development
 
-There were a few coding concepts I wanted to practice when creating this project so I laid out the development process base on what I wanted to learn/practice. The initial concept was working with and rendering a larger amount of data that can be updated by a user then managing all of that in local storage.
+There were a few coding concepts I wanted to practice when creating this project so I laid out the development process based on what I wanted to learn/practice. The initial concept was working with and rendering a larger amount of data that can be updated by a user then managing all of that in local storage.
 
-This are the concepts I would like to practice in the future and how they effect the app
+These are the concepts I would like to practice in the future and how they effect the app
 
 - PWA - Offline
   - Offline support is mostly for me to learn service workers. Destiny is an online game so I don't see how many users will benefit from offline support but I can brag about it to my wife 🥰
 
 - Seasonal Triumphs
-  - Many Destiny players get their Seasonal Challenges knocked out in the week. A bigger pie to eat are 
-  Seasonal Triumphs. Tackling these effeciently are a next big step to help more players! 
+  - Many Destiny players get their Seasonal Challenges knocked out in the week. A bigger pie to eat are
+  Seasonal Triumphs. Tackling these efficiently are a next big step to help more players!
   
 - JWT Authentication and Server Database
   - I have implemented many very basic user account and authentication but I would like to have something more polished and user friendly
@@ -212,6 +225,11 @@ This are the concepts I would like to practice in the future and how they effect
 ### Contact
 
 If you have any feedback our questions, please reach me by [email](diegopie@outlook.com), [GitHub](https://github.com/Diegopie), or [LinkedIn](https://www.linkedin.com/in/diego-hernandez-7327381b2/)!
+
+### Support
+
+Like the app? Show some love! My wife and I have an [e-commerce](https://www.amway.com/myshop/ParkerandDiego) business with plenty of gamer juice to keep you in the grind.
+You can also visit my [Buy Me a Coffee page](https://www.buymeacoffee.com/diegopie)
 
 ### License
 

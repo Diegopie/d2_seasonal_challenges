@@ -55,18 +55,32 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
         patchNumber,
         seasonalChallenges21: seedSeasonalChallenges21
     });
-    newUser.save(err => {
-        if (err) {
-            res.status(500).json(
-                handleResponse(null, 'Error saving new user to the database', '/api/basic-user/newUpdated', err, false)
-            );
-            return;
-        }
 
-        res.status(201).json(
-            handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/newUpdated', null, true)
+    try {
+        newUser.save().then(newUser => {
+            res.status(201).json(
+                handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/newUpdated', null, true)
+            );
+        })
+    } catch (err) {
+        res.status(500).json(
+            handleResponse(null, 'Error saving new user to the database', '/api/basic-user/newUpdated', err, false)
         );
-    })
+    }
+
+
+    // (err => {
+    //     if (err) {
+    //         res.status(500).json(
+    //             handleResponse(null, 'Error saving new user to the database', '/api/basic-user/newUpdated', err, false)
+    //         );
+    //         return;
+    //     }
+
+    //     res.status(201).json(
+    //         handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/newUpdated', null, true)
+    //     );
+    // })
 });
 
 // * Serve challenge data on login/load
@@ -92,15 +106,15 @@ basicUserRouter.post('/data', ({ body }, res) => {
                     currentData.push(serverData[i]);
                 }
             }
-            
+
             // * Check For Patch
             // ** If New Patch Is Available, Patch User's Data
             if (data.patchNumber !== patchNumber) {
                 console.log("hit no match");
-                
+
                 currentData = patchedSeasonalChallenges(data.seasonalChallenges21)
                 data.seasonalChallenges21 = currentData;
-                
+
                 BasicUser.findOneAndUpdate(
                     { username: username },
                     {
