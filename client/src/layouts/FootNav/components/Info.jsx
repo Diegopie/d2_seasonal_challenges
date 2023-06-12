@@ -36,7 +36,7 @@ const Info = (props) => {
             <article className='FootNav-Info-Body'>
                 <h2>Support</h2>
                 <p>Boy does this stuff take a long time to make, I can get raid exotics faster than it takes to add features 😅</p>
-                <p>If this app has added value and you feel like showing your support, check out my Buy Me a Coffee page or visit our <a className='App-Link' href='https://www.amway.com/myshop/ParkerandDiego?utm_source=copy&utm_medium=sharebar&utm_campaign=us_en_8235356_94412679&utm_content=myshop' target='_blank' rel='noreferrer'>eCommerce store</a>! We have a plenty of options to refill your gamer juice so you can stay in the grind 💪</p>
+                <p>If this app has added value and you feel like showing your support, check out my Buy Me a Coffee page or visit our <a className='App-Link' href='https://www.amway.com/myshop/ParkerandDiego' target='_blank' rel='noreferrer'>eCommerce store</a>! We have a plenty of options to refill your gamer juice so you can stay in the grind 💪</p>
                 <div className='App-FlexCenter'>
                     <a className='App-TextCenter' href='https://www.amway.com/en_US/myshop/ParkerandDiego' rel='noreferrer' target='_blank'><img
                         className='FootNav-Info-SupportImgPies'
