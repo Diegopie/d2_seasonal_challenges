@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: String,
-    name: "All That Matters",
-    description: "Complete Week 4 of the We Stand Unbroken quest",
+    name: "Into the Depths IV",
+    description: "Complete the Week 4 Into the Depths mission",
     category: [],
     completed: false,
     challengeIndex: Number,
@@ -15,82 +15,82 @@ const challenges = [
         completed: false
       }
     ],
-    reward: "War Table Upgrade",
+    reward: null,
     xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: String,
-    name: "Cunning Liberator",
-    description: "Defeat combatants in the Defiant Battlegrounds playlist using Energy weapons. Earn bonus progress if they also deal Void or Arc damage.",
-    category: ['Defiant Battleground'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Energy weapon",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: "War Table Upgrade",
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Focused Defiance",
-    description: "Decode or focus Defiant Engrams at the War Table during Season of Defiance.",
-    category: ['Gear'],
+    name: "Front Line Salvager IV",
+    description: "Complete Salvage or Deep Dive activities while using a Void subclass. Additionally, defeat Hive anywhere in the system.",
+    category: ['Salvage', 'Deep Dive'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: false,
-        task: "Defiant Engram",
+        task: "Seasonal activities",
         progress: 0,
-        goal: 10,
-        completed: false
-      }
-    ],
-    reward: "War Table Upgrade",
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Strandweaver",
-    description: "Complete The Final Strand quest. Also, rapidly defeat combatants throughout Neomuna. Bonus for Sidearm final blows.",
-    category: ['Neomuna'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "The Final Strand",
-        progress: 0,
-        goal: 1,
+        goal: 3,
         completed: false
       },
       {
         isPercent: true,
-        task: "Rapidly defeated combatants",
+        task: "Hive",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Deep Diver",
+    description: "Successfully complete encounters at any depth in Deep Dive activities. Pressure Trial encounters grant increased progress.",
+    category: ['Deep Dive'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Encounters",
+        progress: 0,
+        goal: 6,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Commendable Salvager",
+    description: "Give or receive commendations in matchmade Salvage activities.",
+    category: ['Salvage'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: false,
+        task: "Commendations",
+        progress: 0,
+        goal: 6,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: String,
     name: "Mod Collector",
     description: "Unlock artifact mods.",
-    category: ['Activities'],
+    category: [],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -110,7 +110,7 @@ const challenges = [
     belongsTo: String,
     name: "Momentum Crash",
     description: "Defeat Guardians in Momentum Control. Earn bonus progress with Zone Advantage.",
-    category: ['PvP', 'Time'],
+    category: ['PvP'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -128,29 +128,29 @@ const challenges = [
   },
   {
     belongsTo: String,
-    name: "Razor's Edge",
-    description: "Defeat targets with Swords, Bows, and Glaives in Gambit. Bonus progress for defeating Guardians.",
+    name: "Sound of Metal",
+    description: "Defeat targets with Auto Rifles, Hand Cannons, and Scout Rifles in Gambit. Bonus progress is granted for defeating Guardians.",
     category: ['Gambit'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: true,
-        task: "Glaive",
+        task: "Auto Rifle Auto Rifle",
         progress: 0,
         goal: 100,
         completed: false
       },
       {
         isPercent: true,
-        task: "Sword",
+        task: "Hand Cannon Hand Cannon",
         progress: 0,
         goal: 100,
         completed: false
       },
       {
         isPercent: true,
-        task: "Bow",
+        task: "Scout Rifle Scout Rifle",
         progress: 0,
         goal: 100,
         completed: false
@@ -184,7 +184,7 @@ const challenges = [
     belongsTo: String,
     name: "Precision Calibration",
     description: "Calibrate marksman weapons—Scout Rifles, Sniper Rifles, and Linear Fusion Rifles—by landing precision final blows. Bonus progress against Guardians.",
-    category: ['Loadout', 'PvP', 'Gambit'],
+    category: ['Loadout', 'Gambit', 'PvP'],
     completed: false,
     challengeIndex: Number,
     objectives: [

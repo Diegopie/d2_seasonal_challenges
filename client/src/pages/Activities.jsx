@@ -48,14 +48,14 @@ const Activities = (props) => {
             name: 'Destination - EDZ',
             challenges: []
         },
-        // {
-        //     name: 'Destination - Neomuna',
-        //     challenges: []
-        // },
-        // {
-        //     name: 'Destination - Cosmodrome',
-        //     challenges: []
-        // },
+        {
+            name: 'Destination - Throne World',
+            challenges: []
+        },
+        {
+            name: 'Destination - Nessus',
+            challenges: []
+        },
         // {
         //     name: 'Destination - Europa',
         //     challenges: []
@@ -90,12 +90,12 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            // case 'Neomuna':
-            //     activityChallenges[index].challenges.push(challenge)
-            //     break;
-            // case 'Cosmodrome':
-            //     activityChallenges[index].challenges.push(challenge)
-            //     break;
+            case 'Throne World':
+                activityChallenges[index].challenges.push(challenge)
+                break;
+            case 'Nessus':
+                activityChallenges[index].challenges.push(challenge)
+                break;
             case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;

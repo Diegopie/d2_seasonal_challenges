@@ -11,10 +11,10 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
     }
 
     const name = $(seasonalChallenges[i]).children('h3').text().trim();
-    console.dir($(seasonalChallenges[i]).children('.record-description'));
+    // console.dir($(seasonalChallenges[i]).children('.record-description'));
     const descriptionTarget = $(seasonalChallenges[i]).children('.record-description');
-    console.dir(descriptionTarget);
-    const description = descriptionTarget[0].innerText
+    // console.dir(descriptionTarget);
+    const description = descriptionTarget[0].innerText.trim().replace(/"/g, "");
 
     const allObjectives = $(seasonalChallenges[i]).children('.objective-progress-container').children();
     const parsedObjectives = [];
@@ -36,7 +36,7 @@ for (let i = 0; i < seasonalChallenges.length; i++) {
 
         const objective = {
             isPercent: false,
-            task: $(allObjectives[i]).children('strong').text().trim(),
+            task: $(allObjectives[i]).children('strong').text().trim().split(/\[|\]/).join(""),
             progress: 0,
             goal: goal(),
             completed: false,
