@@ -89,6 +89,11 @@ select option {
   height: 2rem;
 }
 
+.App-Invisible-Img {
+  height: 0px;
+  opacity: 0;
+}
+
 .backgroundImg-Home {
   background-image: url("./assets/production/background-img/home.jfif");
   min-height: 100vh;
@@ -98,6 +103,10 @@ select option {
   background-image: url("./assets/production/background-img/background_Home.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-Weekly-small {
+    background-image: url("./assets/production/background-img/background_Home-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-Activities {
   background-image: url("./assets/production/background-img/background_Activities.jpg");
@@ -108,6 +117,10 @@ select option {
   background-image: url("./assets/production/background-img/background_XP.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-XP-small {
+    background-image: url("./assets/production/background-img/background_XP-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-Dust {
   background-image: url("./assets/production/background-img/background_Dust.jpg");

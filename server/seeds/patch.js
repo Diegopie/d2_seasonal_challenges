@@ -1,6 +1,6 @@
 const seedSeasonalChallenges21 = require("./seasonalChallenges");
 
-const patchNumber = 21.3;
+const patchNumber = 21.4;
 
 const patchedSeasonalChallenges = (data) => {
     const userData = data;

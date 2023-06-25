@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
+import img from '../assets/production/background-img/background_XP.jpg';
+// import useBackImg from '../hooks/BackgroundImage';
 import { useGlobalContext } from '../context/GlobalContext';
 
 
@@ -7,7 +9,9 @@ const XP = () => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    const [{ parsedData }, ] = useGlobalContext();
+    const [smallClass, setSmallClass] = useState('backgroundImg-XP-small');
+
+    const [{ parsedData },] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
 
     useEffect(() => {
@@ -59,10 +63,10 @@ const XP = () => {
         season20Data.forEach((week => {
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
-                
-                    // console.log(activity);
-                    handleChallenge(challenge.xp, challenge)
-                
+
+                // console.log(activity);
+                handleChallenge(challenge.xp, challenge)
+
             })
         }))
     }
@@ -70,23 +74,26 @@ const XP = () => {
     sortChallenges();
 
     return (
-        <>
-            <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-XP App-PushBottomUp'>
-                    {activityChallenges.map((week) => {
-                        if (week.challenges.length > 0)
-                            return (
-                                <ChallengeCategory
-                                    key={week.name}
-                                    name={week.name}
-                                    challenges={week.challenges}
-                                />
-                            )
-                        return [];
-                    })}
-                </section>
-            </main>
-        </>
+        <main id='main' className='App-backMaxHeight'>
+            <section className={`App-backImg ${smallClass} backgroundImg-XP App-PushBottomUp`}>
+            <img src={img} alt='invisible img' className='App-Invisible-Img'
+                onLoad={() => { 
+                    setSmallClass('');
+                }}
+            />
+                {activityChallenges.map((week) => {
+                    if (week.challenges.length > 0)
+                        return (
+                            <ChallengeCategory
+                                key={week.name}
+                                name={week.name}
+                                challenges={week.challenges}
+                            />
+                        )
+                    return [];
+                })}
+            </section>
+        </main>
     );
 };
 
