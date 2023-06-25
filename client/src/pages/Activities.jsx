@@ -48,18 +48,18 @@ const Activities = (props) => {
             name: 'Destination - EDZ',
             challenges: []
         },
-        // {
-        //     name: 'Destination - Neomuna',
-        //     challenges: []
-        // },
-        // {
-        //     name: 'Destination - Cosmodrome',
-        //     challenges: []
-        // },
-        // {
-        //     name: 'Destination - Europa',
-        //     challenges: []
-        // },
+        {
+            name: 'Destination - Throne World',
+            challenges: []
+        },
+        {
+            name: 'Destination - Nessus',
+            challenges: []
+        },
+        {
+            name: 'Destination - Neomuna',
+            challenges: []
+        },
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value
@@ -90,13 +90,16 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            // case 'Neomuna':
-            //     activityChallenges[index].challenges.push(challenge)
-            //     break;
-            // case 'Cosmodrome':
-            //     activityChallenges[index].challenges.push(challenge)
-            //     break;
+            case 'Throne World':
+                activityChallenges[index].challenges.push(challenge)
+                break;
+            case 'Nessus':
+                activityChallenges[index].challenges.push(challenge)
+                break;
             case 'EDZ':
+                activityChallenges[index].challenges.push(challenge)
+                break;
+            case 'Neomuna':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             default:

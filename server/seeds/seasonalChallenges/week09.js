@@ -1,69 +1,15 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Legendary Defiance",
-    description: "Complete Defiant Battlegrounds on Legend difficulty.",
-    category: ['Defiant Battleground'],
+    belongsTo: "",
+    name: "Rapid Salvager",
+    description: "Rapidly defeat combatants in Salvage activities.",
+    category: ['Salvage'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Progress",
-        progress: 0,
-        goal: 2,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP++",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Favored Warrior",
-    description: "Earn Favors of Justice, Grace, and Zeal during Season of Defiance activities. Bonus progress awarded for Favors earned during activities on Legend difficulty.",
-    category: ['Defiant Battleground'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Favor of Justice",
-        progress: 0,
-        goal: 20,
-        completed: false
-      },
-      {
-        isPercent: false,
-        task: "Favor of Grace",
-        progress: 0,
-        goal: 20,
-        completed: false
-      },
-      {
-        isPercent: false,
-        task: "Favor of Zeal",
-        progress: 0,
-        goal: 20,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Defiant Specialist",
-    description: "Defeat combatants with precision final blows in Seasonal activities. Bonus progress awarded for using Season of Defiance weapons. These are Perpetualis, Prodigal Return, Regnant, Caretaker, Raconteur, and Royal Executioner.",
-    category: ['Defiant Battleground'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Precision",
+        isPercent: true,
+        task: "Rapidly defeated",
         progress: 0,
         goal: 100,
         completed: false
@@ -74,16 +20,36 @@ const challenges = [
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Pinnacle",
-    description: "Reach Power Level 1810 by earning pinnacle rewards.",
-    category: ['Gear'],
+    belongsTo: "",
+    name: "Patience Perfected",
+    description: "Catch Legendary or Exotic fish at any Fish Pond.",
+    category: ['Activities'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Power Level",
+        task: "Legendary or Exotic fish",
+        progress: 0,
+        goal: 5,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Ritual Ornament",
+    description: "Acquire any ornament for the Seasonal ritual weapon.",
+    category: ['Activities'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Weapon Ornament",
         progress: 0,
         goal: 1,
         completed: false
@@ -94,12 +60,32 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Warp and Weft",
-    description: "In Gambit, defeat targets with a Strand, Solar, or Void subclass equipped. Bonus progress is awarded for ability final blows and defeating Guardians.",
+    belongsTo: "",
+    name: "Eyeing Iron",
+    description: "Complete Crucible matches. Earn bonus progress in Iron Banner and for victories.",
+    category: ['PvP', 'Time'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Progress",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Ethereal Might",
+    description: "Defeat targets with an Arc, Strand, or Void subclass equipped in Gambit. Bonus progress is granted for ability final blows and defeating Guardians.",
     category: ['Gambit'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
@@ -114,50 +100,16 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Weaving Sunlight",
-    description: "Defeat combatants in Vanguard playlists with a Strand, Solar, or Void subclass equipped. Bonus progress awarded for ability final blows.",
-    category: ['Vanguard'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP++",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Armory-Wide Calibration",
-    description: "Calibrate Kinetic, Energy, and Power weapons. Bonus progress against Champions.",
+    belongsTo: "",
+    name: "Rapid Precision",
+    description: "Get rapid precision final blows. Bonus progress is granted for every defeated target after the second one.",
     category: ['Loadout'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Kinetic weapon",
-        progress: 0,
-        goal: 100,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Energy weapon",
-        progress: 0,
-        goal: 100,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Power weapon",
+        task: "Headshot Rapidly defeated",
         progress: 0,
         goal: 100,
         completed: false

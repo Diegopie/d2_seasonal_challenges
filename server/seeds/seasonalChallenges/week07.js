@@ -1,11 +1,38 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Eternal Queensguard",
-    description: "Complete a flawless run in any Defiant Battlegrounds playlist location.",
-    category: ['Defiant Battleground'],
+    belongsTo: "",
+    name: "Front Line Salvager VII",
+    description: "Complete Salvage or Deep Dive activities while wearing Season of the Deep armor. Additionally, defeat bosses and minibosses anywhere in the system.",
+    category: ['Salvage', 'Deep Dive'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Seasonal activities",
+        progress: 0,
+        goal: 100,
+        completed: false
+      },
+      {
+        isPercent: false,
+        task: "Bosses and Minibosses",
+        progress: 0,
+        goal: 10,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Salvage Legend",
+    description: "Complete Salvage on Legend difficulty.",
+    category: ['Salvage'],
+    completed: false,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -20,18 +47,18 @@ const challenges = [
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Defiant Focus",
-    description: "Decode or focus Defiant Engrams at the War Table during Season of Defiance.",
-    category: ['Gear'],
+    belongsTo: "",
+    name: "Salvaged Munitions",
+    description: "Defeat targets with Seasonal weapons. Defeated Guardians or combatants defeated in Salvage or Deep Dive activities grant additional progress.",
+    category: ['Loadout', 'Salvage', 'Crucible', 'Gambit', 'Deep Dive'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Defiant Engram",
+        isPercent: true,
+        task: "Targets defeated",
         progress: 0,
-        goal: 20,
+        goal: 100,
         completed: false
       }
     ],
@@ -40,32 +67,12 @@ const challenges = [
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Favored Liberator",
-    description: "Generate Favors in Seasonal activities. All members of your current fireteam contribute to overall progress",
-    category: ['Defiant Battleground'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Favors generated",
-        progress: 0,
-        goal: 60,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
+    belongsTo: "",
     name: "Fleeting Glory",
     description: "Complete Crucible matches in the Competitive playlist. Earn bonus progress for wins.",
-    category: ['PvP'],
+    category: ['Crucible'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
@@ -76,36 +83,36 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP+++",
+    xp: "Challenger XP++",
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
+    belongsTo: "",
     name: "High-Value Hunter",
     description: "Defeat powerful combatants in Gambit. Earn bonus progress for defeating high-value targets.",
     category: ['Gambit'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Combatants",
+        task: "Targets",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP+++",
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
+    belongsTo: "",
     name: "Grandmaster",
     description: "Complete any Nightfall strike on Grandmaster.",
     category: ['Vanguard'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,

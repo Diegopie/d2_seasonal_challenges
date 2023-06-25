@@ -1,9 +1,8 @@
 const challenges = [
-  // 01
   {
     belongsTo: String,
-    name: "Against the Shadows",
-    description: "Complete Week 2 of the We Stand Unbroken quest",
+    name: "Into the Depths II",
+    description: "Complete the Week 2 Into the Depths mission",
     category: [],
     completed: false,
     challengeIndex: Number,
@@ -20,69 +19,26 @@ const challenges = [
     xp: "Challenger XP+",
     dust: null
   },
-  // 02
   {
     belongsTo: String,
-    name: "Favored Liberator",
-    description: "Generate Favors in Seasonal activities. All members of your current fireteam contribute to overall progress",
-    category: ["Defiant Battleground"],
+    name: "Front Line Salvager II",
+    description: "Open chests in Salvage. Redeeming Salvage Keys grants additional progress. Additionally, defeat Taken anywhere in the system.",
+    category: ['Salvage'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: false,
-        task: "Favors generated",
+        task: "Salvage Chests",
         progress: 0,
-        goal: 30,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP",
-    dust: null
-  },
-  // 03
-  {
-    belongsTo: String,
-    name: "Rohan's Legacy",
-    description: "Complete the quest Unfinished Business. Also, defeat combatants throughout Neomuna with precision final blows. Bonus progress awarded for using Machine Guns",
-    category: ['Neomuna'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Unfinished Business",
-        progress: 0,
-        goal: 1,
+        goal: 3,
         completed: false
       },
       {
-        isPercent: false,
-        task: "[Headshot] Precision",
+        isPercent: true,
+        task: "Taken",
         progress: 0,
-        goal: 50,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP++",
-    dust: null
-  },
-  // 04
-  {
-    belongsTo: String,
-    name: "The Full Set",
-    description: "In Neomuna, collect and place four action figures.",
-    category: ['Neomuna'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Progress",
-        progress: 0,
-        goal: 4,
+        goal: 100,
         completed: false
       }
     ],
@@ -90,12 +46,51 @@ const challenges = [
     xp: "Challenger XP+",
     dust: null
   },
-  // 05
   {
     belongsTo: String,
-    name: "Cosmodrome Activities",
-    description: "In the Cosmodrome, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
-    category: ['Cosmodrome'],
+    name: "Powerful Salvager",
+    description: "Defeat powerful combatants in Salvage activities.",
+    category: ['Salvage'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Powerful combatants",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Antithetical Armaments",
+    description: "Defeat targets with Shotguns or Sniper Rifles. Defeated Guardians or defeated combatants in Salvage or Deep Dive activities grant additional progress.",
+    category: ['Loadout', 'Salvage', 'Deep Dive', 'Gambit', 'PvP'],
+    completed: false,
+    challengeIndex: Number,
+    objectives: [
+      {
+        isPercent: true,
+        task: "Shotgun or Sniper Rifle final blows",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: String,
+    name: "Throne World Activities",
+    description: "In the Throne World, complete bounties and earn progress by completing patrols, public events, and looting Lost Sectors.",
+    category: ['Throne World'],
     completed: false,
     challengeIndex: Number,
     objectives: [
@@ -111,7 +106,6 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 06
   {
     belongsTo: String,
     name: "Lost in the Legend",
@@ -132,7 +126,6 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 07
   {
     belongsTo: String,
     name: "Flourish of Power",
@@ -142,10 +135,10 @@ const challenges = [
     challengeIndex: Number,
     objectives: [
       {
-        isPercent: false,
+        isPercent: true,
         task: "Guardians",
         progress: 0,
-        goal: 25,
+        goal: 100,
         completed: false
       }
     ],
@@ -153,18 +146,17 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 08
   {
     belongsTo: String,
-    name: "Bank, Kill, Repeat",
-    description: "Earn points by banking Motes, defeating Blockers, and defeating Guardians in Gambit.",
+    name: "Primeval Entourage",
+    description: "Defeat Taken in Gambit. Earn bonus progress for defeating tougher combatants.",
     category: ['Gambit'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: true,
-        task: "Points",
+        task: "Taken",
         progress: 0,
         goal: 100,
         completed: false
@@ -174,18 +166,17 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 09
   {
     belongsTo: String,
-    name: "Hive Slayer",
-    description: "Defeat Hive combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
+    name: "Taken Decimator",
+    description: "Defeat Taken combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
     category: ['Vanguard'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
         isPercent: true,
-        task: "Hive",
+        task: "Taken",
         progress: 0,
         goal: 100,
         completed: false
@@ -195,20 +186,19 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   },
-  // 10
   {
     belongsTo: String,
-    name: "Close-Range Calibration",
-    description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords—in the Cosmodrome. Bonus progress for rapidly defeating combatants.",
-    category: ['Cosmodrome'],
+    name: "Calibrate Long Range",
+    description: "Calibrate long-range weapons—Pulse Rifles, Bows, and Trace Rifles. Bonus progress is granted for defeating Guardians.",
+    category: ['Loadout', 'PvP'],
     completed: false,
     challengeIndex: Number,
     objectives: [
       {
-        isPercent: false,
+        isPercent: true,
         task: "Calibration",
         progress: 0,
-        goal: "0/200",
+        goal: 100,
         completed: false
       }
     ],
@@ -216,7 +206,7 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   }
-];
+]
 
 const weekName = 'Week Two'
 
