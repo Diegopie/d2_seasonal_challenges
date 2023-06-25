@@ -1,51 +1,31 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Ultimate Defiance",
-    description: "Defeat combatants with Supers in the Defiant Battlegrounds playlist. Bonus progress awarded if you also have the Strand subclass equipped.",
-    category: ['Defiant Battleground'],
+    belongsTo: "",
+    name: "Wicked Depths",
+    description: "Complete the Whetstone encounter in Deep Dives and earn the Wicked Implement Scout Rifle.",
+    category: ['Activities'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
-        isPercent: true,
-        task: "Super",
+        isPercent: false,
+        task: "",
         progress: 0,
-        goal: 100,
+        goal: 1,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP++",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Favored Liberator",
-    description: "Generate Favors in Seasonal activities. All members of your current fireteam contribute to overall progress.",
-    category: ['Defiant Battleground'],
+    belongsTo: "",
+    name: "Neptune Activities",
+    description: "In Neomuna, complete bounties, patrols, public events, and Lost Sectors.",
+    category: ['Neomuna'],
     completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Favors generated",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Europa Activities",
-    description: "On Europa, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
-    category: ['Destination - Europa'],
-    completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
@@ -60,26 +40,66 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Defiant Vanguard Ornament",
-    description: "Acquire the Vanguard ornament for Ecliptic Distaff.",
-    category: ['Vanguard'],
+    belongsTo: "",
+    name: "Sparks of Arc",
+    description: "Defeat Guardians in Crucible matches with the Arc subclass equipped. Bonus progress is granted for defeating blinded opponents.",
+    category: ['PvP'],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Weapon Ornament",
+        isPercent: true,
+        task: "Progress",
         progress: 0,
-        goal: 1,
+        goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+++",
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Special Measures",
+    description: "Defeat targets in Gambit with weapons using Special ammo. Bonus progress is granted for defeating Guardians and landing final blows with Glaives and Hand Cannons using Special ammo.",
+    category: ['Gambit'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Progress",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Tried and True",
+    description: "Defeat combatants in Vanguard playlists or strikes with Primary ammo. Bonus progress is granted for more challenging combatants.",
+    category: ['Vanguard'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Progress",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
     dust: "Bright Dust"
   }
-];
+]
 
 const weekName = 'Week Ten'
 

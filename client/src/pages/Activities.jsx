@@ -56,10 +56,10 @@ const Activities = (props) => {
             name: 'Destination - Nessus',
             challenges: []
         },
-        // {
-        //     name: 'Destination - Europa',
-        //     challenges: []
-        // },
+        {
+            name: 'Destination - Neomuna',
+            challenges: []
+        },
     ];
 
     // Manually Create Cases that Correspond with the Category's Index Value
@@ -97,6 +97,9 @@ const Activities = (props) => {
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'EDZ':
+                activityChallenges[index].challenges.push(challenge)
+                break;
+            case 'Neomuna':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             default:
