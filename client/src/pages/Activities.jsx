@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
+import img from '../assets/production/background-img/background_Activities.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
 
 
@@ -7,7 +8,9 @@ const Activities = (props) => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    const [{ parsedData }, ] = useGlobalContext();
+    const [smallClass, setSmallClass] = useState('backgroundImg-Activities-small');
+
+    const [{ parsedData },] = useGlobalContext();
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
@@ -149,7 +152,12 @@ const Activities = (props) => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-Activities App-PushBottomUp'>
+                <section className={`App-backImg ${smallClass} backgroundImg-Activities App-PushBottomUp`}>
+                    <img src={img} alt='invisible img' className='App-Invisible-Img'
+                        onLoad={() => {
+                            setSmallClass('');
+                        }}
+                    />
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

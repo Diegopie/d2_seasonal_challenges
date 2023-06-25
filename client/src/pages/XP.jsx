@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import img from '../assets/production/background-img/background_XP.jpg';
-// import useBackImg from '../hooks/BackgroundImage';
 import { useGlobalContext } from '../context/GlobalContext';
 
 

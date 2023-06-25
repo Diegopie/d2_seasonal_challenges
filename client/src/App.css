@@ -112,6 +112,10 @@ select option {
   background-image: url("./assets/production/background-img/background_Activities.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-Activities-small {
+    background-image: url("./assets/production/background-img/background_Activities-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-XP {
   background-image: url("./assets/production/background-img/background_XP.jpg");
