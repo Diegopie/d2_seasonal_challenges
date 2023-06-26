@@ -31,7 +31,7 @@ const Menu = (props) => {
                 <Nav.Link href='/activities'>Activities</Nav.Link>
                 <Nav.Link href='/xp'>XP</Nav.Link>
                 <Nav.Link href='/dust'>Bright Dust</Nav.Link>
-                <Nav.Link href='/seasonal-reward'>War Table Upgrade</Nav.Link>
+                {/* <Nav.Link href='/seasonal-reward'>War Table Upgrade</Nav.Link> */}
                 <Nav.Link href='/time-sensitive'>Time Sensitive</Nav.Link>
                 <Nav.Link onClick={handleLogoff}>{logoutString}</Nav.Link>
               </Nav>
