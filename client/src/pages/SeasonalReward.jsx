@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
+import img from '../assets/production/background-img/background_SeasonalReward.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
 
 
@@ -7,7 +8,9 @@ const SeasonalReward = () => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    const [{ parsedData }, ] = useGlobalContext();
+    const [smallClass, setSmallClass] = useState('backgroundImg-SeasonalReward-small');
+
+    const [{ parsedData },] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
 
     useEffect(() => {
@@ -42,10 +45,10 @@ const SeasonalReward = () => {
         season20Data.forEach((week => {
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
-                
-                    // console.log(activity);
-                    handleChallenge(challenge.reward, challenge)
-                
+
+                // console.log(activity);
+                handleChallenge(challenge.reward, challenge)
+
             })
         }))
     }
@@ -55,7 +58,12 @@ const SeasonalReward = () => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-SeasonalReward App-PushBottomUp'>
+                <section className={`App-backImg ${smallClass} backgroundImg-SeasonalReward App-PushBottomUp`}>
+                    <img src={img} alt='invisible img' className='App-Invisible-Img'
+                        onLoad={() => {
+                            setSmallClass('');
+                        }}
+                    />
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

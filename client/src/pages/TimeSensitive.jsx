@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
+import img from '../assets/production/background-img/background_Time.jpeg';
 import { useGlobalContext } from '../context/GlobalContext';
 
 
@@ -7,7 +8,9 @@ const TimeSensitive = () => {
 
     const [season20Data, setSeason20Data] = useState([]);
 
-    const [{ parsedData }, ] = useGlobalContext();
+    const [smallClass, setSmallClass] = useState('backgroundImg-Time-small');
+
+    const [{ parsedData },] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
 
     useEffect(() => {
@@ -57,7 +60,12 @@ const TimeSensitive = () => {
     return (
         <>
             <main id='main' className='App-backMaxHeight'>
-                <section className='App-backImg backgroundImg-Time App-PushBottomUp'>
+                <section className={`App-backImg ${smallClass} backgroundImg-Time App-PushBottomUp`}>
+                    <img src={img} alt='invisible img' className='App-Invisible-Img'
+                        onLoad={() => {
+                            setSmallClass('');
+                        }}
+                    />
                     {activityChallenges.map((week) => {
                         if (week.challenges.length > 0)
                             return (

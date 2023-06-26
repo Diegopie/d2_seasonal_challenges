@@ -9,6 +9,8 @@ const ChallengeCard = (props) => {
 
     const [{ completed, challengeIndex, description, name, objectives, week }, dispatch] = useChallengeContext();
 
+    // {NOTE} WHAT IF WE ADD A STATE TO CHALLENGE CONTEXT THAT HAS THE TOTAL NUMBER OF CHALLENGES AND A FUNCTION TO UPDATE SERVER AND LOCAL WHEN THE CHANGE HAPPENS, THIS WAY WE CAN MAKE THE COMPARESON ON TOGGLE INSTEAD OF ON USEEFFECT
+
     // *** { THIS IS BEING DOUBLED FOR SOME REASON }
     // * On Mount and State Change, Determine Which Challenges are Completed, Increment and Update DOM Value if/when value becomes not Completed, Decrement Value if/when it becomes completed
     // useEffect(() => {
@@ -78,6 +80,7 @@ const ChallengeCard = (props) => {
         } else if (totalObjectivesCompleted !== objectivesToComplete && objectivesToComplete !== 0) {
             // *** Update Local Storage and State with False Values
             updateLocalAndState(false);
+            updateServerData();
             if (currentContainer === null) return;
             for (let i = 0; i < currentContainer.length; i++) {
                 currentContainer[i].classList.remove('ChallengeCard-Hide', 'ChallengeCard-Completed');

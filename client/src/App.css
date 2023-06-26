@@ -89,6 +89,11 @@ select option {
   height: 2rem;
 }
 
+.App-Invisible-Img {
+  height: 0px;
+  opacity: 0;
+}
+
 .backgroundImg-Home {
   background-image: url("./assets/production/background-img/home.jfif");
   min-height: 100vh;
@@ -98,31 +103,55 @@ select option {
   background-image: url("./assets/production/background-img/background_Home.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-Weekly-small {
+    background-image: url("./assets/production/background-img/background_Home-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-Activities {
   background-image: url("./assets/production/background-img/background_Activities.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-Activities-small {
+    background-image: url("./assets/production/background-img/background_Activities-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-XP {
   background-image: url("./assets/production/background-img/background_XP.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-XP-small {
+    background-image: url("./assets/production/background-img/background_XP-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-Dust {
   background-image: url("./assets/production/background-img/background_Dust.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-Dust-small {
+    background-image: url("./assets/production/background-img/background_Dust-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-SeasonalReward {
   background-image: url("./assets/production/background-img/background_SeasonalReward.jpg");
   min-height: 100vh;
 }
+  .backgroundImg-SeasonalReward-small {
+    background-image: url("./assets/production/background-img/background_SeasonalReward-small.jpg");
+    min-height: 100vh;
+  }
 
 .backgroundImg-Time {
   background-image: url("./assets/production/background-img/background_Time.jpeg");
   min-height: 100vh;
 }
+  .backgroundImg-Time-small {
+    background-image: url("./assets/production/background-img/background_Time-small.jpg");
+    min-height: 100vh;
+  }
 
 body>iframe {
   pointer-events: none;
