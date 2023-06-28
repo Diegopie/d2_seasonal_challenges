@@ -1,7 +1,7 @@
 .ChallengeCard-Container {
     width: min(100% - 2rem, 496px);
     margin-bottom: 0.6rem;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 
@@ -14,7 +14,7 @@
 .ChallengeCard-Body {
     width: min(100% - 3rem, 500px);
     margin: auto;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .ChallengeCard-Text {
@@ -29,7 +29,7 @@
     border-style: solid;
     border-color: #0cc0d9;
     color: #0cc0d9;
-    transition: 0s;
+    /* transition: 0s; */
 }
 
 .ObjectiveToggle {
@@ -62,7 +62,7 @@
 .ObjectiveOptions {
     max-width: 4.5rem;
     height: 80%;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .ChallengeObjectivePercentage {
@@ -81,12 +81,12 @@
 @media (max-width: 1000px) {
     .ChallengeCard-Container {
         width: min(100%, 1000px);
-        transition: 0.5s;
+        transition: 0.3s;
     }
 
     .ChallengeCard-Body {
         width: min(100% - 3rem, 1000px);
-        transition: 0.5s;
+        transition: 0.3s;
     }
 }
 
@@ -94,7 +94,7 @@
     .ObjectiveOptions {
         max-width: 3.2rem;
         max-height: 2rem;
-        transition: 0.5s;
+        transition: 0.3s;
     }
 
 }
