@@ -109,11 +109,9 @@ const ChallengeCard = (props) => {
                     <p>{description}</p>
                 </article>
                 {/* Objectives */}
-                <ChallengeObjectives
-                />
+                {/* <ChallengeObjectives /> */}
                 {/* Rewards */}
-                <ChallengeReward
-                />
+                {/* <ChallengeReward /> */}
             </section>
         </section>
     );
