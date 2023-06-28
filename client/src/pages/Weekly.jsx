@@ -44,3 +44,5 @@ const Weekly = () => {
 };
 
 export default Weekly;
+
+// ffmpeg -i background_XP.png -vf scale=30:-1 background_XP-small.png
