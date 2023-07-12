@@ -28,6 +28,8 @@ const ChallengeCard = (props) => {
     // }, [completed, props.challengesRemainingID]);
 
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
+
+    // {thought} What if this check happens when we complete an objective? We could make a hook that handles updating an objectives complete key to use in ObjectiveToggle and Options. This hook could then do the work of checking if all objectives are complete. If true, it can update the challenges' complete key then we only need one get req to manage both and we can remove all this code found here
     useEffect(() => {
         // ** Store The Amount of Objectives to Complete; Have a Number that Can Increment If A Challenge Is COmplete; Loop Through the Length of the Objectives Array to Increment When Any Objective is Completed
         const totalObjectives = objectives.length;
@@ -67,14 +69,6 @@ const ChallengeCard = (props) => {
 
     }, [dispatch, challengeIndex, objectives, week]);
 
-    const imBad = useComponentDidUpdate()
-    useEffect(() => {
-        console.log(imBad);
-        if (imBad) {
-            console.count()
-            completed ? updateServerData(true) : updateServerData(false)
-        }
-    }, [completed, imBad]);
 
     const isWeekly = window.location.pathname.includes('/weekly');
 
