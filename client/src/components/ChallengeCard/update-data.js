@@ -1,13 +1,14 @@
 import { updateServerData } from "../../api/server-data";
 
-const updateData = (objectiveIsComplete, week, challengeIndex, objectiveIndex, dispatch) => {
+const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIsComplete, progress) => {
 
     // * Create Reference to Current Challenge and Objectives
     const newLocal = JSON.parse(localStorage.getItem(week));
     const currentChallenge = newLocal[challengeIndex]
     const allObjectives = currentChallenge.objectives;
+    const currentObjective = allObjectives[objectiveIndex];
 
-    // Use Local Storage Data to Determine Total Completed Challenges
+    // * Use Local Storage Data to Determine if All Objectives are Completed
     const allObjectivesComplete = (allObjectives) => {
         // check if all objectives are complete
         const totalObjectives = allObjectives.length;
@@ -28,14 +29,35 @@ const updateData = (objectiveIsComplete, week, challengeIndex, objectiveIndex, d
         }
     }
 
+    // * Check if Initiated By ObjectiveOptions to Update Progress
+    if (progress) {
+        console.log('hit progress');
+        currentObjective.progress = progress.progress;
+        // ** Check If Progress Matches Goal to Mark Objective as Complete, then Run Logic To Update Objective and Challenge Complete
+        if (progress.progress === progress.goal) {
+            objectiveIsComplete = true;
+        } else {
+            // ** If they don't match, update local, state, db, and end the function
+            localStorage.setItem(week, JSON.stringify(newLocal));
+            dispatch({type:'setNewObjective', payload: { updatedProgress: allObjectives }});
+            updateServerData();
+            return;
+        }
+    }
+
+    
+    console.log('hit completed');
+    if (objectiveIsComplete) {
+        console.log('hit complete');
+        currentObjective.completed = objectiveIsComplete
+        currentChallenge.completed = allObjectivesComplete(allObjectives);
+    }
     // * Mutate Boolean for Current Objective
-    allObjectives[objectiveIndex].completed = objectiveIsComplete
     // * Use allObjectivesComplete() to determine if All Challenges Are Complete
-    currentChallenge.completed = allObjectivesComplete(allObjectives);
     // * Save Updated Data To Local Storage
     localStorage.setItem(week, JSON.stringify(newLocal));
-    // console.log({newLocal});
     // * Update State
+    console.log(allObjectives);
     dispatch({ type: 'setUpdatedChallenge', payload: { allObjectives, challengeIsCompleted: allObjectivesComplete(allObjectives) }});
     // * Update Database
     updateServerData();

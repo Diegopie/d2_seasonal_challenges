@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import updateData from '../../update-data';
 import { useChallengeContext } from '../../ChallengeContext';
 
@@ -11,7 +11,7 @@ const ObjectiveToggle = (props) => {
     // NOTE: PROGRESS STILL DOES NOT UPDATE ACROSS PAGES
     const handleClick = (e) => {
         setObjectiveComplete(!objComplete);
-        updateData(!objComplete, week, challengeIndex, props.objectiveIndex, dispatch, objectives);
+        updateData( week, challengeIndex, props.objectiveIndex, dispatch, !objComplete, null);
         
         // { bandage } update DOM across all duplicates
         const targets = document.getElementsByClassName(props.id);
@@ -19,6 +19,10 @@ const ObjectiveToggle = (props) => {
             targets[i].checked = e.target.checked;
         }
     }
+
+    useEffect(() => {
+        setObjectiveComplete(objectives[props.objectiveIndex].completed);
+    }, [objectives, objComplete, props.objectiveIndex]);
 
     return (
         <input

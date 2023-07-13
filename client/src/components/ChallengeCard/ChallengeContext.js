@@ -31,14 +31,13 @@ const reducer = (state, action) => {
                 dust: challenge.dust,
             };
         case 'setNewObjective':
-            const { newObjective } = action.payload;
+            const { updatedProgress } = action.payload;
             return {
                 ...state,
-                objectives: newObjective
+                objectives: updatedProgress
             }
         case 'setUpdatedChallenge':
             const { allObjectives, challengeIsCompleted } = action.payload;
-            console.log(allObjectives, challengeIsCompleted);
             return {
                 ...state,
                 completed: challengeIsCompleted,
