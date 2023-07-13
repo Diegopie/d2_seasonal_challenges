@@ -31,7 +31,6 @@ const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIs
 
     // * Check if Initiated By ObjectiveOptions to Update Progress
     if (progress) {
-        console.log('hit progress');
         currentObjective.progress = progress.progress;
         // ** Check If Progress Matches Goal to Mark Objective as Complete, then Run Logic To Update Objective and Challenge Complete
         if (progress.progress === progress.goal) {
@@ -45,10 +44,7 @@ const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIs
         }
     }
 
-    
-    console.log('hit completed');
-    if (objectiveIsComplete) {
-        console.log('hit complete');
+    if (objectiveIsComplete !== null) {
         currentObjective.completed = objectiveIsComplete
         currentChallenge.completed = allObjectivesComplete(allObjectives);
     }
@@ -57,7 +53,6 @@ const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIs
     // * Save Updated Data To Local Storage
     localStorage.setItem(week, JSON.stringify(newLocal));
     // * Update State
-    console.log(allObjectives);
     dispatch({ type: 'setUpdatedChallenge', payload: { allObjectives, challengeIsCompleted: allObjectivesComplete(allObjectives) }});
     // * Update Database
     updateServerData();
