@@ -67,7 +67,7 @@ const ChallengeCategory = (props) => {
     }, [togglerID, dispatchGlobal])
 
     return (
-        <section id={props.name.replaceAll(' ', '-')} className='ChallengeCategory-Container'>
+        <section id={props.name} className='ChallengeCategory-Container'>
             <article className='ChallengeCategory-Header'>
                 <div className='ChallengeCategory-Title'>
                     <h2>{props.name.replaceAll('-', ' ')}</h2>
