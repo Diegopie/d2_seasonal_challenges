@@ -1,14 +1,10 @@
 import { getServerData } from "../api/server-data";
+import { dummyData1 } from "./dummyData";
 
-const localSeasonalChallenges = () => {
-    const username = localStorage.getItem('username');
-    if (username === null) return;
-    // console.log(username);
+const dummyData = false;
 
-    return getServerData(username)
-        .then(data => {
-            // console.log(data);
-            const serverData = data.data.seasonalChallenges21
+const parser = (data) => {
+    const serverData = data.data.seasonalChallenges21
             serverData.map((week) => {
                 // * Set weekName to be JSON and LocalStorage Friendly
                 const weekName = week.name.replaceAll(' ', '-');
@@ -30,9 +26,25 @@ const localSeasonalChallenges = () => {
                 // *** Return Updated Data
                 return week;
             });
-
             return serverData;
-        })
 }
 
-export default localSeasonalChallenges;
+const parsedSeasonalChallenges = () => {
+    const username = localStorage.getItem('username');
+    if (username === null) return;
+    if (dummyData) {
+        const user = localStorage.getItem('username')
+        localStorage.clear();
+        localStorage.setItem('username', user);
+        localStorage.setItem('init21', 'true');
+        return dummyData1.then(data => parser(data));
+    }
+
+    return getServerData(username)
+        .then(data => {
+            return parser(data)
+        });
+        
+}
+
+export default parsedSeasonalChallenges;

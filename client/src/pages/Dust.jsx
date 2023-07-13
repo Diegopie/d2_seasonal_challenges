@@ -70,7 +70,7 @@ const Dust = () => {
                             return (
                                 <ChallengeCategory
                                     key={week.name}
-                                    name={week.name}
+                                    name={week.name.replaceAll(' ', '-')}
                                     challenges={week.challenges}
                                 />
                             )

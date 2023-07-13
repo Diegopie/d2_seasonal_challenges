@@ -95,7 +95,7 @@ select option {
 }
 
 .backgroundImg-Home {
-  background-image: url("./assets/production/background-img/home.jfif");
+  background-image: url("./assets/production/background-img/home.jpg");
   min-height: 100vh;
 }
 

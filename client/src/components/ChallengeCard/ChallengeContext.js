@@ -24,23 +24,25 @@ const reducer = (state, action) => {
                 name: challenge.name,
                 challengeIndex: challenge.challengeIndex,
                 description: challenge.description,
+                completed: challenge.completed,
                 objectives: challenge.objectives,
                 reward: challenge.reward,
                 xp: challenge.xp,
                 dust: challenge.dust,
             };
         case 'setNewObjective':
-            const { newObjective } = action.payload;
+            const { updatedProgress } = action.payload;
             return {
                 ...state,
-                objectives: newObjective
+                objectives: updatedProgress
             }
-            case 'setCompletedChallenge':
-                const { completedChallenge } = action.payload;
-                return {
-                    ...state,
-                    completed: completedChallenge
-                }
+        case 'setUpdatedChallenge':
+            const { allObjectives, challengeIsCompleted } = action.payload;
+            return {
+                ...state,
+                completed: challengeIsCompleted,
+                objectives: allObjectives
+            }
         default: return state;
     }
 }

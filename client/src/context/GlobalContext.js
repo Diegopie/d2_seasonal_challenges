@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import localSeasonalChallenges from '../data/parsedSeasonalChallenges';
+import parsedSeasonalChallenges from '../data/parsedSeasonalChallenges';
 
 export const GlobalContext = createContext();
 
@@ -28,7 +28,7 @@ const defaultState = {
     hidesLoader: () => document.querySelector('.load-icon').classList.add('hide-icon'),
     showLoader: () => document.querySelector('.load-icon').classList.remove('hide-icon'),
     darkMode: determineDarkMode(),
-    parsedData: localSeasonalChallenges(),
+    parsedData: parsedSeasonalChallenges(),
     activityIdsNav: [],
 };
 
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
         case 'setParsedData':
             return {
                 ...state,
-                parsedData: localSeasonalChallenges()
+                parsedData: parsedSeasonalChallenges()
             }
         case 'setDarkMode':
             return {
@@ -47,7 +47,7 @@ const reducer = (state, action) => {
         case 'updateParsedData':
             return {
                 ...state,
-                parsedData: localSeasonalChallenges()
+                parsedData: parsedSeasonalChallenges()
             };
         case 'updateActivityIdsNav':
             return {
