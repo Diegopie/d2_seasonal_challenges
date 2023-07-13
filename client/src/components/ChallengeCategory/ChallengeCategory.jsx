@@ -31,7 +31,6 @@ const ChallengeCategory = (props) => {
     const handleToggleChallenges = (e) => {
         const isChecked = document.getElementById(togglerID).checked;
         // If isChecked is True, Hide Completed Challenges
-        console.log(isChecked);
         if (isChecked) {
             // Loop through each returned element, check if their data set is true, and add to DOM
             for (let i = 0; i < activityChallenges.length; i++) {
@@ -71,7 +70,7 @@ const ChallengeCategory = (props) => {
         <section id={props.name.replaceAll(' ', '-')} className='ChallengeCategory-Container'>
             <article className='ChallengeCategory-Header'>
                 <div className='ChallengeCategory-Title'>
-                    <h2>{props.name}</h2>
+                    <h2>{props.name.replaceAll('-', ' ')}</h2>
                     <div className='App-FlexCenter'>
                         <p>Hide: {props.name}</p>
                         <label className="HideCompleted">
