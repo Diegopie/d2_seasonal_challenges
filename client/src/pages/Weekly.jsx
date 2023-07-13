@@ -5,7 +5,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const Weekly = () => {
 
-    const [season20Data, setSeason20Data] = useState([]);
+    const [seasonData, setSeasonData] = useState([]);
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
@@ -15,7 +15,7 @@ const Weekly = () => {
     useEffect(() => {
         parsedData
             .then(data => {
-                setSeason20Data(data);
+                setSeasonData(data);
             })
     }, [parsedData])
 
@@ -28,7 +28,7 @@ const Weekly = () => {
                             setSmallClass('');
                         }}
                     />
-                    {season20Data.map((week) => {
+                    {seasonData.map((week) => {
                         return (
                             <ChallengeCategory
                                 key={week.name}

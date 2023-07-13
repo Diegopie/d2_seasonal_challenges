@@ -1,25 +1,26 @@
 import { updateServerData } from "../../api/server-data";
 
-const updateData = (objectiveIsComplete, week, challengeIndex, objectiveIndex, dispatch, objectives) => {
+const updateData = (objectiveIsComplete, week, challengeIndex, objectiveIndex, dispatch) => {
 
-
-    // check if all objectives are complete
-    const totalObjectives = objectives.length;
-    let totalObjectivesCompleted = 0;
-    for (let i = 0; i < totalObjectives; i++) {
-        if (objectives[i].completed) {
-            // console.log("hit");
-            totalObjectivesCompleted++;
-        }
-    }
-
-    // Update Local Storage
-
+    // * Create Reference to Current Challenge and Objectives
     const newLocal = JSON.parse(localStorage.getItem(week));
     const currentChallenge = newLocal[challengeIndex]
-    const currentObjective = currentChallenge.objectives[objectiveIndex];
+    const allObjectives = currentChallenge.objectives;
 
-    const allObjectivesComplete = () => {
+    // Use Local Storage Data to Determine Total Completed Challenges
+    const allObjectivesComplete = (allObjectives) => {
+        // check if all objectives are complete
+        const totalObjectives = allObjectives.length;
+        let totalObjectivesCompleted = 0;
+        for (let i = 0; i < totalObjectives; i++) {
+            if (allObjectives[i].completed) {
+                // console.log("hit");
+                totalObjectivesCompleted++;
+            }
+        }
+        // console.log({objectiveIsComplete});
+        // console.log('-- total completed vs totalObjectives --');
+        // console.log(totalObjectivesCompleted, totalObjectives);
         if (totalObjectivesCompleted === totalObjectives && totalObjectives !== 0) {
             return true
         } else if (totalObjectivesCompleted !== totalObjectives && totalObjectives !== 0) {
@@ -27,19 +28,16 @@ const updateData = (objectiveIsComplete, week, challengeIndex, objectiveIndex, d
         }
     }
 
-
-    // ** Use Challenge Index From ChallengeState to Find the Correct Challenge and objectiveIndex to find the Correct Objective
-
-    currentChallenge.completed = allObjectivesComplete();
-    currentObjective.completed = objectiveIsComplete
-    // ** Store the Mutated Array in Local Storage
+    // * Mutate Boolean for Current Objective
+    allObjectives[objectiveIndex].completed = objectiveIsComplete
+    // * Use allObjectivesComplete() to determine if All Challenges Are Complete
+    currentChallenge.completed = allObjectivesComplete(allObjectives);
+    // * Save Updated Data To Local Storage
     localStorage.setItem(week, JSON.stringify(newLocal));
     // console.log({newLocal});
-    // ** Dispatch Values to State for Data to Persist Between Pages
-    const newObjective = newLocal[challengeIndex].objectives;
-    // Update State
-    dispatch({ type: 'setNewObjective', payload: { newObjective } });
-    // Update Database
+    // * Update State
+    dispatch({ type: 'setUpdatedChallenge', payload: { allObjectives, challengeIsCompleted: allObjectivesComplete(allObjectives) }});
+    // * Update Database
     updateServerData();
 }
 
