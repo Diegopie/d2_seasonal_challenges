@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { updateServerData } from '../../../../api/server-data';
+import { useState } from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
 import updateData from '../../update-data';
 
