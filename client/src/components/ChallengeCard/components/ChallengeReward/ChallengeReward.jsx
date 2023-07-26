@@ -17,6 +17,7 @@ const ChallengeReward = (props) => {
         if (xpTier === 'Challenger XP') return '/assets/img/icons/xp-t1.png'
         if (xpTier === 'Challenger XP+') return '/assets/img/icons/xp-t1.png'
         if (xpTier === 'Challenger XP++') return '/assets/img/icons/xp-t1.png'
+        if (xpTier === 'Challenger XP+++') return '/assets/img/icons/xp-t1.png'
     }
 
     return (

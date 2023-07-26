@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ChallengeCard from '../ChallengeCard';
 import ChallengeProvider from '../ChallengeCard/ChallengeContext';
 import './ChallengeCategory.css';
@@ -66,13 +66,21 @@ const ChallengeCategory = (props) => {
         dispatchGlobal({type:'updateActivityIdsNav', payload: navIDs})
     }, [togglerID, dispatchGlobal])
 
+    const [displayName, ] = useState(() => {
+        if (props.name.includes('Destination')) {
+            return props.name.replaceAll('-', ' ').replace(' ', ' - ')
+        } else {
+            return props.name.replaceAll('-', ' ')
+        }
+    })
+
     return (
         <section id={props.name} className='ChallengeCategory-Container'>
             <article className='ChallengeCategory-Header'>
                 <div className='ChallengeCategory-Title'>
-                    <h2>{props.name.replaceAll('-', ' ')}</h2>
+                    <h2>{displayName}</h2>
                     <div className='App-FlexCenter'>
-                        <p>Hide: {props.name}</p>
+                        <p>Hide: {displayName}</p>
                         <label className="HideCompleted">
                             <input
                                 id={togglerActivitiesID}
