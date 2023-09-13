@@ -85,7 +85,7 @@ const ChallengeCategory = (props) => {
                     </div>
                 </div>
                 <div>
-                    {/* <p> Challenges Remaining: <span id={challengesRemainingID}>0</span></p> */}
+                    <p> Challenges Remaining: <span id={challengesRemainingID}>0</span></p>
                     <div className='App-FlexCenter'>
                         <p>Show Completed: </p>
                         <label className="HideCompleted">

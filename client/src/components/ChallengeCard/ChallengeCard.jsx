@@ -11,18 +11,19 @@ const ChallengeCard = (props) => {
 
     // *** { THIS IS BEING DOUBLED FOR SOME REASON }
     // * On Mount and State Change, Determine Which Challenges are Completed, Increment and Update DOM Value if/when value becomes not Completed, Decrement Value if/when it becomes completed
-    // useEffect(() => {
-    //     const challengesRemaining = document.getElementById(props.challengesRemainingID);
-    //     if (!completed) {
-    //         challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
+    useEffect(() => {
+        const challengesRemaining = document.getElementById(props.challengesRemainingID);
+        console.log(completed);
+        if (!completed) {
+            challengesRemaining.innerText = parseInt(challengesRemaining.innerText) + 1;
 
-    //     }
-    //     if (completed) {
-    //         // ** Prevent DOM Value from becoming negative
-    //         if (parseInt(challengesRemaining.innerText) === 0) return;
-    //         challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
-    //     }
-    // }, [completed, props.challengesRemainingID]);
+        }
+        if (completed) {
+            // ** Prevent DOM Value from becoming negative
+            if (parseInt(challengesRemaining.innerText) === 0) return;
+            challengesRemaining.innerText = parseInt(challengesRemaining.innerText) - 1;
+        }
+    }, [completed, props.challengesRemainingID]);
 
     // * On Mount and State Change, Monitor if All Objectives Have Been Completed and Mark The Challenge Complete or Not Complete
     useEffect(() => {
