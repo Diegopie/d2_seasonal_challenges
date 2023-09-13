@@ -53,7 +53,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     const newUser = new BasicUser({
         username,
         patchNumber,
-        seasonalChallenges21: seedSeasonalChallenges
+        seasonalChallenges22: seedSeasonalChallenges
     });
 
     try {
@@ -98,7 +98,7 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 );
                 return;
             }
-            let currentData = data.seasonalChallenges21;
+            let currentData = data.seasonalChallenges22;
             const serverData = seedSeasonalChallenges;
             // *** If user's data is shorter than server, user is missing new data. Begin a loop with user's current data (length) than push new data to user array
             if (currentData.length < serverData.length) {
@@ -112,14 +112,14 @@ basicUserRouter.post('/data', ({ body }, res) => {
             if (data.patchNumber !== patchNumber) {
                 console.log("hit no match");
 
-                currentData = patchedSeasonalChallenges(data.seasonalChallenges21)
-                data.seasonalChallenges21 = currentData;
+                currentData = patchedSeasonalChallenges(data.seasonalChallenges22)
+                data.seasonalChallenges22 = currentData;
 
                 BasicUser.findOneAndUpdate(
                     { username: username },
                     {
                         $set: {
-                            seasonalChallenges21: data.seasonalChallenges21,
+                            seasonalChallenges22: data.seasonalChallenges22,
                             patchNumber: patchNumber
                         }
                     },
@@ -152,7 +152,7 @@ basicUserRouter.post('/update', async ({ body }, res) => {
     // console.log(username);
     BasicUser.findOneAndUpdate(
         { username: username },
-        { seasonalChallenges21: seasonalChallenges },
+        { seasonalChallenges22: seasonalChallenges },
         { returnNewDocument: true }
     )
         .then(data => {

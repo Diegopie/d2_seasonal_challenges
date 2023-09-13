@@ -2,7 +2,7 @@ export const dummyData1 = new Promise((resolve, reject) => {
     resolve(
         {
             data: {
-                seasonalChallenges21:
+                seasonalChallenges22:
                     [
                         {
                             name: "Season of the Deep Upgrades",
@@ -109,7 +109,7 @@ export const dummyData1 = new Promise((resolve, reject) => {
 
 export const dummyData2 = {
     data: {
-        seasonalChallenges21: [
+        seasonalChallenges22: [
             {
                 name: "Season of-the-Deep-Upgrades",
                 challenges: [
