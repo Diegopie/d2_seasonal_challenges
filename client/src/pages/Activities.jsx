@@ -19,11 +19,11 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Deep Dive',
+            name: "Savathûn's Spire",
             challenges: []
         },
         {
-            name: 'Salvage',
+            name: 'Altars of Summoning',
             challenges: []
         },
         {
