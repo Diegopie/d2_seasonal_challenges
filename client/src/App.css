@@ -1,5 +1,13 @@
+:root {
+  --App-Main-Color-solid: rgba(74, 105, 74, 1);
+  --App-Main-Color-t1: rgba(74, 105, 74, 0.8);
+  --App-Secondary-Color-solid: rgba(120, 153, 103, 1);
+  --App-Secondary-Color-t1: rgba(120, 153, 103, 0.8);
+  --App-Secondary-Color-t2: rgba(120, 153, 103, 0.5);
+  --App-Highlight-One: rgb(232, 214, 94);
+} 
 body {
-  background-color: #A09EF0;
+  background-color: var(--App-Secondary-Color-solid);
   color: white !important;
 }
 
@@ -14,16 +22,6 @@ a {
 
 a:hover {
   color: inherit
-}
-
-:root {
-  --App-Main-Color-solid: rgba(74, 105, 74, 1);
-  --App-Main-Color-t1: rgba(74, 105, 74, 0.8);
-  --App-Secondary-Color-solid: rgba(120, 153, 103, 1);
-  --App-Secondary-Color-t1: rgba(120, 153, 103, 0.8);
-  --App-Secondary-Color-t2: rgba(120, 153, 103, 0.5);
-  --App-Highlight-One: rgb(232, 214, 94);
-
 }
 
 select {
@@ -52,7 +50,7 @@ select option {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #5C5DB8;
+  background-color: var(--App-Secondary-Color-solid);
 }
 
 .App-dropShadow {
