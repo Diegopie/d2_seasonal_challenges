@@ -1,11 +1,11 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Into the Depths IV",
-    description: "Complete the Week 4 Into the Depths mission",
+    belongsTo: "",
+    name: "Acolyte's Ascent IV",
+    description: "Complete Week 4 of The Bladed Path quest.",
     category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -16,30 +16,70 @@ const challenges = [
       }
     ],
     reward: null,
+    xp: "Challenger XP",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Forgotten Power",
+    description: "Complete a Powerful encounter in the Altars of Summoning and defeat combatants using the damage type that matches your subclass.",
+    category: ["Altars of Summoning", "Loadout"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Powerful encounter completed",
+        progress: 0,
+        goal: 1,
+        completed: false
+      },
+      {
+        isPercent: true,
+        task: "Matching damage defeats",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
     xp: "Challenger XP+",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Front Line Salvager IV",
-    description: "Complete Salvage or Deep Dive activities while using a Void subclass. Additionally, defeat Hive anywhere in the system.",
-    category: ['Salvage', 'Deep Dive'],
+    belongsTo: "",
+    name: "Luminary II",
+    description: "Master the Light by defeating combatants with [Void] Void, [Arc] Arc, or [Solar] Solar damage. Earn bonus progress by affecting combatants with subclass abilities: [Void] Weaken [Arc] Jolt [Solar] Ignite",
+    category: ["Loadout"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Void Void, Arc Arc, or Solar Solar",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Bounty Conjurer",
+    description: "Complete daily bounties during the Season of the Witch.",
+    category: [],
+    completed: false,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Seasonal activities",
+        task: "Season of the Witch bounties",
         progress: 0,
         goal: 3,
         completed: false
-      },
-      {
-        isPercent: true,
-        task: "Hive",
-        progress: 0,
-        goal: 100,
-        completed: false
       }
     ],
     reward: null,
@@ -47,110 +87,16 @@ const challenges = [
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Deep Diver",
-    description: "Successfully complete encounters at any depth in Deep Dive activities. Pressure Trial encounters grant increased progress.",
-    category: ['Deep Dive'],
+    belongsTo: "",
+    name: "Last Rites",
+    description: "Get ability final blows in Season of the Witch activities.",
+    category: ["Savathûn's Spire", "Altars of Summoning"],
     completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Encounters",
-        progress: 0,
-        goal: 6,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Commendable Salvager",
-    description: "Give or receive commendations in matchmade Salvage activities.",
-    category: ['Salvage'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Commendations",
-        progress: 0,
-        goal: 6,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Mod Collector",
-    description: "Unlock artifact mods.",
-    category: [],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Mods unlocked",
-        progress: 0,
-        goal: 12,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP++",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Momentum Crash",
-    description: "Defeat Guardians in Momentum Control. Earn bonus progress with Zone Advantage.",
-    category: ['PvP'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Guardians",
-        progress: 0,
-        goal: 50,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Sound of Metal",
-    description: "Defeat targets with Auto Rifles, Hand Cannons, and Scout Rifles in Gambit. Bonus progress is granted for defeating Guardians.",
-    category: ['Gambit'],
-    completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Auto Rifle Auto Rifle",
-        progress: 0,
-        goal: 100,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Hand Cannon Hand Cannon",
-        progress: 0,
-        goal: 100,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Scout Rifle Scout Rifle",
+        task: "Ability",
         progress: 0,
         goal: 100,
         completed: false
@@ -161,32 +107,32 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Darkest Nightfall",
-    description: "Complete any Nightfall strike on Hero difficulty or higher.",
-    category: ['Vanguard'],
+    belongsTo: "",
+    name: "Grandmaster",
+    description: "Complete any Nightfall strike on Grandmaster.",
+    category: ["Vanguard"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
         task: "Nightfall",
         progress: 0,
-        goal: 3,
+        goal: 1,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP+++",
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Precision Calibration",
-    description: "Calibrate marksman weapons—Scout Rifles, Sniper Rifles, and Linear Fusion Rifles—by landing precision final blows. Bonus progress against Guardians.",
-    category: ['Loadout', 'Gambit', 'PvP'],
+    belongsTo: "",
+    name: "Calibrate Close Range",
+    description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords. Bonus progress for defeating Guardians.",
+    category: ["Loadout", "PvP", "Gambit"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
