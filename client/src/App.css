@@ -135,17 +135,17 @@ select option {
     min-height: 100vh;
   }
 
-.backgroundImg-SeasonalReward {
+/* .backgroundImg-SeasonalReward {
   background-image: url("./assets/production/background-img/background_SeasonalReward.jpg");
   min-height: 100vh;
-}
-  .backgroundImg-SeasonalReward-small {
+} */
+  /* .backgroundImg-SeasonalReward-small {
     background-image: url("./assets/production/background-img/background_SeasonalReward-small.jpg");
     min-height: 100vh;
-  }
+  } */
 
 .backgroundImg-Time {
-  background-image: url("./assets/production/background-img/background_Time.jpeg");
+  background-image: url("./assets/production/background-img/background_Time.jpg");
   min-height: 100vh;
 }
   .backgroundImg-Time-small {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-import img from '../assets/production/background-img/background_Time.jpeg';
+import img from '../assets/production/background-img/background_Time.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
 
 

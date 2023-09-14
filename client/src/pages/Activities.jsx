@@ -7,6 +7,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 const Activities = (props) => {
 
     const [season20Data, setSeason20Data] = useState([]);
+    console.log(season20Data);
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Activities-small');
 
@@ -69,10 +70,10 @@ const Activities = (props) => {
     const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Deep Dive':
+            case "Savathûn's Spire":
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Salvage':
+            case 'Altars of Summoning':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gambit':
