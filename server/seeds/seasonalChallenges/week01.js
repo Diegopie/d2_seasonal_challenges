@@ -146,7 +146,7 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   }
-]
+];
 
 const weekName = 'Week One'
 

@@ -1,11 +1,11 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Into the Depths III",
-    description: "Complete the Week 3 Into the Depths mission",
+    belongsTo: "",
+    name: "Acolyte's Ascent III",
+    description: "Complete Week 3 of The Bladed Path quest",
     category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -16,49 +16,69 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Front Line Salvager III",
-    description: "Complete Salvage or Deep Dive activities while wielding any Season of the Deep weapon. Additionally, defeat targets with Arc or Strand damage anywhere in the system. Guardians grant additional progress.",
-    category: ['Salvage', 'Deep Dive', 'Loadout', 'PvP', 'Gambit'],
+    belongsTo: "",
+    name: "Athamethodology",
+    description: "Complete Savathûn's Spire or Altars of Summoning encounters with Season of the Witch weapons equipped. These include Locus Locutus, Eleatic Principle, Semiotician, Kept Confidence, The Eremite, and Brya's Love. Earn bonus progress for each additiona ...",
+    category: ["Savathûn's Spire", "Altars of Summoning"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Season of the Witch activities",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+++",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Kinesic Spellcraft",
+    description: "Defeat challenging combatants and earn melee or ability final blows in Savathûn's Spire.",
+    category: ["Savathûn's Spire"],
+    completed: false,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Seasonal activities",
+        task: "Challenging combatants",
         progress: 0,
-        goal: 3,
+        goal: 50,
         completed: false
       },
       {
-        isPercent: true,
-        task: "Arc or Strand damage",
+        isPercent: false,
+        task: "Ability",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Depth Charge",
-    description: "Defeat bosses in Salvage activities.",
-    category: ['Salvage'],
+    belongsTo: "",
+    name: "Doom and Boom",
+    description: "Defeat targets with Fusion Rifles or Grenade Launchers. Earn bonus progress by defeating Guardians or by defeating combatants in Season of the Witch activities.",
+    category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Bosses",
+        task: "[Fusion Rifle] or [Grenade Launcher] Final blows",
         progress: 0,
-        goal: 5,
+        goal: 200,
         completed: false
       }
     ],
@@ -67,52 +87,12 @@ const challenges = [
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Short-Range Salvager",
-    description: "Defeat targets with Submachine Guns or Swords. Defeated Guardians or combatants defeated in Salvage or Deep Dive activities grant additional progress.",
-    category: ['Loadout', 'Salvage', 'Deep Dive'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "SMG or Sword final blows",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Nessus Activities",
-    description: "On Nessus, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
-    category: ['Nessus'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
+    belongsTo: "",
     name: "Commendation Appreciation",
     description: "Earn progress for giving commendations in Vanguard, Crucible, and Gambit activities.",
-    category: ['Vanguard', 'Crucible', 'Gambit'],
+    category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -127,18 +107,18 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Cosmic Churn",
-    description: "Defeat Guardians in Crucible. Bonus progress is granted for opponents defeated with Arc, Strand, and Void ability final blows.",
-    category: ['PvP'],
+    belongsTo: "",
+    name: "Neptune Activities",
+    description: "In Neomuna, complete bounties, patrols, public events, and Lost Sectors.",
+    category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
-        isPercent: true,
-        task: "Guardians",
+        isPercent: false,
+        task: "Progress",
         progress: 0,
-        goal: 100,
+        goal: 30,
         completed: false
       }
     ],
@@ -147,58 +127,58 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Bank, Kill, Repeat",
-    description: "Earn points by banking Motes, defeating Blockers, and defeating Guardians in Gambit.",
-    category: ['Gambit'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Points",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Ultimate Champion",
-    description: "Defeat Champions in any Nightfall strike on Hero difficulty or higher. Earn bonus progress at higher difficulty tiers.",
-    category: ['Vanguard'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Champions",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Mid-Range Calibration",
-    description: "Calibrate mid-range weapons—Hand Cannons, Glaives, Auto Rifles, Fusion Rifles, and Machine Guns. Bonus progress is granted for defeating Guardians.",
-    category: ['Loadout', 'PvP', 'Gambit'],
+    belongsTo: "",
+    name: "Ritual Violence",
+    description: "Rapidly defeat targets in Season of the Witch activities.",
+    category: [],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: true,
-        task: "Calibration",
+        isPercent: false,
+        task: "Rapidly defeated combatants",
         progress: 0,
-        goal: 100,
+        goal: 25,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Iron Sharpens Iron",
+    description: "Complete Iron Banner matches. Earn bonus progress for wins.",
+    category: [],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Progress",
+        progress: 0,
+        goal: 15,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Ultimate Champion",
+    description: "Defeat Champions in any Nightfall strike on Hero difficulty or higher. Earn bonus progress at higher difficulty tiers.",
+    category: [],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Champions",
+        progress: 0,
+        goal: 60,
         completed: false
       }
     ],
@@ -206,7 +186,7 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   }
-]
+];
   
   const weekName = 'Week Three'
   
