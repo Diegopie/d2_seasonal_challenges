@@ -14,7 +14,7 @@
 }
 
 .FootNav-Body {
-    background-color: rgba(174, 201, 245, 1);
+    background-color: var(--App-Main-Color-solid);
     color: black;
     border-radius: 100px;
     display: flex;
@@ -26,12 +26,12 @@
 }
 
 .FootNav-Button {
-    background-color: rgba(129, 181, 181, 0.8) !important;
+    background-color: var(--App-Secondary-Color-t1) !important;
     color: white !important;
     height: 75% !important;
 }
     .FootNav-Button:hover {
-        background-color: rgba(129, 181, 181, 1);
+        background-color: var(--App-Secondary-Color-solid)!important;
     }
 
 /* DropUp Nav Menu */
@@ -42,7 +42,7 @@
     position: relative;
     overflow-y: scroll;
     width: 100%;
-    background-color: rgba(174, 201, 245, 0.9);
+    background-color: var(--App-Secondary-Color-t1);
     bottom: 25rem;
     height: 0;
     transform: translateY(100%);
@@ -72,13 +72,13 @@
 .FootNav-DropUp-Button {
     margin-top: 0.8rem !important;
     color: white !important;
-    background-color: rgb(116, 163, 239) !important;
+    background-color: var(--App-Main-Color-t1) !important;
     text-decoration: none;
     text-align: center;
 }
 
 .FootNav-DropUp-Button:hover {
-    color: rgb(232, 214, 94) !important
+    color: var(--App-Highlight-One) !important
 }
 
 /* Info Menu */
@@ -113,7 +113,7 @@
 
 .FootNav-ContactCards-container {
     border-radius: 20%;
-    background-color: rgb(116, 163, 239);
+    background-color: var(--App-Main-Color-solid);
     /* padding: 1em; */
     margin: 0.8rem;
     width: 1.8rem;

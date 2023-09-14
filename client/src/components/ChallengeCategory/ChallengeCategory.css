@@ -6,7 +6,7 @@
 }
 
 .ChallengeCategory-Header {
-    background-color: rgba(174, 201, 245, 0.5);
+    background-color: var(--App-Secondary-Color-t1);
     display: flex;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -19,7 +19,7 @@
 }
 
 .ChallengeCategory-Body {
-    background-color: rgba(174, 201, 245, 0.4);
+    background-color: var(--App-Secondary-Color-t2);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

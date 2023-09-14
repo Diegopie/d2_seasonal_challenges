@@ -17,6 +17,9 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 
 ## Updates
 
+09/15/23
+Season 22 update! New Bungie art has been added to each page.
+
 05/23/23
 Season 21 update! New Bungie art has been added to each page. Many UI updates have been made, most notably having icons for the Rewards of a Challenge. The site has been updated to manage the new Seasonal Upgrades so you can continue to be efficient with these challenges
 

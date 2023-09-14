@@ -16,8 +16,18 @@ a:hover {
   color: inherit
 }
 
+:root {
+  --App-Main-Color-solid: rgba(74, 105, 74, 1);
+  --App-Main-Color-t1: rgba(74, 105, 74, 0.8);
+  --App-Secondary-Color-solid: rgba(120, 153, 103, 1);
+  --App-Secondary-Color-t1: rgba(120, 153, 103, 0.8);
+  --App-Secondary-Color-t2: rgba(120, 153, 103, 0.5);
+  --App-Highlight-One: rgb(232, 214, 94);
+
+}
+
 select {
-  background-color: rgba(160, 211, 241, 0.6);
+  background-color: var(--App-Secondary-Color-t1);
   color: #f1f1f1;
   text-align: center;
   border-radius: 8px;
@@ -25,7 +35,7 @@ select {
 }
 
 select option {
-  background: rgba(99, 130, 148, 0.6);
+  background: var(--App-Secondary-Color-t2);
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -85,9 +95,9 @@ select option {
   border-radius: 3px;
 }
 
-.App-Button:hover {
+/* .App-Button:hover {
   height: 2rem;
-}
+} */
 
 .App-Invisible-Img {
   height: 0px;
