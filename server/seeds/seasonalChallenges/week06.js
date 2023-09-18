@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Into the Depths VI",
-    description: "Complete the Week 6 Into the Depths mission.",
+    name: "Acolyte's Ascent VI",
+    description: "Complete Week 6 of The Bladed Path quest.",
     category: [],
     completed: false,
     challengeIndex: "",
@@ -16,27 +16,40 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Front Line Salvager VI",
-    description: "Open chests in Deep Dive activities. Redeeming Deep Dive Keys grants bonus progress. Additionally, defeat targets with Void damage anywhere in the system. Guardians grant increased progress.",
-    category: ['Deep Dive', 'Loadout'],
+    name: "Luminary III",
+    description: "Master the Light by defeating combatants with Void, Arc, or Solar damage. Earn bonus progress by affecting combatants with subclass abilities: [Void] Volatile [Arc] Blind [Solar] Scorch",
+    category: ["Loadout"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Deep Dive Chests",
+        isPercent: true,
+        task: "Void Void, Arc Arc, or Solar Solar",
         progress: 0,
-        goal: 3,
+        goal: 100,
         completed: false
-      },
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Sympathetic Magic",
+    description: "Defeat combatants in Savathûn's Spire using damage that matches your active subclass.",
+    category: ["Savathûn's Spire"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
       {
         isPercent: true,
-        task: "Void Void",
+        task: "Matching damage defeats",
         progress: 0,
         goal: 100,
         completed: false
@@ -48,84 +61,37 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Under Pressure",
-    description: "Successfully complete a Pressure Trial encounter at any depth in a Deep Dive activity. Additionally, defeat bosses and minibosses in Deep Dive activities.",
-    category: ['Deep Dive'],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Pressure Trial",
-        progress: 0,
-        goal: 1,
-        completed: false
-      },
-      {
-        isPercent: false,
-        task: "Bosses and Minibosses",
-        progress: 0,
-        goal: 7,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Go Big (Fish) or Go Home",
-    description: "Catch large or bigger fish at any Fish Pond. Fish must be at least 18kg to be considered large.",
-    category: ['Activities'],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Large fish",
-        progress: 0,
-        goal: 15,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Round and Round We Go",
-    description: "Generate Orbs of Power in Vanguard, Gambit, or Crucible playlists.",
-    category: ['Vanguard', 'Gambit', 'Crucible'],
+    name: "Bone Breaker",
+    description: "Crush Lucent Hive Ghosts anywhere in Savathûn's throne world. Earn bonus progress during Season of the Witch activities.",
+    category: ["Throne World", "Savathûn's Spire", "Altars of Summoning"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Orbs of Power",
+        task: "Hive Ghosts crushed",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
+    xp: "Challenger XP",
+    dust: null
   },
   {
     belongsTo: "",
-    name: "The Deep End",
-    description: "Defeat opponents in the Crucible with Auto Rifles, Hand Cannons, Scout Rifles, Glaives, or Linear Fusion Rifles. Additional progress is granted for landing final blows with Glaives, Linear Fusion Rifles, and Hand Cannons that use Special ammo.",
-    category: ['Crucible'],
+    name: "Mod Collector",
+    description: "Unlock artifact mods.",
+    category: ["Gear"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: true,
-        task: "Guardians",
+        isPercent: false,
+        task: "Mods unlocked",
         progress: 0,
-        goal: 100,
+        goal: 12,
         completed: false
       }
     ],
@@ -135,15 +101,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Boss Battle",
-    description: "Defeat bosses in strikes or Vanguard playlists.",
-    category: ['Vanguard'],
+    name: "Trial by Firing Squad",
+    description: "Win multiple rounds in the Trials of Osiris.",
+    category: ["PvP", "Time"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Bosses",
+        task: "Wins",
         progress: 0,
         goal: 10,
         completed: false
@@ -155,17 +121,37 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Absolutely Stunning",
-    description: "Stun Champions.",
-    category: [],
+    name: "Calibrate Long Range",
+    description: "Calibrate long-range weapons—Pulse Rifles, Bows, and Trace Rifles. Bonus progress is granted for defeating Guardians.",
+    category: ["Loadout", "PvP"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Champions",
+        task: "Calibration",
         progress: 0,
-        goal: 50,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Heavy Hardware",
+    description: "Get final blows with Heavy ammo in ritual activities. Earn bonus progress for Machine Gun final blows or by defeating Guardians.",
+    category: ["Vanguard", "Gambit", "PvP"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Power weapon",
+        progress: 0,
+        goal: 100,
         completed: false
       }
     ],

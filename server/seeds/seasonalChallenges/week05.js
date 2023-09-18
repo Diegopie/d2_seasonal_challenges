@@ -171,12 +171,12 @@ const challenges = [
 const weekName = 'Week Five'
 
 const week05 = {
-        name: weekName,
-        challenges: challenges.map((challenge, challengeIndex) => {
-          challenge.belongsTo = weekName.replaceAll(' ', '-');
-          challenge.challengeIndex = challengeIndex;
-          return challenge;
-        })
-    };
+  name: weekName,
+  challenges: challenges.map((challenge, challengeIndex) => {
+    challenge.belongsTo = weekName.replaceAll(' ', '-');
+    challenge.challengeIndex = challengeIndex;
+    return challenge;
+  })
+};
 
 module.exports = week05;

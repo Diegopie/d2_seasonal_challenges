@@ -1,29 +1,49 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Wicked Depths",
-    description: "Complete the Whetstone encounter in Deep Dives and earn the Wicked Implement Scout Rifle.",
-    category: ['Activities'],
+    name: "Greatsword Logic",
+    description: "Defeat bosses and minibosses anywhere in the system. Earn bonus progress by defeating Headless Ones in Haunted Sectors during Festival of the Lost.",
+    category: ["Activities", "Time"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "",
+        isPercent: true,
+        task: "Bosses",
         progress: 0,
-        goal: 1,
+        goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Neptune Activities",
-    description: "In Neomuna, complete bounties, patrols, public events, and Lost Sectors.",
-    category: ['Neomuna'],
+    name: "Hive Eradicator",
+    description: "Defeat Hive anywhere in the system. Earn bonus progress by defeating Hive in Season of the Witch activities or in Haunted Sectors during Festival of the Lost.",
+    category: ["Savathûn's Spire", "Altars of Summoning", "Time"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Hive",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Throne World Activities",
+    description: "In the Throne World, complete bounties and earn progress by completing patrols, public events, and looting Lost Sectors.",
+    category: ["Throne World"],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -41,15 +61,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Sparks of Arc",
-    description: "Defeat Guardians in Crucible matches with the Arc subclass equipped. Bonus progress is granted for defeating blinded opponents.",
-    category: ['PvP'],
+    name: "Mean and Green",
+    description: "Get final blows with Strand weapons or abilities in the Crucible.",
+    category: ["PvP"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
+        task: "Strand final blows",
         progress: 0,
         goal: 100,
         completed: false
@@ -61,15 +81,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Special Measures",
-    description: "Defeat targets in Gambit with weapons using Special ammo. Bonus progress is granted for defeating Guardians and landing final blows with Glaives and Hand Cannons using Special ammo.",
-    category: ['Gambit'],
+    name: "Bring a Sword",
+    description: "Get final blows with Swords. Earn bonus progress in Haunted Sectors.",
+    category: ["Loadout", "Time"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Progress",
+        task: "Calibration",
         progress: 0,
         goal: 100,
         completed: false
@@ -81,15 +101,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Tried and True",
-    description: "Defeat combatants in Vanguard playlists or strikes with Primary ammo. Bonus progress is granted for more challenging combatants.",
-    category: ['Vanguard'],
+    name: "Primary School",
+    description: "Get final blows with Primary ammo in ritual activities. Earn bonus progress for Submachine Gun, Bow, or Scout Rifle final blows or by defeating Guardians.",
+    category: ["Vanguard", "Gambit", "PvP"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
+        task: "Primary ammo weapon",
         progress: 0,
         goal: 100,
         completed: false
@@ -99,7 +119,7 @@ const challenges = [
     xp: "Challenger XP++",
     dust: "Bright Dust"
   }
-]
+];
 
 const weekName = 'Week Ten'
 
