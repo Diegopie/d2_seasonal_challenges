@@ -5,9 +5,9 @@ const { patchNumber, patchedSeasonalChallenges } = require('../seeds/patch')
 const { BasicUser } = require('../models');
 
 // * Print Errors and Create Response Object 
-// arg 1 is the data to send to the client; arg 2 is the rought the route the req is made
-// arg 3 is the err from the promise or null of not applicalple
-// arg 4 is true if the request is successfull
+// arg 1 is the data to send to the client; arg 2 is the route the route the req is made
+// arg 3 is the err from the promise or null of not applicable
+// arg 4 is true if the request is successful
 const handleResponse = (data, note, route, err, success) => {
     if (route && err) console.log({ route }, err);
     return {
@@ -25,7 +25,7 @@ const handleResponse = (data, note, route, err, success) => {
 basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     const { username } = body;
 
-    // * Check Excisting USer
+    // * Check Existing User
     // console.log('---server data--');
     // console.log(seedSeasonalChallenges);
     const checkExisting = await BasicUser.findOne(
@@ -67,20 +67,6 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
             handleResponse(null, 'Error saving new user to the database', '/api/basic-user/newUpdated', err, false)
         );
     }
-
-
-    // (err => {
-    //     if (err) {
-    //         res.status(500).json(
-    //             handleResponse(null, 'Error saving new user to the database', '/api/basic-user/newUpdated', err, false)
-    //         );
-    //         return;
-    //     }
-
-    //     res.status(201).json(
-    //         handleResponse(newUser, 'Successfully saved new user!', '/api/basic-user/newUpdated', null, true)
-    //     );
-    // })
 });
 
 // * Serve challenge data on login/load
