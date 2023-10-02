@@ -12,7 +12,7 @@ const handleResponse = (data, note, route, err) => {
     if (route && err) console.log({ route }, err);
     return {
         message: {
-            success: err === null ? false : true,
+            success: err === null ? true : false,
             note: note,
             data: data,
             error: err
@@ -23,12 +23,13 @@ const handleResponse = (data, note, route, err) => {
 const baseApiRoute = '/api/serverData/';
 
 serverDataRouter.post('/initServer', async ({ body }, res) => {
+
     const apiRoute = baseApiRoute + '/initServer';
 
     try {
         new ServerData().save().then(data => {
             res.status(201).json(
-                handleResponse(data, 'Successfully initiated server data!', apiRoute, null, true)
+                handleResponse(data, 'Successfully initiated server data!', apiRoute, null)
             );
         })
     } catch (err) {
@@ -41,8 +42,12 @@ serverDataRouter.post('/initServer', async ({ body }, res) => {
 serverDataRouter.post('/getServerData', async ({ body }, res) => {
     const apiRoute = baseApiRoute + '/getServerData';
 
+    const newActiveWeeks = body.newActiveWeeks;
+    console.log(newActiveWeeks);
     try {
-        ServerData.find().then(data => {
+        ServerData.find(
+            { }
+        ).then(data => {
             res.status(201).json(
                 handleResponse(data, 'Successfully found server data!', apiRoute, null)
             );
@@ -50,6 +55,29 @@ serverDataRouter.post('/getServerData', async ({ body }, res) => {
     } catch (err) {
         res.status(500).json(
             handleResponse(null, 'Error finding server data', apiRoute, err)
+        );
+    }
+});
+
+// Update Server Data
+serverDataRouter.post('/updateServerData', async ({ body }, res) => {
+    const apiRoute = baseApiRoute + '/updateServerData';
+
+    const newActiveWeeks = body.newActiveWeeks;
+    console.log(newActiveWeeks);
+    try {
+        ServerData.findOneAndUpdate(
+            { },
+            {$set: { activeWeeks: newActiveWeeks }},
+            { new: true }
+        ).then(data => {
+            res.status(201).json(
+                handleResponse(data, 'Successfully updated server data!', apiRoute, null)
+            );
+        })
+    } catch (err) {
+        res.status(500).json(
+            handleResponse(null, 'Error updating server data', apiRoute, err)
         );
     }
 });
