@@ -4,7 +4,7 @@ import { dummyData1 } from "./dummyData";
 const dummyData = false;
 
 const parser = (data) => {
-    const serverData = data.data.seasonalChallenges21
+    const serverData = data.data.seasonalChallenges22
             serverData.map((week) => {
                 // * Set weekName to be JSON and LocalStorage Friendly
                 const weekName = week.name.replaceAll(' ', '-');
@@ -36,7 +36,7 @@ const parsedSeasonalChallenges = () => {
         const user = localStorage.getItem('username')
         localStorage.clear();
         localStorage.setItem('username', user);
-        localStorage.setItem('init21', 'true');
+        localStorage.setItem('init22', 'true');
         return dummyData1.then(data => parser(data));
     }
 

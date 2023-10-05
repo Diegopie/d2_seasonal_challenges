@@ -1,11 +1,11 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Into the Depths I",
-    description: "Complete the Week 1 Into the Depths mission",
+    belongsTo: "",
+    name: "Acolyte's Ascent I",
+    description: "Complete Week 1 of The Bladed Path quest.",
     category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -16,94 +16,67 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Front Line Salvager I",
-    description: "Complete Salvage or Deep Dive activities while using an Arc or Strand subclass. Additionally, defeat Fallen anywhere in the system.",
-    category: ['Deep Dive', 'Salvage'],
+    belongsTo: "",
+    name: "Adept Arcana",
+    description: "Complete Major Arcana quests to collect your Deck of Whispers.",
+    category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Seasonal activities",
-        progress: 0,
-        goal: 3,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Fallen",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Successful Salvager",
-    description: "Successfully complete jobs in Salvage activities.",
-    category: ['Salvage'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Jobs",
+        task: "Quests completed",
         progress: 0,
         goal: 5,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "The One That Didn't Get Away",
-    description: "Catch fish at any Fish Pond. Additionally, complete public events on any destination.",
-    category: ['Activities'],
+    belongsTo: "",
+    name: "Witch's Spoils",
+    description: "Open chests in Savathûn's Spire or the Altars of Summoning. Earn bonus progress by opening chests with Witch's Keys.",
+    category: ["Savathûn's Spire", "Altars of Summoning"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Fish",
+        isPercent: true,
+        task: "Chests opened",
         progress: 0,
-        goal: 50,
-        completed: false
-      },
-      {
-        isPercent: false,
-        task: "Public events",
-        progress: 0,
-        goal: 2,
+        goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP+++",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "EDZ Activities",
-    description: "In the EDZ, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
-    category: ['EDZ'],
+    belongsTo: "",
+    name: "Master Conjurer",
+    description: "Collect offerings, which are used to summon combatants in the Altars of Summoning. Complete Altars of Summoning encounters. Higher difficulty encounters grant bonus progress.",
+    category: ["Altars of Summoning"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
+        isPercent: false,
+        task: "Offerings acquired",
+        progress: 0,
+        goal: 5,
+        completed: false
+      },
+      {
         isPercent: true,
-        task: "Progress",
+        task: "Encounters completed",
         progress: 0,
         goal: 100,
         completed: false
@@ -111,15 +84,15 @@ const challenges = [
     ],
     reward: null,
     xp: "Challenger XP+",
-    dust: "Bright Dust"
+    dust: null
   },
   {
-    belongsTo: String,
+    belongsTo: "",
     name: "Taking All Challenges",
     description: "Complete weekly playlist challenges.",
-    category: ['Activites'],
+    category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -134,72 +107,32 @@ const challenges = [
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "Spark Defender",
-    description: "Score points in Rift. Bonus progress is awarded for igniting the Rift.",
-    category: ['PvP', 'Time'],
+    belongsTo: "",
+    name: "Round and Round We Go",
+    description: "Generate Orbs of Power in Vanguard, Gambit, or Crucible playlists.",
+    category: [],
     completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: false,
-        task: "Points",
-        progress: 0,
-        goal: 50,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Standard Issue",
-    description: "Defeat targets in Gambit with Primary ammo. Bonus progress is granted for using Auto Rifles, Hand Cannons, and Scout Rifles. Bonus progress also is granted for defeating Guardians.",
-    category: ['Gambit'],
-    completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
+        task: "Orbs of Power",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP+++",
     dust: "Bright Dust"
   },
   {
-    belongsTo: String,
-    name: "The Fallen Fall",
-    description: "Defeat Fallen combatants in Vanguard playlists or strikes. Earn bonus progress for defeating tougher combatants.",
-    category: ['Vanguard'],
+    belongsTo: "",
+    name: "Precision Calibration",
+    description: "Calibrate marksman weapons—Scout Rifles, Sniper Rifles, and Linear Fusion Rifles—by landing precision final blows. Bonus progress against Guardians.",
+    category: ["Loadout", "PvP"],
     completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Fallen",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Calibrate Close Range",
-    description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords. Bonus progress for defeating Guardians.",
-    category: ['Loadout', 'PvP', 'Gambit'],
-    completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: true,
@@ -213,7 +146,7 @@ const challenges = [
     xp: "Challenger XP+",
     dust: "Bright Dust"
   }
-]
+];
 
 const weekName = 'Week One'
 

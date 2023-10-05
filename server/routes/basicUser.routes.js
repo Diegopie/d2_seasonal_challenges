@@ -1,5 +1,5 @@
 const basicUserRouter = require('express').Router();
-const seedSeasonalChallenges21 = require('../seeds/seasonalChallenges')
+const seedSeasonalChallenges = require('../seeds/seasonalChallenges')
 const { patchNumber, patchedSeasonalChallenges } = require('../seeds/patch')
 
 const { BasicUser } = require('../models');
@@ -27,7 +27,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
 
     // * Check Excisting USer
     // console.log('---server data--');
-    // console.log(seedSeasonalChallenges21);
+    // console.log(seedSeasonalChallenges);
     const checkExisting = await BasicUser.findOne(
         { username: username }
     ).then(data => {
@@ -53,7 +53,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
     const newUser = new BasicUser({
         username,
         patchNumber,
-        seasonalChallenges21: seedSeasonalChallenges21
+        seasonalChallenges22: seedSeasonalChallenges
     });
 
     try {
@@ -98,8 +98,8 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 );
                 return;
             }
-            let currentData = data.seasonalChallenges21;
-            const serverData = seedSeasonalChallenges21;
+            let currentData = data.seasonalChallenges22;
+            const serverData = seedSeasonalChallenges;
             // *** If user's data is shorter than server, user is missing new data. Begin a loop with user's current data (length) than push new data to user array
             if (currentData.length < serverData.length) {
                 for (let i = currentData.length; i < serverData.length; i++) {
@@ -112,14 +112,14 @@ basicUserRouter.post('/data', ({ body }, res) => {
             if (data.patchNumber !== patchNumber) {
                 console.log("hit no match");
 
-                currentData = patchedSeasonalChallenges(data.seasonalChallenges21)
-                data.seasonalChallenges21 = currentData;
+                currentData = patchedSeasonalChallenges(data.seasonalChallenges22)
+                data.seasonalChallenges22 = currentData;
 
                 BasicUser.findOneAndUpdate(
                     { username: username },
                     {
                         $set: {
-                            seasonalChallenges21: data.seasonalChallenges21,
+                            seasonalChallenges22: data.seasonalChallenges22,
                             patchNumber: patchNumber
                         }
                     },
@@ -152,7 +152,7 @@ basicUserRouter.post('/update', async ({ body }, res) => {
     // console.log(username);
     BasicUser.findOneAndUpdate(
         { username: username },
-        { seasonalChallenges21: seasonalChallenges },
+        { seasonalChallenges22: seasonalChallenges },
         { returnNewDocument: true }
     )
         .then(data => {

@@ -1,9 +1,9 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Super Salvager",
-    description: "Defeat combatants with Super abilities in Salvage activities.",
-    category: ['Salvage'],
+    name: "Filamentary Magic",
+    description: "Defeat targets with Strand, Arc, or Solar Supers. Earn bonus progress for defeating Guardians.",
+    category: ["Loadout", "PvP", "Gambit"],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -21,37 +21,44 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Treasures from the Deep",
-    description: "Complete a Deep Dive activity with the highest tier reward bonus.",
-    category: ['Deep Dive'],
+    name: "Ponderous Orbs",
+    description: "Generate Orbs of Power and find any hidden chest within Savathûn's Spire.",
+    category: ["Savathûn's Spire"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
+        isPercent: true,
+        task: "Orbs of Power",
+        progress: 0,
+        goal: 100,
+        completed: false
+      },
+      {
         isPercent: false,
-        task: "",
+        task: "Hidden chests",
         progress: 0,
         goal: 1,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Commendable Diver",
-    description: "Give or receive commendations in matchmade Deep Dive activities.",
-    category: ['Deep Dive'],
+    name: "Precision Paraphysics",
+    description: "Defeat targets with Bows or Hand Cannons. Earn bonus progress by defeating Guardians or by defeating combatants in Season of the Witch activities.",
+    category: ["Loadout", "PvP", "Gambit", "Savathûn's Spire", "Altars of Summoning"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Commendations",
+        isPercent: true,
+        task: "Bow or Hand Cannon Final blows",
         progress: 0,
-        goal: 6,
+        goal: 100,
         completed: false
       }
     ],
@@ -61,35 +68,55 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Pinnacle",
-    description: "Reach Power Level 1810 by earning pinnacle rewards.",
-    category: [],
+    name: "Punch Drunk",
+    description: "Get powered melee final blows in Season of the Witch activities.",
+    category: ["Savathûn's Spire", "Altars of Summoning"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Power Level",
+        isPercent: true,
+        task: "Melee Melee",
         progress: 0,
-        goal: 1,
+        goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+++",
+    xp: "Challenger XP++",
     dust: "Bright Dust"
   },
   {
     belongsTo: "",
-    name: "Trial by Firing Squad",
-    description: "Win multiple rounds in the Trials of Osiris.",
-    category: ['PvP'],
+    name: "Flourish of Power",
+    description: "Defeat Guardians in the Mayhem playlist with Super abilities.",
+    category: ["PvP", "Time"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Wins",
+        task: "Guardians",
+        progress: 0,
+        goal: 25,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Boss Battle",
+    description: "Defeat bosses in strikes or Vanguard playlists.",
+    category: ["Vanguard"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Bosses",
         progress: 0,
         goal: 20,
         completed: false
@@ -101,35 +128,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Broadside",
-    description: "Defeat targets in Gambit with Power Weapons. Bonus progress is granted for final blows with Linear Fusion Rifles and for defeating Guardians.",
-    category: ['Gambit'],
+    name: "Kinetic Forces",
+    description: "Get final blows with Kinetic weapons. Bonus progress for defeating Guardians.",
+    category: ["Loadout", "PvP", "Gambit"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
-    name: "Implements of War",
-    description: "Defeat targets with Auto Rifles, Hand Cannons, Scout Rifles, Glaives, and Linear Fusion Rifles. Bonus progress is granted for defeating Guardians.",
-    category: ['Loadout', 'PvP' , 'Gambit'],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
+        task: "Kinetic weapon",
         progress: 0,
         goal: 100,
         completed: false

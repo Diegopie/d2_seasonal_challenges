@@ -7,6 +7,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 const Activities = (props) => {
 
     const [season20Data, setSeason20Data] = useState([]);
+    console.log(season20Data);
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Activities-small');
 
@@ -19,11 +20,11 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Deep Dive',
+            name: "Savathûn's Spire",
             challenges: []
         },
         {
-            name: 'Salvage',
+            name: 'Altars of Summoning',
             challenges: []
         },
         {
@@ -48,7 +49,7 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Destination - EDZ',
+            name: 'Destination - Moon',
             challenges: []
         },
         {
@@ -69,10 +70,10 @@ const Activities = (props) => {
     const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Deep Dive':
+            case "Savathûn's Spire":
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Salvage':
+            case 'Altars of Summoning':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gambit':
@@ -93,13 +94,13 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
+            case 'Moon':
+                activityChallenges[index].challenges.push(challenge)
+                break;
             case 'Throne World':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Nessus':
-                activityChallenges[index].challenges.push(challenge)
-                break;
-            case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Neomuna':

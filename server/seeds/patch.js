@@ -1,11 +1,11 @@
-const seedSeasonalChallenges21 = require("./seasonalChallenges");
+const seedSeasonalChallenges = require("./seasonalChallenges");
 
 const patchNumber = 21.4;
 
 const patchedSeasonalChallenges = (data) => {
     const userData = data;
 
-    const patch = seedSeasonalChallenges21.map((week, index) => {
+    const patch = seedSeasonalChallenges.map((week, index) => {
         // * Set weekName to be JSON and LocalStorage Friendly
 
         // * For a Given Week, map() Through Each Challenge, Programmatically Create Data, and Sync Data In Local Storage

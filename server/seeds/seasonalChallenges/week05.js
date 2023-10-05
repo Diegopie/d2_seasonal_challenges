@@ -1,11 +1,11 @@
 const challenges = [
   {
-    belongsTo: String,
-    name: "Into the Depths V",
-    description: "Complete the Week 5 Into the Depths mission",
+    belongsTo: "",
+    name: "Acolyte's Ascent V",
+    description: "Complete Week 5 of The Bladed Path quest.",
     category: [],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
@@ -16,29 +16,69 @@ const challenges = [
       }
     ],
     reward: null,
+    xp: "Challenger XP",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Master Magus",
+    description: "Complete combat encounters in the Altars of Summoning. More difficult encounters grant bonus progress.",
+    category: ["Altars of Summoning"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Encounters completed",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
     xp: "Challenger XP+",
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Front Line Salvager V",
-    description: "Complete 8 bounties from the Sonar Station in the H.E.L.M. Additionally, defeat powerful combatants anywhere in the system.",
-    category: ['Deep Dive', 'Salvage'],
+    belongsTo: "",
+    name: "Runic Rifles",
+    description: "Defeat targets with Scout Rifles or Sniper Rifles. Earn bonus progress by defeating Guardians or by defeating combatants in Season of the Witch activities.",
+    category: ["Loadout", "Savathûn's Spire", "Altars of Summoning", "PvP", "Gambit"],
     completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Scout Rifle or Sniper Rifle Final blows",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Mist and Mysteries",
+    description: "Solve the Cunning Test in the Imbaru Engine and identify Minor Arcana.",
+    category: [],
+    completed: false,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Bounties",
+        task: "Cunning conjured",
         progress: 0,
-        goal: 8,
+        goal: 1,
         completed: false
       },
       {
-        isPercent: true,
-        task: "Powerful combatants",
+        isPercent: false,
+        task: "Minor Arcana identified",
         progress: 0,
-        goal: 100,
+        goal: 15,
         completed: false
       }
     ],
@@ -47,116 +87,16 @@ const challenges = [
     dust: null
   },
   {
-    belongsTo: String,
-    name: "Heavy Salvager",
-    description: "Defeat combatants with Power weapons in Salvage activities.",
-    category: ['Salvage'],
+    belongsTo: "",
+    name: "Cursed by Success",
+    description: "Acquire the Hand Cannon, Malediction.",
+    category: ["Gear"],
     completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Power weapon",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Prepared for War",
-    description: "Defeat targets with Hand Cannons or Pulse Rifles. Defeated Guardians or combatants defeated in Salvage or Deep Dive activities grant additional progress.",
-    category: ['Loadout', 'Salvage', 'Deep Dive', 'Gambit', 'PvP'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Hand Cannon or Pulse Rifle final blows",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: String,
-    name: "Battle Rhythm",
-    description: "Defeat targets anywhere in the system while using Auto Rifles, Hand Cannons, Scout Rifles, Glaives, or Linear Fusion Rifles. Bonus progress is granted for defeating Guardians.",
-    category: ['Loadout', 'PvP', 'Gambit'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Gotta Win Them All",
-    description: "Complete activities in Vanguard, Gambit, or Crucible playlists. Bonus progress is granted for completing Vanguard playlist activities at Hero difficulty or higher, or for winning Gambit or Crucible matches.",
-    category: ['Vanguard', 'Crucible', 'Gambit'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Iron Sharpens Iron",
-    description: "Complete Iron Banner matches. Earn bonus progress for wins.",
-    category: ['Time'],
-    completed: false,
-    challengeIndex: Number,
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: String,
-    name: "Flood Tide",
-    description: "Acquire Last Rite.",
-    category: ['Gear'],
-    completed: false,
-    challengeIndex: Number,
+    challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Scout Rifle",
+        task: "Hand Cannon Hand Cannon",
         progress: 0,
         goal: 1,
         completed: false
@@ -165,18 +105,78 @@ const challenges = [
     reward: null,
     xp: "Challenger XP++",
     dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Fleeting Glory",
+    description: "Complete Crucible matches in the Competitive playlist. Earn bonus progress for wins.",
+    category: ["PvP"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Progress",
+        progress: 0,
+        goal: 8,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Special Forces",
+    description: "Defeat combatants with weapons that use Special ammunition.",
+    category: ["Loadout"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Special ammo weapon",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Higher Caliber",
+    description: "Defeat Guardians in Crucible or Gambit with Submachine Guns, Bows, Scout Rifles, Sniper Rifles, or Machine Guns. Earn bonus progress for Sniper Rifle or Machine Gun final blows.",
+    category: ["PvP", "Gambit"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Weapon",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
   }
-];
+]
 
 const weekName = 'Week Five'
 
 const week05 = {
-        name: weekName,
-        challenges: challenges.map((challenge, challengeIndex) => {
-          challenge.belongsTo = weekName.replaceAll(' ', '-');
-          challenge.challengeIndex = challengeIndex;
-          return challenge;
-        })
-    };
+  name: weekName,
+  challenges: challenges.map((challenge, challengeIndex) => {
+    challenge.belongsTo = weekName.replaceAll(' ', '-');
+    challenge.challengeIndex = challengeIndex;
+    return challenge;
+  })
+};
 
 module.exports = week05;

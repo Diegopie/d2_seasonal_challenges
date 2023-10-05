@@ -27,8 +27,8 @@
 
 .ChallengeCard-Completed {
     border-style: solid;
-    border-color: #0cc0d9;
-    color: #0cc0d9;
+    border-color: var(--App-Highlight-One);
+    color: var(--App-Highlight-One);
     /* transition: 0s; */
 }
 

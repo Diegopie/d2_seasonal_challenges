@@ -1,5 +1,5 @@
 .Menu-Container {
-    background-color: rgba(130, 162, 213, 0.8) !important;
+    background-color: var(--App-Main-Color-solid)!important;
 }
 
 .Menu-Icon {
