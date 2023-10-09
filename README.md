@@ -16,6 +16,8 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 &NewLine;
 
 ## Updates
+10/09/23
+Just in time for the end of the season, I have done some back end work so that I can much more quickly update the site. I still may look into getting the site to add new data on reset but at this stage I think I will finally do proper research on the Destiny API to make this a rich, synced experiance with the game
 
 09/15/23
 Season 22 update! New Bungie art has been added to each page.
