@@ -25,6 +25,7 @@ const checkKey = (req, res) => {
         res.status(401).json({ msg: 'Be Gone, Imposter!' })
         return false;
     }
+    return true;
 }
 
 const baseApiRoute = '/api/serverData/';
@@ -74,7 +75,6 @@ serverDataRouter.post('/updateServerData', async ({ body }, res) => {
     const apiRoute = baseApiRoute + '/updateServerData';
 
     if (!checkKey(body.key, res)) { return; }
-    console.log('hit');
 
     const newActiveWeeks = body.newActiveWeeks;
     try {
