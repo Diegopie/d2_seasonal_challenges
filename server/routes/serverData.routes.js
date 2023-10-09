@@ -43,7 +43,6 @@ serverDataRouter.post('/getServerData', async ({ body }, res) => {
     const apiRoute = baseApiRoute + '/getServerData';
 
     const newActiveWeeks = body.newActiveWeeks;
-    console.log(newActiveWeeks);
     try {
         ServerData.find(
             { }
@@ -64,7 +63,6 @@ serverDataRouter.post('/updateServerData', async ({ body }, res) => {
     const apiRoute = baseApiRoute + '/updateServerData';
 
     const newActiveWeeks = body.newActiveWeeks;
-    console.log(newActiveWeeks);
     try {
         ServerData.findOneAndUpdate(
             { },

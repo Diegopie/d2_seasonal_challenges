@@ -41,4 +41,4 @@ const getActiveWeek = async () => {
 }
 
 // * Export to patch.js and basicUser.route.js 
-module.exports = getActiveWeek();
+module.exports = getActiveWeek;
