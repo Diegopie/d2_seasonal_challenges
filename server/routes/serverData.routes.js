@@ -20,9 +20,18 @@ const handleResponse = (data, note, route, err) => {
     };
 };
 
+const checkKey = (req, res) => {
+    if (req !== process.env.SERVER_SECRET) {
+        res.status(401).json({ msg: 'Be Gone, Imposter!' })
+        return false;
+    }
+}
+
 const baseApiRoute = '/api/serverData/';
 
 serverDataRouter.post('/initServer', async ({ body }, res) => {
+
+    if (!checkKey(body.key, res)) { return; }
 
     const apiRoute = baseApiRoute + '/initServer';
 
@@ -42,10 +51,12 @@ serverDataRouter.post('/initServer', async ({ body }, res) => {
 serverDataRouter.post('/getServerData', async ({ body }, res) => {
     const apiRoute = baseApiRoute + '/getServerData';
 
+    if (!checkKey(body.key, res)) { return; }
+
     const newActiveWeeks = body.newActiveWeeks;
     try {
         ServerData.find(
-            { }
+            {}
         ).then(data => {
             res.status(201).json(
                 handleResponse(data, 'Successfully found server data!', apiRoute, null)
@@ -62,11 +73,14 @@ serverDataRouter.post('/getServerData', async ({ body }, res) => {
 serverDataRouter.post('/updateServerData', async ({ body }, res) => {
     const apiRoute = baseApiRoute + '/updateServerData';
 
+    if (!checkKey(body.key, res)) { return; }
+    console.log('hit');
+
     const newActiveWeeks = body.newActiveWeeks;
     try {
         ServerData.findOneAndUpdate(
-            { },
-            {$set: { activeWeeks: newActiveWeeks }},
+            {},
+            { $set: { activeWeeks: newActiveWeeks } },
             { new: true }
         ).then(data => {
             res.status(201).json(
