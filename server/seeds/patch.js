@@ -1,11 +1,10 @@
-const seedSeasonalChallenges = require("./seasonalChallenges");
+const patchNumber = 21.8;
 
-const patchNumber = 21.4;
+const patchedSeasonalChallenges = (data, patchData) => {
 
-const patchedSeasonalChallenges = (data) => {
     const userData = data;
 
-    const patch = seedSeasonalChallenges.map((week, index) => {
+    const patch = patchData.map((week, index) => {
         // * Set weekName to be JSON and LocalStorage Friendly
 
         // * For a Given Week, map() Through Each Challenge, Programmatically Create Data, and Sync Data In Local Storage
@@ -25,11 +24,13 @@ const patchedSeasonalChallenges = (data) => {
         // *** Return Updated Data
         return week;
     });
+    // console.log('patch');
+    // console.log(patch);
     return patch;
 }
 
 
 // console.log('-- patchedSeasonalChallenges -- ');
-// console.log(patchedSeasonalChallenges);
+// console.log(patchedSeasonalChallenges());
 
 module.exports = { patchNumber, patchedSeasonalChallenges, };

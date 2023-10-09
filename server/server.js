@@ -1,6 +1,7 @@
 // Import Packages
 const express = require('express');
 const path = require('path');
+require('dotenv').config()
 
 require('./config/db')();
 const routes = require('./routes');
