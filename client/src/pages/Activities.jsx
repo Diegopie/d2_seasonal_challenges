@@ -49,11 +49,11 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Destination - Moon',
+            name: 'Destination - Dreaming City',
             challenges: []
         },
         {
-            name: 'Destination - Throne World',
+            name: 'Destination - EDZ',
             challenges: []
         },
         {
@@ -94,10 +94,10 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Moon':
+            case 'Dreaming City':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Throne World':
+            case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Nessus':
