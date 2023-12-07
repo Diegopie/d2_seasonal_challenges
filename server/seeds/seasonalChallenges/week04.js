@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Acolyte's Ascent IV",
-    description: "Complete Week 4 of The Bladed Path quest.",
+    name: "Wishseeker IV",
+    description: "Complete Week 4 of Wishing All the Best.",
     category: [],
     completed: false,
     challengeIndex: "",
@@ -16,49 +16,22 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Forgotten Power",
-    description: "Complete a Powerful encounter in the Altars of Summoning and defeat combatants using the damage type that matches your subclass.",
-    category: ["Altars of Summoning", "Loadout"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Powerful encounter completed",
-        progress: 0,
-        goal: 1,
-        completed: false
-      },
-      {
-        isPercent: true,
-        task: "Matching damage defeats",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
     xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Luminary II",
-    description: "Master the Light by defeating combatants with [Void] Void, [Arc] Arc, or [Solar] Solar damage. Earn bonus progress by affecting combatants with subclass abilities: [Void] Weaken [Arc] Jolt [Solar] Ignite",
-    category: ["Loadout"],
+    name: "Wishing Well",
+    description: "Open chests in Riven's Lair and The Coil.",
+    category: ["Riven's Lair/The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: true,
-        task: "Void Void, Arc Arc, or Solar Solar",
+        isPercent: false,
+        task: "Chests",
         progress: 0,
-        goal: 100,
+        goal: 25,
         completed: false
       }
     ],
@@ -68,17 +41,24 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Bounty Conjurer",
-    description: "Complete daily bounties during the Season of the Witch.",
-    category: [],
+    name: "Foes of the Dragon: Vex",
+    description: "Defeat Vex anywhere in the system. Defeating Vex in Riven's Lair or The Coil grants additional progress. Additionally, break pots in The Coil.",
+    category: ["Riven's Lair/The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Season of the Witch bounties",
+        task: "Vex",
         progress: 0,
-        goal: 3,
+        goal: 125,
+        completed: false
+      },
+      {
+        isPercent: false,
+        task: "Pots broken",
+        progress: 0,
+        goal: 10,
         completed: false
       }
     ],
@@ -88,15 +68,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Last Rites",
-    description: "Get ability final blows in Season of the Witch activities.",
-    category: ["Savathûn's Spire", "Altars of Summoning"],
+    name: "Gotta Win Them All",
+    description: "Complete activities in Vanguard, Gambit, or Crucible playlists. Bonus progress is granted for completing Vanguard playlist activities at Hero difficulty or higher, or for winning Gambit or Crucible matches.",
+    category: ['Vanguard', 'PvP', 'Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Ability",
+        task: "Progress",
         progress: 0,
         goal: 100,
         completed: false
@@ -110,7 +90,7 @@ const challenges = [
     belongsTo: "",
     name: "Grandmaster",
     description: "Complete any Nightfall strike on Grandmaster.",
-    category: ["Vanguard"],
+    category: ['Vanguard'],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -128,25 +108,17 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Calibrate Close Range",
-    description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords. Bonus progress for defeating Guardians.",
-    category: ["Loadout", "PvP", "Gambit"],
+    name: "Classified",
+    description: "Keep it secret. Keep it safe.",
+    category: [],
     completed: false,
     challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Calibration",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
+    objectives: [],
     reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
+    xp: null,
+    dust: null
   }
-];
+]
 
 const weekName = 'Week Four'
 

@@ -20,13 +20,13 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: "Savathûn's Spire",
+            name: "Riven's Lair/The Coil",
             challenges: []
         },
-        {
-            name: 'Altars of Summoning',
-            challenges: []
-        },
+        // {
+        //     name: 'Altars of Summoning',
+        //     challenges: []
+        // },
         {
             name: 'Gambit',
             challenges: []

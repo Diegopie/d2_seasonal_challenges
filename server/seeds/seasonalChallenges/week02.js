@@ -43,7 +43,7 @@ const challenges = [
       "belongsTo": "",
       "name": "Foes of the Dragon: Taken",
       "description": "Defeat Taken anywhere in the system. Defeating Taken in Riven's Lair or The Coil grants additional progress. Additionally, complete pathways in Riven's Lair and The Coil.",
-      "category": ["Riven's Lair",  "The Coil"],
+      "category": ["Riven's Lair/The Coil"],
       "completed": false,
       "challengeIndex": "",
       "objectives": [
@@ -70,7 +70,7 @@ const challenges = [
       "belongsTo": "",
       "name": "Dragon's Defender II",
       "description": "Defeat targets with Shotguns and Bows. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
-      "category": ['Loadout', 'PvP', 'Gambit', "Riven's Lair", "The Coil"],
+      "category": ['Loadout', 'PvP', 'Gambit', "Riven's Lair/he Coil"],
       "completed": false,
       "challengeIndex": "",
       "objectives": [
