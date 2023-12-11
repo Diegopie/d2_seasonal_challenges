@@ -56,10 +56,10 @@ const Activities = (props) => {
             name: 'Destination - EDZ',
             challenges: []
         },
-        {
-            name: 'Destination - Nessus',
-            challenges: []
-        },
+        // {
+        //     name: 'Destination - Nessus',
+        //     challenges: []
+        // },
         {
             name: 'Destination - Neomuna',
             challenges: []
@@ -100,9 +100,9 @@ const Activities = (props) => {
             case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Nessus':
-                activityChallenges[index].challenges.push(challenge)
-                break;
+            // case 'Nessus':
+            //     activityChallenges[index].challenges.push(challenge)
+            //     break;
             case 'Neomuna':
                 activityChallenges[index].challenges.push(challenge)
                 break;
