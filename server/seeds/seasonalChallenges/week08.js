@@ -1,82 +1,75 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Filamentary Magic",
-    description: "Defeat targets with Strand, Arc, or Solar Supers. Earn bonus progress for defeating Guardians.",
-    category: ["Loadout", "PvP", "Gambit"],
+    name: "Nest Egg",
+    description: "Complete The Coil activity and access the Chamber of Wishes.",
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
-      {
-        isPercent: true,
-        task: "Super",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Ponderous Orbs",
-    description: "Generate Orbs of Power and find any hidden chest within Savathûn's Spire.",
-    category: ["Savathûn's Spire"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Orbs of Power",
-        progress: 0,
-        goal: 100,
-        completed: false
-      },
       {
         isPercent: false,
-        task: "Hidden chests",
+        task: "",
         progress: 0,
         goal: 1,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Precision Paraphysics",
-    description: "Defeat targets with Bows or Hand Cannons. Earn bonus progress by defeating Guardians or by defeating combatants in Season of the Witch activities.",
-    category: ["Loadout", "PvP", "Gambit", "Savathûn's Spire", "Altars of Summoning"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Bow or Hand Cannon Final blows",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
     xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Punch Drunk",
-    description: "Get powered melee final blows in Season of the Witch activities.",
-    category: ["Savathûn's Spire", "Altars of Summoning"],
+    name: "Ritual Ornament",
+    description: "Acquire any ornament for the Seasonal ritual weapon.",
+    category: ["Gear"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Weapon Ornament",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Taking All Challenges",
+    description: "Complete weekly playlist challenges.",
+    category: ["Ritual"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Challenges",
+        progress: 0,
+        goal: 3,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Fleeting Glory",
+    description: "Complete Crucible matches in the Competitive playlist. Earn bonus progress for wins.",
+    category: ['PvP'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Melee Melee",
+        task: "Progress",
         progress: 0,
         goal: 100,
         completed: false
@@ -88,17 +81,17 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Flourish of Power",
-    description: "Defeat Guardians in the Mayhem playlist with Super abilities.",
-    category: ["PvP", "Time"],
+    name: "Life Dispersion",
+    description: "Defeat targets with the Solar, Stasis, or Strand subclass equipped in Gambit. Bonus progress is granted for ability final blows and final blows against Guardians.",
+    category: ['Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Guardians",
+        isPercent: true,
+        task: "Progress",
         progress: 0,
-        goal: 25,
+        goal: 100,
         completed: false
       }
     ],
@@ -108,29 +101,9 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Boss Battle",
-    description: "Defeat bosses in strikes or Vanguard playlists.",
-    category: ["Vanguard"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Bosses",
-        progress: 0,
-        goal: 20,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+++",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
     name: "Kinetic Forces",
     description: "Get final blows with Kinetic weapons. Bonus progress for defeating Guardians.",
-    category: ["Loadout", "PvP", "Gambit"],
+    category: ['Guardians', 'Loadout'],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -145,6 +118,18 @@ const challenges = [
     reward: null,
     xp: "Challenger XP++",
     dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Classified",
+    description: "Keep it secret. Keep it safe.",
+    category: [],
+    completed: false,
+    challengeIndex: "",
+    objectives: [],
+    reward: null,
+    xp: null,
+    dust: null
   }
 ];
 

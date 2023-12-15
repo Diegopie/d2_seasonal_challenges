@@ -23,7 +23,7 @@ const challenges = [
     belongsTo: "",
     name: "Wishing Well",
     description: "Open chests in Riven's Lair and The Coil.",
-    category: ["Riven's Lair/The Coil"],
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -43,7 +43,7 @@ const challenges = [
     belongsTo: "",
     name: "Foes of the Dragon: Vex",
     description: "Defeat Vex anywhere in the system. Defeating Vex in Riven's Lair or The Coil grants additional progress. Additionally, break pots in The Coil.",
-    category: ["Riven's Lair/The Coil"],
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [

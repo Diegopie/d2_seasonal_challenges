@@ -25,11 +25,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-    if(localStorage.getItem('init22') !== 'true') {
+    if(localStorage.getItem('init23') !== 'true') {
         console.log('hit');
         localStorage.clear();
-        localStorage.setItem('init22', 'true');
-        console.log(localStorage.getItem('init22'));
+        localStorage.setItem('init23', 'true');
+        console.log(localStorage.getItem('init23'));
         document.location.href = '/';
     }
 
@@ -78,6 +78,7 @@ function App() {
                 <Route exact path='/dust' element={<Dust />} />
                 {/* <Route exact path='/seasonal-reward' element={<SeasonalReward />} /> */}
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
+                <Route exact path='/seasonal-upgrades' element={<SeasonalReward />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
             <FootNav />

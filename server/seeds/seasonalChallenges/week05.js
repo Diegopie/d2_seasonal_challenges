@@ -23,7 +23,7 @@ const challenges = [
     belongsTo: "",
     name: "Dreamcrusher",
     description: "Defeat bosses and minibosses in Riven's Lair or The Coil.",
-    category: ["Riven's Lair/The Coil"],
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -43,7 +43,7 @@ const challenges = [
     belongsTo: "",
     name: "Dragon's Defender IV",
     description: "Defeat targets with Hand Cannons or Submachine Guns. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
-    category: ["Riven's Lair/The Coil", 'Loadout', 'PvP', "Gambit"],
+    category: ["The Coil", 'Loadout', 'PvP', "Gambit"],
     completed: false,
     challengeIndex: "",
     objectives: [

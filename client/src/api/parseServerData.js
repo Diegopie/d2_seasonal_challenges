@@ -1,6 +1,6 @@
 import { getServerData } from "./server-data";
 
-const weeks = ['Week-One', 'Week-Two', 'Week-Three', 'Week-Four', 'Week-Five', 'Week-Six', 'Week-Seven', 'Week-Eight', 'Week-Nine', 'Week-Ten'];
+const weeks = ['Season-of-the-Wish-Upgrades', 'Week-One', 'Week-Two', 'Week-Three', 'Week-Four', 'Week-Five', 'Week-Six', 'Week-Seven', 'Week-Eight', 'Week-Nine', 'Week-Ten'];
 
 const allLocalData = () => {
 

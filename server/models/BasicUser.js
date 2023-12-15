@@ -21,6 +21,10 @@ const BasicUserSchema = new mongoose.Schema({
         type: Array,
         required: true,
     },
+    seasonalChallenges23: {
+        type: Array,
+        required: true,
+    },
 });
 
 const BasicUser = mongoose.model('BasicUser', BasicUserSchema);

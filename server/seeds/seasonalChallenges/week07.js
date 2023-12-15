@@ -23,7 +23,7 @@ const challenges = [
     belongsTo: "",
     name: "Swift Dispersal",
     description: "Rapidly defeat combatants in Riven's Lair or The Coil. Gain additional progress from final blows within The Coil. Additionally, collect Wishing Glass Shards in The Coil.",
-    category: ["Riven's Lair/The Coil"],
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -50,7 +50,7 @@ const challenges = [
     belongsTo: "",
     name: "Dragon's Defender V",
     description: "Defeat targets with Trace Rifles or Linear Fusion Rifles. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
-    category: ['Loadout', 'PvP', 'Gambit', "Riven's Lair/The Coil"],
+    category: ['Loadout', 'PvP', 'Gambit', "The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [

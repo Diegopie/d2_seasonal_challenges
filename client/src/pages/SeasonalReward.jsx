@@ -1,84 +1,85 @@
-// import { useEffect, useState } from 'react';
-// import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
-// // import img from '../assets/production/background-img/background_SeasonalReward.jpg';
-// import { useGlobalContext } from '../context/GlobalContext';
+import { useEffect, useState } from 'react';
+import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
+// import img from '../assets/production/background-img/background_SeasonalReward.jpg';
+import img from '../assets/production/background-img/background_Time.jpg';
+import { useGlobalContext } from '../context/GlobalContext';
 
 
-// const SeasonalReward = () => {
+const SeasonalReward = () => {
 
-//     const [season20Data, setSeason20Data] = useState([]);
+  const [seasonData, setSeasonData] = useState([]);
 
-//     const [smallClass, setSmallClass] = useState('backgroundImg-SeasonalReward-small');
+    const [smallClass, setSmallClass] = useState('backgroundImg-SeasonalReward-small');
 
-//     const [{ parsedData },] = useGlobalContext();
-//     // const [ count, setCount ] = useState(0)
+    const [{ parsedData },] = useGlobalContext();
+    // const [ count, setCount ] = useState(0)
 
-//     useEffect(() => {
-//         parsedData
-//             .then(data => {
-//                 setSeason20Data(data);
-//             })
-//     }, [parsedData])
+    useEffect(() => {
+        parsedData
+            .then(data => {
+                setSeasonData(data);
+            })
+    }, [parsedData])
 
-//     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
-//     const activityChallenges = [
-//         // [0]
-//         {
-//             name: 'War Table Upgrade',
-//             challenges: []
-//         },
-//     ];
+    // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
+    const activityChallenges = [
+        // [0]
+        {
+            name: 'Season of the Wish Upgrades',
+            challenges: []
+        },
+    ];
 
-//     // Manually Create Cases that Correspond with the Category's Index Value
-//     const handleChallenge = (category, challenge) => {
-//         // console.log({category, challenge});
-//         switch (category) {
-//             case 'War Table Upgrade':
-//                 activityChallenges[0].challenges.push(challenge)
-//                 break;
-//             default:
-//                 break;
-//         }
-//     }
+    // Manually Create Cases that Correspond with the Category's Index Value
+    const handleChallenge = (category, challenge) => {
+        // console.log({category, challenge});
+        switch (category) {
+            case 'Season of the Wish Upgrades':
+                activityChallenges[0].challenges.push(challenge)
+                break;
+            default:
+                break;
+        }
+    }
 
-//     const sortChallenges = () => {
-//         season20Data.forEach((week => {
-//             week.challenges.forEach(challenge => {
-//                 // console.log(challenge.category);
+    const sortChallenges = () => {
+        seasonData.forEach((week => {
+            week.challenges.forEach(challenge => {
+                // console.log(challenge.category);
 
-//                 // console.log(activity);
-//                 handleChallenge(challenge.reward, challenge)
+                // console.log(activity);
+                handleChallenge(challenge.reward, challenge)
 
-//             })
-//         }))
-//     }
+            })
+        }))
+    }
 
-//     sortChallenges();
+    sortChallenges();
 
-//     return (
-//         <>
-//             {/* <main id='main' className='App-backMaxHeight'>
-//                 <section className={`App-backImg ${smallClass} backgroundImg-SeasonalReward App-PushBottomUp`}>
-//                     <img src={img} alt='invisible img' className='App-Invisible-Img'
-//                         onLoad={() => {
-//                             setSmallClass('');
-//                         }}
-//                     />
-//                     {activityChallenges.map((week) => {
-//                         if (week.challenges.length > 0)
-//                             return (
-//                                 <ChallengeCategory
-//                                     key={week.name}
-//                                     name={week.name.replaceAll(' ', '-')}
-//                                     challenges={week.challenges}
-//                                 />
-//                             )
-//                         return [];
-//                     })}
-//                 </section>
-//             </main> */}
-//         </>
-//     );
-// };
+    return (
+        <>
+            <main id='main' className='App-backMaxHeight'>
+                <section className={`App-backImg ${smallClass} backgroundImg-SeasonalReward App-PushBottomUp`}>
+                    <img src={img} alt='invisible img' className='App-Invisible-Img'
+                        onLoad={() => {
+                            setSmallClass('');
+                        }}
+                    />
+                    {activityChallenges.map((week) => {
+                        if (week.challenges.length > 0)
+                            return (
+                                <ChallengeCategory
+                                    key={week.name}
+                                    name={week.name.replaceAll(' ', '-')}
+                                    challenges={week.challenges}
+                                />
+                            )
+                        return [];
+                    })}
+                </section>
+            </main>
+        </>
+    );
+};
 
-// export default SeasonalReward;
+export default SeasonalReward;

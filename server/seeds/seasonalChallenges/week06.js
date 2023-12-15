@@ -23,7 +23,7 @@ const challenges = [
     belongsTo: "",
     name: "Dragon Delves",
     description: "Complete pathways in Riven's Lair and The Coil.",
-    category: ["Riven's Lair/The Coil"],
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [

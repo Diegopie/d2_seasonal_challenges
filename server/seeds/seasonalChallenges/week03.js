@@ -29,7 +29,7 @@ const challenges = [
       objectives: [
           {
               isPercent: true,
-              task: Progress,
+              task: 'Progress',
               progress: 0,
               goal: 100,
               completed: false
@@ -43,7 +43,7 @@ const challenges = [
       belongsTo: "",
       name: "Foes of the Dragon: Scorn",
       description: "Defeat Scorn anywhere in the system. Defeating Scorn in Riven's Lair or The Coil grants additional progress. Additionally, defeat Glass Collectors in The Coil.",
-      category: ["Riven's Lair/The Coil"],
+      category: ["The Coil"],
       completed: false,
       challengeIndex: "",
       objectives: [
@@ -70,7 +70,7 @@ const challenges = [
       belongsTo: "",
       name: "Dragon's Defender III",
       description: "Defeat targets with Pulse or Fusion Rifles. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
-      category: ["Riven's Lair/The Coil", "PvP", "Gambit"],
+      category: ["The Coil", "PvP", "Gambit"],
       completed: false,
       challengeIndex: "",
       objectives: [
