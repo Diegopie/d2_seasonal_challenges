@@ -1,15 +1,15 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Sol Sorcery",
-    description: "Defeat combatants anywhere in the system with the damage type that matches your subclass. Earn bonus progress from combatants in Haunted Sectors during Festival of the Lost.",
-    category: ["Loadout", "Timed"],
+    name: "Dragon's Defender VI",
+    description: "Defeat targets with Pulse or Scout Rifles. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
+    category: ["The Coil", "Guardians", "Loadout"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Matching damage defeats",
+        task: "Pulse Rifle or Scout Rifle final blows",
         progress: 0,
         goal: 100,
         completed: false
@@ -21,89 +21,49 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Sun and Moon",
-    description: "Defeat combatants with Void or Solar damage in the Altars of Summoning.",
-    category: ["Altars of Summoning"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Void Void or Solar Solar final blows",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Into the Unknown",
-    description: "Complete Lost Sectors on Neptune, in Savathûn's throne world, or on Europa. Haunted Sectors also grant progress during Festival of the Lost.",
-    category: ["Throne World", "Activities", "Time"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Lost Sectors completed",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Ritual Ornament",
-    description: "Acquire any ornament for the Seasonal ritual weapon.",
-    category: ["Gear"],
+    name: "Lost in the Legend",
+    description: "Complete a Lost Sector on Legend or higher.",
+    category: ['Activities'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Weapon Ornament",
+        task: "Lost Sectors",
         progress: 0,
         goal: 1,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+++",
+    xp: "Challenger XP+",
     dust: "Bright Dust"
   },
   {
     belongsTo: "",
-    name: "Moon Activities",
-    description: "On the Moon, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
-    category: ["Moon"],
+    name: "Overspecialized",
+    description: "Get final blows with weapons using Special ammo in ritual activities. Earn bonus progress by defeating Guardians.",
+    category: ['Ritual'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
+        task: "Special ammo weapon",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
+    xp: "Challenger XP++",
     dust: "Bright Dust"
   },
   {
     belongsTo: "",
     name: "Eyeing Iron",
     description: "Complete Crucible matches. Earn bonus progress in Iron Banner and for victories.",
-    category: ["PvP", "Time"],
+    category: ['PvP', 'Time'],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -121,17 +81,37 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Darkest Nightfall",
-    description: "Complete any Nightfall strike on Hero difficulty or higher.",
-    category: ["Vanguard"],
+    name: "Ultimate Champion",
+    description: "Defeat Champions in any Nightfall strike on Hero difficulty or higher. Earn bonus progress at higher difficulty tiers.",
+    category: ['Vanguard'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Nightfall",
+        isPercent: true,
+        task: "Champions",
         progress: 0,
-        goal: 1,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Calibrate Close Range",
+    description: "Calibrate close-range weapons—Sidearms, Submachine Guns, Shotguns, Glaives, and Swords. Bonus progress for defeating Guardians.",
+    category: ['Loadout', 'Guardians'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Calibration",
+        progress: 0,
+        goal: 100,
         completed: false
       }
     ],

@@ -20,13 +20,13 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: "Savathûn's Spire",
+            name: "Riven's Lair / The Coil",
             challenges: []
         },
-        {
-            name: 'Altars of Summoning',
-            challenges: []
-        },
+        // {
+        //     name: 'Altars of Summoning',
+        //     challenges: []
+        // },
         {
             name: 'Gambit',
             challenges: []
@@ -49,19 +49,19 @@ const Activities = (props) => {
             challenges: []
         },
         {
-            name: 'Destination - Moon',
+            name: 'Destination - Dreaming City',
             challenges: []
         },
         {
-            name: 'Destination - Throne World',
-            challenges: []
-        },
-        {
-            name: 'Destination - Nessus',
+            name: 'Destination - EDZ',
             challenges: []
         },
         {
             name: 'Destination - Neomuna',
+            challenges: []
+        },
+        {
+            name: 'Destination - Throne World',
             challenges: []
         },
     ];
@@ -70,10 +70,10 @@ const Activities = (props) => {
     const handleChallenge = (category, challenge, index) => {
         // console.log({category, challenge});
         switch (category) {
-            case "Savathûn's Spire":
-                activityChallenges[index].challenges.push(challenge)
-                break;
-            case 'Altars of Summoning':
+            // case "Savathûn's Spire":
+            //     activityChallenges[index].challenges.push(challenge)
+            //     break;
+            case 'The Coil':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Gambit':
@@ -85,6 +85,15 @@ const Activities = (props) => {
             case 'Vanguard':
                 activityChallenges[index].challenges.push(challenge)
                 break;
+            case 'Ritual':
+                activityChallenges[findActivityIndex("Gambit")].challenges.push(challenge);
+                activityChallenges[findActivityIndex("PvP")].challenges.push(challenge);
+                activityChallenges[findActivityIndex("Vanguard")].challenges.push(challenge);
+                break;
+            case 'Guardians':
+                activityChallenges[findActivityIndex("Gambit")].challenges.push(challenge);
+                activityChallenges[findActivityIndex("PvP")].challenges.push(challenge);
+                break;
             case 'Activities':
                 activityChallenges[index].challenges.push(challenge)
                 break;
@@ -94,16 +103,16 @@ const Activities = (props) => {
             case 'Gear':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Moon':
+            case 'Dreaming City':
                 activityChallenges[index].challenges.push(challenge)
                 break;
-            case 'Throne World':
-                activityChallenges[index].challenges.push(challenge)
-                break;
-            case 'Nessus':
+            case 'EDZ':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             case 'Neomuna':
+                activityChallenges[index].challenges.push(challenge)
+                break;
+            case 'Throne World':
                 activityChallenges[index].challenges.push(challenge)
                 break;
             default:
@@ -115,6 +124,7 @@ const Activities = (props) => {
         let activityIndex;
 
         activityChallenges.forEach((category, index) => {
+            // console.log(arg);
             // console.log(category.name);
             if (category.name.includes(arg)) {
                 // console.log(index);
@@ -149,6 +159,7 @@ const Activities = (props) => {
     }, [parsedData])
 
     sortChallenges();
+    console.log(activityChallenges);
 
     return (
         <>

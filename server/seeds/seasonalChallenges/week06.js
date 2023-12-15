@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Acolyte's Ascent VI",
-    description: "Complete Week 6 of The Bladed Path quest.",
+    name: "Wishseeker VI",
+    description: "Complete Week 6 of Wishing All the Best.",
     category: [],
     completed: false,
     challengeIndex: "",
@@ -16,22 +16,22 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP",
+    xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Luminary III",
-    description: "Master the Light by defeating combatants with Void, Arc, or Solar damage. Earn bonus progress by affecting combatants with subclass abilities: [Void] Volatile [Arc] Blind [Solar] Scorch",
-    category: ["Loadout"],
+    name: "Dragon Delves",
+    description: "Complete pathways in Riven's Lair and The Coil.",
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: true,
-        task: "Void Void, Arc Arc, or Solar Solar",
+        isPercent: false,
+        task: "Pathways",
         progress: 0,
-        goal: 100,
+        goal: 30,
         completed: false
       }
     ],
@@ -41,49 +41,9 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Sympathetic Magic",
-    description: "Defeat combatants in Savathûn's Spire using damage that matches your active subclass.",
-    category: ["Savathûn's Spire"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Matching damage defeats",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Bone Breaker",
-    description: "Crush Lucent Hive Ghosts anywhere in Savathûn's throne world. Earn bonus progress during Season of the Witch activities.",
-    category: ["Throne World", "Savathûn's Spire", "Altars of Summoning"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Hive Ghosts crushed",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: "",
     name: "Mod Collector",
     description: "Unlock artifact mods.",
-    category: ["Gear"],
+    category: ['Activities'],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -101,35 +61,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Trial by Firing Squad",
-    description: "Win multiple rounds in the Trials of Osiris.",
-    category: ["PvP", "Time"],
+    name: "Iron Sharpens Iron",
+    description: "Complete Iron Banner matches. Earn bonus progress for wins.",
+    category: ['Time', 'PvP'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Wins",
-        progress: 0,
-        goal: 10,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP++",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
-    name: "Calibrate Long Range",
-    description: "Calibrate long-range weapons—Pulse Rifles, Bows, and Trace Rifles. Bonus progress is granted for defeating Guardians.",
-    category: ["Loadout", "PvP"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Calibration",
+        isPercent: true,
+        task: "Progress",
         progress: 0,
         goal: 100,
         completed: false
@@ -141,15 +81,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Heavy Hardware",
-    description: "Get final blows with Heavy ammo in ritual activities. Earn bonus progress for Machine Gun final blows or by defeating Guardians.",
-    category: ["Vanguard", "Gambit", "PvP"],
+    name: "Rapid Precision",
+    description: "Get rapid precision final blows. Bonus progress is granted for defeating Guardians, and for every defeated target after the second one.",
+    category: ['Loadout', 'PvP', 'Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Power weapon",
+        task: "Headshot Rapidly defeated",
         progress: 0,
         goal: 100,
         completed: false

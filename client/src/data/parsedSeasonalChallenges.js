@@ -4,7 +4,7 @@ import { dummyData1 } from "./dummyData";
 const dummyData = false;
 
 const parser = (data) => {
-    const serverData = data.data.seasonalChallenges22
+    const serverData = data.data.seasonalChallenges23
             serverData.map((week) => {
                 // * Set weekName to be JSON and LocalStorage Friendly
                 const weekName = week.name.replaceAll(' ', '-');

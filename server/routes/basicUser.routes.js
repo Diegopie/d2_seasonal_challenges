@@ -1,6 +1,7 @@
 const basicUserRouter = require('express').Router();
 const getActiveWeek = require('../seeds/seasonalChallenges')
 const { patchNumber, patchedSeasonalChallenges } = require('../seeds/patch')
+const util= require('util');
 
 const { BasicUser } = require('../models');
 
@@ -53,7 +54,7 @@ basicUserRouter.post('/newUpdated', async ({ body }, res) => {
         const newUser = new BasicUser({
             username,
             patchNumber,
-            seasonalChallenges22: seeds
+            seasonalChallenges23: seeds
         });
 
         try {
@@ -86,7 +87,7 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 return;
             }
             getActiveWeek().then(seeds => {
-                let currentData = data.seasonalChallenges22;
+                let currentData = data.seasonalChallenges23;
                 const seedData = seeds;
                 
                 
@@ -104,7 +105,7 @@ basicUserRouter.post('/data', ({ body }, res) => {
                         { username: username },
                         {
                             $set: {
-                                seasonalChallenges22: currentData,
+                                seasonalChallenges23: currentData,
                             }
                         },
                         {
@@ -123,14 +124,14 @@ basicUserRouter.post('/data', ({ body }, res) => {
                 if (data.patchNumber !== patchNumber) {
                     // console.log("hit no match");
 
-                    currentData = patchedSeasonalChallenges(data.seasonalChallenges22, seedData);
-                    data.seasonalChallenges22 = currentData;
+                    currentData = patchedSeasonalChallenges(data.seasonalChallenges23, seedData);
+                    data.seasonalChallenges23 = currentData;
 
                     BasicUser.findOneAndUpdate(
                         { username: username },
                         {
                             $set: {
-                                seasonalChallenges22: data.seasonalChallenges22,
+                                seasonalChallenges23: data.seasonalChallenges23,
                                 patchNumber: patchNumber
                             }
                         },
@@ -145,7 +146,8 @@ basicUserRouter.post('/data', ({ body }, res) => {
                     });
                 }
 
-                // Send data to client    
+                // Send data to client   
+                // console.log(util.inspect(data, { showHidden: true, depth: null })); 
                 res.status(200).json(
                     handleResponse(data, 'Requests successful', '/api/basic-user/data', null, true)
                 );
@@ -161,7 +163,7 @@ basicUserRouter.post('/update', async ({ body }, res) => {
     const { username, seasonalChallenges } = body;
     BasicUser.findOneAndUpdate(
         { username: username },
-        { seasonalChallenges22: seasonalChallenges },
+        { seasonalChallenges23: seasonalChallenges },
         { returnNewDocument: true }
     )
         .then(data => {

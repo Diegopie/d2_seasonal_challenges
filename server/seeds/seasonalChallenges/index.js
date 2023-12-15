@@ -1,6 +1,6 @@
 const ServerData = require('../../models/ServerData');
 
-// const deepUpgrades = require( "./deepUpgrades");
+const wishUpgrades = require( "./wishUpgrades");
 const week01 = require("./week01");
 const week02 = require("./week02");
 const week03 = require("./week03");
@@ -16,6 +16,7 @@ const week10 = require("./week10");
 const getActiveWeek = async () => {
     // * Store All Challenges In Array
     let seasonalChallenges = [
+        wishUpgrades,
         week01,
         week02,
         week03,
@@ -33,7 +34,8 @@ const getActiveWeek = async () => {
         return await ServerData.find({})
             .then(data => {
                 // ** Return Sliced Array Based On Active Week
-                return seasonalChallenges.slice(0, data[0].activeWeeks)
+                // Note: The + 1 accounts for wish upgrades
+                return seasonalChallenges.slice(0, data[0].activeWeeks + 1)
             })
     } catch (err) {
         console.log(err);

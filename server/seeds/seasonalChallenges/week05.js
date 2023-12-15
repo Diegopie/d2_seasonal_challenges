@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Acolyte's Ascent V",
-    description: "Complete Week 5 of The Bladed Path quest.",
+    name: "Wishseeker V",
+    description: "Complete Week 5 of Wishing All the Best.",
     category: [],
     completed: false,
     challengeIndex: "",
@@ -16,20 +16,20 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP",
+    xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Master Magus",
-    description: "Complete combat encounters in the Altars of Summoning. More difficult encounters grant bonus progress.",
-    category: ["Altars of Summoning"],
+    name: "Dreamcrusher",
+    description: "Defeat bosses and minibosses in Riven's Lair or The Coil.",
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Encounters completed",
+        task: "Bosses",
         progress: 0,
         goal: 100,
         completed: false
@@ -41,15 +41,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Runic Rifles",
-    description: "Defeat targets with Scout Rifles or Sniper Rifles. Earn bonus progress by defeating Guardians or by defeating combatants in Season of the Witch activities.",
-    category: ["Loadout", "Savathûn's Spire", "Altars of Summoning", "PvP", "Gambit"],
+    name: "Dragon's Defender IV",
+    description: "Defeat targets with Hand Cannons or Submachine Guns. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
+    category: ["The Coil", 'Loadout', 'PvP', "Gambit"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Scout Rifle or Sniper Rifle Final blows",
+        task: "Hand Cannon or SMG final blows",
         progress: 0,
         goal: 100,
         completed: false
@@ -61,44 +61,17 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Mist and Mysteries",
-    description: "Solve the Cunning Test in the Imbaru Engine and identify Minor Arcana.",
-    category: [],
+    name: "Neptune Activities",
+    description: "In Neomuna, complete bounties, patrols, public events, and Lost Sectors.",
+    category: ['Neomuna'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Cunning conjured",
+        isPercent: true,
+        task: "Progress",
         progress: 0,
-        goal: 1,
-        completed: false
-      },
-      {
-        isPercent: false,
-        task: "Minor Arcana identified",
-        progress: 0,
-        goal: 15,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Cursed by Success",
-    description: "Acquire the Hand Cannon, Malediction.",
-    category: ["Gear"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Hand Cannon Hand Cannon",
-        progress: 0,
-        goal: 1,
+        goal: 100,
         completed: false
       }
     ],
@@ -108,9 +81,9 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Fleeting Glory",
-    description: "Complete Crucible matches in the Competitive playlist. Earn bonus progress for wins.",
-    category: ["PvP"],
+    name: "Commendation Appreciation",
+    description: "Earn progress for giving commendations in Vanguard, Crucible, and Gambit activities.",
+    category: ['Vanguard', 'PvP', 'Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -118,52 +91,52 @@ const challenges = [
         isPercent: false,
         task: "Progress",
         progress: 0,
-        goal: 8,
+        goal: 5,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP",
     dust: "Bright Dust"
   },
   {
     belongsTo: "",
-    name: "Special Forces",
-    description: "Defeat combatants with weapons that use Special ammunition.",
-    category: ["Loadout"],
+    name: "Potent Projectiles",
+    description: "Defeat Guardians in Crucible or Gambit with Bows, Hand Cannons, Pulse Rifles, Auto Rifles, or Rocket Launchers. Earn bonus progress for Rocket Launcher final blows.",
+    category: ['PvP', 'Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Special ammo weapon",
+        task: "Guardians",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP",
     dust: "Bright Dust"
   },
   {
     belongsTo: "",
-    name: "Higher Caliber",
-    description: "Defeat Guardians in Crucible or Gambit with Submachine Guns, Bows, Scout Rifles, Sniper Rifles, or Machine Guns. Earn bonus progress for Sniper Rifle or Machine Gun final blows.",
-    category: ["PvP", "Gambit"],
+    name: "Boss Battle",
+    description: "Defeat bosses in strikes or Vanguard playlists. Bonus progress is granted for defeating bosses on Hero difficulty or higher.",
+    category: ['Vanguard'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Weapon",
+        task: "Bosses",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP++",
+    xp: "Challenger XP+++",
     dust: "Bright Dust"
   }
 ]

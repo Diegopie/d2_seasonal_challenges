@@ -1,4 +1,4 @@
-const patchNumber = 21.8;
+const patchNumber = 23.0;
 
 const patchedSeasonalChallenges = (data, patchData) => {
 

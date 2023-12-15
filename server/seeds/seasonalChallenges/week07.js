@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Acolyte's Ascent VII",
-    description: "Complete Week 7 of The Bladed Path quest.",
+    name: "Wishseeker VII",
+    description: "Complete Week 7 of Wishing All the Best.",
     category: [],
     completed: false,
     challengeIndex: "",
@@ -16,20 +16,47 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP",
+    xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Power Caster",
-    description: "Defeat combatants with Power weapons in Season of the Witch activities.",
-    category: ["Savathûn's Spire", "Altars of Summoning"],
+    name: "Swift Dispersal",
+    description: "Rapidly defeat combatants in Riven's Lair or The Coil. Gain additional progress from final blows within The Coil. Additionally, collect Wishing Glass Shards in The Coil.",
+    category: ["The Coil"],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Heavy ammo final blows",
+        task: "Rapidly defeated",
+        progress: 0,
+        goal: 100,
+        completed: false
+      },
+      {
+        isPercent: false,
+        task: "Shards collected",
+        progress: 0,
+        goal: 500,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP+",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Dragon's Defender V",
+    description: "Defeat targets with Trace Rifles or Linear Fusion Rifles. Gain additional progress from Guardian final blows and final blows within Riven's Lair or The Coil.",
+    category: ['Loadout', 'PvP', 'Gambit', "The Coil"],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Trace Rifle or Linear Fusion Rifle final blows",
         progress: 0,
         goal: 100,
         completed: false
@@ -41,9 +68,29 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Ritual Rampage",
-    description: "Rapidly defeat combatants and defeat challenging combatants in the Altars of Summoning.",
-    category: ["Altars of Summoning"],
+    name: "On a Whim",
+    description: "Acquire Chivalric Fire.",
+    category: ['Gear'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Sword Sword",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Expedited Violence",
+    description: "Rapidly defeat targets in Crucible, Gambit, or Vanguard. Bonus progress is granted for Guardian final blows.",
+    category: ['Vanguard', 'PvP', 'Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
@@ -53,52 +100,45 @@ const challenges = [
         progress: 0,
         goal: 100,
         completed: false
-      },
-      {
-        isPercent: true,
-        task: "Powerful combatants",
-        progress: 0,
-        goal: 100,
-        completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP",
-    dust: null
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
   },
   {
     belongsTo: "",
-    name: "Boomsayer",
-    description: "Defeat targets with Rocket Launchers or Machine Guns. Earn bonus progress by defeating Guardians or by defeating combatants in Season of the Witch activities.",
-    category: ["Loadout", "PvP", "Savathûn's Spire", "Altars of Summoning"],
+    name: "Weight of Dreams",
+    description: "Get final blows with weapons using Heavy ammo in ritual activities. Earn bonus progress for Rocket Launcher final blows or by defeating Guardians.",
+    category: ['Vanguard', 'PvP', 'Gambit'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Rocket Launcher or Machine Gun Final blows",
+        task: "Power weapon",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+",
-    dust: null
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
   },
   {
     belongsTo: "",
-    name: "Lost in the Legend",
-    description: "Complete a Lost Sector on Legend or higher.",
-    category: ["Activities"],
+    name: "Flourish of Power",
+    description: "Defeat Guardians in the Mayhem playlist with Super abilities.",
+    category: ['Time', 'PvP'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: false,
-        task: "Lost Sectors",
+        task: "Guardians",
         progress: 0,
-        goal: 1,
+        goal: 25,
         completed: false
       }
     ],
@@ -108,35 +148,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Guardian Spirit",
-    description: "Assist your allies via revives, healing, overshields, and subclass buffs in Vanguard, Gambit, or Crucible playlists.",
-    category: ["Vanguard", "Gambit", "PvP"],
+    name: "Darkest Nightfall",
+    description: "Complete any Nightfall strike on Hero difficulty or higher. Bonus progress is granted for completing Nightfalls above Hero difficulty.",
+    category: ['Vanguard'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
-    name: "Gotta Win Them All",
-    description: "Complete activities in Vanguard, Gambit, or Crucible playlists. Bonus progress is granted for completing Vanguard playlist activities at Hero difficulty or higher, or for winning Gambit or Crucible matches.",
-    category: ["Vanguard", "Gambit", "PvP"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Progress",
+        task: "Nightfall",
         progress: 0,
         goal: 100,
         completed: false
@@ -148,15 +168,15 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Enlightened Gambit",
-    description: "Defeat targets with the Arc, Solar, or Void subclass equipped in Gambit. Bonus progress is awarded for ability final blows and Guardian final blows.",
-    category: ["Gambit"],
+    name: "Mid-Range Calibration",
+    description: "Calibrate mid-range weapons—Hand Cannons, Glaives, Auto Rifles, Fusion Rifles, and Machine Guns. Bonus progress is granted for defeating Guardians.",
+    category: ['Loadout', 'PvP'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Progress",
+        task: "Calibration",
         progress: 0,
         goal: 100,
         completed: false
@@ -164,26 +184,6 @@ const challenges = [
     ],
     reward: null,
     xp: "Challenger XP++",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
-    name: "Rapid Precision",
-    description: "Get rapid precision final blows. Bonus progress is granted for every defeated target after the second one.",
-    category: ["Loadout"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Headshot Rapidly defeated",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+++",
     dust: "Bright Dust"
   }
 ];

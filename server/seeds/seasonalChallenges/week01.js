@@ -1,8 +1,8 @@
 const challenges = [
   {
     belongsTo: "",
-    name: "Acolyte's Ascent I",
-    description: "Complete Week 1 of The Bladed Path quest.",
+    name: "Wishseeker I",
+    description: "Complete Week 1 of Wishing All the Best.",
     category: [],
     completed: false,
     challengeIndex: "",
@@ -16,67 +16,67 @@ const challenges = [
       }
     ],
     reward: null,
-    xp: "Challenger XP",
+    xp: "Challenger XP+",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Adept Arcana",
-    description: "Complete Major Arcana quests to collect your Deck of Whispers.",
-    category: [],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Quests completed",
-        progress: 0,
-        goal: 5,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP",
-    dust: null
-  },
-  {
-    belongsTo: "",
-    name: "Witch's Spoils",
-    description: "Open chests in Savathûn's Spire or the Altars of Summoning. Earn bonus progress by opening chests with Witch's Keys.",
-    category: ["Savathûn's Spire", "Altars of Summoning"],
+    name: "The City A Wish Built",
+    description: "Complete Dreaming City public events, Lost Sectors, and patrols. Blind Well completions grant additional progress.",
+    category: ['Dreaming City'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Chests opened",
+        task: "Dreaming City",
         progress: 0,
         goal: 100,
         completed: false
       }
     ],
     reward: null,
-    xp: "Challenger XP+++",
+    xp: "Challenger XP++",
     dust: null
   },
   {
     belongsTo: "",
-    name: "Master Conjurer",
-    description: "Collect offerings, which are used to summon combatants in the Altars of Summoning. Complete Altars of Summoning encounters. Higher difficulty encounters grant bonus progress.",
-    category: ["Altars of Summoning"],
+    name: "Dragon's Defender I",
+    description: "Defeat combatants with Solar weapons. Gain additional progress from Solar Rocket Launcher final blows.",
+    category: ['Loadout'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
-        isPercent: false,
-        task: "Offerings acquired",
+        isPercent: true,
+        task: "Solar Solar weapon",
         progress: 0,
-        goal: 5,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: null
+  },
+  {
+    belongsTo: "",
+    name: "Silver Blade",
+    description: "Acquire the Swords and Signs Triumph.",
+    category: ['Loadout'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Sword Sword",
+        progress: 0,
+        goal: 100,
         completed: false
       },
       {
         isPercent: true,
-        task: "Encounters completed",
+        task: "Solar Solar melee",
         progress: 0,
         goal: 100,
         completed: false
@@ -88,35 +88,35 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Taking All Challenges",
-    description: "Complete weekly playlist challenges.",
-    category: [],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Challenges",
-        progress: 0,
-        goal: 3,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
-    name: "Round and Round We Go",
-    description: "Generate Orbs of Power in Vanguard, Gambit, or Crucible playlists.",
-    category: [],
+    name: "EDZ Activities",
+    description: "In the EDZ, earn progress by completing bounties, patrols, public events, and Lost Sectors.",
+    category: ['EDZ'],
     completed: false,
     challengeIndex: "",
     objectives: [
       {
         isPercent: true,
-        task: "Orbs of Power",
+        task: "Progress",
+        progress: 0,
+        goal: 100,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: "Challenger XP++",
+    dust: "Bright Dust"
+  },
+  {
+    belongsTo: "",
+    name: "Focused Intention",
+    description: "Get final blows with weapons using Primary ammo in ritual activities. Earn bonus progress for Bow, Hand Cannon, Pulse Rifle, or Auto Rifle final blows or by defeating Guardians.",
+    category: ['Gambit, PvP, Vanguard'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: true,
+        task: "Primary ammo weapon",
         progress: 0,
         goal: 100,
         completed: false
@@ -125,28 +125,8 @@ const challenges = [
     reward: null,
     xp: "Challenger XP+++",
     dust: "Bright Dust"
-  },
-  {
-    belongsTo: "",
-    name: "Precision Calibration",
-    description: "Calibrate marksman weapons—Scout Rifles, Sniper Rifles, and Linear Fusion Rifles—by landing precision final blows. Bonus progress against Guardians.",
-    category: ["Loadout", "PvP"],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: true,
-        task: "Calibration",
-        progress: 0,
-        goal: 100,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: "Challenger XP+",
-    dust: "Bright Dust"
   }
-];
+]
 
 const weekName = 'Week One'
 
