@@ -16,6 +16,10 @@ So if you are preparing to do your Pinnacle Vanguard challenge you can visit the
 &NewLine;
 
 ## Updates
+
+12/15/23
+Added data for season 23. New images for the season to come! I've also finally played with the Destiny API, I hope to roll out bungie.net login in the next few weeks. Getting data from your accounts to show on the screen will essentially be a rewrite of the project 🙃
+
 10/09/23
 Just in time for the end of the season, I have done some back end work so that I can much more quickly update the site. I still may look into getting the site to add new data on reset but at this stage I think I will finally do proper research on the Destiny API to make this a rich, synced experiance with the game
 

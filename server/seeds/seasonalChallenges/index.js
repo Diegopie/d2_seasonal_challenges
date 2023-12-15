@@ -34,6 +34,7 @@ const getActiveWeek = async () => {
         return await ServerData.find({})
             .then(data => {
                 // ** Return Sliced Array Based On Active Week
+                // Note: The + 1 accounts for wish upgrades
                 return seasonalChallenges.slice(0, data[0].activeWeeks + 1)
             })
     } catch (err) {
