@@ -7,7 +7,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 const Activities = (props) => {
 
     const [season20Data, setSeason20Data] = useState([]);
-    console.log(season20Data);
+    // console.log(season20Data);
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Activities-small');
 
@@ -124,10 +124,7 @@ const Activities = (props) => {
         let activityIndex;
 
         activityChallenges.forEach((category, index) => {
-            // console.log(arg);
-            // console.log(category.name);
             if (category.name.includes(arg)) {
-                // console.log(index);
                 activityIndex = index;
             }
         })
@@ -141,10 +138,8 @@ const Activities = (props) => {
         season20Data.forEach((week => {
             // * Loop through each challenge in a week
             week.challenges.forEach(challenge => {
-                // console.log(challenge.category);
                 // * Loop through each activity in the category array for a given challenge
                 challenge.category.forEach((activity => {
-                    // console.log(activity);
                     handleChallenge(activity, challenge, findActivityIndex(activity))
                 }))
             })
@@ -159,7 +154,6 @@ const Activities = (props) => {
     }, [parsedData])
 
     sortChallenges();
-    console.log(activityChallenges);
 
     return (
         <>
