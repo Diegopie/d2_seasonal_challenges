@@ -108,12 +108,20 @@ const challenges = [
   },
   {
     belongsTo: "",
-    name: "Classified",
-    description: "Keep it secret. Keep it safe.",
-    category: [],
+    name: "Fond Farewells",
+    description: "Complete the Exotic mission 'Starcrossed.'",
+    category: ['Activities'],
     completed: false,
     challengeIndex: "",
-    objectives: [],
+    objectives: [
+      {
+        isPercent: false,
+        task: "Complete",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
     reward: null,
     xp: null,
     dust: null
