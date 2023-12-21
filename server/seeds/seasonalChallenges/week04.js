@@ -68,6 +68,26 @@ const challenges = [
   },
   {
     belongsTo: "",
+    name: "Fond Farewells",
+    description: "Complete the Exotic mission 'Starcrossed.'",
+    category: ['Activities'],
+    completed: false,
+    challengeIndex: "",
+    objectives: [
+      {
+        isPercent: false,
+        task: "Complete",
+        progress: 0,
+        goal: 1,
+        completed: false
+      }
+    ],
+    reward: null,
+    xp: null,
+    dust: null
+  },
+  {
+    belongsTo: "",
     name: "Gotta Win Them All",
     description: "Complete activities in Vanguard, Gambit, or Crucible playlists. Bonus progress is granted for completing Vanguard playlist activities at Hero difficulty or higher, or for winning Gambit or Crucible matches.",
     category: ['Vanguard', 'PvP', 'Gambit'],
@@ -106,26 +126,6 @@ const challenges = [
     xp: "Challenger XP+++",
     dust: "Bright Dust"
   },
-  {
-    belongsTo: "",
-    name: "Fond Farewells",
-    description: "Complete the Exotic mission 'Starcrossed.'",
-    category: ['Activities'],
-    completed: false,
-    challengeIndex: "",
-    objectives: [
-      {
-        isPercent: false,
-        task: "Complete",
-        progress: 0,
-        goal: 1,
-        completed: false
-      }
-    ],
-    reward: null,
-    xp: null,
-    dust: null
-  }
 ]
 
 const weekName = 'Week Four'
