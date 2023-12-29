@@ -4,14 +4,17 @@ import img from '../assets/production/background-img/background_Activities.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
 
 
-const Activities = (props) => {
-
-    const [season20Data, setSeason20Data] = useState([]);
-    // console.log(season20Data);
+const Activities = () => {
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Activities-small');
 
     const [{ parsedData },] = useGlobalContext();
+
+    const [seasonData, setSeasonData] = useState(parsedData);
+
+    useEffect(() => {
+        setSeasonData(parsedData)
+    },[parsedData])
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
@@ -135,7 +138,7 @@ const Activities = (props) => {
 
     const sortChallenges = () => {
         // * Loop through each week
-        season20Data.forEach((week => {
+        seasonData.forEach((week => {
             // * Loop through each challenge in a week
             week.challenges.forEach(challenge => {
                 // * Loop through each activity in the category array for a given challenge
@@ -145,13 +148,6 @@ const Activities = (props) => {
             })
         }))
     }
-
-    useEffect(() => {
-        parsedData
-            .then(data => {
-                setSeason20Data(data)
-            });
-    }, [parsedData])
 
     sortChallenges();
 

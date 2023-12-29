@@ -52,7 +52,6 @@ function App() {
     // Remove Loading and Change Body Background Color On Dark Mode Change
     useEffect(() => {
         // * Hide Laoding Screen
-        console.log(darkMode);
         hidesLoader();
         // * Set Dark Mode
         if (darkMode) {
@@ -64,10 +63,12 @@ function App() {
 
     // Set Server Data
     useEffect(() => {
+        async function makeAsync () {
         parsedSeasonalChallenges().then(data => {
-                console.log(data);
                 dispatchGlobal({type:'setParsedData', payload: data})
             })
+        }
+        makeAsync();
     }, [dispatchGlobal])
 
 
