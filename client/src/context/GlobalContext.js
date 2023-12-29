@@ -11,11 +11,11 @@ const determineDarkMode = () => {
         // Check matchMedia Support
         if (window.matchMedia) {
             return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        // Default to false
+            // Default to false
         } else {
             return false;
         }
-    // Use data From Local
+        // Use data From Local
     } else {
         return localDarkMode;
     }
@@ -35,12 +35,10 @@ const defaultState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'setParsedData':
-          
-            const wtf = {
+            return {
                 ...state,
                 parsedData: action.payload
             }
-            return wtf
         case 'setDarkMode':
             return {
                 ...state,
