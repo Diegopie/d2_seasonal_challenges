@@ -12,8 +12,8 @@ const Weekly = (props) => {
     const [{ parsedData },] = useGlobalContext();
     console.log(parsedData);
     const [seasonData, setSeasonData] = useState(parsedData);
-    // console.log(parsedData);
-    // const [ count, setCount ] = useState(0)
+   
+    
     useEffect(() => {
         setSeasonData(parsedData)
     },[parsedData])
