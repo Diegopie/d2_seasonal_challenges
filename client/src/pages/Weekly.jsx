@@ -3,21 +3,21 @@ import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory
 import img from '../assets/production/background-img/background_Home.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
 
-const Weekly = () => {
+const Weekly = (props) => {
 
-    const [seasonData, setSeasonData] = useState([]);
+    
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
     const [{ parsedData },] = useGlobalContext();
+    const [seasonData, setSeasonData] = useState([]);
+    // console.log(parsedData);
     // const [ count, setCount ] = useState(0)
 
     useEffect(() => {
-        parsedData
-            .then(data => {
-                setSeasonData(data);
-            })
-    }, [parsedData])
+        // setSeasonData(parsedData)
+    }, [setSeasonData, parsedData])
+  
 
     return (
         <>

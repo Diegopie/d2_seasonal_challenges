@@ -21,35 +21,45 @@ const determineDarkMode = () => {
     }
 }
 
-// parserServerData().then(data => console.log(data))
-
 const defaultState = {
     // Functions
     hidesLoader: () => document.querySelector('.load-icon').classList.add('hide-icon'),
     showLoader: () => document.querySelector('.load-icon').classList.remove('hide-icon'),
     darkMode: determineDarkMode(),
-    parsedData: parsedSeasonalChallenges(),
+    parsedData: [],
     activityIdsNav: [],
 };
 
-const reducer = (state, action) => {
+
+const reducer = async (state, action) => {
     switch (action.type) {
         case 'setParsedData':
-            return {
+            let plz = [];
+            await parsedSeasonalChallenges().then(data => {
+                console.log(data);
+                plz = data;
+            })
+            // console.log({plz});
+            console.log(state);
+            const wtf = {
                 ...state,
-                parsedData: parsedSeasonalChallenges()
+                parsedData: plz
             }
+            console.log(wtf);
+            return wtf
         case 'setDarkMode':
             return {
                 ...state,
                 darkMode: action.payload
             };
-        case 'updateParsedData':
+        case 'shit':
+            console.log('dark mode');
+            console.log(state);
             return {
                 ...state,
-                parsedData: parsedSeasonalChallenges()
             };
         case 'updateActivityIdsNav':
+            
             return {
                 ...state,
                 activityIdsNav: action.payload

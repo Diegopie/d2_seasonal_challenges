@@ -15,6 +15,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Menu from './layouts/Menu';
 import FootNav from './layouts/FootNav';
 // Import Utils/Data
+import parsedSeasonalChallenges from './data/parsedSeasonalChallenges';
 // import ScrollHook from './hooks/ScrollHook';
 import { useGlobalContext } from './context/GlobalContext';
 // CSS
@@ -51,6 +52,7 @@ function App() {
     // Remove Loading and Change Body Background Color On Dark Mode Change
     useEffect(() => {
         // * Hide Laoding Screen
+        console.log(darkMode);
         hidesLoader();
         // * Set Dark Mode
         if (darkMode) {
@@ -58,7 +60,15 @@ function App() {
             return
         }
         document.body.classList.remove('darkMode');
-    }, [darkMode, hidesLoader])
+    }, [darkMode, hidesLoader]);
+
+    // Set Server Data
+    useEffect(() => {
+        parsedSeasonalChallenges().then(data => {
+                console.log(data);
+                dispatchGlobal({type:'setParsedData', payload: data})
+            })
+    }, [dispatchGlobal])
 
 
     return (
@@ -72,7 +82,7 @@ function App() {
             <Menu />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
-                <Route exact path='weekly' element={<Weekly />} />
+                <Route exact path='weekly' element={<Weekly plzWork={'hey'}/>} />
                 <Route exact path='activities' element={<Activities />} />
                 <Route exact path='/xp' element={<XP />} />
                 <Route exact path='/dust' element={<Dust />} />
