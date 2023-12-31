@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 // import img from '../assets/production/background-img/background_SeasonalReward.jpg';
 import img from '../assets/production/background-img/background_Time.jpg';
@@ -7,19 +7,10 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const SeasonalReward = () => {
 
-  const [seasonData, setSeasonData] = useState([]);
-
     const [smallClass, setSmallClass] = useState('backgroundImg-SeasonalReward-small');
 
     const [{ parsedData },] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
-
-    useEffect(() => {
-        parsedData
-            .then(data => {
-                setSeasonData(data);
-            })
-    }, [parsedData])
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
@@ -34,7 +25,7 @@ const SeasonalReward = () => {
     const handleChallenge = (category, challenge) => {
         // console.log({category, challenge});
         switch (category) {
-            case 'Season of the Wish Upgrades':
+            case 'Season-of-the-Wish-Upgrades':
                 activityChallenges[0].challenges.push(challenge)
                 break;
             default:
@@ -43,13 +34,10 @@ const SeasonalReward = () => {
     }
 
     const sortChallenges = () => {
-        seasonData.forEach((week => {
+        parsedData.forEach((week => {
             week.challenges.forEach(challenge => {
-                // console.log(challenge.category);
 
-                // console.log(activity);
-                handleChallenge(challenge.reward, challenge)
-
+                handleChallenge(challenge.belongsTo, challenge);
             })
         }))
     }

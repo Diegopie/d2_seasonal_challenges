@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
-import { Link, redirect } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { updateServerData } from '../../api/server-data';
 import { useGlobalContext } from '../../context/GlobalContext';
 
 const Menu = (props) => {
 
   const [, dispatchGlobal] = useGlobalContext();
+
+  const navigate = useNavigate();
 
   // const [previousPage, setPreviousPage] = useState(null);
 
@@ -25,7 +27,8 @@ const Menu = (props) => {
     updateServerData().then(data => {
       dispatchGlobal({ type: 'setParsedData', payload: data })
 
-      return redirect(e.target.dataset.href)
+      console.log(e.target.dataset.href);
+      navigate(e.target.dataset.href);
 
     })
 
@@ -63,7 +66,7 @@ const Menu = (props) => {
             <Link data-href='/activities' onClick={(e) => handleClick(e)}>Activities</Link>
             <Link data-href='/xp' onClick={(e) => handleClick(e)}>XP</Link>
             <Link data-href='/dust' onClick={(e) => handleClick(e)}>Bright Dust</Link>
-            {/* <Link data-href='/seasonal-reward'>War Table Upgrade</Link> */}
+            <Link data-href='/seasonal-reward' onClick={(e) => handleClick(e)}>Wish Upgrade</Link>
             <Link data-href='/time-sensitive' onClick={(e) => handleClick(e)}>Time Sensitive</Link>
             <Link onClick={handleLogoff}>{logoutString}</Link>
           </Nav>

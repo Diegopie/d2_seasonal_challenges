@@ -9,8 +9,8 @@ const Activities = () => {
     const [smallClass, setSmallClass] = useState('backgroundImg-Activities-small');
 
     const [{ parsedData },] = useGlobalContext();
-    console.log('activities');
-    console.log(parsedData);
+    // console.log('activities');
+    // console.log(parsedData);
 
     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [

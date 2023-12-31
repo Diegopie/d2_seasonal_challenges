@@ -69,7 +69,7 @@ function App() {
             })
         }
         makeAsync();
-    }, [dispatchGlobal])
+    }, [])
 
 
     return (
@@ -87,7 +87,7 @@ function App() {
                 <Route exact path='activities' element={<Activities />} />
                 <Route exact path='/xp' element={<XP />} />
                 <Route exact path='/dust' element={<Dust />} />
-                {/* <Route exact path='/seasonal-reward' element={<SeasonalReward />} /> */}
+                <Route exact path='/seasonal-reward' element={<SeasonalReward />} />
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
                 <Route exact path='/seasonal-upgrades' element={<SeasonalReward />} />
                 <Route path='*' element={<NotFoundPage />} />

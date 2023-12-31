@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import img from '../assets/production/background-img/background_XP.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
@@ -6,21 +6,12 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const XP = () => {
 
-    const [season20Data, setSeason20Data] = useState([]);
-
     const [smallClass, setSmallClass] = useState('backgroundImg-XP-small');
 
     const [{ parsedData },] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
 
-    useEffect(() => {
-        parsedData
-            .then(data => {
-                setSeason20Data(data);
-            })
-    }, [parsedData])
-
-    // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
+     // * Manually Create an Array of Objects that Correspond with the Season's Current Categories 
     const activityChallenges = [
         // [0]
         {
@@ -59,7 +50,7 @@ const XP = () => {
 
 
     const sortChallenges = () => {
-        season20Data.forEach((week => {
+        parsedData.forEach((week => {
             week.challenges.forEach(challenge => {
                 // console.log(challenge.category);
 
