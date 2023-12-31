@@ -5,6 +5,8 @@ const ChallengeReward = (props) => {
 
     const [{ reward, xp, dust, week },] = useChallengeContext();
 
+
+
     // console.log(week);
 
     const getRewardImg = (reward) => {
@@ -20,10 +22,15 @@ const ChallengeReward = (props) => {
         if (xpTier === 'Challenger XP+++') return '/assets/img/icons/xp-t1.png'
     }
 
+    console.log(xp);
+
     return (
         <section>
             {/* Check If Each Reward Type has a Truthy Value in this Challenge Instance and Render */}
-            <h4>Rewards</h4>
+             { reward || xp || dust ?
+                <h4>Rewards</h4>
+                : null
+             } 
             {reward &&
                 <div className='ChallengeReward-Body'>
                     <img

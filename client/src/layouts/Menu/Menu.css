@@ -1,9 +1,25 @@
 .Menu-Container {
-    background-color: var(--App-Main-Color-solid)!important;
+    background-color: var(--App-Main-Color-solid) !important;
 }
 
 .Menu-Icon {
     height: 2.2rem;
     border-radius: 80%;
     margin-right: 0.8rem;
+}
+
+.navbar-nav a {
+    /* color: red; */
+    padding: 0 1rem 0 1rem;
+    color: rgba(255, 255, 255, 0.55)
+}
+
+.navbar-nav a:hover {
+    /* color: red; */
+    padding: 0 1rem 0 1rem;
+    color: rgba(255, 255, 255, 1)
+}
+
+.Menu-Active {
+    color: rgba(255, 255, 255, 1)!important;
 }

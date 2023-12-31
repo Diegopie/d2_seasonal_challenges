@@ -5,19 +5,19 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const Weekly = (props) => {
 
-    
-
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const [{ parsedData },] = useGlobalContext();
-    // console.log(parsedData);
-    const [seasonData, setSeasonData] = useState(parsedData);
-   
-    
+
     useEffect(() => {
-        setSeasonData(parsedData)
-    },[parsedData])
-  
+        if(parsedData.length !== 0 ) {
+            setIsLoading(false)
+        }
+    }, [parsedData]);
+
+    console.log(isLoading);
 
     return (
         <>
@@ -28,9 +28,10 @@ const Weekly = (props) => {
                             setSmallClass('');
                         }}
                     />
-                    {seasonData.map((week) => {
+                    {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
+                                isLoading={isLoading}
                                 key={week.name}
                                 name={week.name.replaceAll(' ', '-')}
                                 challenges={week.challenges}

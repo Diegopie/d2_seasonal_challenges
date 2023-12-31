@@ -83,7 +83,7 @@ function App() {
             <Menu />
             <Routes>
                 <Route exact path='/' element={<Home />}></Route>
-                <Route exact path='weekly' element={<Weekly plzWork={'hey'}/>} />
+                <Route exact path='weekly' element={<Weekly />} />
                 <Route exact path='activities' element={<Activities />} />
                 <Route exact path='/xp' element={<XP />} />
                 <Route exact path='/dust' element={<Dust />} />
