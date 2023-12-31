@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import img from '../assets/production/background-img/background_Home.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
@@ -7,17 +7,9 @@ const Weekly = (props) => {
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
-    const [isLoading, setIsLoading] = useState(true);
-
     const [{ parsedData },] = useGlobalContext();
-
-    useEffect(() => {
-        if(parsedData.length !== 0 ) {
-            setIsLoading(false)
-        }
-    }, [parsedData]);
-
-    console.log(isLoading);
+    console.log('weekly');
+    console.log(parsedData);
 
     return (
         <>
@@ -31,7 +23,6 @@ const Weekly = (props) => {
                     {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
-                                isLoading={isLoading}
                                 key={week.name}
                                 name={week.name.replaceAll(' ', '-')}
                                 challenges={week.challenges}

@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
-import { Link } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 import { updateServerData } from '../../api/server-data';
 import { useGlobalContext } from '../../context/GlobalContext';
 
@@ -24,7 +24,11 @@ const Menu = (props) => {
   const handleClick = (e) => {
     updateServerData().then(data => {
       dispatchGlobal({ type: 'setParsedData', payload: data })
+
+      return redirect(e.target.dataset.href)
+
     })
+
 
     // if (previousPage) {
     //   console.log(previousPage);
@@ -55,12 +59,12 @@ const Menu = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to='/weekly' onClick={(e) => handleClick(e)}>Weekly</Link>
-            <Link to='/activities' onClick={(e) => handleClick(e)}>Activities</Link>
-            <Link to='/xp' onClick={(e) => handleClick(e)}>XP</Link>
-            <Link to='/dust' onClick={(e) => handleClick(e)}>Bright Dust</Link>
-            {/* <Link to='/seasonal-reward'>War Table Upgrade</Link> */}
-            <Link to='/time-sensitive' onClick={(e) => handleClick(e)}>Time Sensitive</Link>
+            <Link data-href='/weekly' onClick={(e) => handleClick(e)}>Weekly</Link>
+            <Link data-href='/activities' onClick={(e) => handleClick(e)}>Activities</Link>
+            <Link data-href='/xp' onClick={(e) => handleClick(e)}>XP</Link>
+            <Link data-href='/dust' onClick={(e) => handleClick(e)}>Bright Dust</Link>
+            {/* <Link data-href='/seasonal-reward'>War Table Upgrade</Link> */}
+            <Link data-href='/time-sensitive' onClick={(e) => handleClick(e)}>Time Sensitive</Link>
             <Link onClick={handleLogoff}>{logoutString}</Link>
           </Nav>
         </Navbar.Collapse>

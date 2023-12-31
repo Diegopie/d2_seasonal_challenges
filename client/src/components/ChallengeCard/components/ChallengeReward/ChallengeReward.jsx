@@ -22,8 +22,6 @@ const ChallengeReward = (props) => {
         if (xpTier === 'Challenger XP+++') return '/assets/img/icons/xp-t1.png'
     }
 
-    console.log(xp);
-
     return (
         <section>
             {/* Check If Each Reward Type has a Truthy Value in this Challenge Instance and Render */}
