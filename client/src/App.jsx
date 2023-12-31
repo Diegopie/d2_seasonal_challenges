@@ -64,7 +64,7 @@ function App() {
     // Set Server Data
     useEffect(() => {
         async function makeAsync () {
-        parsedSeasonalChallenges().then(data => {
+        await parsedSeasonalChallenges().then(data => {
                 dispatchGlobal({type:'setParsedData', payload: data})
             })
         }

@@ -1,6 +1,11 @@
 import { updateServerData } from "../../api/server-data";
 
-const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIsComplete, progress) => {
+// args:(
+//  // week: the week that needs to be updated,
+//  // challengeIndex: the index that challenge exists in,
+//  //objectiveIndex: the index the objective exists in,
+//  //dispatch: dispatch for challenge context)
+const useUpdateData = (week, challengeIndex, objectiveIndex, dispatchChallenge, dispatchGlobal, objectiveIsComplete, progress) => {
 
     // * Create Reference to Current Challenge and Objectives
     const newLocal = JSON.parse(localStorage.getItem(week));
@@ -19,9 +24,7 @@ const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIs
                 totalObjectivesCompleted++;
             }
         }
-        // console.log({objectiveIsComplete});
-        // console.log('-- total completed vs totalObjectives --');
-        // console.log(totalObjectivesCompleted, totalObjectives);
+
         if (totalObjectivesCompleted === totalObjectives && totalObjectives !== 0) {
             return true
         } else if (totalObjectivesCompleted !== totalObjectives && totalObjectives !== 0) {
@@ -38,8 +41,8 @@ const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIs
         } else {
             // ** If they don't match, update local, state, db, and end the function
             localStorage.setItem(week, JSON.stringify(newLocal));
-            dispatch({type:'setNewObjective', payload: { updatedProgress: allObjectives }});
-            updateServerData();
+            dispatchChallenge({ type: 'setNewObjective', payload: { updatedProgress: allObjectives } });
+            updateServerData().then(data => data);
             return;
         }
     }
@@ -53,9 +56,9 @@ const updateData = ( week, challengeIndex, objectiveIndex, dispatch, objectiveIs
     // * Save Updated Data To Local Storage
     localStorage.setItem(week, JSON.stringify(newLocal));
     // * Update State
-    dispatch({ type: 'setUpdatedChallenge', payload: { allObjectives, challengeIsCompleted: allObjectivesComplete(allObjectives) }});
+    dispatchChallenge({ type: 'setUpdatedChallenge', payload: { allObjectives, challengeIsCompleted: allObjectivesComplete(allObjectives) } });
     // * Update Database
-    updateServerData();
+    updateServerData()
 }
 
-export default updateData
+export default useUpdateData;

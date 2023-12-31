@@ -10,7 +10,7 @@ const Weekly = (props) => {
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
     const [{ parsedData },] = useGlobalContext();
-    console.log(parsedData);
+    // console.log(parsedData);
     const [seasonData, setSeasonData] = useState(parsedData);
    
     

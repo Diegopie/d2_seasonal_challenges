@@ -64,6 +64,7 @@ const getServerData = async (username, ) => {
 const updateServerData = async () => {
     const username = localStorage.getItem('username')
     try {
+        const allData = allLocalData()
         // * Update Data
         const updateDataResponse = await fetch('/api/basic-user/update', {
             headers: {
@@ -71,7 +72,7 @@ const updateServerData = async () => {
             },
             body: JSON.stringify({
                 username: username,
-                seasonalChallenges: allLocalData()
+                seasonalChallenges: allData
             }),
             method: 'POST'
         });
@@ -83,6 +84,8 @@ const updateServerData = async () => {
             console.log("Could not update data!");
             return false;
         }
+
+        return allData;
         
         
     } catch (err) {

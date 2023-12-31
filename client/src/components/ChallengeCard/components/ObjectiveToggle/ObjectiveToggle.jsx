@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import updateData from '../../update-data';
+import updateData from '../../useUpdateData';
 import { useChallengeContext } from '../../ChallengeContext';
 
 const ObjectiveToggle = (props) => {

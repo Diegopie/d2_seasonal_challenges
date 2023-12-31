@@ -5,11 +5,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
 import { Link } from 'react-router-dom';
+import { updateServerData } from '../../api/server-data';
+import { useGlobalContext } from '../../context/GlobalContext';
 
 const Menu = (props) => {
 
+  const [ , dispatchGlobal ] = useGlobalContext();
+
   if (window.location.pathname === '/') {
     return null;
+  }
+
+
+  const handleClick = () => {
+    updateServerData().then(data => {
+      console.log(data);
+      console.log(data);
+      dispatchGlobal({type:'setParsedData', payload: data})
+  })
   }
 
   const handleLogoff = () => {
@@ -28,8 +41,8 @@ const Menu = (props) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Link to='/weekly'>Weekly</Link>
-                <Link to='/activities'>Activities</Link>
+                <Link to='/weekly' onClick={() => handleClick()}>Weekly</Link>
+                <Link to='/activities' onClick={() => handleClick()}>Activities</Link>
                 <Nav.Link href='/xp'>XP</Nav.Link>
                 <Nav.Link href='/dust'>Bright Dust</Nav.Link>
                 {/* <Nav.Link href='/seasonal-reward'>War Table Upgrade</Nav.Link> */}
