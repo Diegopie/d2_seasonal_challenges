@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
+import { Link } from 'react-router-dom';
 
 const Menu = (props) => {
 
@@ -27,8 +28,8 @@ const Menu = (props) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href='/weekly'>Weekly</Nav.Link>
-                <Nav.Link href='/activities'>Activities</Nav.Link>
+                <Link to='/weekly'>Weekly</Link>
+                <Link to='/activities'>Activities</Link>
                 <Nav.Link href='/xp'>XP</Nav.Link>
                 <Nav.Link href='/dust'>Bright Dust</Nav.Link>
                 {/* <Nav.Link href='/seasonal-reward'>War Table Upgrade</Nav.Link> */}
