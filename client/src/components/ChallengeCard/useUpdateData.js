@@ -5,7 +5,7 @@ import { updateServerData } from "../../api/server-data";
 //  // challengeIndex: the index that challenge exists in,
 //  //objectiveIndex: the index the objective exists in,
 //  //dispatch: dispatch for challenge context)
-const useUpdateData = (week, challengeIndex, objectiveIndex, dispatchChallenge, dispatchGlobal, objectiveIsComplete, progress) => {
+const useUpdateData = (week, challengeIndex, objectiveIndex, dispatchChallenge, objectiveIsComplete, progress) => {
 
     // * Create Reference to Current Challenge and Objectives
     const newLocal = JSON.parse(localStorage.getItem(week));
@@ -42,7 +42,7 @@ const useUpdateData = (week, challengeIndex, objectiveIndex, dispatchChallenge, 
             // ** If they don't match, update local, state, db, and end the function
             localStorage.setItem(week, JSON.stringify(newLocal));
             dispatchChallenge({ type: 'setNewObjective', payload: { updatedProgress: allObjectives } });
-            updateServerData().then(data => data);
+            updateServerData();
             return;
         }
     }
@@ -58,7 +58,7 @@ const useUpdateData = (week, challengeIndex, objectiveIndex, dispatchChallenge, 
     // * Update State
     dispatchChallenge({ type: 'setUpdatedChallenge', payload: { allObjectives, challengeIsCompleted: allObjectivesComplete(allObjectives) } });
     // * Update Database
-    updateServerData()
+    updateServerData();
 }
 
 export default useUpdateData;
