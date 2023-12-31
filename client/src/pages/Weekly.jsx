@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import img from '../assets/production/background-img/background_Home.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
@@ -8,9 +8,6 @@ const Weekly = (props) => {
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
     const [{ parsedData },] = useGlobalContext();
-    // console.count('huh')
-    // console.log('weekly');
-    // console.log(parsedData);
 
     return (
         <>
