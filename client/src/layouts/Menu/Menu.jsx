@@ -7,6 +7,7 @@ import './Menu.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { updateServerData } from '../../api/server-data';
 import { useGlobalContext } from '../../context/GlobalContext';
+import { allLocalData } from '../../api/parseServerData';
 
 const Menu = (props) => {
 
@@ -24,11 +25,25 @@ const Menu = (props) => {
 
 
   const handleClick = (e) => {
-    updateServerData().then(data => {
-      dispatchGlobal({ type: 'setParsedData', payload: data })
+    
+    console.log(e.target.dataset.href);
 
-      navigate(e.target.dataset.href);
+    const why = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, [1])
     })
+
+    why.then(() => {
+      navigate(e.target.dataset.href);
+      dispatchGlobal({ type: 'setParsedData', payload: allLocalData() })
+    })
+
+    // updateServerData().then(data => {
+    //   dispatchGlobal({ type: 'setParsedData', payload: data })
+    //   navigate(e.target.dataset.href);
+
+    // })
 
 
     // if (previousPage) {
@@ -41,7 +56,7 @@ const Menu = (props) => {
     // console.log(e.target);
 
     // setPreviousPage(e.target);
-
+ 
   }
 
   const handleLogoff = () => {
