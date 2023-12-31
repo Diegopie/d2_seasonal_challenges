@@ -11,11 +11,11 @@ const determineDarkMode = () => {
         // Check matchMedia Support
         if (window.matchMedia) {
             return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        // Default to false
+            // Default to false
         } else {
             return false;
         }
-    // Use data From Local
+        // Use data From Local
     } else {
         return localDarkMode;
     }
@@ -28,7 +28,7 @@ const defaultState = {
     hidesLoader: () => document.querySelector('.load-icon').classList.add('hide-icon'),
     showLoader: () => document.querySelector('.load-icon').classList.remove('hide-icon'),
     darkMode: determineDarkMode(),
-    parsedData: parsedSeasonalChallenges(),
+    parsedData: [],
     activityIdsNav: [],
 };
 
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
         case 'setParsedData':
             return {
                 ...state,
-                parsedData: parsedSeasonalChallenges()
+                parsedData: action.payload
             }
         case 'setDarkMode':
             return {

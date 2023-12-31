@@ -15,6 +15,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Menu from './layouts/Menu';
 import FootNav from './layouts/FootNav';
 // Import Utils/Data
+import parsedSeasonalChallenges from './data/parsedSeasonalChallenges';
 // import ScrollHook from './hooks/ScrollHook';
 import { useGlobalContext } from './context/GlobalContext';
 // CSS
@@ -58,7 +59,17 @@ function App() {
             return
         }
         document.body.classList.remove('darkMode');
-    }, [darkMode, hidesLoader])
+    }, [darkMode, hidesLoader]);
+
+    // Set Server Data
+    useEffect(() => {
+        async function makeAsync () {
+        await parsedSeasonalChallenges().then(data => {
+                dispatchGlobal({type:'setParsedData', payload: data})
+            })
+        }
+        makeAsync();
+    }, [])
 
 
     return (
@@ -76,7 +87,7 @@ function App() {
                 <Route exact path='activities' element={<Activities />} />
                 <Route exact path='/xp' element={<XP />} />
                 <Route exact path='/dust' element={<Dust />} />
-                {/* <Route exact path='/seasonal-reward' element={<SeasonalReward />} /> */}
+                <Route exact path='/seasonal-reward' element={<SeasonalReward />} />
                 <Route exact path='/time-sensitive' element={<TimeSensitive />} />
                 <Route exact path='/seasonal-upgrades' element={<SeasonalReward />} />
                 <Route path='*' element={<NotFoundPage />} />

@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import img from '../assets/production/background-img/background_Home.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
 
-const Weekly = () => {
-
-    const [seasonData, setSeasonData] = useState([]);
+const Weekly = (props) => {
 
     const [smallClass, setSmallClass] = useState('backgroundImg-Weekly-small');
 
     const [{ parsedData },] = useGlobalContext();
-    // const [ count, setCount ] = useState(0)
-
-    useEffect(() => {
-        parsedData
-            .then(data => {
-                setSeasonData(data);
-            })
-    }, [parsedData])
+    // console.count('huh')
+    // console.log('weekly');
+    // console.log(parsedData);
 
     return (
         <>
@@ -28,7 +21,7 @@ const Weekly = () => {
                             setSmallClass('');
                         }}
                     />
-                    {seasonData.map((week) => {
+                    {parsedData.map((week) => {
                         return (
                             <ChallengeCategory
                                 key={week.name}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useChallengeContext } from '../../ChallengeContext';
-import updateData from '../../update-data';
+import updateData from '../../useUpdateData';
 
 const ObjectiveOptions = (props) => {
 
