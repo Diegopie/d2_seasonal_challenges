@@ -30,17 +30,17 @@ const ChallengeCard = (props) => {
 
     const isWeekly = window.location.pathname.includes('/weekly');
 
+    const nameToRender = isWeekly ? <h3>{name}</h3> : <h3>{name + " - " + week.replaceAll('-', ' ')}</h3>;
+
     return (
         <section className={
             `ChallengeCard-Container ${props.activityHeader} ${name.replaceAll(' ', '-')} App-DropShadow-2 ${completed ? 'ChallengeCard-Completed' : ''}`
         } id={name.replaceAll(' ', '-')} data-completed={completed}>
             {/* NAME */}
             <article className='ChallengeCard-Header App-FlexCenter'>
-                {!isWeekly &&
-                    <h3>{name + " - " + week.replaceAll('-', ' ')}</h3>
-                }
-                {isWeekly &&
-                    <h3>{name}</h3>
+                { name || week ?
+                    nameToRender
+                    : null
                 }
             </article>
             <section className='ChallengeCard-Body'>

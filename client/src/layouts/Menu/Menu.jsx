@@ -27,9 +27,7 @@ const Menu = (props) => {
     updateServerData().then(data => {
       dispatchGlobal({ type: 'setParsedData', payload: data })
 
-      console.log(e.target.dataset.href);
       navigate(e.target.dataset.href);
-
     })
 
 
@@ -43,7 +41,7 @@ const Menu = (props) => {
     // console.log(e.target);
 
     // setPreviousPage(e.target);
- 
+
   }
 
   const handleLogoff = () => {
