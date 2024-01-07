@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import ChallengeCategory from '../components/ChallengeCategory/ChallengeCategory';
 import img from '../assets/production/background-img/background_XP.jpg';
 import { useGlobalContext } from '../context/GlobalContext';
@@ -6,7 +6,8 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const XP = () => {
 
-    const [smallClass, setSmallClass] = useState('backgroundImg-XP-small');
+    const smallClass = useRef('backgroundImg-XP-small');
+    const imgContainer = useRef(null);
 
     const [{ parsedData },] = useGlobalContext();
     // const [ count, setCount ] = useState(0)
@@ -65,10 +66,10 @@ const XP = () => {
 
     return (
         <main id='main' className='App-backMaxHeight'>
-            <section className={`App-backImg ${smallClass} backgroundImg-XP App-PushBottomUp`}>
+            <section ref={imgContainer} className={`App-backImg ${smallClass.current} backgroundImg-XP App-PushBottomUp`}>
             <img src={img} alt='invisible img' className='App-Invisible-Img'
                 onLoad={() => { 
-                    setSmallClass('');
+                    imgContainer.current.classList.remove(smallClass.current);
                 }}
             />
                 {activityChallenges.map((week) => {

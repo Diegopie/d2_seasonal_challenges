@@ -5,7 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { updateServerData } from '../../api/server-data';
 import { useGlobalContext } from '../../context/GlobalContext';
 import { allLocalData } from '../../api/parseServerData';
 
@@ -25,7 +24,7 @@ const Menu = (props) => {
 
 
   const handleClick = (e) => {
-    
+    e.preventDefault();
     console.log(e.target.dataset.href);
 
     const why = new Promise((resolve) => {
