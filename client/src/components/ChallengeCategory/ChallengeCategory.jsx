@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ChallengeCard from '../ChallengeCard';
-import ChallengeProvider from '../ChallengeCard/ChallengeContext';
+import ChallengeCard from './components/ChallengeCard';
+import ChallengeProvider from './context/ChallengeContext';
 import './ChallengeCategory.css';
 import { useGlobalContext } from '../../context/GlobalContext';
 

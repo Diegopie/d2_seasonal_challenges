@@ -1,5 +1,5 @@
 import React from 'react';
-import { useChallengeContext } from '../../ChallengeContext';
+import { useChallengeContext } from '../../context/ChallengeContext';
 
 const ChallengeReward = (props) => {
 

@@ -1,4 +1,4 @@
-import { updateServerData } from "../../api/server-data";
+import { updateServerData } from "../../../api/server-data";
 
 // args:(
 //  // week: the week that needs to be updated,

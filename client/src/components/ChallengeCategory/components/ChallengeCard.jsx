@@ -1,7 +1,7 @@
 import React from 'react';
-import { useChallengeContext } from './ChallengeContext';
-import ChallengeObjectives from './components/ChallengeObjectives';
-import ChallengeReward from './components/ChallengeReward';
+import { useChallengeContext } from '../context/ChallengeContext.js';
+import ChallengeObjectives from './ChallengeObjectives';
+import ChallengeReward from './ChallengeReward';
 import './ChallengeCard.css';
 
 const ChallengeCard = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useChallengeContext } from '../../ChallengeContext';
+import { useChallengeContext } from '../../context/ChallengeContext';
 import ObjectiveOptions from '../ObjectiveOptions/ObjectiveOptions';
 import ObjectiveToggle from '../ObjectiveToggle/ObjectiveToggle';
 
